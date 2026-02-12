@@ -1,0 +1,224 @@
+﻿<Window x:Class="MusicSystem.App.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Music Streaming - Admin Portal" 
+        Height="700" Width="1400"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        MinHeight="600" MinWidth="1200">
+
+    
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+        <!-- ==================== HEADER ==================== -->
+        <Border Grid.Row="0" Background="#FF2C3E50">
+            <Grid Margin="20,0">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="🎵" FontSize="28" Margin="0,0,10,0"/>
+                    <StackPanel>
+                        <TextBlock Text="Music Streaming Admin" 
+                                   FontSize="18" 
+                                   FontWeight="Bold" 
+                                   Foreground="White"/>
+                        <TextBlock x:Name="txtSubtitle"
+                                   Text="Admin Portal" 
+                                   FontSize="11" 
+                                   Foreground="#FFBDC3C7"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right" 
+                            VerticalAlignment="Center">
+                    <!-- User Avatar & Name -->
+                    <Border Background="#FF34495E" 
+                            CornerRadius="20" 
+                            Padding="12,6"
+                            Margin="0,0,15,0">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Background="#FF3498DB" 
+                                    Width="32" 
+                                    Height="32" 
+                                    CornerRadius="16"
+                                    Margin="0,0,10,0">
+                                <TextBlock x:Name="txtAvatarInitial"
+                                           Text="A" 
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           Foreground="White"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock x:Name="txtWelcome"
+                                           Text="Admin User" 
+                                           FontSize="13" 
+                                           FontWeight="SemiBold"
+                                           Foreground="White"/>
+                                <TextBlock x:Name="txtRole"
+                                           Text="Administrator" 
+                                           FontSize="10" 
+                                           Foreground="#FFBDC3C7"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Logout Button -->
+                    <Button x:Name="btnLogout"
+                            Click="btnLogout_Click"
+                            Background="#FFE74C3C"
+                            Foreground="White"
+                            BorderThickness="0"
+                            Padding="15,8"
+                            Cursor="Hand"
+                            ToolTip="Đăng xuất khỏi hệ thống">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="🚪" FontSize="14" Margin="0,0,5,0"/>
+                            <TextBlock Text="Đăng xuất" FontSize="13"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ==================== SIDEBAR ==================== -->
+            <Border Grid.Column="0" 
+                    Background="#FF34495E" 
+                    BorderBrush="#FF2C3E50"
+                    BorderThickness="0,0,1,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="0,20,0,20">
+                        <!-- Dashboard -->
+                        <Button x:Name="btnDashboard"
+                                Click="btnDashboard_Click"
+                                Style="{StaticResource MenuButtonStyle}"
+                                Tag="Dashboard">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="📊" FontSize="18" Margin="0,0,10,0"/>
+                                <TextBlock Text="Dashboard" FontSize="14"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- ADMIN MENU -->
+                        <Border x:Name="adminMenu" Visibility="Collapsed">
+                            <StackPanel>
+                                <TextBlock Text="QUẢN TRỊ HỆ THỐNG" 
+                                           FontSize="11" 
+                                           Foreground="#FF95A5A6"
+                                           Margin="20,20,0,10"
+                                           FontWeight="SemiBold"/>
+
+                                <Button x:Name="btnUsers"
+                                        Click="btnUsers_Click"
+                                        Style="{StaticResource MenuButtonStyle}"
+                                        Tag="Users">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="👥" FontSize="18" Margin="0,0,10,0"/>
+                                        <TextBlock Text="Quản lý người dùng" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- MANAGER MENU -->
+                        <Border x:Name="managerMenu" Visibility="Collapsed">
+                            <StackPanel>
+                                <TextBlock Text="QUẢN LÝ NỘI DUNG" 
+                                           FontSize="11" 
+                                           Foreground="#FF95A5A6"
+                                           Margin="20,20,0,10"
+                                           FontWeight="SemiBold"/>
+
+                                <Button x:Name="btnSongs"
+                                        Click="btnSongs_Click"
+                                        Style="{StaticResource MenuButtonStyle}"
+                                        Tag="Songs">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="🎵" FontSize="18" Margin="0,0,10,0"/>
+                                        <TextBlock Text="Quản lý bài hát" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="btnArtists"
+                                        Click="btnArtists_Click"
+                                        Style="{StaticResource MenuButtonStyle}"
+                                        Tag="Artists">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="🎤" FontSize="18" Margin="0,0,10,0"/>
+                                        <TextBlock Text="Quản lý nghệ sĩ" FontSize="14"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="btnPendingSongs"
+                                        Click="btnPendingSongs_Click"
+                                        Style="{StaticResource MenuButtonStyle}"
+                                        Tag="PendingSongs">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="⏳" FontSize="18" Margin="0,0,10,0"/>
+                                        <StackPanel>
+                                            <TextBlock Text="Duyệt bài hát" FontSize="14"/>
+                                            <Border x:Name="badgePending"
+                                                    Background="#FFDC3545"
+                                                    CornerRadius="10"
+                                                    Padding="6,2"
+                                                    HorizontalAlignment="Left"
+                                                    Margin="0,3,0,0"
+                                                    Visibility="Collapsed">
+                                                <TextBlock x:Name="txtPendingCount"
+                                                           Text="5" 
+                                                           FontSize="10"
+                                                           Foreground="White"
+                                                           FontWeight="Bold"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- SEPARATOR -->
+                        <Border Height="1" 
+                                Background="#FF2C3E50" 
+                                Margin="20,20"/>
+
+                        <!-- Settings -->
+                        <Button x:Name="btnSettings"
+                                Click="btnSettings_Click"
+                                Style="{StaticResource MenuButtonStyle}"
+                                Tag="Settings">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="⚙️" FontSize="18" Margin="0,0,10,0"/>
+                                <TextBlock Text="Cài đặt" FontSize="14"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <!-- ==================== CONTENT AREA ==================== -->
+            <Border Grid.Column="1" Background="#FFECF0F1">
+                <Frame x:Name="mainFrame" 
+                       NavigationUIVisibility="Hidden"
+                       Background="Transparent"/>
+            </Border>
+        </Grid>
+    </Grid>
+
+   
+</Window>

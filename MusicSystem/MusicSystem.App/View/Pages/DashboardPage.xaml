@@ -1,0 +1,204 @@
+﻿<Page x:Class="MusicSystem.App.Views.Pages.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Dashboard"
+      Background="Transparent">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="30">
+            <!-- Welcome Banner -->
+            <Border Background="White" 
+                    CornerRadius="10"
+                    Padding="30"
+                    Margin="0,0,0,20">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock x:Name="txtWelcome"
+                                   Text="Xin chào, Admin!" 
+                                   FontSize="28" 
+                                   FontWeight="Bold"
+                                   Foreground="#FF2C3E50"/>
+                        <TextBlock Text="Chào mừng bạn quay trở lại hệ thống quản trị Music Streaming" 
+                                   FontSize="14" 
+                                   Foreground="#FF7F8C8D"
+                                   Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                    <TextBlock Text="🎉" 
+                               FontSize="80" 
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                               Opacity="0.3"/>
+                </Grid>
+            </Border>
+
+            <!-- Statistics Cards -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Card: Users -->
+                <Border x:Name="cardUsers"
+                        Grid.Column="0"
+                        Background="#FF3498DB"
+                        CornerRadius="10"
+                        Padding="20"
+                        Margin="0,0,10,0"
+                        Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="👥" FontSize="40" Margin="0,0,0,10"/>
+                        <TextBlock x:Name="txtUserCount"
+                                   Text="0" 
+                                   FontSize="32" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Người dùng" 
+                                   FontSize="14" 
+                                   Foreground="White"
+                                   Opacity="0.9"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card: Songs -->
+                <Border x:Name="cardSongs"
+                        Grid.Column="1"
+                        Background="#FF1ABC9C"
+                        CornerRadius="10"
+                        Padding="20"
+                        Margin="0,0,10,0"
+                        Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🎵" FontSize="40" Margin="0,0,0,10"/>
+                        <TextBlock x:Name="txtSongCount"
+                                   Text="0" 
+                                   FontSize="32" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Bài hát" 
+                                   FontSize="14" 
+                                   Foreground="White"
+                                   Opacity="0.9"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card: Artists -->
+                <Border x:Name="cardArtists"
+                        Grid.Column="2"
+                        Background="#FF9B59B6"
+                        CornerRadius="10"
+                        Padding="20"
+                        Margin="0,0,10,0"
+                        Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="🎤" FontSize="40" Margin="0,0,0,10"/>
+                        <TextBlock x:Name="txtArtistCount"
+                                   Text="0" 
+                                   FontSize="32" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Nghệ sĩ" 
+                                   FontSize="14" 
+                                   Foreground="White"
+                                   Opacity="0.9"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Card: Pending -->
+                <Border x:Name="cardPending"
+                        Grid.Column="3"
+                        Background="#FFDC3545"
+                        CornerRadius="10"
+                        Padding="20"
+                        Visibility="Collapsed">
+                    <StackPanel>
+                        <TextBlock Text="⏳" FontSize="40" Margin="0,0,0,10"/>
+                        <TextBlock x:Name="txtPendingCount"
+                                   Text="0" 
+                                   FontSize="32" 
+                                   FontWeight="Bold"
+                                   Foreground="White"/>
+                        <TextBlock Text="Chờ duyệt" 
+                                   FontSize="14" 
+                                   Foreground="White"
+                                   Opacity="0.9"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- Quick Actions -->
+            <Border Background="White" 
+                    CornerRadius="10"
+                    Padding="30"
+                    Margin="0,20,0,0">
+                <StackPanel>
+                    <TextBlock Text="⚡ Thao tác nhanh" 
+                               FontSize="20" 
+                               FontWeight="Bold"
+                               Foreground="#FF2C3E50"
+                               Margin="0,0,0,20"/>
+
+                    <StackPanel x:Name="quickActionsPanel">
+                        <!-- Admin Quick Actions -->
+                        <StackPanel x:Name="adminQuickActions" Visibility="Collapsed">
+                            <Button Content="➕ Thêm người dùng mới"
+                                    Click="btnQuickAddUser_Click"
+                                    Style="{StaticResource QuickActionButtonStyle}"/>
+                        </StackPanel>
+
+                        <!-- Manager Quick Actions -->
+                        <StackPanel x:Name="managerQuickActions" Visibility="Collapsed">
+                            <Button Content="➕ Thêm bài hát mới"
+                                    Click="btnQuickAddSong_Click"
+                                    Style="{StaticResource QuickActionButtonStyle}"
+                                    Margin="0,0,0,10"/>
+
+                            <Button Content="➕ Thêm nghệ sĩ mới"
+                                    Click="btnQuickAddArtist_Click"
+                                    Style="{StaticResource QuickActionButtonStyle}"
+                                    Margin="0,0,0,10"/>
+
+                            <Button Content="⏳ Xem bài hát chờ duyệt"
+                                    Click="btnQuickPending_Click"
+                                    Style="{StaticResource QuickActionButtonStyle}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+
+    <!-- Resources -->
+    <Page.Resources>
+        <Style x:Key="QuickActionButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#FF3498DB"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="20,12"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth" Value="250"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF2980B9"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+</Page>

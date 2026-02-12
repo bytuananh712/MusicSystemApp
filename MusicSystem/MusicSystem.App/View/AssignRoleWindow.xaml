@@ -1,0 +1,95 @@
+﻿<Window x:Class="MusicSystem.App.Views.AssignRoleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Phân quyền người dùng" 
+        Height="400" Width="450"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="🔑 Phân quyền người dùng" 
+                       FontSize="20" 
+                       FontWeight="Bold"/>
+            <TextBlock x:Name="txtUserInfo" 
+                       Text="Username: admin" 
+                       FontSize="12" 
+                       Foreground="Gray"
+                       Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Roles -->
+        <Border Grid.Row="1" 
+                BorderBrush="#FFDEE2E6" 
+                BorderThickness="1"
+                CornerRadius="5"
+                Padding="15">
+            <StackPanel>
+                <TextBlock Text="Chọn vai trò:" 
+                           FontWeight="SemiBold" 
+                           Margin="0,0,0,15"/>
+
+                <CheckBox x:Name="chkAdmin" 
+                          Content="Admin - Quản trị hệ thống, quản lý người dùng"
+                          Margin="0,0,0,10"
+                          FontSize="13"/>
+
+                <CheckBox x:Name="chkManager" 
+                          Content="Manager - Quản lý nội dung (bài hát, nghệ sĩ)"
+                          Margin="0,0,0,10"
+                          FontSize="13"/>
+
+                <CheckBox x:Name="chkCustomer" 
+                          Content="Customer - Người dùng thường (nghe nhạc)"
+                          Margin="0,0,0,10"
+                          FontSize="13"/>
+
+                <TextBlock Text="Lưu ý: Một user có thể có nhiều role" 
+                           FontSize="11" 
+                           Foreground="Gray"
+                           FontStyle="Italic"
+                           Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Buttons -->
+        <Grid Grid.Row="2" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    x:Name="btnCancel"
+                    Content="Hủy"
+                    Height="40"
+                    Margin="0,0,5,0"
+                    Background="#FF6C757D"
+                    Foreground="White"
+                    FontSize="14"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="btnCancel_Click"/>
+
+            <Button Grid.Column="1"
+                    x:Name="btnSave"
+                    Content="Lưu"
+                    Height="40"
+                    Margin="5,0,0,0"
+                    Background="#FF28A745"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="btnSave_Click"/>
+        </Grid>
+    </Grid>
+</Window>

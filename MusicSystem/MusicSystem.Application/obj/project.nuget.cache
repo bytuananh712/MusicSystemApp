@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/ONP+Bj+wWM=",
+  "success": true,
+  "projectFilePath": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Application\\MusicSystem.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,77 @@
+﻿@model MusicSystem.Shared.DTOs.Auth.LoginRequestDto
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = "MusicStream | Login";
+}
+
+<div class="page-wrapper">
+    <div class="brand-side">
+        <div class="brand-content">
+            <div style="background: var(--primary); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px;">
+                <i class="fas fa-bolt" style="font-size: 24px;"></i>
+            </div>
+            <h1>Music<br />Stream.</h1>
+            <p>Hệ thống quản lý âm thanh trực tuyến dành cho những tâm hồn nghệ sĩ đích thực.</p>
+        </div>
+    </div>
+
+    <div class="form-side">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Đăng nhập</h2>
+                <p>Chào mừng bạn quay trở lại với MusicStream</p>
+            </div>
+
+            <form asp-action="Login" method="post" id="loginForm">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3" style="font-size: 0.85rem;"></div>
+
+                <div class="form-group">
+                    <label asp-for="Username">Username</label>
+                    <div class="input-box">
+                        <i class="fas fa-user-ninja prefix-icon"></i>
+                        <input asp-for="Username" class="form-control" placeholder="Tên tài khoản của bạn" autofocus />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password">Mật khẩu</label>
+                    <div class="input-box">
+                        <i class="fas fa-shield-alt prefix-icon"></i>
+                        <input asp-for="Password" type="password" class="form-control" placeholder="••••••••" />
+                        <i class="fas fa-eye eye-btn" id="togglePass"></i>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; margin-bottom: 30px; font-size: 0.85rem;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                        <input asp-for="RememberMe" type="checkbox" style="accent-color: var(--primary);" /> Ghi nhớ tôi
+                    </label>
+                    <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Quên mật khẩu?</a>
+                </div>
+
+                <button type="submit" class="btn-login" id="submitBtn">
+                    <span id="btnTxt">TIẾP TỤC</span>
+                </button>
+            </form>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Sử dụng nhanh</p>
+                <div class="demo-accounts">
+                    <div class="demo-chip" onclick="autoFill('admin', 'Admin@123')">Admin</div>
+                    <div class="demo-chip" onclick="autoFill('manager', 'Manager@123')">Manager</div>
+                    <div class="demo-chip" onclick="autoFill('user01', 'User@123')">Member</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/auth/login.css" asp-append-version="true" />
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/auth/login.js" asp-append-version="true"></script>
+}

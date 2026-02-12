@@ -1,0 +1,172 @@
+﻿<Window x:Class="MusicSystem.App.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Music Streaming - Admin Login"
+        Height="640"
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#FF2C3E50">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ================= HEADER ================= -->
+        <Border Grid.Row="0"
+                Background="#FF34495E"
+                Padding="20">
+            <StackPanel>
+                <TextBlock Text="🎵 Music Streaming"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Admin Portal"
+                           FontSize="14"
+                           Foreground="#FFBDC3C7"
+                           HorizontalAlignment="Center"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- ================= LOGIN FORM ================= -->
+        <Border Grid.Row="1"
+                Background="White"
+                Margin="30"
+                CornerRadius="10"
+                Padding="30">
+
+            <StackPanel>
+
+                <!-- Title -->
+                <TextBlock Text="Đăng nhập"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Foreground="#FF2C3E50"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,30"/>
+
+                <!-- Username -->
+                <TextBlock Text="Username hoặc Email"
+                           FontSize="12"
+                           Foreground="#FF7F8C8D"
+                           Margin="0,0,0,5"/>
+
+                <TextBox x:Name="txtUsername"
+                         FontSize="14"
+                         Height="40"
+                         Padding="10"
+                         Margin="0,0,0,15"
+                         Text="admin"
+                         BorderBrush="#FFBDC3C7"
+                         BorderThickness="1"/>
+
+                <!-- Password -->
+                <TextBlock Text="Mật khẩu"
+                           FontSize="12"
+                           Foreground="#FF7F8C8D"
+                           Margin="0,0,0,5"/>
+
+                <PasswordBox x:Name="txtPassword"
+                             FontSize="14"
+                             Height="40"
+                             Padding="10"
+                             Margin="0,0,0,10"
+                             BorderBrush="#FFBDC3C7"
+                             BorderThickness="1"
+                             KeyDown="txtPassword_KeyDown"/>
+
+                <!-- Error Message -->
+                <Border x:Name="errorBorder"
+                        Background="#FFFFE5E5"
+                        BorderBrush="#FFFF6B6B"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="10"
+                        Margin="0,0,0,15"
+                        Visibility="Collapsed">
+
+                    <TextBlock x:Name="txtError"
+                               Foreground="#FFC0392B"
+                               FontSize="12"
+                               TextWrapping="Wrap"/>
+                </Border>
+
+                <!-- Login Button -->
+                <Button x:Name="btnLogin"
+                        Content="ĐĂNG NHẬP"
+                        FontSize="14"
+                        FontWeight="Bold"
+                        Height="45"
+                        Background="#FF3498DB"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnLogin_Click"
+                        Margin="0,5,0,0">
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <!-- Loading -->
+                <StackPanel x:Name="loadingPanel"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0,15,0,0"
+                            Visibility="Collapsed">
+                    <TextBlock Text="⏳ Đang kết nối tới server..."
+                               Foreground="#FF95A5A6"
+                               FontSize="12"/>
+                </StackPanel>
+
+                <!-- Demo Info -->
+                <Border Background="#FFFFF3CD"
+                        BorderBrush="#FFFFC107"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="12"
+                        Margin="0,20,0,0">
+
+                    <StackPanel>
+                        <TextBlock Text="📌 Tài khoản demo:"
+                                   FontWeight="Bold"
+                                   FontSize="11"
+                                   Foreground="#FF856404"/>
+
+                        <TextBlock Text="Admin: admin / Admin@123"
+                                   FontSize="10"
+                                   Foreground="#FF856404"
+                                   Margin="0,5,0,0"/>
+
+                        <TextBlock Text="Manager: manager / Manager@123"
+                                   FontSize="10"
+                                   Foreground="#FF856404"/>
+
+                        <TextBlock Text="━━━━━━━━━━━━━━━━━━━"
+                                   FontSize="9"
+                                   Foreground="#FFFFC107"
+                                   Margin="0,5,0,5"
+                                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Text="Server: localhost:1500"
+                                   FontSize="9"
+                                   Foreground="#FF856404"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

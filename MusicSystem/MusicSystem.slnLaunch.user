@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MusicSystem.Web\\MusicSystem.Web.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "MusicSystem.App\\MusicSystem.App.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
