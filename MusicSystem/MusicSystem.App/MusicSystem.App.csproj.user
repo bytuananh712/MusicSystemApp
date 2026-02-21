@@ -2,16 +2,25 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="View\AddArtistWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\AssignRoleWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\EditArtistWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\EditUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Pages\ArtistManagementPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\ResetPasswordDialog.xaml.cs">

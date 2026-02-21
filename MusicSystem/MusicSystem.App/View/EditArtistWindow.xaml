@@ -1,0 +1,107 @@
+﻿<Window x:Class="MusicSystem.App.Views.EditArtistWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sửa thông tin nghệ sĩ" 
+        Height="455" Width="530"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="✏️ Sửa thông tin nghệ sĩ" 
+                       FontSize="20" 
+                       FontWeight="Bold"/>
+            <TextBlock x:Name="txtArtistName" 
+                       Text="Nghệ sĩ: ..." 
+                       FontSize="12" 
+                       Foreground="Gray"
+                       Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Form -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,0,10,0">
+            <StackPanel>
+                <!-- Artist Name -->
+                <TextBlock Text="Tên nghệ sĩ *" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtNewArtistName" 
+                         Height="35" 
+                         Padding="10,0"
+                         FontSize="13"
+                         Margin="0,0,0,15" Width="448"/>
+
+                <!-- Biography -->
+                <TextBlock Text="Tiểu sử" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtBiography" 
+                         Height="100" 
+                         Padding="10"
+                         FontSize="13"
+                         TextWrapping="Wrap"
+                         AcceptsReturn="True"
+                         VerticalScrollBarVisibility="Auto"
+                         Margin="0,0,0,15" Width="446"/>
+
+                <!-- Avatar URL -->
+                <TextBlock Text="Avatar URL" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                <TextBox x:Name="txtAvatarUrl" 
+                         Height="35" 
+                         Padding="10,0"
+                         FontSize="13"
+                         Margin="0,0,0,15" Width="454"/>
+
+                <!-- Error message -->
+                <Border x:Name="errorBorder"
+                        Background="#FFFFE5E5"
+                        BorderBrush="#FFFF6B6B"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="10"
+                        Margin="0,0,0,15"
+                        Visibility="Collapsed">
+                    <TextBlock x:Name="txtError" 
+                               Foreground="#FFC0392B"
+                               TextWrapping="Wrap"/>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Buttons -->
+        <Grid Grid.Row="2" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    x:Name="btnCancel"
+                    Content="Hủy"
+                    Height="40"
+                    Margin="0,0,5,0"
+                    Background="#FF6C757D"
+                    Foreground="White"
+                    FontSize="14"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="btnCancel_Click"/>
+
+            <Button Grid.Column="1"
+                    x:Name="btnSave"
+                    Content="Lưu"
+                    Height="40"
+                    Margin="5,0,0,0"
+                    Background="#FF28A745"
+                    Foreground="White"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="btnSave_Click"/>
+        </Grid>
+    </Grid>
+</Window>

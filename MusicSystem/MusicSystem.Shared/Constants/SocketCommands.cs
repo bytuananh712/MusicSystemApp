@@ -33,10 +33,14 @@ namespace MusicSystem.Shared.Constants
         public const string ApproveSong = "ApproveSong";
         public const string DeleteSong = "DeleteSong";
 
-        // Artist Management
-        public const string GetArtists = "GetArtists";
+        // Artist Management (Manager only)
+        public const string GetAllArtists = "GetAllArtists";
+        public const string GetArtistById = "GetArtistById";
         public const string CreateArtist = "CreateArtist";
         public const string UpdateArtist = "UpdateArtist";
+        public const string DeleteArtist = "DeleteArtist";
+        public const string DisableArtist = "DisableArtist";
+        public const string EnableArtist = "EnableArtist";
 
         // User Management
         public const string GetUsers = "GetUsers";

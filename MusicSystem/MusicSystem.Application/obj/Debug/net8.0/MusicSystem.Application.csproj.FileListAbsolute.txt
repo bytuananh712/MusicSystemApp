@@ -10,6 +10,7 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\D
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\MusicSystem.Application.AssemblyInfoInputs.cache
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\MusicSystem.Application.AssemblyInfo.cs
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\MusicSystem.Application.csproj.CoreCompileInputs.cache
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\MusicSystem.Application.sourcelink.json
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\MusicSys.71882FD5.Up2Date
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\MusicSystem.Application.dll
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\obj\Debug\net8.0\refint\MusicSystem.Application.dll

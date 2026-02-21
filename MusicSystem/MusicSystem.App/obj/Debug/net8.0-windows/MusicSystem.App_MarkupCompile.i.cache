@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\App.xaml
-8-612492591
+11-1487482038
 
-161619325504
+19-1153191708
 210-205067465
-View\AddUserWindow.xaml;View\AssignRoleWindow.xaml;View\EditUserWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\Pages\DashboardPage.xaml;View\Pages\UserManagementPage.xaml;View\ResetPasswordDialog.xaml;
+View\AddArtistWindow.xaml;View\AddUserWindow.xaml;View\AssignRoleWindow.xaml;View\EditArtistWindow.xaml;View\EditUserWindow.xaml;View\LoginWindow.xaml;View\MainWindow.xaml;View\Pages\ArtistManagementPage.xaml;View\Pages\DashboardPage.xaml;View\Pages\UserManagementPage.xaml;View\ResetPasswordDialog.xaml;
 
-False
+True
 

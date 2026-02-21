@@ -94,4 +94,25 @@ namespace MusicSystem.App.Helpers
             throw new NotImplementedException();
         }
     }
+
+
+    // Converter lấy chữ cái đầu tiên của tên
+    public class InitialConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string text && !string.IsNullOrEmpty(text))
+            {
+                return text.Substring(0, 1).ToUpper();
+            }
+            return "?";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
 }

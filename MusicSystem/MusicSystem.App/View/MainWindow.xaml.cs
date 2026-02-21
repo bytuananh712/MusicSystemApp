@@ -149,12 +149,8 @@ namespace MusicSystem.App.Views
 
         private void LoadArtistManagement()
         {
-            // TODO: Tạo ArtistManagementPage sau
-            MessageBox.Show(
-                "Tính năng Quản lý nghệ sĩ đang được phát triển",
-                "Thông báo",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            var artistPage = new ArtistManagementPage(_socketClient);
+            mainFrame.Navigate(artistPage);
         }
 
         private void LoadPendingSongs()

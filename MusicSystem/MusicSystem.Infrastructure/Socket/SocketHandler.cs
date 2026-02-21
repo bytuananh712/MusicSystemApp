@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using MusicSystem.Application.Services.Artists;
 using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Users;
 using MusicSystem.Shared.Constants;
+using MusicSystem.Shared.DTOs.Artists;
 using MusicSystem.Shared.DTOs.Auth;
 using MusicSystem.Shared.DTOs.Users;
 using MusicSystem.Shared.SocketContracts;
@@ -20,15 +22,18 @@ namespace MusicSystem.Infrastructure.Socket
         private readonly ILogger<SocketHandler> _logger;
         private readonly IAuthService _authService;
         private readonly IUserService _userService;
+        private readonly IArtistService _artistService; // quản lí nghệ sĩ
 
         public SocketHandler(
             ILogger<SocketHandler> logger,
             IAuthService authService,
-             IUserService userService)
+             IUserService userService,
+              IArtistService artistService)
         {
             _logger = logger;
             _authService = authService;
             _userService = userService;
+            _artistService = artistService;
         }
 
         public async Task HandleAsync(TcpClient client, CancellationToken cancellationToken)
@@ -125,6 +130,27 @@ namespace MusicSystem.Infrastructure.Socket
 
                     case SocketCommands.ResetPassword:
                         return await HandleResetPasswordAsync(request);
+
+
+                    // ===== ARTIST MANAGEMENT =====
+                    case SocketCommands.GetAllArtists:
+                        return await HandleGetAllArtistsAsync(request);
+
+                    case SocketCommands.CreateArtist:
+                        return await HandleCreateArtistAsync(request);
+
+                    case SocketCommands.UpdateArtist:
+                        return await HandleUpdateArtistAsync(request);
+
+                    case SocketCommands.DeleteArtist:
+                        return await HandleDeleteArtistAsync(request);
+
+                    case SocketCommands.DisableArtist:
+                        return await HandleDisableArtistAsync(request);
+
+                    case SocketCommands.EnableArtist:
+                        return await HandleEnableArtistAsync(request);
+
 
                     // Thêm các command khác sau...
 
@@ -264,6 +290,61 @@ namespace MusicSystem.Infrastructure.Socket
             var result = await _userService.ResetPasswordAsync(userId, newPassword);
             return SuccessResponse(request.RequestId, result);
         }
+
+
+        // ==================== ARTIST HANDLERS ====================  quản lí nghệ sĩ
+        private async Task<SocketResponse> HandleGetAllArtistsAsync(SocketRequest request)
+        {
+            var artists = await _artistService.GetAllArtistsAsync();
+            return SuccessResponse(request.RequestId, artists);
+        }
+
+        private async Task<SocketResponse> HandleCreateArtistAsync(SocketRequest request)
+        {
+            var createDto = JsonSerializer.Deserialize<CreateArtistDto>(request.Data);
+
+            // TODO: Get userId from token
+            var userId = Guid.Empty;
+
+            var artist = await _artistService.CreateArtistAsync(createDto, userId);
+            return SuccessResponse(request.RequestId, artist);
+        }
+
+        private async Task<SocketResponse> HandleUpdateArtistAsync(SocketRequest request)
+        {
+            var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
+            var artistId = Guid.Parse(data["artistId"].ToString());
+            var updateDto = JsonSerializer.Deserialize<UpdateArtistDto>(data["data"].ToString());
+
+            var artist = await _artistService.UpdateArtistAsync(artistId, updateDto);
+            return SuccessResponse(request.RequestId, artist);
+        }
+
+        private async Task<SocketResponse> HandleDeleteArtistAsync(SocketRequest request)
+        {
+            var artistId = Guid.Parse(request.Data);
+            var result = await _artistService.DeleteArtistAsync(artistId);
+            return SuccessResponse(request.RequestId, result);
+        }
+
+        private async Task<SocketResponse> HandleDisableArtistAsync(SocketRequest request)
+        {
+            var artistId = Guid.Parse(request.Data);
+            var result = await _artistService.DisableArtistAsync(artistId);
+            return SuccessResponse(request.RequestId, result);
+        }
+
+        private async Task<SocketResponse> HandleEnableArtistAsync(SocketRequest request)
+        {
+            var artistId = Guid.Parse(request.Data);
+            var result = await _artistService.EnableArtistAsync(artistId);
+            return SuccessResponse(request.RequestId, result);
+        }
+
+
+
+
+
 
         private SocketResponse HandleValidateToken(SocketRequest request)
         {

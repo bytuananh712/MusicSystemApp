@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MusicSystem.Application.Services.Artists;
 using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Users;
@@ -24,15 +25,18 @@ namespace MusicSystem.Web
             // Repositories
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+            builder.Services.AddScoped<IArtistRepository, ArtistRepository>();  // Qu?n lý ngh? s?
 
             // Services
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IArtistService, ArtistService>();
 
 
             // ===== SOCKET SERVER =====
             builder.Services.AddScoped<SocketHandler>(); // Scoped per client connection
             builder.Services.AddHostedService<SocketServer>(); // Background service
+
 
 
 

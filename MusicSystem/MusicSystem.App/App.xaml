@@ -11,6 +11,7 @@
         <helpers:StatusToBrushConverter x:Key="StatusToBrushConverter"/>
         <helpers:ActiveToVisibilityConverter x:Key="ActiveToVisibilityConverter"/>
         <helpers:DisabledToVisibilityConverter x:Key="DisabledToVisibilityConverter"/>
+        <helpers:InitialConverter x:Key="InitialConverter"/>
 
 
 
