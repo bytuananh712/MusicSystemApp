@@ -216,3 +216,21 @@ END;
 GO
 
 PRINT 'Khởi tạo Database MusicStreamingDB thành công!';
+
+
+
+
+
+
+-- Thêm cột UpdatedAt vào bảng Artists
+ALTER TABLE Artists
+ADD UpdatedAt DATETIME2 NOT NULL DEFAULT GETDATE();
+GO
+
+-- Update giá trị hiện tại (set = CreatedAt)
+UPDATE Artists
+SET UpdatedAt = CreatedAt
+WHERE UpdatedAt IS NULL;
+GO
+
+PRINT 'Added UpdatedAt column to Artists table';

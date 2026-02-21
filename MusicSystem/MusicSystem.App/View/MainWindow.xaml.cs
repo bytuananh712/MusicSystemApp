@@ -96,7 +96,7 @@ namespace MusicSystem.App.Views
             LoadUserManagement();
         }
 
-        // ✅ THÊM CÁC EVENT HANDLER THIẾU
+        //  THÊM CÁC EVENT HANDLER THIẾU
         private void btnSongs_Click(object sender, RoutedEventArgs e)
         {
             SetActiveMenu(btnSongs);

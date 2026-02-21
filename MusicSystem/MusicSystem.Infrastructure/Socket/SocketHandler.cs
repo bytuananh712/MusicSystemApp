@@ -199,7 +199,7 @@ namespace MusicSystem.Infrastructure.Socket
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Login error");
+                _logger.LogError(ex, " Login error");
                 return new SocketResponse
                 {
                     RequestId = request.RequestId,

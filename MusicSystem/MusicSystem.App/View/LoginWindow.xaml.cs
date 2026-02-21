@@ -106,8 +106,8 @@ namespace MusicSystem.App.Views
                     Application.Current.Properties["CurrentUser"] = loginResult.User;
 
                     // Log thông tin
-                    System.Diagnostics.Debug.WriteLine($"✅ Login thành công: {loginResult.User.FullName}");
-                    System.Diagnostics.Debug.WriteLine($"✅ Roles: {string.Join(", ", loginResult.User.Roles)}");
+                    System.Diagnostics.Debug.WriteLine($" Login thành công: {loginResult.User.FullName}");
+                    System.Diagnostics.Debug.WriteLine($" Roles: {string.Join(", ", loginResult.User.Roles)}");
 
                     // Mở MainWindow
                     var mainWindow = new MainWindow(_socketClient);

@@ -19,6 +19,8 @@ public partial class Artist
 
     public Guid? UpdatedBy { get; set; }
 
+    public DateTime? UpdatedAt { get; set; }
+
     public virtual ICollection<SongArtist> SongArtists { get; set; } = new List<SongArtist>();
 
     public virtual User? UpdatedByNavigation { get; set; }

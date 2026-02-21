@@ -4,7 +4,7 @@
         Title="Music Streaming - Admin Portal" 
         Height="700" Width="1400"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
+        WindowState="Minimized"
         MinHeight="600" MinWidth="1200">
 
     
@@ -102,7 +102,7 @@
                     Background="#FF34495E" 
                     BorderBrush="#FF2C3E50"
                     BorderThickness="0,0,1,0">
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,34,0">
                     <StackPanel Margin="0,20,0,20">
                         <!-- Dashboard -->
                         <Button x:Name="btnDashboard"

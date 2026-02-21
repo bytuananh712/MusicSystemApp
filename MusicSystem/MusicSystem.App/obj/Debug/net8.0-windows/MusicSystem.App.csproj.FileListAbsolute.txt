@@ -52,3 +52,4 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\View\Pages\UserManagementPage.baml
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\App.baml
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\MusicSystem.App.sourcelink.json
