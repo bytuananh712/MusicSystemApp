@@ -84,7 +84,7 @@ namespace MusicSystem.App.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicSystem.App;component/view/resetpassworddialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicSystem.App;V1.0.0.0;component/view/resetpassworddialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\ResetPasswordDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

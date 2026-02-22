@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using MusicSystem.Application.Services.Artists;
 using MusicSystem.Application.Services.Auth;
+using MusicSystem.Application.Services.Files;
+using MusicSystem.Application.Services.Songs;
 using MusicSystem.Application.Services.Users;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Artists;
@@ -23,6 +25,9 @@ namespace MusicSystem.Infrastructure.Socket
         private readonly IAuthService _authService;
         private readonly IUserService _userService;
         private readonly IArtistService _artistService; // quản lí nghệ sĩ
+        private readonly ISongService _songService;    
+        private readonly IFileUploadService _fileUploadService;
+
 
         public SocketHandler(
             ILogger<SocketHandler> logger,
@@ -109,7 +114,7 @@ namespace MusicSystem.Infrastructure.Socket
                     case SocketCommands.Logout:
                         return HandleLogout(request);
 
-                    // Thêm vào ProcessRequestAsync
+                    // Admin
                     case SocketCommands.GetAllUsers:
                         return await HandleGetAllUsersAsync(request);
 

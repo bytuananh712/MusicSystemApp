@@ -13,4 +13,8 @@
     <ProjectReference Include="..\MusicSystem.Shared\MusicSystem.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\songs\" />
+  </ItemGroup>
+
 </Project>

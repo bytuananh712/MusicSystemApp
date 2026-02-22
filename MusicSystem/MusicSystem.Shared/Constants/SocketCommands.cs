@@ -25,13 +25,16 @@ namespace MusicSystem.Shared.Constants
         public const string Logout = "Logout";
         public const string ValidateToken = "ValidateToken";
 
-        // Song Management (dùng sau)
-        public const string GetSongs = "GetSongs";
+        // Song Management (Manager only)
+        public const string GetAllSongs = "GetAllSongs";
+        public const string GetSongById = "GetSongById";
         public const string GetPendingSongs = "GetPendingSongs";
+        public const string UploadSongFile = "UploadSongFile";
         public const string CreateSong = "CreateSong";
         public const string UpdateSong = "UpdateSong";
-        public const string ApproveSong = "ApproveSong";
         public const string DeleteSong = "DeleteSong";
+        public const string ApproveSong = "ApproveSong";
+        public const string RejectSong = "RejectSong";
 
         // Artist Management (Manager only)
         public const string GetAllArtists = "GetAllArtists";

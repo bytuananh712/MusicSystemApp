@@ -100,7 +100,7 @@ namespace MusicSystem.App.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MusicSystem.App;component/view/assignrolewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MusicSystem.App;V1.0.0.0;component/view/assignrolewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AssignRoleWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

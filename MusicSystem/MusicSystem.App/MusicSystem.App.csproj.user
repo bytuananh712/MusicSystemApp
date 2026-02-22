@@ -2,37 +2,40 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="View\AddArtistWindow.xaml.cs">
+    <Compile Update="Views\AddArtistWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\AddUserWindow.xaml.cs">
+    <Compile Update="Views\AddUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\AssignRoleWindow.xaml.cs">
+    <Compile Update="Views\AssignRoleWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\EditArtistWindow.xaml.cs">
+    <Compile Update="Views\EditArtistWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\EditUserWindow.xaml.cs">
+    <Compile Update="Views\EditUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\LoginWindow.xaml.cs">
+    <Compile Update="Views\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Pages\ArtistManagementPage.xaml.cs">
+    <Compile Update="Views\Pages\ArtistManagementPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ResetPasswordDialog.xaml.cs">
+    <Compile Update="Views\Pages\SongManagementPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainWindow.xaml.cs">
+    <Compile Update="Views\ResetPasswordDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Pages\DashboardPage.xaml.cs">
+    <Compile Update="Views\MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\Pages\UserManagementPage.xaml.cs">
+    <Compile Update="Views\Pages\DashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\UserManagementPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

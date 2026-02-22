@@ -1,7 +1,9 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MusicSystem.Application.Services.Artists;
 using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Auth;
+using MusicSystem.Application.Services.Files;
+using MusicSystem.Application.Services.Songs;
 using MusicSystem.Application.Services.Users;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Infrastructure.Data;
@@ -25,17 +27,24 @@ namespace MusicSystem.Web
             // Repositories
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-            builder.Services.AddScoped<IArtistRepository, ArtistRepository>();  // Qu?n l� ngh? s?
+            builder.Services.AddScoped<IArtistRepository, ArtistRepository>();  // Quản lí nghệ sĩ
+            builder.Services.AddScoped<ISongRepository, SongRepository>();  // Quản lí bài hát
 
             // Services
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IArtistService, ArtistService>();
+            builder.Services.AddScoped<ISongService, SongService>();
 
 
             // ===== SOCKET SERVER =====
             builder.Services.AddScoped<SocketHandler>(); // Scoped per client connection
             builder.Services.AddHostedService<SocketServer>(); // Background service
+
+            // ===== FILE UPLOAD SERVICE =====
+            
+            var uploadPath = Path.Combine(builder.Environment.WebRootPath, "uploads", "songs");
+            builder.Services.AddScoped<IFileUploadService>(sp => new FileUploadService(uploadPath));
 
 
 
@@ -54,6 +63,14 @@ namespace MusicSystem.Web
 
             var app = builder.Build();
 
+            var uploadsFolder = Path.Combine(app.Environment.WebRootPath, "uploads", "songs");
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+
+
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
@@ -67,7 +84,7 @@ namespace MusicSystem.Web
 
             app.UseRouting();
 
-            // Th�m session
+            // Thêm session
             app.UseSession();
 
             app.UseAuthorization();
