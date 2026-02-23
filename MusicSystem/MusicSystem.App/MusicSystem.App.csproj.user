@@ -5,6 +5,9 @@
     <Compile Update="Views\AddArtistWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AddSongWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\AddUserWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -12,6 +15,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EditArtistWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditSongWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\EditUserWindow.xaml.cs">
@@ -36,6 +42,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Pages\UserManagementPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\SelectArtistsDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

@@ -139,12 +139,8 @@ namespace MusicSystem.App.Views
 
         private void LoadSongManagement()
         {
-            // TODO: Tạo SongManagementPage sau
-            MessageBox.Show(
-                "Tính năng Quản lý bài hát đang được phát triển",
-                "Thông báo",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            var songPage = new SongManagementPage(_socketClient);
+            mainFrame.Navigate(songPage);
         }
 
         private void LoadArtistManagement()

@@ -45,29 +45,135 @@ namespace MusicSystem.App.Views.Pages
         }
 
         // LOAD DATA 
+        //private async Task LoadSongsAsync()
+        //{
+        //    try
+        //    {
+        //        Mouse.OverrideCursor = Cursors.Wait;
+        //        btnRefresh.IsEnabled = false;
+
+        //        var request = new SocketRequest
+        //        {
+        //            Command = SocketCommands.GetAllSongs,
+        //            Token = Application.Current.Properties["AuthToken"]?.ToString(),
+        //            Data = "{}"
+        //        };
+
+        //        var response = await _socketClient.SendRequestAsync(request);
+
+        //        if (response.Status == SocketStatus.Success)
+        //        {
+        //            _allSongs = JsonSerializer.Deserialize<List<SongDto>>(response.Data);
+        //            _filteredSongs = _allSongs.ToList();
+
+        //            dgSongs.ItemsSource = _filteredSongs;
+        //            txtStatus.Text = $"Tổng: {_allSongs.Count} bài hát";
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show(
+        //                $"Lỗi: {response.Message}",
+        //                "Lỗi",
+        //                MessageBoxButton.OK,
+        //                MessageBoxImage.Error);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(
+        //            $"Không thể tải danh sách bài hát:\n{ex.Message}",
+        //            "Lỗi",
+        //            MessageBoxButton.OK,
+        //            MessageBoxImage.Error);
+        //    }
+        //    finally
+        //    {
+        //        Mouse.OverrideCursor = null;
+        //        btnRefresh.IsEnabled = true;
+        //    }
+        //}
+
         private async Task LoadSongsAsync()
         {
             try
             {
+                // ✅ CHECK NULL từng bước
+                System.Diagnostics.Debug.WriteLine("🔵 Step 1: Start LoadSongsAsync");
+
+                if (_socketClient == null)
+                {
+                    throw new Exception("_socketClient is NULL!");
+                }
+
+                System.Diagnostics.Debug.WriteLine("🔵 Step 2: SocketClient OK");
+
+                if (btnRefresh == null)
+                {
+                    throw new Exception("btnRefresh is NULL! Did you call InitializeComponent()?");
+                }
+
+                System.Diagnostics.Debug.WriteLine("🔵 Step 3: btnRefresh OK");
+
                 Mouse.OverrideCursor = Cursors.Wait;
                 btnRefresh.IsEnabled = false;
+
+                System.Diagnostics.Debug.WriteLine("🔵 Step 4: Creating request");
+
+                var token = Application.Current.Properties["AuthToken"]?.ToString();
+                System.Diagnostics.Debug.WriteLine($"🔵 Step 5: Token = {token ?? "NULL"}");
 
                 var request = new SocketRequest
                 {
                     Command = SocketCommands.GetAllSongs,
-                    Token = Application.Current.Properties["AuthToken"]?.ToString(),
+                    Token = token,
                     Data = "{}"
                 };
 
+                System.Diagnostics.Debug.WriteLine("🔵 Step 6: Sending request");
+
                 var response = await _socketClient.SendRequestAsync(request);
+
+                System.Diagnostics.Debug.WriteLine($"🔵 Step 7: Response Status = {response?.Status ?? "NULL"}");
+
+                if (response == null)
+                {
+                    throw new Exception("Response is NULL!");
+                }
 
                 if (response.Status == SocketStatus.Success)
                 {
-                    _allSongs = JsonSerializer.Deserialize<List<SongDto>>(response.Data);
-                    _filteredSongs = _allSongs.ToList();
+                    System.Diagnostics.Debug.WriteLine($"🔵 Step 8: Response Data Length = {response.Data?.Length ?? 0}");
+
+                    if (string.IsNullOrEmpty(response.Data))
+                    {
+                        _allSongs = new List<SongDto>();
+                    }
+                    else
+                    {
+                        _allSongs = JsonSerializer.Deserialize<List<SongDto>>(response.Data);
+                    }
+
+                    System.Diagnostics.Debug.WriteLine($"🔵 Step 9: Deserialized {_allSongs?.Count ?? 0} songs");
+
+                    _filteredSongs = _allSongs?.ToList() ?? new List<SongDto>();
+
+                    System.Diagnostics.Debug.WriteLine("🔵 Step 10: Binding to DataGrid");
+
+                    if (dgSongs == null)
+                    {
+                        throw new Exception("dgSongs is NULL!");
+                    }
 
                     dgSongs.ItemsSource = _filteredSongs;
+
+                    if (txtStatus == null)
+                    {
+                        throw new Exception("txtStatus is NULL!");
+                    }
+
                     txtStatus.Text = $"Tổng: {_allSongs.Count} bài hát";
+
+                    System.Diagnostics.Debug.WriteLine("✅ LoadSongsAsync completed successfully");
                 }
                 else
                 {
@@ -80,8 +186,9 @@ namespace MusicSystem.App.Views.Pages
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Debug.WriteLine($"🔴 Exception: {ex}");
                 MessageBox.Show(
-                    $"Không thể tải danh sách bài hát:\n{ex.Message}",
+                    $"❌ Lỗi: {ex.Message}\n\nStackTrace:\n{ex.StackTrace}",
                     "Lỗi",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
@@ -89,9 +196,14 @@ namespace MusicSystem.App.Views.Pages
             finally
             {
                 Mouse.OverrideCursor = null;
-                btnRefresh.IsEnabled = true;
+                if (btnRefresh != null)
+                {
+                    btnRefresh.IsEnabled = true;
+                }
             }
         }
+
+
 
         // SEARCH
         private void btnSearch_Click(object sender, RoutedEventArgs e)

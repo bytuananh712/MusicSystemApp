@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicSystem.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a55f4e1ec5d0bd2821cc7b23a920abd5f7e9124")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5833e47a618ff1d929939d0c64d99a9ee3ccffca")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicSystem.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicSystem.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4,9 +4,11 @@ using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Files;
 using MusicSystem.Application.Services.Songs;
 using MusicSystem.Application.Services.Users;
+using MusicSystem.Domain.Interfaces;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Artists;
 using MusicSystem.Shared.DTOs.Auth;
+using MusicSystem.Shared.DTOs.Songs;
 using MusicSystem.Shared.DTOs.Users;
 using MusicSystem.Shared.SocketContracts;
 using System;
@@ -27,18 +29,22 @@ namespace MusicSystem.Infrastructure.Socket
         private readonly IArtistService _artistService; // quản lí nghệ sĩ
         private readonly ISongService _songService;    
         private readonly IFileUploadService _fileUploadService;
+        private readonly IUserRepository _userRepository;
 
 
         public SocketHandler(
             ILogger<SocketHandler> logger,
             IAuthService authService,
              IUserService userService,
-              IArtistService artistService)
+              IArtistService artistService, ISongService songService, IFileUploadService fileUploadService, IUserRepository userRepository)
         {
             _logger = logger;
             _authService = authService;
             _userService = userService;
             _artistService = artistService;
+            _songService = songService;
+            _fileUploadService = fileUploadService;
+            _userRepository = userRepository;
         }
 
         public async Task HandleAsync(TcpClient client, CancellationToken cancellationToken)
@@ -94,6 +100,35 @@ namespace MusicSystem.Infrastructure.Socket
                     var errorJson = JsonSerializer.Serialize(errorResponse);
                     await writer.WriteLineAsync(errorJson);
                 }
+            }
+        }
+
+
+
+        private async Task<Guid> GetCurrentUserIdAsync()
+        {
+            try
+            {
+                // Lấy user có role Manager hoặc Admin (bất kỳ)
+                var users = await _userRepository.GetAllWithRolesAsync();
+
+                var user = users.FirstOrDefault(u =>
+                    u.UserRoles.Any(ur =>
+                        ur.Role.RoleName == "Manager" ||
+                        ur.Role.RoleName == "Admin"));
+
+                if (user != null)
+                {
+                    _logger.LogInformation($"Using userId: {user.UserId} ({user.Username})");
+                    return user.UserId;
+                }
+
+                throw new Exception("No valid Manager or Admin user found in database");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting current user ID");
+                throw;
             }
         }
 
@@ -156,6 +191,35 @@ namespace MusicSystem.Infrastructure.Socket
                     case SocketCommands.EnableArtist:
                         return await HandleEnableArtistAsync(request);
 
+                    // ===== SONG MANAGEMENT =====
+
+                    case SocketCommands.GetAllSongs:
+                        return await HandleGetAllSongsAsync(request);
+
+                    case SocketCommands.GetPendingSongs:
+                        return await HandleGetPendingSongsAsync(request);
+
+                    case SocketCommands.UploadSongFile:
+                        return await HandleUploadSongFileAsync(request);
+
+                    case SocketCommands.CreateSong:
+                        return await HandleCreateSongAsync(request);
+
+                    case SocketCommands.UpdateSong:
+                        return await HandleUpdateSongAsync(request);
+
+                    case SocketCommands.DeleteSong:
+                        return await HandleDeleteSongAsync(request);
+
+                    case SocketCommands.ApproveSong:
+                        return await HandleApproveSongAsync(request);
+
+                    case SocketCommands.RejectSong:
+                        return await HandleRejectSongAsync(request);
+
+
+
+
 
                     // Thêm các command khác sau...
 
@@ -171,7 +235,7 @@ namespace MusicSystem.Infrastructure.Socket
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"❌ Error processing command: {request.Command}");
+                _logger.LogError(ex, $" Error processing command: {request.Command}");
                 return new SocketResponse
                 {
                     RequestId = request.RequestId,
@@ -347,7 +411,87 @@ namespace MusicSystem.Infrastructure.Socket
         }
 
 
+        // ==================== SONG HANDLERS ==================== quản lí bài hát
+        private async Task<SocketResponse> HandleGetAllSongsAsync(SocketRequest request)
+        {
+            var songs = await _songService.GetAllSongsAsync("Active", 1, 1000);
+            return SuccessResponse(request.RequestId, songs);
+        }
 
+        private async Task<SocketResponse> HandleGetPendingSongsAsync(SocketRequest request)
+        {
+            var songs = await _songService.GetPendingSongsAsync();
+            return SuccessResponse(request.RequestId, songs);
+        }
+
+        private async Task<SocketResponse> HandleUploadSongFileAsync(SocketRequest request)
+        {
+            var uploadRequest = JsonSerializer.Deserialize<UploadFileRequest>(request.Data);
+            var result = await _fileUploadService.UploadSongFileAsync(uploadRequest);
+            return SuccessResponse(request.RequestId, result);
+        }
+
+        private async Task<SocketResponse> HandleCreateSongAsync(SocketRequest request)
+        {
+            try
+            {
+                var createDto = JsonSerializer.Deserialize<CreateSongDto>(request.Data);
+
+                // Lấy userId từ helper method
+                var userId = await GetCurrentUserIdAsync();
+
+                _logger.LogInformation($" Creating song with userId: {userId}");
+
+                var song = await _songService.CreateSongAsync(createDto, userId);
+                return SuccessResponse(request.RequestId, song);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating song");
+                return ErrorResponse(request.RequestId, ex.Message);
+            }
+        }
+
+        private async Task<SocketResponse> HandleUpdateSongAsync(SocketRequest request)
+        {
+            var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
+            var songId = Guid.Parse(data["songId"].ToString());
+            var updateDto = JsonSerializer.Deserialize<UpdateSongDto>(data["data"].ToString());
+
+            var song = await _songService.UpdateSongAsync(songId, updateDto);
+            return SuccessResponse(request.RequestId, song);
+        }
+
+        private async Task<SocketResponse> HandleDeleteSongAsync(SocketRequest request)
+        {
+            var songId = Guid.Parse(request.Data);
+            var result = await _songService.DeleteSongAsync(songId);
+            return SuccessResponse(request.RequestId, result);
+        }
+
+        private async Task<SocketResponse> HandleApproveSongAsync(SocketRequest request)
+        {
+            var songId = Guid.Parse(request.Data);
+
+            // TODO: Get managerId from token
+            var managerId = Guid.Empty;
+
+            var result = await _songService.ApproveSongAsync(songId, managerId);
+            return SuccessResponse(request.RequestId, result);
+        }
+
+        private async Task<SocketResponse> HandleRejectSongAsync(SocketRequest request)
+        {
+            var data = JsonSerializer.Deserialize<Dictionary<string, string>>(request.Data);
+            var songId = Guid.Parse(data["songId"]);
+            var reason = data["reason"];
+
+            // TODO: Get managerId from token
+            var managerId = Guid.Empty;
+
+            var result = await _songService.RejectSongAsync(songId, managerId, reason);
+            return SuccessResponse(request.RequestId, result);
+        }
 
 
 

@@ -60,7 +60,7 @@
                          Height="40"
                          Padding="10"
                          Margin="0,0,0,15"
-                         Text="admin"
+                         Text="manager"
                          BorderBrush="#FFBDC3C7"
                          BorderThickness="1"/>
 

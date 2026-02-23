@@ -32,7 +32,7 @@ namespace MusicSystem.App.Views
             _socketClient = socketClient;
 
             // Set default password cho demo
-            txtPassword.Password = "Admin@123";
+            txtPassword.Password = "Manager@123";
 
             // Focus vào username
             txtUsername.Focus();
