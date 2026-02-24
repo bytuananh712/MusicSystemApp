@@ -473,10 +473,9 @@ namespace MusicSystem.Infrastructure.Socket
         {
             var songId = Guid.Parse(request.Data);
 
-            // TODO: Get managerId from token
-            var managerId = Guid.Empty;
+            var adminId = await GetCurrentUserIdAsync();
 
-            var result = await _songService.ApproveSongAsync(songId, managerId);
+            var result = await _songService.ApproveSongAsync(songId, adminId);
             return SuccessResponse(request.RequestId, result);
         }
 
@@ -484,12 +483,12 @@ namespace MusicSystem.Infrastructure.Socket
         {
             var data = JsonSerializer.Deserialize<Dictionary<string, string>>(request.Data);
             var songId = Guid.Parse(data["songId"]);
-            var reason = data["reason"];
+            var reason = data.ContainsKey("reason") ? data["reason"] : "Không đạt yêu cầu";
 
-            // TODO: Get managerId from token
-            var managerId = Guid.Empty;
+            //Get adminId from token
+            var adminId = await GetCurrentUserIdAsync();
 
-            var result = await _songService.RejectSongAsync(songId, managerId, reason);
+            var result = await _songService.RejectSongAsync(songId, adminId, reason);
             return SuccessResponse(request.RequestId, result);
         }
 

@@ -67,3 +67,9 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\MusicSystem.App.pdb
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\MusicSystem.App.genruntimeconfig.cache
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\ref\MusicSystem.App.dll
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\Views\Pages\PendingSongsPage.baml
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\Views\RejectReasonDialog.baml
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\Views\SongDetailWindow.baml
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\Views\Pages\PendingSongsPage.g.cs
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\Views\RejectReasonDialog.g.cs
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\obj\Debug\net8.0-windows\Views\SongDetailWindow.g.cs

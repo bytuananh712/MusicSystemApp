@@ -53,16 +53,18 @@ namespace MusicSystem.App.Views
         {
             if (_currentUser == null) return;
 
-            // Admin menu
+            // ===== ADMIN =====
             if (_currentUser.Roles.Contains("Admin"))
             {
                 adminMenu.Visibility = Visibility.Visible;
+                
             }
 
-            // Manager menu
+            // ===== MANAGER =====
             if (_currentUser.Roles.Contains("Manager"))
             {
                 managerMenu.Visibility = Visibility.Visible;
+                
             }
         }
 
@@ -151,12 +153,8 @@ namespace MusicSystem.App.Views
 
         private void LoadPendingSongs()
         {
-            // TODO: Tạo PendingSongsPage sau
-            MessageBox.Show(
-                "Tính năng Duyệt bài hát đang được phát triển",
-                "Thông báo",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            var pendingPage = new PendingSongsPage(_socketClient);
+            mainFrame.Navigate(pendingPage);
         }
 
         private void LoadSettings()

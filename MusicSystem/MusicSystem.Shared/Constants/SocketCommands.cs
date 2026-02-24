@@ -28,13 +28,12 @@ namespace MusicSystem.Shared.Constants
         // Song Management (Manager only)
         public const string GetAllSongs = "GetAllSongs";
         public const string GetSongById = "GetSongById";
-        public const string GetPendingSongs = "GetPendingSongs";
+        
         public const string UploadSongFile = "UploadSongFile";
         public const string CreateSong = "CreateSong";
         public const string UpdateSong = "UpdateSong";
         public const string DeleteSong = "DeleteSong";
-        public const string ApproveSong = "ApproveSong";
-        public const string RejectSong = "RejectSong";
+        
 
         // Artist Management (Manager only)
         public const string GetAllArtists = "GetAllArtists";
@@ -45,22 +44,21 @@ namespace MusicSystem.Shared.Constants
         public const string DisableArtist = "DisableArtist";
         public const string EnableArtist = "EnableArtist";
 
-        // User Management
-        public const string GetUsers = "GetUsers";
-        public const string CreateUser = "CreateUser";
-        public const string AssignRole = "AssignRole";
 
         // User Management (Admin only)
         public const string GetAllUsers = "GetAllUsers";
         public const string GetUserById = "GetUserById";
-       // public const string CreateUser = "CreateUser";
+        public const string CreateUser = "CreateUser";
         public const string UpdateUser = "UpdateUser";
         public const string DisableUser = "DisableUser";
         public const string EnableUser = "EnableUser";
-       // public const string AssignRole = "AssignRole";
+        public const string AssignRole = "AssignRole";
         public const string RemoveRole = "RemoveRole";
         public const string ResetPassword = "ResetPassword";
 
+        public const string GetPendingSongs = "GetPendingSongs";
+        public const string ApproveSong = "ApproveSong";
+        public const string RejectSong = "RejectSong";
 
 
     }

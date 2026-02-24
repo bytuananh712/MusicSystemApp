@@ -3,76 +3,44 @@
   "WorkspaceRootPath": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.infrastructure\\socket\\sockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|solutionrelative:musicsystem.infrastructure\\socket\\sockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690EB263-A37D-42C5-A3CB-9426A5BC16CF}|MusicSystem.Application\\MusicSystem.Application.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.application\\services\\songs\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690EB263-A37D-42C5-A3CB-9426A5BC16CF}|MusicSystem.Application\\MusicSystem.Application.csproj|solutionrelative:musicsystem.application\\services\\songs\\songservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\pages\\songmanagementpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\pages\\songmanagementpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\pages\\artistmanagementpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\pages\\artistmanagementpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\pages\\artistmanagementpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\pages\\artistmanagementpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\addartistwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\addartistwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\songdetailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\songdetailwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\editsongwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\editsongwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\songdetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\songdetailwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\adduserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\adduserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\rejectreasondialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\rejectreasondialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\selectartistsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\selectartistsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\rejectreasondialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\rejectreasondialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\assignrolewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\assignrolewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\pages\\pendingsongspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\pages\\pendingsongspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\pages\\pendingsongspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\pages\\pendingsongspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\editsongwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\editsongwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.infrastructure\\socket\\sockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|solutionrelative:musicsystem.infrastructure\\socket\\sockethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\selectartistsdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\selectartistsdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\addsongwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\addsongwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.app\\views\\addsongwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{DE79DB4F-6DF7-4DAF-9857-AB99D0C850B3}|MusicSystem.App\\MusicSystem.App.csproj|solutionrelative:musicsystem.app\\views\\addsongwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.shared\\constants\\socketcommands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|solutionrelative:musicsystem.shared\\constants\\socketcommands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Bookmark",
@@ -162,227 +130,128 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginWindow.xaml.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\LoginWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\LoginWindow.xaml.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\LoginWindow.xaml.cs",
-              "RelativeToolTip": "MusicSystem.App\\Views\\LoginWindow.xaml.cs",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAIwCIAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T16:00:25.691Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\LoginWindow.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\LoginWindow.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\LoginWindow.xaml",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\MainWindow.xaml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\MainWindow.xaml",
+              "RelativeToolTip": "MusicSystem.App\\Views\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T16:00:09.012Z",
+              "WhenOpened": "2026-02-24T13:28:50.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SongService.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Application\\Services\\Songs\\SongService.cs",
-              "RelativeDocumentMoniker": "MusicSystem.Application\\Services\\Songs\\SongService.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Application\\Services\\Songs\\SongService.cs",
-              "RelativeToolTip": "MusicSystem.Application\\Services\\Songs\\SongService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowF4AAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T15:45:49.72Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SocketHandler.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
-              "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
-              "RelativeToolTip": "MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
-              "ViewState": "AgIAAKIBAAAAAAAAAAAkwMEBAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T15:23:10.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ArtistManagementPage.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T15:19:47.197Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\MainWindow.xaml.cs",
               "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\MainWindow.xaml.cs",
               "RelativeToolTip": "MusicSystem.App\\Views\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAADwv5YAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAAAEMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T15:04:02.603Z",
+              "WhenOpened": "2026-02-24T13:07:00.666Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AddUserWindow.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddUserWindow.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\AddUserWindow.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddUserWindow.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\AddUserWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T15:02:10.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AssignRoleWindow.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AssignRoleWindow.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\AssignRoleWindow.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AssignRoleWindow.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\AssignRoleWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T15:01:54.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "App.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\App.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\App.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\App.xaml",
-              "RelativeToolTip": "MusicSystem.App\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T15:00:40.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "EditSongWindow.xaml.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\EditSongWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\EditSongWindow.xaml.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\EditSongWindow.xaml.cs",
-              "RelativeToolTip": "MusicSystem.App\\Views\\EditSongWindow.xaml.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAcwHkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SongDetailWindow.xaml.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SongDetailWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\SongDetailWindow.xaml.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SongDetailWindow.xaml.cs",
+              "RelativeToolTip": "MusicSystem.App\\Views\\SongDetailWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T14:43:36.823Z",
+              "WhenOpened": "2026-02-24T13:06:35.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SongDetailWindow.xaml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SongDetailWindow.xaml",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\SongDetailWindow.xaml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SongDetailWindow.xaml",
+              "RelativeToolTip": "MusicSystem.App\\Views\\SongDetailWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-24T13:06:17.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SongManagementPage.xaml.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\SongManagementPage.xaml.cs",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\SongManagementPage.xaml.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\SongManagementPage.xaml.cs",
-              "RelativeToolTip": "MusicSystem.App\\Views\\Pages\\SongManagementPage.xaml.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAUwMsAAAAJAAAAAAAAAA==",
+              "Title": "RejectReasonDialog.xaml.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\RejectReasonDialog.xaml.cs",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\RejectReasonDialog.xaml.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\RejectReasonDialog.xaml.cs",
+              "RelativeToolTip": "MusicSystem.App\\Views\\RejectReasonDialog.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T14:33:18.679Z",
+              "WhenOpened": "2026-02-24T13:05:44.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ArtistManagementPage.xaml.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml.cs",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml.cs",
-              "RelativeToolTip": "MusicSystem.App\\Views\\Pages\\ArtistManagementPage.xaml.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwFgAAAAgAAAAAAAAAA==",
+              "Title": "RejectReasonDialog.xaml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\RejectReasonDialog.xaml",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\RejectReasonDialog.xaml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\RejectReasonDialog.xaml",
+              "RelativeToolTip": "MusicSystem.App\\Views\\RejectReasonDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-24T13:05:00.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PendingSongsPage.xaml.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml.cs",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml.cs",
+              "RelativeToolTip": "MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAAAJQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T15:19:48.747Z",
+              "WhenOpened": "2026-02-24T13:01:39.996Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PendingSongsPage.xaml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml",
+              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml",
+              "RelativeToolTip": "MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-24T13:01:19.069Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AddArtistWindow.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddArtistWindow.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\AddArtistWindow.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddArtistWindow.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\AddArtistWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T15:02:21.375Z",
+              "Title": "SocketHandler.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
+              "RelativeToolTip": "MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
+              "ViewState": "AgIAAMkBAAAAAAAAAAAowOcBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T12:58:43.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "EditSongWindow.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\EditSongWindow.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\EditSongWindow.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\EditSongWindow.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\EditSongWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T14:42:52.784Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SelectArtistsDialog.xaml.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SelectArtistsDialog.xaml.cs",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\SelectArtistsDialog.xaml.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SelectArtistsDialog.xaml.cs",
-              "RelativeToolTip": "MusicSystem.App\\Views\\SelectArtistsDialog.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAABAAAAAAAAAA==",
+              "Title": "SocketCommands.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\Constants\\SocketCommands.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Shared\\Constants\\SocketCommands.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\Constants\\SocketCommands.cs",
+              "RelativeToolTip": "MusicSystem.Shared\\Constants\\SocketCommands.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T14:42:24.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SelectArtistsDialog.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SelectArtistsDialog.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\SelectArtistsDialog.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SelectArtistsDialog.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\SelectArtistsDialog.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T14:41:52.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AddSongWindow.xaml.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddSongWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\AddSongWindow.xaml.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddSongWindow.xaml.cs",
-              "RelativeToolTip": "MusicSystem.App\\Views\\AddSongWindow.xaml.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAIwF8AAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T14:40:45.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "AddSongWindow.xaml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddSongWindow.xaml",
-              "RelativeDocumentMoniker": "MusicSystem.App\\Views\\AddSongWindow.xaml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\AddSongWindow.xaml",
-              "RelativeToolTip": "MusicSystem.App\\Views\\AddSongWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-22T14:33:50.47Z",
+              "WhenOpened": "2026-02-24T12:52:21.551Z",
               "EditorCaption": ""
             }
           ]

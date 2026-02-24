@@ -115,78 +115,82 @@
                             </StackPanel>
                         </Button>
 
-                        <!-- ADMIN MENU -->
+                        <!-- ===== ADMIN MENU ===== -->
                         <Border x:Name="adminMenu" Visibility="Collapsed">
                             <StackPanel>
                                 <TextBlock Text="QUẢN TRỊ HỆ THỐNG" 
-                                           FontSize="11" 
-                                           Foreground="#FF95A5A6"
-                                           Margin="20,20,0,10"
-                                           FontWeight="SemiBold"/>
+                               FontSize="11" 
+                               Foreground="#FF95A5A6"
+                               Margin="20,20,0,10"
+                               FontWeight="SemiBold"/>
 
+                                <!-- Quản lý Users -->
                                 <Button x:Name="btnUsers"
-                                        Click="btnUsers_Click"
-                                        Style="{StaticResource MenuButtonStyle}"
-                                        Tag="Users">
+                            Click="btnUsers_Click"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Tag="Users">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="👥" FontSize="18" Margin="0,0,10,0"/>
                                         <TextBlock Text="Quản lý người dùng" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
+
+                                <!-- ✅ DUYỆT BÀI HÁT (Admin only) -->
+                                <Button x:Name="btnPendingSongs"
+                            Click="btnPendingSongs_Click"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Tag="PendingSongs">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="⏳" FontSize="18" Margin="0,0,10,0"/>
+                                        <StackPanel>
+                                            <TextBlock Text="Duyệt bài hát" FontSize="14"/>
+                                            <Border x:Name="badgePending"
+                                        Background="#FFDC3545"
+                                        CornerRadius="10"
+                                        Padding="6,2"
+                                        HorizontalAlignment="Left"
+                                        Margin="0,3,0,0"
+                                        Visibility="Collapsed">
+                                                <TextBlock x:Name="txtPendingCount"
+                                               Text="5" 
+                                               FontSize="10"
+                                               Foreground="White"
+                                               FontWeight="Bold"/>
+                                            </Border>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Button>
                             </StackPanel>
                         </Border>
 
-                        <!-- MANAGER MENU -->
+                        <!-- ===== MANAGER MENU ===== -->
                         <Border x:Name="managerMenu" Visibility="Collapsed">
                             <StackPanel>
                                 <TextBlock Text="QUẢN LÝ NỘI DUNG" 
-                                           FontSize="11" 
-                                           Foreground="#FF95A5A6"
-                                           Margin="20,20,0,10"
-                                           FontWeight="SemiBold"/>
+                               FontSize="11" 
+                               Foreground="#FF95A5A6"
+                               Margin="20,20,0,10"
+                               FontWeight="SemiBold"/>
 
-                                <Button x:Name="btnSongs"
-                                        Click="btnSongs_Click"
-                                        Style="{StaticResource MenuButtonStyle}"
-                                        Tag="Songs">
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="🎵" FontSize="18" Margin="0,0,10,0"/>
-                                        <TextBlock Text="Quản lý bài hát" FontSize="14"/>
-                                    </StackPanel>
-                                </Button>
-
+                                <!-- Quản lý Nghệ sĩ -->
                                 <Button x:Name="btnArtists"
-                                        Click="btnArtists_Click"
-                                        Style="{StaticResource MenuButtonStyle}"
-                                        Tag="Artists">
+                            Click="btnArtists_Click"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Tag="Artists">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="🎤" FontSize="18" Margin="0,0,10,0"/>
                                         <TextBlock Text="Quản lý nghệ sĩ" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
 
-                                <Button x:Name="btnPendingSongs"
-                                        Click="btnPendingSongs_Click"
-                                        Style="{StaticResource MenuButtonStyle}"
-                                        Tag="PendingSongs">
+                                <!-- Quản lý Bài hát -->
+                                <Button x:Name="btnSongs"
+                            Click="btnSongs_Click"
+                            Style="{StaticResource MenuButtonStyle}"
+                            Tag="Songs">
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="⏳" FontSize="18" Margin="0,0,10,0"/>
-                                        <StackPanel>
-                                            <TextBlock Text="Duyệt bài hát" FontSize="14"/>
-                                            <Border x:Name="badgePending"
-                                                    Background="#FFDC3545"
-                                                    CornerRadius="10"
-                                                    Padding="6,2"
-                                                    HorizontalAlignment="Left"
-                                                    Margin="0,3,0,0"
-                                                    Visibility="Collapsed">
-                                                <TextBlock x:Name="txtPendingCount"
-                                                           Text="5" 
-                                                           FontSize="10"
-                                                           Foreground="White"
-                                                           FontWeight="Bold"/>
-                                            </Border>
-                                        </StackPanel>
+                                        <TextBlock Text="🎵" FontSize="18" Margin="0,0,10,0"/>
+                                        <TextBlock Text="Quản lý bài hát" FontSize="14"/>
                                     </StackPanel>
                                 </Button>
                             </StackPanel>

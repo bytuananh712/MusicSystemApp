@@ -1,0 +1,152 @@
+﻿<Page x:Class="MusicSystem.App.Views.Pages.PendingSongsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Duyệt bài hát"
+      Background="Transparent">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="⏳ Duyệt bài hát chờ phê duyệt" 
+                       FontSize="24" 
+                       FontWeight="Bold"/>
+            <TextBlock Text="Xem xét và phê duyệt các bài hát Manager đã upload" 
+                       FontSize="12" 
+                       Foreground="Gray"
+                       Margin="0,5,0,0"/>
+        </StackPanel>
+
+        <!-- Toolbar -->
+        <Border Grid.Row="1" 
+                Background="#FFF8F9FA" 
+                Padding="15"
+                CornerRadius="5"
+                Margin="0,0,0,15">
+            <Grid>
+                <TextBlock Text="📋 Danh sách bài hát chờ duyệt" 
+                           FontSize="14"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center"/>
+
+                <Button x:Name="btnRefresh"
+                        Content="🔄 Làm mới"
+                        Height="35"
+                        Padding="15,0"
+                        HorizontalAlignment="Right"
+                        Background="#FF17A2B8"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="btnRefresh_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- DataGrid -->
+        <Border Grid.Row="2" 
+                BorderBrush="#FFDEE2E6" 
+                BorderThickness="1"
+                CornerRadius="5">
+            <DataGrid x:Name="dgPendingSongs"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      SelectionMode="Single"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      RowHeight="60"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="Horizontal"
+                      AlternatingRowBackground="#FFF8F9FA">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Tiêu đề" 
+                                        Binding="{Binding Title}" 
+                                        Width="250"
+                                        FontWeight="SemiBold"/>
+
+                    <DataGridTextColumn Header="Nghệ sĩ" 
+                                        Binding="{Binding Artists}" 
+                                        Width="180"/>
+
+                    <DataGridTextColumn Header="Thể loại" 
+                                        Binding="{Binding Genre}" 
+                                        Width="100"/>
+
+                    <DataGridTextColumn Header="Thời lượng" 
+                                        Binding="{Binding DurationFormatted}" 
+                                        Width="90"/>
+
+                    <DataGridTextColumn Header="Kích thước" 
+                                        Binding="{Binding FileSizeFormatted}" 
+                                        Width="90"/>
+
+                    <DataGridTextColumn Header="Upload lúc" 
+                                        Binding="{Binding CreatedAt, StringFormat='dd/MM/yyyy HH:mm'}" 
+                                        Width="130"/>
+
+                    <DataGridTemplateColumn Header="Thao tác" Width="*" MinWidth="250">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="👁️ Xem" 
+                                            Padding="12,5"
+                                            Margin="2"
+                                            Background="#FF17A2B8"
+                                            Foreground="White"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Click="btnView_Click"
+                                            Tag="{Binding SongId}"
+                                            ToolTip="Xem chi tiết"/>
+
+                                    <Button Content="✅ Duyệt" 
+                                            Padding="12,5"
+                                            Margin="2"
+                                            Background="#FF28A745"
+                                            Foreground="White"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            FontWeight="SemiBold"
+                                            Click="btnApprove_Click"
+                                            Tag="{Binding SongId}"
+                                            ToolTip="Phê duyệt bài hát"/>
+
+                                    <Button Content="❌ Từ chối" 
+                                            Padding="12,5"
+                                            Margin="2"
+                                            Background="#FFDC3545"
+                                            Foreground="White"
+                                            BorderThickness="0"
+                                            Cursor="Hand"
+                                            Click="btnReject_Click"
+                                            Tag="{Binding SongId}"
+                                            ToolTip="Từ chối bài hát"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <!-- Footer -->
+        <Border Grid.Row="3" 
+                Background="#FFF8F9FA"
+                Padding="15"
+                Margin="0,15,0,0"
+                CornerRadius="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="txtStatus" 
+                           Text="Không có bài hát chờ duyệt"
+                           FontSize="12"
+                           Foreground="Gray"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
