@@ -952,7 +952,6 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\rjimswa.dswa.cache.json
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\scopedcss\bundle\MusicSystem.Web.styles.css
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\scopedcss\projectbundle\MusicSystem.Web.bundle.scp.css
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\staticwebassets.build.json
@@ -966,3 +965,4 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\MusicSystem.Web.pdb
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\MusicSystem.Web.genruntimeconfig.cache
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\ref\MusicSystem.Web.dll
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\scopedcss\Views\Shared\_CustomerLayout.cshtml.rz.scp.css

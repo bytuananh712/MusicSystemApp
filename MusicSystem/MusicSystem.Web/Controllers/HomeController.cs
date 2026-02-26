@@ -1,40 +1,54 @@
 using Microsoft.AspNetCore.Mvc;
-using MusicSystem.Web.Models;
-using System.Diagnostics;
+using MusicSystem.Application.Services.Songs;
+using MusicSystem.Shared.DTOs.Songs;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MusicSystem.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ISongService _songService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ISongService songService)
         {
-            _logger = logger;
+            _songService = songService;
         }
 
-        public IActionResult Index()
+        // GET: /
+        public async Task<IActionResult> Index()
         {
-            var currentUser = HttpContext.Session.GetString("CurrentUser");
-            ViewBag.CurrentUser = currentUser;
-            return View();
+            var songs = await _songService.GetAllSongsAsync("Active", 1, 50);
+            return View(songs);
         }
 
-        public IActionResult Privacy()
+        // GET: /Home/Search?q=...
+        public async Task<IActionResult> Search(string q)
         {
-            return View();
+            if (string.IsNullOrWhiteSpace(q))
+            {
+                return RedirectToAction("Index");
+            }
+
+            var songs = await _songService.SearchSongsAsync(q);
+            ViewBag.SearchQuery = q;
+            return View("Index", songs);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        // API: Get song by ID (for player)
+        [HttpGet]
+        public async Task<IActionResult> GetSong(Guid id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            try
+            {
+                var song = await _songService.GetSongByIdAsync(id);
+                return Json(new { success = true, song });
+            }
+            catch
+            {
+                return Json(new { success = false, message = "Song not found" });
+            }
         }
-
-
-
-
-
-
     }
 }

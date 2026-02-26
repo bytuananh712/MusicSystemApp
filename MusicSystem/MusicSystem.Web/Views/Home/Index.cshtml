@@ -1,8 +1,96 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<MusicSystem.Shared.DTOs.Songs.SongDto>
+@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "_CustomerLayout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid">
+    <!-- Header -->
+    <div class="mb-4">
+        @if (!string.IsNullOrEmpty(ViewBag.SearchQuery))
+        {
+            <h2>
+                <i class="fas fa-search"></i>
+                Kết quả tìm kiếm: "@ViewBag.SearchQuery"
+            </h2>
+            <p class="text-muted">Tìm thấy @Model.Count() bài hát</p>
+        }
+        else
+        {
+            <h2>
+                <i class="fas fa-fire"></i>
+                Bài hát nổi bật
+            </h2>
+            <p class="text-muted">Khám phá âm nhạc mới nhất</p>
+        }
+    </div>
+
+    <!-- Songs Grid -->
+    @if (Model.Any())
+    {
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+            @foreach (var song in Model)
+            {
+                <div class="col">
+                    <div class="song-card"
+                         data-song-id="@song.SongId"
+                         data-song-title="@song.Title"
+                         data-song-artists="@song.Artists"
+                         data-song-url="@song.FileUrl"
+                         onclick="playSong(this)">
+
+                        <!-- Cover -->
+                        <div class="song-cover">
+                            <i class="fas fa-music"></i>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="song-info">
+                            <h6 class="mb-1 text-truncate" title="@song.Title">
+                                @song.Title
+                            </h6>
+                            <p class="text-muted small mb-2 text-truncate">
+                                @song.Artists
+                            </p>
+
+                            <!-- Stats -->
+                            <div class="d-flex justify-content-between align-items-center small text-muted">
+                                <span>
+                                    <i class="fas fa-play"></i>
+                                    @song.TotalPlays
+                                </span>
+                                <span>
+                                    <i class="fas fa-heart"></i>
+                                    @song.TotalLikes
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Play Button Overlay -->
+                        <div class="position-absolute top-50 start-50 translate-middle"
+                             style="pointer-events: none; opacity: 0; transition: opacity 0.3s;">
+                            <i class="fas fa-play-circle text-white" style="font-size: 3rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <!-- Empty State -->
+        <div class="text-center py-5">
+            <i class="fas fa-music" style="font-size: 4rem; color: #666;"></i>
+            <h4 class="mt-3 text-muted">Không tìm thấy bài hát nào</h4>
+            <p class="text-muted">Thử tìm kiếm với từ khóa khác</p>
+        </div>
+    }
 </div>
+
+@section Scripts {
+    <style>
+        .song-card:hover .position-absolute {
+            opacity: 1 !important;
+        }
+    </style>
+}

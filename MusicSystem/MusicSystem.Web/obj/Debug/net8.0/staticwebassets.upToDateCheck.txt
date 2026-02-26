@@ -1,7 +1,9 @@
 wwwroot\css\auth\login.css
+wwwroot\css\layout.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\auth\login.js
+wwwroot\js\player.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

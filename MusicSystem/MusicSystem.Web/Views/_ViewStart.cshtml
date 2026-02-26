@@ -1,3 +1,15 @@
 ﻿@{
-    Layout = "_Layout";
+    // Kiểm tra nếu đang ở Customer area thì dùng _CustomerLayout
+    // Còn không thì dùng _Layout cũ (cho Admin/Auth)
+    
+    var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+    
+    if (controller == "Home" || controller == "Playlist" || controller == "Song")
+    {
+        Layout = "_CustomerLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
 }

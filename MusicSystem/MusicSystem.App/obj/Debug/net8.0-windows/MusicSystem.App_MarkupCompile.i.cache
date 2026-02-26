@@ -16,5 +16,5 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.App\App.xaml
 210-205067465
 Views\AddArtistWindow.xaml;Views\AddSongWindow.xaml;Views\AddUserWindow.xaml;Views\AssignRoleWindow.xaml;Views\EditArtistWindow.xaml;Views\EditSongWindow.xaml;Views\EditUserWindow.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\Pages\ArtistManagementPage.xaml;Views\Pages\DashboardPage.xaml;Views\Pages\PendingSongsPage.xaml;Views\Pages\SongManagementPage.xaml;Views\Pages\UserManagementPage.xaml;Views\RejectReasonDialog.xaml;Views\ResetPasswordDialog.xaml;Views\SelectArtistsDialog.xaml;Views\SongDetailWindow.xaml;
 
-False
+True
 
