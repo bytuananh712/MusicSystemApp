@@ -1,0 +1,98 @@
+﻿@model IEnumerable<MusicSystem.Domain.Entities.SongLike>
+@{
+    ViewData["Title"] = "Bài hát yêu thích";
+    Layout = "_CustomerLayout";
+    int rownum = 1;
+}
+
+<div class="sp-section">
+    <div class="sp-section-header">
+        <div class="sp-section-title">
+            ❤️ Bài hát yêu thích
+        </div>
+        <span style="font-size:13px;color:var(--text-200)">@Model.Count() bài</span>
+    </div>
+
+    @if (Model.Any())
+    {
+        <table class="history-table">
+            <thead class="history-thead">
+                <tr>
+                    <th style="width:40px;text-align:center">#</th>
+                    <th style="width:48px"></th>
+                    <th>Tiêu đề</th>
+                    <th class="d-none d-md-table-cell">Nghệ sĩ</th>
+                    <th class="d-none d-lg-table-cell" style="width:120px">Đã thích</th>
+                    <th style="width:48px"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var like in Model)
+                {
+                    var song = like.Song;
+                    var artists = song?.SongArtists != null && song.SongArtists.Any()
+                    ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
+                    : "Unknown";
+
+                    var diff = DateTime.UtcNow - like.LikedAt;
+                    var timeAgo = diff.TotalMinutes < 1 ? "Vừa xong"
+                    : diff.TotalHours < 1 ? $"{(int)diff.TotalMinutes} phút"
+                    : diff.TotalDays < 1 ? $"{(int)diff.TotalHours} giờ"
+                    : diff.TotalDays < 7 ? $"{(int)diff.TotalDays} ngày"
+                    : like.LikedAt.ToString("dd/MM/yy");
+
+                    var stitle = (song?.Title ?? "").Replace("'", "\\'");
+                    var sartists = artists.Replace("'", "\\'");
+                    var sUrl = song?.FileUrl ?? "";
+
+                    <tr class="history-row" onclick="playLikedSong('@song?.SongId','@stitle','@sartists','@sUrl')">
+                        <td style="width:40px">
+                            <span class="h-num">@rownum</span>
+                            <span class="h-play-icon"><i class="fas fa-play"></i></span>
+                        </td>
+                        <td style="width:48px">
+                            <div class="h-thumb"><i class="fas fa-music"></i></div>
+                        </td>
+                        <td>
+                            <div class="h-info-title">@(song?.Title ?? "Unknown")</div>
+                            <div class="h-info-artist d-md-none">@artists</div>
+                        </td>
+                        <td class="h-time d-none d-md-table-cell">@artists</td>
+                        <td class="h-time d-none d-lg-table-cell">
+                            <i class="fas fa-heart" style="color:var(--green);font-size:11px;margin-right:4px"></i>@timeAgo
+                        </td>
+                        <td>
+                            <button class="h-play-btn"
+                                    onclick="event.stopPropagation(); playLikedSong('@song?.SongId','@stitle','@sartists','@sUrl')"
+                                    title="Phát">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    rownum++;
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="empty-state">
+            <i class="fas fa-heart" style="color:var(--green)"></i>
+            <h3>Chưa có bài hát yêu thích</h3>
+            <p>Nhấn ❤️ trên thanh phát nhạc để lưu bài hát bạn thích</p>
+            <a href="/" class="sp-btn-primary" style="text-decoration:none;display:inline-block;margin-top:8px">
+                Khám phá nhạc
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function playLikedSong(id, title, artists, url) {
+           if (!id) return;
+           playSong({ dataset: { songId: id, songTitle: title, songArtists: artists, songUrl: url } });
+        }
+    </script>
+}

@@ -1,7 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using MusicSystem.Application.Services.Auth;
 using MusicSystem.Shared.DTOs.Auth;
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace MusicSystem.Web.Controllers
 {
@@ -18,8 +24,8 @@ namespace MusicSystem.Web.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
-            // Nếu đã login, redirect về home
-            if (HttpContext.Session.GetString("CurrentUser") != null)
+            //  Check Cookie Authentication
+            if (User.Identity?.IsAuthenticated == true)
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -48,10 +54,40 @@ namespace MusicSystem.Web.Controllers
                 return View(model);
             }
 
-            // Lưu user vào session
-            HttpContext.Session.SetString("CurrentUser", JsonSerializer.Serialize(result.User));
+            // ✅ Create Claims
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, result.User.UserId.ToString()),
+                new Claim(ClaimTypes.Name, result.User.Username),
+                new Claim(ClaimTypes.Email, result.User.Email ?? ""),
+                new Claim("FullName", result.User.FullName ?? result.User.Username)
+            };
 
-            // Redirect dựa vào role
+            // Add roles
+            foreach (var role in result.User.Roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = model.RememberMe,
+                ExpiresUtc = DateTimeOffset.UtcNow.AddHours(24)
+            };
+
+            //  Sign In
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                authProperties);
+
+            //  Also save to Session (for backward compatibility)
+            HttpContext.Session.SetString("CurrentUser", JsonSerializer.Serialize(result.User));
+            HttpContext.Session.SetString("UserId", result.User.UserId.ToString());
+
+            // Redirect
             if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
@@ -61,10 +97,24 @@ namespace MusicSystem.Web.Controllers
         }
 
         // GET: /Account/Logout
-        public IActionResult Logout()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
         {
+            //  Sign Out
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Clear session
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        // GET: /Account/AccessDenied
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

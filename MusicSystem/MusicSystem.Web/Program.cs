@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 using MusicSystem.Application.Services.Artists;
 using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Auth;
@@ -30,6 +31,11 @@ namespace MusicSystem.Web
             builder.Services.AddScoped<IArtistRepository, ArtistRepository>();  // Quản lí nghệ sĩ
             builder.Services.AddScoped<ISongRepository, SongRepository>();  // Quản lí bài hát
 
+            builder.Services.AddScoped<ILikeRepository, LikeRepository>();          // Nhạc yêu thích
+            builder.Services.AddScoped<IHistoryRepository, HistoryRepository>();    // Lịch sử nghe
+            builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();  // Danh sách phát 
+
+
             // Services
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
@@ -46,7 +52,19 @@ namespace MusicSystem.Web
             var uploadPath = Path.Combine(builder.Environment.WebRootPath, "uploads", "songs");
             builder.Services.AddScoped<IFileUploadService>(sp => new FileUploadService(uploadPath));
 
-
+            // ===== AUTHENTICATION =====
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.LogoutPath = "/Account/Logout";
+                    options.AccessDeniedPath = "/Account/AccessDenied";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(24);
+                    options.SlidingExpiration = true;
+                    options.Cookie.Name = "MusicStreamingAuth";
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.IsEssential = true;
+                });
 
 
             // Session
@@ -87,6 +105,7 @@ namespace MusicSystem.Web
             // Thêm session
             app.UseSession();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

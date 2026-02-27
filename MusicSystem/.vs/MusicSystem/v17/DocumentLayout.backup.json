@@ -3,8 +3,64 @@
   "WorkspaceRootPath": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\song\\likedsongs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\song\\likedsongs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\controllers\\songcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\controllers\\songcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.infrastructure\\repositories\\likerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|solutionrelative:musicsystem.infrastructure\\repositories\\likerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F34226B8-2C66-4613-9851-C720A88D37DE}|MusicSystem.Domain\\MusicSystem.Domain.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.domain\\interfaces\\ilikerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F34226B8-2C66-4613-9851-C720A88D37DE}|MusicSystem.Domain\\MusicSystem.Domain.csproj|solutionrelative:musicsystem.domain\\interfaces\\ilikerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\wwwroot\\css\\auth\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\wwwroot\\css\\auth\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\shared\\_customerlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\playlist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\playlist\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\history\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\history\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\playlist\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\playlist\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.shared\\dtos\\playlists\\createplaylistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|solutionrelative:musicsystem.shared\\dtos\\playlists\\createplaylistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.infrastructure\\repositories\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|solutionrelative:musicsystem.infrastructure\\repositories\\playlistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,20 +75,56 @@
       "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\shared\\_navbarpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.shared\\dtos\\playlists\\playlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|solutionrelative:musicsystem.shared\\dtos\\playlists\\playlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\wwwroot\\js\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\wwwroot\\js\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\wwwroot\\css\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.web\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90F287D-26AA-4711-B29B-341356AF19A5}|MusicSystem.Web\\MusicSystem.Web.csproj|solutionrelative:musicsystem.web\\controllers\\historycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F34226B8-2C66-4613-9851-C720A88D37DE}|MusicSystem.Domain\\MusicSystem.Domain.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.domain\\interfaces\\iplaylistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F34226B8-2C66-4613-9851-C720A88D37DE}|MusicSystem.Domain\\MusicSystem.Domain.csproj|solutionrelative:musicsystem.domain\\interfaces\\iplaylistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.infrastructure\\repositories\\historyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|solutionrelative:musicsystem.infrastructure\\repositories\\historyrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F34226B8-2C66-4613-9851-C720A88D37DE}|MusicSystem.Domain\\MusicSystem.Domain.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.domain\\interfaces\\ihistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F34226B8-2C66-4613-9851-C720A88D37DE}|MusicSystem.Domain\\MusicSystem.Domain.csproj|solutionrelative:musicsystem.domain\\interfaces\\ihistoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.shared\\dtos\\songs\\historydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|solutionrelative:musicsystem.shared\\dtos\\songs\\historydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.shared\\dtos\\playlists\\songdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|solutionrelative:musicsystem.shared\\dtos\\playlists\\songdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.shared\\dtos\\songs\\likedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488057AE-1F29-4464-BCC4-64C92E1B9CCF}|MusicSystem.Shared\\MusicSystem.Shared.csproj|solutionrelative:musicsystem.shared\\dtos\\songs\\likedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4815FBE2-50C6-4C3D-9184-E22E52227359}|MusicSystem.Infrastructure\\MusicSystem.Infrastructure.csproj|e:\\hk_7_sp2026\\project_prn222_musicapp\\musicsystem\\musicsystem.infrastructure\\socket\\sockerserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,7 +178,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 26,
           "Children": [
             {
               "$type": "Bookmark",
@@ -167,92 +259,154 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\_ViewStart.cshtml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\_ViewStart.cshtml*",
-              "RelativeToolTip": "MusicSystem.Web\\Views\\_ViewStart.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Title": "LikedSongs.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Song\\LikedSongs.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Song\\LikedSongs.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Song\\LikedSongs.cshtml*",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Song\\LikedSongs.cshtml*",
+              "ViewState": "AgIAADwAAAAAAAAAAAAkwFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-26T12:37:56.577Z",
+              "WhenOpened": "2026-02-27T14:17:33.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "player.js",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\js\\player.js",
-              "RelativeDocumentMoniker": "MusicSystem.Web\\wwwroot\\js\\player.js",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\js\\player.js",
-              "RelativeToolTip": "MusicSystem.Web\\wwwroot\\js\\player.js",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAcwMIAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-02-26T12:37:23.938Z",
+              "Title": "login.css",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\css\\auth\\login.css",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\wwwroot\\css\\auth\\login.css",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\css\\auth\\login.css",
+              "RelativeToolTip": "MusicSystem.Web\\wwwroot\\css\\auth\\login.css",
+              "ViewState": "AgIAAHMBAAAAAAAAAAAcwJcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-27T14:10:26.525Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Account\\Login.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T14:09:21.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_NavbarPartial.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAiwEAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-26T12:29:54.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\_ViewStart.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-26T12:37:56.577Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "ILikeRepository.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Domain\\Interfaces\\ILikeRepository.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Domain\\Interfaces\\ILikeRepository.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Domain\\Interfaces\\ILikeRepository.cs*",
+              "RelativeToolTip": "MusicSystem.Domain\\Interfaces\\ILikeRepository.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:02:16.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LikeRepository.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Repositories\\LikeRepository.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Repositories\\LikeRepository.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Repositories\\LikeRepository.cs*",
+              "RelativeToolTip": "MusicSystem.Infrastructure\\Repositories\\LikeRepository.cs*",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:02:50.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Home\\Index.cshtml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "MusicSystem.Web\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACwAAAAAAAAAAAAQwE4AAAAIAAAAAAAAAA==",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAkwKUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-26T12:35:45.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MusicSystem.Web\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MusicSystem.Web\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAQwCQAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SongController.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\SongController.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Controllers\\SongController.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\SongController.cs*",
+              "RelativeToolTip": "MusicSystem.Web\\Controllers\\SongController.cs*",
+              "ViewState": "AgIAADoAAAAAAAAAAAA5wHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-26T12:34:55.985Z",
+              "WhenOpened": "2026-02-26T13:16:05.687Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 16,
+              "Title": "_PlayerPartial.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-26T12:30:22.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "_CustomerLayout.cshtml",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Shared\\_CustomerLayout.cshtml",
               "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_CustomerLayout.cshtml",
               "RelativeToolTip": "MusicSystem.Web\\Views\\Shared\\_CustomerLayout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAkwBMBAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-26T12:29:45.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_PlayerPartial.cshtml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
-              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
-              "RelativeToolTip": "MusicSystem.Web\\Views\\Shared\\_PlayerPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Playlist\\Details.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Playlist\\Details.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Playlist\\Details.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Playlist\\Details.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAkwJAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-26T12:30:22.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_NavbarPartial.cshtml",
-              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
-              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
-              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
-              "RelativeToolTip": "MusicSystem.Web\\Views\\Shared\\_NavbarPartial.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwCYAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-26T12:29:54.878Z",
+              "WhenOpened": "2026-02-26T13:18:09.323Z",
               "EditorCaption": ""
             },
             {
@@ -263,14 +417,232 @@
               "RelativeDocumentMoniker": "MusicSystem.Web\\wwwroot\\css\\layout.css",
               "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\css\\layout.css",
               "RelativeToolTip": "MusicSystem.Web\\wwwroot\\css\\layout.css",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAALgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAN8GAAAAAAAAAAAcwAMHAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-02-26T12:28:20.81Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Playlist\\Index.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Playlist\\Index.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Playlist\\Index.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Playlist\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHoAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-26T13:17:30.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\History\\Index.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\History\\Index.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\History\\Index.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\History\\Index.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAkwEgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-26T13:21:29.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PlaylistController.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\PlaylistController.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Controllers\\PlaylistController.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\PlaylistController.cs",
+              "RelativeToolTip": "MusicSystem.Web\\Controllers\\PlaylistController.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAwwJoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:16:27.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CreatePlaylistDto.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Playlists\\CreatePlaylistDto.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Shared\\DTOs\\Playlists\\CreatePlaylistDto.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Playlists\\CreatePlaylistDto.cs",
+              "RelativeToolTip": "MusicSystem.Shared\\DTOs\\Playlists\\CreatePlaylistDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:59:10.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MusicSystem.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowCgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:34:55.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PlaylistRepository.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Repositories\\PlaylistRepository.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Repositories\\PlaylistRepository.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Repositories\\PlaylistRepository.cs",
+              "RelativeToolTip": "MusicSystem.Infrastructure\\Repositories\\PlaylistRepository.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwFgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:14:04.178Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Views\\Account\\AccessDenied.cshtml",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeToolTip": "MusicSystem.Web\\Views\\Account\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-26T13:56:48.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Controllers\\AccountController.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "MusicSystem.Web\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:47:39.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PlaylistDto.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Playlists\\PlaylistDto.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Shared\\DTOs\\Playlists\\PlaylistDto.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Playlists\\PlaylistDto.cs",
+              "RelativeToolTip": "MusicSystem.Shared\\DTOs\\Playlists\\PlaylistDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:58:23.739Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "player.js",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\js\\player.js",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\wwwroot\\js\\player.js",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\wwwroot\\js\\player.js",
+              "RelativeToolTip": "MusicSystem.Web\\wwwroot\\js\\player.js",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAiwMUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-26T12:37:23.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "HistoryController.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\HistoryController.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Controllers\\HistoryController.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Controllers\\HistoryController.cs",
+              "RelativeToolTip": "MusicSystem.Web\\Controllers\\HistoryController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAmwCwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:20:50.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Program.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Web\\Program.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Web\\Program.cs",
+              "RelativeToolTip": "MusicSystem.Web\\Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwDYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:14:37.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IPlaylistRepository.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Domain\\Interfaces\\IPlaylistRepository.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Domain\\Interfaces\\IPlaylistRepository.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Domain\\Interfaces\\IPlaylistRepository.cs",
+              "RelativeToolTip": "MusicSystem.Domain\\Interfaces\\IPlaylistRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:13:20.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "HistoryRepository.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Repositories\\HistoryRepository.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Repositories\\HistoryRepository.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Repositories\\HistoryRepository.cs",
+              "RelativeToolTip": "MusicSystem.Infrastructure\\Repositories\\HistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:12:57.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IHistoryRepository.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Domain\\Interfaces\\IHistoryRepository.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Domain\\Interfaces\\IHistoryRepository.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Domain\\Interfaces\\IHistoryRepository.cs",
+              "RelativeToolTip": "MusicSystem.Domain\\Interfaces\\IHistoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:06:24.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "HistoryDto.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Songs\\HistoryDto.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Shared\\DTOs\\Songs\\HistoryDto.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Songs\\HistoryDto.cs",
+              "RelativeToolTip": "MusicSystem.Shared\\DTOs\\Songs\\HistoryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T13:01:34.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SongDto.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Playlists\\SongDto.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Shared\\DTOs\\Playlists\\SongDto.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Playlists\\SongDto.cs",
+              "RelativeToolTip": "MusicSystem.Shared\\DTOs\\Playlists\\SongDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:58:44.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LikeDto.cs",
+              "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Songs\\LikeDto.cs",
+              "RelativeDocumentMoniker": "MusicSystem.Shared\\DTOs\\Songs\\LikeDto.cs",
+              "ToolTip": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\DTOs\\Songs\\LikeDto.cs",
+              "RelativeToolTip": "MusicSystem.Shared\\DTOs\\Songs\\LikeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T12:57:35.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
               "Title": "SockerServer.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Socket\\SockerServer.cs",
               "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Socket\\SockerServer.cs",
@@ -278,12 +650,11 @@
               "RelativeToolTip": "MusicSystem.Infrastructure\\Socket\\SockerServer.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAgwEUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T15:01:41.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T15:01:41.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 36,
               "Title": "SongDetailWindow.xaml",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SongDetailWindow.xaml",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\SongDetailWindow.xaml",
@@ -294,7 +665,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 37,
               "Title": "RejectReasonDialog.xaml.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\RejectReasonDialog.xaml.cs",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\RejectReasonDialog.xaml.cs",
@@ -306,7 +677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 38,
               "Title": "RejectReasonDialog.xaml",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\RejectReasonDialog.xaml",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\RejectReasonDialog.xaml",
@@ -317,7 +688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 39,
               "Title": "PendingSongsPage.xaml.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml.cs",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml.cs",
@@ -329,7 +700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 40,
               "Title": "PendingSongsPage.xaml",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\Pages\\PendingSongsPage.xaml",
@@ -340,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 32,
               "Title": "SocketHandler.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
               "RelativeDocumentMoniker": "MusicSystem.Infrastructure\\Socket\\SocketHandler.cs",
@@ -352,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 35,
               "Title": "SongDetailWindow.xaml.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\SongDetailWindow.xaml.cs",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\SongDetailWindow.xaml.cs",
@@ -364,7 +735,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 33,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\MainWindow.xaml",
@@ -375,7 +746,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 34,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.App\\Views\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MusicSystem.App\\Views\\MainWindow.xaml.cs",
@@ -387,7 +758,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 41,
               "Title": "SocketCommands.cs",
               "DocumentMoniker": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\Constants\\SocketCommands.cs",
               "RelativeDocumentMoniker": "MusicSystem.Shared\\Constants\\SocketCommands.cs",

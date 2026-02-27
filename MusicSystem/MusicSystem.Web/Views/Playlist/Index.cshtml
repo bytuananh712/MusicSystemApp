@@ -1,0 +1,138 @@
+﻿@model IEnumerable<MusicSystem.Domain.Entities.Playlist>
+@{
+    ViewData["Title"] = "Thư viện";
+    Layout = "_CustomerLayout";
+}
+
+<div class="sp-section">
+    <div class="sp-section-header">
+        <div class="sp-section-title">Danh sách phát</div>
+        <button onclick="showCreatePlaylistModal()" class="sp-btn-secondary" style="font-size:13px;padding:8px 20px;">
+            <i class="fas fa-plus me-1"></i> Tạo mới
+        </button>
+    </div>
+
+    <div class="playlist-grid">
+        <!-- Create card -->
+        <div class="playlist-create-card" onclick="showCreatePlaylistModal()">
+            <div class="playlist-create-icon"><i class="fas fa-plus"></i></div>
+            <div class="playlist-create-label">Tạo danh sách phát</div>
+            <div style="font-size:12px;color:var(--text-200)">Thêm bài hát bạn thích</div>
+        </div>
+
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var pl in Model)
+            {
+                <a href="/Playlist/Details/@pl.PlaylistId" class="playlist-card">
+                    <div class="playlist-cover">
+                        <i class="fas fa-music" style="font-size:42px;opacity:.4"></i>
+                        <button class="cover-play-btn" onclick="event.preventDefault(); event.stopPropagation()"
+                                title="Phát @pl.Title">
+                            <i class="fas fa-play" style="margin-left:2px"></i>
+                        </button>
+                    </div>
+                    <div class="playlist-name">@pl.Title</div>
+                    <div class="playlist-desc">
+                        Danh sách phát • @(pl.PlaylistSongs?.Count ?? 0) bài
+                    </div>
+                    <!-- Delete action -->
+                    <div class="playlist-card-actions">
+                        <div class="p-action-btn danger"
+                             onclick="event.preventDefault(); event.stopPropagation(); _deletePlaylist('@pl.PlaylistId','@pl.Title')"
+                             title="Xóa">
+                            <i class="fas fa-trash-can"></i>
+                        </div>
+                    </div>
+                </a>
+            }
+        }
+    </div>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="empty-state" style="padding:40px 0">
+            <i class="fas fa-list-music"></i>
+            <h3>Thư viện trống</h3>
+            <p>Tạo playlist đầu tiên của bạn và bắt đầu thêm bài hát</p>
+            <button onclick="showCreatePlaylistModal()" class="sp-btn-primary" style="margin-top:8px">
+                Tạo danh sách phát
+            </button>
+        </div>
+    }
+</div>
+
+<!-- Bài hát gợi ý -->
+<div class="sp-section">
+    <div class="sp-section-header">
+        <div class="sp-section-title">Khám phá thêm</div>
+        <a href="/" class="sp-section-link">Trang chủ</a>
+    </div>
+    <div style="text-align:center;padding:32px;color:var(--text-200);font-size:14px">
+        <i class="fas fa-house" style="font-size:32px;margin-bottom:12px;display:block;color:var(--text-300)"></i>
+        Truy cập <a href="/" style="color:var(--text-100);font-weight:600">Trang chủ</a> để thêm bài vào playlist
+    </div>
+</div>
+
+<!-- Add to Playlist Modal -->
+<div class="modal fade" id="addToPlaylistModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm vào danh sách phát</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size:13px;color:var(--text-200);margin-bottom:12px">
+                    <strong style="color:var(--text-100)" id="selectedSongTitle"></strong>
+                </p>
+                <div id="playlistList"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let _addSongId = null;
+
+        async function _deletePlaylist(id, name) {
+            if (!confirm(`Xóa playlist "${name}"?`)) return;
+            const res = await fetch(`/Playlist/Delete/${id}`, { method: 'POST' });
+            const data = await res.json();
+            if (data.success) { showToast(`Đã xóa "${name}"`); setTimeout(() => location.reload(), 800); }
+            else showToast('Lỗi: ' + data.message, 'error');
+        }
+
+        async function openAddToPlaylist(songId, title) {
+            _addSongId = songId;
+            document.getElementById('selectedSongTitle').textContent = title;
+            new bootstrap.Modal(document.getElementById('addToPlaylistModal')).show();
+            const listEl = document.getElementById('playlistList');
+            listEl.innerHTML = '<div class="text-center py-2"><div class="spinner-border spinner-border-sm text-light"></div></div>';
+            const res = await fetch('/Playlist/GetUserPlaylists');
+            const data = await res.json();
+            if (!data.success || !data.playlists.length) {
+                listEl.innerHTML = '<p style="color:var(--text-200);font-size:13px;text-align:center;padding:12px 0">Chưa có playlist</p>';
+                return;
+            }
+            const _esc = s => { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+            listEl.innerHTML = data.playlists.map(p => `
+                <button class="playlist-modal-item" onclick="_addToPlaylist('${p.playlistId}','${_esc(p.playlistName)}')">
+                    <div class="playlist-modal-icon"><i class="fas fa-music"></i></div>
+                    <span class="playlist-modal-name">${_esc(p.playlistName)}</span>
+                    <span class="playlist-modal-count">${p.songCount}</span>
+                </button>`).join('');
+        }
+
+        async function _addToPlaylist(plId, name) {
+            const res = await fetch('/Playlist/AddSong', {
+                method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ playlistId: plId, songId: _addSongId })
+            });
+            const data = await res.json();
+            bootstrap.Modal.getInstance(document.getElementById('addToPlaylistModal'))?.hide();
+            showToast(data.success ? `Đã thêm vào "${name}"` : 'Lỗi: ' + data.message, data.success ? 'success' : 'error');
+        }
+    </script>
+}

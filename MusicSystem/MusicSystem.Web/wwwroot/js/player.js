@@ -193,3 +193,94 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial volume
     audioPlayer.volume = 0.8;
 });
+
+
+
+document.addEventListener('contextmenu', async (e) => {
+    const songCard = e.target.closest('.song-card');
+    if (songCard) {
+        e.preventDefault();
+
+        const songId = songCard.dataset.songId;
+        const title = songCard.dataset.songTitle;
+
+        await showAddToPlaylistMenu(songId, title);
+    }
+});
+
+async function showAddToPlaylistMenu(songId, songTitle) {
+    // Fetch user playlists
+    try {
+        const response = await fetch('/Playlist/GetUserPlaylists');
+        const data = await response.json();
+
+        if (data.success && data.playlists.length > 0) {
+            // Show modal with playlists
+            const modal = document.createElement('div');
+            modal.className = 'modal fade';
+            modal.innerHTML = `
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark text-white">
+                        <div class="modal-header border-secondary">
+                            <h5 class="modal-title">Thêm vào playlist</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="text-muted mb-3">Bài hát: ${songTitle}</p>
+                            <div class="list-group">
+                                ${data.playlists.map(p => `
+                                    <button class="list-group-item list-group-item-action bg-dark text-white border-secondary"
+                                            onclick="addToPlaylist('${p.playlistId}', '${songId}')">
+                                        <i class="fas fa-list me-2"></i> ${p.playlistName}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+            const bsModal = new bootstrap.Modal(modal);
+            bsModal.show();
+
+            modal.addEventListener('hidden.bs.modal', () => {
+                modal.remove();
+            });
+        } else {
+            alert('Bạn chưa có playlist nào. Tạo playlist trước!');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+async function addToPlaylist(playlistId, songId) {
+    try {
+        const response = await fetch('/Playlist/AddSong', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                playlistId: playlistId,
+                songId: songId
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert('Đã thêm vào playlist!');
+            // Close modal
+            const modal = document.querySelector('.modal.show');
+            if (modal) {
+                bootstrap.Modal.getInstance(modal).hide();
+            }
+        } else {
+            alert('Lỗi: ' + data.message);
+        }
+    } catch (error) {
+        alert('Lỗi: ' + error.message);
+    }
+}

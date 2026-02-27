@@ -1,0 +1,165 @@
+﻿@model MusicSystem.Domain.Entities.Playlist
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "_CustomerLayout";
+
+    var totalSec = Model.PlaylistSongs?
+        .Where(ps => ps.Song != null)
+        .Sum(ps => ps.Song.Duration) ?? 0;
+    var totalDur = totalSec > 3600
+        ? $"{totalSec / 3600} giờ {(totalSec % 3600) / 60} phút"
+        : $"{totalSec / 60} phút";
+    int idx = 1;
+}
+
+<!-- Hero gradient (Spotify style: purple gradient that fades to base) -->
+<div class="pl-hero">
+    <div class="pl-hero-cover">
+        <i class="fas fa-music"></i>
+    </div>
+    <div>
+        <div class="pl-hero-type">Danh sách phát</div>
+        <div class="pl-hero-title">@Model.Title</div>
+        <div class="pl-hero-meta">
+            <strong>@(Model.PlaylistSongs?.Count ?? 0) bài hát</strong>
+            &nbsp;•&nbsp; @totalDur
+            &nbsp;•&nbsp; @(Model.IsPublic ? "Công khai" : "Riêng tư")
+            &nbsp;•&nbsp; @Model.CreatedAt.ToString("dd/MM/yyyy")
+        </div>
+    </div>
+</div>
+
+<!-- Actions bar -->
+<div class="pl-actions-bar">
+    @if (Model.PlaylistSongs?.Any() == true)
+    {
+        <button class="pl-play-btn" onclick="playAll()" title="Phát tất cả">
+            <i class="fas fa-play" style="margin-left:3px"></i>
+        </button>
+    }
+    <button class="pl-icon-btn danger" onclick="confirmDeletePlaylist()" title="Xóa playlist">
+        <i class="fas fa-trash-can"></i>
+    </button>
+    <a href="/Playlist" class="pl-icon-btn" title="Quay lại thư viện" style="display:inline-flex;align-items:center">
+        <i class="fas fa-arrow-left fa-sm"></i>
+    </a>
+</div>
+
+<!-- Song table -->
+@if (Model.PlaylistSongs?.Any() == true)
+{
+    <div class="pl-table-header">
+        <div style="text-align:center">#</div>
+        <div>Tiêu đề</div>
+        <div class="d-none d-md-block">Nghệ sĩ</div>
+        <div style="text-align:right">⏱</div>
+    </div>
+
+    @foreach (var ps in Model.PlaylistSongs.OrderBy(x => x.AddedAt))
+    {
+        var song = ps.Song;
+        var artists = song?.SongArtists != null && song.SongArtists.Any()
+            ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
+            : "Unknown";
+        var dur = TimeSpan.FromSeconds(song?.Duration ?? 0).ToString(@"mm\:ss");
+        var stitle = (song?.Title ?? "").Replace("'", "\\'");
+        var sartists = artists.Replace("'", "\\'");
+        var sUrl = song?.FileUrl ?? "";
+
+        <div class="pl-table-row" onclick="playInPlaylist('@song?.SongId','@stitle','@sartists','@sUrl')"
+             data-song-id="@song?.SongId" data-song-title="@song?.Title" data-song-artists="@artists"
+             data-song-url="@song?.FileUrl">
+
+            <div>
+                <span class="pl-row-num">@idx</span>
+                <span class="pl-row-play-icon"><i class="fas fa-play" style="font-size:13px"></i></span>
+            </div>
+
+            <div class="pl-row-info">
+                <div class="pl-row-thumb"><i class="fas fa-music" style="font-size:13px"></i></div>
+                <div style="min-width:0">
+                    <div class="pl-row-title">@song?.Title</div>
+                    <div class="pl-row-artist d-md-none">@artists</div>
+                </div>
+            </div>
+
+            <div class="pl-row-mid d-none d-md-block">@artists</div>
+
+            <div class="pl-row-right">
+                <span class="pl-row-dur">@dur</span>
+                <button class="pl-row-del" onclick="event.stopPropagation(); removeSong('@song?.SongId')"
+                        title="Xóa khỏi playlist">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        idx++;
+    }
+}
+else
+{
+    <div class="empty-state" style="padding:40px 0">
+        <i class="fas fa-music"></i>
+        <h3>Playlist trống</h3>
+        <p>Thêm bài hát yêu thích vào đây từ trang chủ</p>
+        <a href="/" class="sp-btn-primary" style="text-decoration:none;display:inline-block;margin-top:4px">
+            Tìm bài hát
+        </a>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        // All songs for playAll
+        const allSongs = [
+            @if (Model.PlaylistSongs?.Any() == true)
+            {
+                        @foreach (var ps in Model.PlaylistSongs.OrderBy(x => x.AddedAt))
+                    {
+                            var song = ps.Song;
+                            var artists = song?.SongArtists != null && song.SongArtists.Any()
+                            ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
+                            : "Unknown";
+                            <text>{songId:'@song?.SongId', title:'@((song?.Title ?? "").Replace("'", "\\'"))', artists:'@(artists.Replace("'", "\\'"))', url:'@(song?.FileUrl ?? "")' },</text>
+                        }
+            }
+        ];
+
+        function playInPlaylist(id, title, artists, url) {
+            playSong({ dataset: { songId: id, songTitle: title, songArtists: artists, songUrl: url } });
+            document.querySelectorAll('.pl-table-row').forEach(r => r.style.background = '');
+            event.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+        }
+
+        let _playIdx = 0;
+        function playAll() {
+            if (!allSongs.length) return;
+            _playIdx = 0;
+            _playFromIdx(0);
+        }
+        function _playFromIdx(i) {
+            const s = allSongs[i]; if (!s) return;
+            playSong({ dataset: { songId: s.songId, songTitle: s.title, songArtists: s.artists, songUrl: s.url } });
+        }
+
+        async function removeSong(songId) {
+            if (!confirm('Xóa bài này khỏi playlist?')) return;
+            const res = await fetch('/Playlist/RemoveSong', {
+                method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ playlistId: '@Model.PlaylistId', songId })
+            });
+            const data = await res.json();
+            if (data.success) { showToast('Đã xóa khỏi playlist'); setTimeout(() => location.reload(), 700); }
+            else showToast('Lỗi: ' + data.message, 'error');
+        }
+
+        async function confirmDeletePlaylist() {
+            if (!confirm('Xóa playlist "@Model.Title"?')) return;
+            const res = await fetch('/Playlist/Delete/@Model.PlaylistId', { method: 'POST' });
+            const data = await res.json();
+            if (data.success) { showToast('Đã xóa playlist'); setTimeout(() => window.location.href = '/Playlist', 700); }
+            else showToast('Lỗi: ' + data.message, 'error');
+        }
+    </script>
+}

@@ -1,96 +1,182 @@
 ﻿@model IEnumerable<MusicSystem.Shared.DTOs.Songs.SongDto>
 @{
-    ViewData["Title"] = "Trang chủ";
+    bool isSearch = !string.IsNullOrEmpty(ViewBag.SearchQuery as string);
+    ViewData["Title"] = isSearch ? $"Kết quả: {ViewBag.SearchQuery}" : "Trang chủ";
     Layout = "_CustomerLayout";
 }
 
-<div class="container-fluid">
-    <!-- Header -->
-    <div class="mb-4">
-        @if (!string.IsNullOrEmpty(ViewBag.SearchQuery))
+@if (!isSearch && User.Identity?.IsAuthenticated == true)
+{
+    <!-- Quick access shortcuts (Spotify "Good evening" grid) -->
+    <div class="quick-grid">
+        <a href="/Playlist" class="quick-item" style="text-decoration:none">
+            <div class="quick-item-img green-bg"><i class="fas fa-music"></i></div>
+            <span class="quick-item-label">Playlist của tôi</span>
+        </a>
+        <a href="/History" class="quick-item" style="text-decoration:none">
+            <div class="quick-item-img blue-bg"><i class="fas fa-clock-rotate-left"></i></div>
+            <span class="quick-item-label">Đã nghe gần đây</span>
+        </a>
+        <div class="quick-item">
+            <a href="/Song/Liked" style="display:flex;align-items:center;text-decoration:none;width:100%;height:100%">
+                <div class="quick-item-img purple-bg"><i class="fas fa-heart"></i></div>
+                <span class="quick-item-label">Bài hát yêu thích</span>
+            </a>
+        </div>
+    </div>
+}
+
+<!-- Section header -->
+<div class="sp-section">
+    <div class="sp-section-header">
+        <div class="sp-section-title">
+            @if (isSearch)
+            {
+                <span>Kết quả cho "@ViewBag.SearchQuery"</span>
+            }
+            else
+            {
+                <span>Bài hát nổi bật</span>
+            }
+        </div>
+        @if (!isSearch)
         {
-            <h2>
-                <i class="fas fa-search"></i>
-                Kết quả tìm kiếm: "@ViewBag.SearchQuery"
-            </h2>
-            <p class="text-muted">Tìm thấy @Model.Count() bài hát</p>
+            <a href="#" class="sp-section-link">Xem tất cả</a>
         }
         else
         {
-            <h2>
-                <i class="fas fa-fire"></i>
-                Bài hát nổi bật
-            </h2>
-            <p class="text-muted">Khám phá âm nhạc mới nhất</p>
+            <span style="font-size:13px;color:var(--text-200)">@Model.Count() kết quả</span>
         }
     </div>
 
-    <!-- Songs Grid -->
     @if (Model.Any())
     {
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+        <div class="songs-grid" id="songsGrid">
             @foreach (var song in Model)
             {
-                <div class="col">
-                    <div class="song-card"
-                         data-song-id="@song.SongId"
-                         data-song-title="@song.Title"
-                         data-song-artists="@song.Artists"
-                         data-song-url="@song.FileUrl"
-                         onclick="playSong(this)">
+                <div class="song-card" data-song-id="@song.SongId" data-song-title="@song.Title"
+                     data-song-artists="@song.Artists" data-song-url="@song.FileUrl" onclick="playSong(this)">
 
-                        <!-- Cover -->
-                        <div class="song-cover">
-                            <i class="fas fa-music"></i>
-                        </div>
-
-                        <!-- Info -->
-                        <div class="song-info">
-                            <h6 class="mb-1 text-truncate" title="@song.Title">
-                                @song.Title
-                            </h6>
-                            <p class="text-muted small mb-2 text-truncate">
-                                @song.Artists
-                            </p>
-
-                            <!-- Stats -->
-                            <div class="d-flex justify-content-between align-items-center small text-muted">
-                                <span>
-                                    <i class="fas fa-play"></i>
-                                    @song.TotalPlays
-                                </span>
-                                <span>
-                                    <i class="fas fa-heart"></i>
-                                    @song.TotalLikes
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Play Button Overlay -->
-                        <div class="position-absolute top-50 start-50 translate-middle"
-                             style="pointer-events: none; opacity: 0; transition: opacity 0.3s;">
-                            <i class="fas fa-play-circle text-white" style="font-size: 3rem;"></i>
-                        </div>
+                    <div class="song-cover">
+                        @if (!string.IsNullOrEmpty(song.CoverImageUrl))
+                        {
+                            <img src="@song.CoverImageUrl" alt="@song.Title" loading="lazy">
+                        }
+                        else
+                        {
+                            <i class="fas fa-music" style="font-size:42px;opacity:.4"></i>
+                        }
+                        <!-- Green play button (Spotify) -->
+                        <button class="cover-play-btn" onclick="event.stopPropagation(); playSong(this.closest('.song-card'))"
+                                title="Phát @song.Title">
+                            <i class="fas fa-play" style="margin-left:2px"></i>
+                        </button>
                     </div>
+
+                    <div class="song-title" title="@song.Title">@song.Title</div>
+                    <div class="song-artist">@song.Artists</div>
+                    <div class="song-stats">
+                        <span>
+                            <i class="fas fa-play"></i> @(song.TotalPlays > 999 ? $"{song.TotalPlays/1000}K" :
+                                                song.TotalPlays.ToString())
+                </span>
+                <span><i class="fas fa-heart"></i> @song.TotalLikes</span>
+            </div>
+
+                    <!-- Add to playlist -->
+                    <button class="card-add-btn"
+                            onclick="event.stopPropagation(); openAddToPlaylist('@song.SongId','@song.Title')"
+                            title="Thêm vào playlist">
+                        <i class="fas fa-plus"></i>
+                    </button>
                 </div>
-            }
+                }
         </div>
     }
     else
     {
-        <!-- Empty State -->
-        <div class="text-center py-5">
-            <i class="fas fa-music" style="font-size: 4rem; color: #666;"></i>
-            <h4 class="mt-3 text-muted">Không tìm thấy bài hát nào</h4>
-            <p class="text-muted">Thử tìm kiếm với từ khóa khác</p>
+        <div class="empty-state">
+            <i class="fas fa-music"></i>
+            <h3>@(isSearch ? "Không tìm thấy kết quả" : "Chưa có bài hát")</h3>
+            <p>@(isSearch ? "Thử tìm kiếm với từ khóa khác" : "Chưa có bài hát nào được duyệt")</p>
         </div>
     }
 </div>
 
+<!-- Add to Playlist Modal -->
+<div class="modal fade" id="addToPlaylistModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm vào danh sách phát</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p style="font-size:13px;color:var(--text-200);margin-bottom:16px">
+                    <strong style="color:var(--text-100)" id="selectedSongTitle"></strong>
+                </p>
+                <div id="playlistList" style="max-height:280px;overflow-y:auto;">
+                    <div class="text-center py-3">
+                        <div class="spinner-border spinner-border-sm text-light"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
-    <style>
-        .song-card:hover .position-absolute {
-            opacity: 1 !important;
+    <script>
+        let _addSongId = null;
+
+        async function openAddToPlaylist(songId, title) {
+            const isAuth = '@User.Identity?.IsAuthenticated' === 'True';
+            if (!isAuth) {
+                if (confirm('Đăng nhập để thêm vào playlist?'))
+                    window.location.href = '/Account/Login';
+                return;
+            }
+            _addSongId = songId;
+            document.getElementById('selectedSongTitle').textContent = title;
+            new bootstrap.Modal(document.getElementById('addToPlaylistModal')).show();
+            await _loadPlaylists();
         }
-    </style>
+
+        async function _loadPlaylists() {
+            const listEl = document.getElementById('playlistList');
+            listEl.innerHTML = '<div class="text-center py-3"><div class="spinner-border spinner-border-sm text-light"></div></div>';
+            try {
+                const res = await fetch('/Playlist/GetUserPlaylists');
+                const data = await res.json();
+                if (!data.success || !data.playlists.length) {
+                    listEl.innerHTML = '<p style="color:var(--text-200);font-size:13px;text-align:center;padding:16px 0">Chưa có playlist. Hãy tạo mới!</p>';
+                    return;
+                }
+                listEl.innerHTML = data.playlists.map(p => `
+                            <button class="playlist-modal-item" onclick="_addToPlaylist('${p.playlistId}','${_esc(p.playlistName)}')">
+                                <div class="playlist-modal-icon"><i class="fas fa-music"></i></div>
+                                <span class="playlist-modal-name">${_esc(p.playlistName)}</span>
+                                <span class="playlist-modal-count">${p.songCount} bài</span>
+                            </button>`).join('');
+            } catch (e) {
+                listEl.innerHTML = `<p style="color:#f87171;font-size:13px">Lỗi: ${e.message}</p>`;
+            }
+        }
+
+        async function _addToPlaylist(plId, name) {
+            const res = await fetch('/Playlist/AddSong', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ playlistId: plId, songId: _addSongId })
+            });
+            const data = await res.json();
+            bootstrap.Modal.getInstance(document.getElementById('addToPlaylistModal'))?.hide();
+            showToast(data.success ? `Đã lưu vào "${name}"` : 'Lỗi: ' + data.message, data.success ? 'success' : 'error');
+        }
+
+        function _esc(s) {
+            const d = document.createElement('div');
+            d.textContent = s; return d.innerHTML;
+        }
+    </script>
 }

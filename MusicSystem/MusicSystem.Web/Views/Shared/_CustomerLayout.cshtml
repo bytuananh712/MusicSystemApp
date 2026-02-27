@@ -3,26 +3,292 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Music Streaming</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>@ViewData["Title"] - MusicSystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
-
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
-    <partial name="_NavbarPartial" />
 
-    <div class="main-content">
-        @RenderBody()
+    <div class="app-root">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <!-- Nav top -->
+            <div class="sidebar-nav">
+                <!-- Logo -->
+                <div class="sidebar-logo">
+                    <svg viewBox="0 0 168 168" xmlns="http://www.w3.org/2000/svg" aria-label="Spotify">
+                        <path d="M83.996.277C37.747.277.253 37.77.253 84.019c0 46.251 37.494 83.741 83.743 83.741 46.254 0 83.744-37.49 83.744-83.741 0-46.246-37.49-83.738-83.744-83.742zm38.404 120.78a5.217 5.217 0 01-7.18 1.73c-19.662-12.01-44.414-14.73-73.564-8.07a5.222 5.222 0 01-6.249-3.93 5.213 5.213 0 013.926-6.25c31.9-7.291 59.263-4.15 81.337 9.34 2.46 1.51 3.24 4.72 1.73 7.18zm10.25-22.805c-1.89 3.075-5.91 4.045-8.98 2.155-22.51-13.839-56.823-17.846-83.448-9.764-3.453 1.043-7.1-.903-8.148-4.35a6.538 6.538 0 014.354-8.143c30.427-9.234 68.2-4.758 94.072 11.127 3.07 1.89 4.04 5.91 2.15 8.976v-.001zm.88-23.744c-26.99-16.031-71.52-17.505-97.289-9.684-4.138 1.255-8.514-1.081-9.768-5.219a7.835 7.835 0 015.221-9.771c29.581-8.98 78.756-7.245 109.83 11.202a7.823 7.823 0 012.74 10.733c-2.2 3.722-7.02 4.949-10.734 2.739z" />
+                    </svg>
+                    <span class="logo-label">MusicSystem</span>
+                </div>
+
+                <!-- Home -->
+                <a class="sidebar-nav-link @(ViewContext.RouteData.Values["controller"]?.ToString() == "Home" ? "active" : "")"
+                   href="/">
+                    <span class="nav-icon">
+                        @if (ViewContext.RouteData.Values["controller"]?.ToString() == "Home")
+                        {
+                            <i class="fas fa-house"></i>
+                        }
+                        else
+                        {
+                            <i class="fa-regular fa-house"></i>
+                        }
+                    </span>
+                    Trang chủ
+                </a>
+            </div>
+
+            <!-- Library -->
+            <div class="sidebar-library">
+                <div class="sidebar-library-header">
+                    <div class="sidebar-library-title">
+                        <i class="fas fa-book-open-cover"></i>
+                        Thư viện của bạn
+                    </div>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <button class="sidebar-library-btn" onclick="showCreatePlaylistModal()" title="Tạo playlist">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    }
+                </div>
+
+                <div class="library-list" id="sidebarLibraryList">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <!-- Create playlist shortcut -->
+                        <div class="library-create-btn" onclick="showCreatePlaylistModal()">
+                            <div class="library-create-icon"><i class="fas fa-plus"></i></div>
+                            <div>
+                                <div style="font-size:14px;font-weight:700;color:var(--text-100)">Tạo playlist mới</div>
+                                <div style="font-size:11px;color:var(--text-200)">Tạo danh sách của bạn</div>
+                            </div>
+                        </div>
+                        <!-- History quick link -->
+                        <a class="library-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "History" ? "active" : "")"
+                           href="/History">
+                            <div class="library-item-img round" style="background:#2a2a2a;">
+                                <i class="fas fa-clock-rotate-left" style="color:#b3b3b3"></i>
+                            </div>
+                            <div class="library-item-info">
+                                <div class="library-item-name">Lịch sử nghe</div>
+                                <div class="library-item-meta">Danh sách</div>
+                            </div>
+                        </a>
+                        <a class="library-item @(ViewContext.RouteData.Values["controller"]?.ToString() == "Playlist" ? "active" : "")"
+                           href="/Playlist">
+                            <div class="library-item-img" style="background:#1db954;color:#000;font-size:20px;">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="library-item-info">
+                                <div class="library-item-name">Playlist của tôi</div>
+                                <div class="library-item-meta">Danh sách</div>
+                            </div>
+                        </a>
+                    }
+                    else
+                    {
+                        <div style="margin:16px 8px;padding:16px;background:var(--bg-elevated);border-radius:8px;">
+                            <p style="font-size:14px;font-weight:700;color:var(--text-100);margin-bottom:6px">Tạo danh sách phát đầu tiên</p>
+                            <p style="font-size:13px;color:var(--text-200);margin-bottom:12px">Dễ dàng, chúng tôi sẽ giúp bạn</p>
+                            <a href="/Account/Login" style="display:inline-block;padding:8px 16px;border-radius:500px;background:var(--text-100);color:#000;font-size:13px;font-weight:700;">Đăng nhập</a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN PANEL ===== -->
+        <div class="main-panel">
+            <!-- Top Nav -->
+            <nav class="top-nav" id="topNav">
+                <div class="top-nav-left">
+                    <button class="nav-arrow-btn" onclick="history.back()" title="Quay lại">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="nav-arrow-btn" onclick="history.forward()" title="Tiến">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Search bar (center) -->
+                <div class="top-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="topSearch" placeholder="Bạn muốn nghe gì?" autocomplete="off">
+                </div>
+
+                <!-- User area -->
+                <div class="top-user">
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        var fullName = User.FindFirst("FullName")?.Value ?? User.Identity.Name ?? "User";
+                        var initial = fullName.Length > 0 ? fullName[0].ToString().ToUpper() : "U";
+                        <div class="user-avatar" id="userAvatarBtn" onclick="toggleUserMenu()" title="@fullName">
+                            @initial
+                        </div>
+                        <div class="user-dropdown" id="userDropdown">
+                            <a class="dropdown-item-sp" href="/Playlist">
+                                <i class="fas fa-music me-2" style="width:16px"></i>Playlist của tôi
+                            </a>
+                            <a class="dropdown-item-sp" href="/History">
+                                <i class="fas fa-clock-rotate-left me-2" style="width:16px"></i>Lịch sử nghe
+                            </a>
+                            <div class="dropdown-divider-sp"></div>
+                            <form method="post" asp-controller="Account" asp-action="Logout">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="dropdown-item-sp">
+                                    <i class="fas fa-arrow-right-from-bracket me-2" style="width:16px"></i>Đăng xuất
+                                </button>
+                            </form>
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="#" class="btn-login-top btn-signup-top">Đăng ký</a>
+                        <a href="/Account/Login" class="btn-login-top btn-login-filled">Đăng nhập</a>
+                    }
+                </div>
+            </nav>
+
+            <!-- Content -->
+            <div class="content-scroll" id="contentScroll">
+                @RenderBody()
+            </div>
+        </div>
+
+        <!-- ===== PLAYER BAR ===== -->
+        <div id="playerBar">
+            <!-- Left: song info -->
+            <div class="player-left">
+                <div class="player-thumb" id="playerThumb"><i class="fas fa-music"></i></div>
+                <div class="player-track-info">
+                    <div class="player-track-name" id="currentSongTitle">Chọn bài hát</div>
+                    <div class="player-track-artist" id="currentSongArtist">Nghệ sĩ</div>
+                </div>
+                <button class="player-like-btn" id="btnLike" title="Lưu vào thư viện">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+
+            <!-- Center: controls -->
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="ctrl-btn" id="btnShuffle" title="Ngẫu nhiên"><i class="fas fa-shuffle"></i></button>
+                    <button class="ctrl-btn" id="btnPrevious" title="Bài trước"><i class="fas fa-backward-step"></i></button>
+                    <button class="ctrl-btn play-ctrl" id="btnPlay" title="Phát/Dừng">
+                        <i class="fas fa-play" id="playIcon"></i>
+                    </button>
+                    <button class="ctrl-btn" id="btnNext" title="Bài tiếp"><i class="fas fa-forward-step"></i></button>
+                    <button class="ctrl-btn" id="btnRepeat" title="Lặp lại"><i class="fas fa-repeat"></i></button>
+                </div>
+                <div class="player-progress">
+                    <span class="p-time" id="currentTime">0:00</span>
+                    <div class="progress-track" id="progressBar">
+                        <div class="progress-fill" id="progress" style="width:0%"></div>
+                    </div>
+                    <span class="p-time right" id="duration">0:00</span>
+                </div>
+            </div>
+
+            <!-- Right: volume -->
+            <div class="player-right">
+                <button class="vol-icon" id="btnVolume"><i class="fas fa-volume-high"></i></button>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+            </div>
+
+            <audio id="audioPlayer"></audio>
+        </div>
+
+    </div><!-- /app-root -->
+    <!-- Create Playlist Modal -->
+    <div class="modal fade" id="createPlaylistModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tạo Playlist mới</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="newPlaylistNameModal" class="sp-input" placeholder="Tên danh sách phát..." maxlength="100">
+                </div>
+                <div class="modal-footer" style="gap:8px;">
+                    <button type="button" class="sp-btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="sp-btn-primary" onclick="createPlaylist()">Tạo</button>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <partial name="_PlayerPartial" />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/player.js" asp-append-version="true"></script>
+    <script>
+        // Search
+        document.getElementById('topSearch')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                window.location.href = '/Home/Search?q=' + encodeURIComponent(this.value.trim());
+            }
+        });
 
+        // Top nav background on scroll
+        const contentScroll = document.getElementById('contentScroll');
+        const topNav = document.getElementById('topNav');
+        contentScroll?.addEventListener('scroll', () => {
+            topNav?.classList.toggle('scrolled', contentScroll.scrollTop > 30);
+        });
+
+        // User dropdown toggle
+        function toggleUserMenu() {
+            document.getElementById('userDropdown')?.classList.toggle('show');
+        }
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.top-user')) {
+                document.getElementById('userDropdown')?.classList.remove('show');
+            }
+        });
+
+        // Create playlist
+        function showCreatePlaylistModal() {
+            document.getElementById('newPlaylistNameModal').value = '';
+            new bootstrap.Modal(document.getElementById('createPlaylistModal')).show();
+            setTimeout(() => document.getElementById('newPlaylistNameModal').focus(), 300);
+        }
+        document.getElementById('newPlaylistNameModal')?.addEventListener('keypress', e => {
+            if (e.key === 'Enter') createPlaylist();
+        });
+        async function createPlaylist() {
+            const name = document.getElementById('newPlaylistNameModal').value.trim();
+            if (!name) return;
+            const res = await fetch('/Playlist/Create', {
+                method: 'POST',
+                headers: {'Content-Type':'application/x-www-form-urlencoded'},
+                body: new URLSearchParams({title: name, isPublic: 'true'})
+            });
+            const data = await res.json();
+            bootstrap.Modal.getInstance(document.getElementById('createPlaylistModal'))?.hide();
+            if (data.success) {
+                showToast('Đã tạo playlist "' + name + '"');
+                setTimeout(() => window.location.href = '/Playlist/Details/' + data.playlistId, 800);
+            } else {
+                showToast('Lỗi: ' + data.message, 'error');
+            }
+        }
+
+        // Toast (Spotify style - bottom center)
+        window.showToast = function(msg, type = 'success') {
+            document.querySelectorAll('.sp-toast').forEach(t => t.remove());
+            const el = document.createElement('div');
+            el.className = 'sp-toast' + (type === 'error' ? ' error' : '');
+            el.innerHTML = `<i class="fas fa-${type === 'error' ? 'xmark' : 'check'}"></i> ${msg}`;
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 3000);
+        };
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
