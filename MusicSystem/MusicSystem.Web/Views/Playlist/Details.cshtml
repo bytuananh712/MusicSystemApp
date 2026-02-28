@@ -115,14 +115,14 @@ else
         const allSongs = [
             @if (Model.PlaylistSongs?.Any() == true)
             {
-                        @foreach (var ps in Model.PlaylistSongs.OrderBy(x => x.AddedAt))
-                    {
-                            var song = ps.Song;
-                            var artists = song?.SongArtists != null && song.SongArtists.Any()
-                            ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
-                            : "Unknown";
-                            <text>{songId:'@song?.SongId', title:'@((song?.Title ?? "").Replace("'", "\\'"))', artists:'@(artists.Replace("'", "\\'"))', url:'@(song?.FileUrl ?? "")' },</text>
-                        }
+                            @foreach (var ps in Model.PlaylistSongs.OrderBy(x => x.AddedAt))
+                        {
+                                    var song = ps.Song;
+                                    var artists = song?.SongArtists != null && song.SongArtists.Any()
+                                    ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
+                                    : "Unknown";
+                                    <text>{songId:'@song?.SongId', title:'@((song?.Title ?? "").Replace("'", "\\'"))', artists:'@(artists.Replace("'", "\\'"))', url:'@(song?.FileUrl ?? "")' },</text>
+                            }
             }
         ];
 

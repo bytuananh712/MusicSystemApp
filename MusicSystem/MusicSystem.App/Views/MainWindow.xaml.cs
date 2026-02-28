@@ -57,14 +57,14 @@ namespace MusicSystem.App.Views
             if (_currentUser.Roles.Contains("Admin"))
             {
                 adminMenu.Visibility = Visibility.Visible;
-                
+
             }
 
             // ===== MANAGER =====
             if (_currentUser.Roles.Contains("Manager"))
             {
                 managerMenu.Visibility = Visibility.Visible;
-                
+
             }
         }
 
@@ -92,7 +92,7 @@ namespace MusicSystem.App.Views
             LoadDashboard();
         }
 
-        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        public void btnUsers_Click(object sender, RoutedEventArgs e)
         {
             SetActiveMenu(btnUsers);
             LoadUserManagement();
@@ -126,8 +126,8 @@ namespace MusicSystem.App.Views
         // ==================== LOAD PAGES ====================
         private void LoadDashboard()
         {
-            var dashboardPage = new DashboardPage(_socketClient, _currentUser);
-            mainFrame.Navigate(dashboardPage);
+            var adminDashboard = new AdminDashboardPage(_socketClient, _currentUser);
+            mainFrame.Navigate(adminDashboard);
         }
 
         private void LoadUserManagement()

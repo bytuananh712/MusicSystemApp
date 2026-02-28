@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MusicSystem.Domain.Interfaces;
 using System;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MusicSystem.Web.Controllers
@@ -34,12 +35,16 @@ namespace MusicSystem.Web.Controllers
 
         private Guid GetCurrentUserId()
         {
-            var userIdString = HttpContext.Session.GetString("UserId");
-            if (!string.IsNullOrEmpty(userIdString) && Guid.TryParse(userIdString, out var userId))
+            if (User.Identity?.IsAuthenticated == true)
             {
-                return userId;
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (!string.IsNullOrEmpty(userIdClaim) && Guid.TryParse(userIdClaim, out var userId))
+                {
+                    return userId;
+                }
             }
             return Guid.Empty;
         }
+
     }
 }

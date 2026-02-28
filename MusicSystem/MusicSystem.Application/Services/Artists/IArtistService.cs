@@ -15,7 +15,7 @@ namespace MusicSystem.Application.Services.Artists
         Task<IEnumerable<ArtistDto>> SearchArtistsAsync(string searchTerm);
 
         // Commands
-        Task<ArtistDto> CreateArtistAsync(CreateArtistDto dto, Guid createdBy);
+        Task<ArtistDto> CreateArtistAsync(CreateArtistDto dto);
         Task<ArtistDto> UpdateArtistAsync(Guid artistId, UpdateArtistDto dto);
         Task<bool> DeleteArtistAsync(Guid artistId);
         Task<bool> DisableArtistAsync(Guid artistId);

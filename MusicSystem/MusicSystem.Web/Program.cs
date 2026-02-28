@@ -10,6 +10,8 @@ using MusicSystem.Domain.Interfaces;
 using MusicSystem.Infrastructure.Data;
 using MusicSystem.Infrastructure.Repositories;
 using MusicSystem.Infrastructure.Socket;
+using Serilog;
+using Serilog.Events;
 
 namespace MusicSystem.Web
 {
@@ -18,6 +20,24 @@ namespace MusicSystem.Web
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+
+            
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)             
+                .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning) 
+                .Enrich.FromLogContext()
+                .WriteTo.Console(
+                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .WriteTo.File(
+                    path: "logs/app-.txt",
+                    rollingInterval: RollingInterval.Day,
+                    outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                .CreateLogger();
+
+            builder.Host.UseSerilog();
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -76,6 +96,7 @@ namespace MusicSystem.Web
             });
 
             builder.Services.AddHttpContextAccessor();
+
 
 
 

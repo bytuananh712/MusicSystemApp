@@ -1347,12 +1347,19 @@ a {
     grid-row: 2;
     background: var(--bg-player);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /*  ẨN ban đầu */
     display: none;
-    align-items: center;
-    padding: 0 16px;
     height: var(--player-h);
+    padding: 0 16px;
     gap: 0;
 }
+
+    /*  HIỆN khi có class active */
+    #playerBar.active {
+        display: grid;
+        grid-template-columns: 30% 1fr 30%;
+        align-items: center;
+    }
 
 .player-left {
     display: flex;

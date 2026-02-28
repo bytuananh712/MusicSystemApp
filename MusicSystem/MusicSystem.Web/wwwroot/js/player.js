@@ -39,7 +39,7 @@ function playSong(element) {
     currentSongArtist.textContent = artists;
 
     // Show player bar
-    playerBar.style.display = 'block';
+    playerBar.classList.add('active');
 
     // Load and play
     audioPlayer.src = url;

@@ -162,48 +162,8 @@
             </div>
         </div>
 
-        <!-- ===== PLAYER BAR ===== -->
-        <div id="playerBar">
-            <!-- Left: song info -->
-            <div class="player-left">
-                <div class="player-thumb" id="playerThumb"><i class="fas fa-music"></i></div>
-                <div class="player-track-info">
-                    <div class="player-track-name" id="currentSongTitle">Chọn bài hát</div>
-                    <div class="player-track-artist" id="currentSongArtist">Nghệ sĩ</div>
-                </div>
-                <button class="player-like-btn" id="btnLike" title="Lưu vào thư viện">
-                    <i class="far fa-heart"></i>
-                </button>
-            </div>
-
-            <!-- Center: controls -->
-            <div class="player-center">
-                <div class="player-controls">
-                    <button class="ctrl-btn" id="btnShuffle" title="Ngẫu nhiên"><i class="fas fa-shuffle"></i></button>
-                    <button class="ctrl-btn" id="btnPrevious" title="Bài trước"><i class="fas fa-backward-step"></i></button>
-                    <button class="ctrl-btn play-ctrl" id="btnPlay" title="Phát/Dừng">
-                        <i class="fas fa-play" id="playIcon"></i>
-                    </button>
-                    <button class="ctrl-btn" id="btnNext" title="Bài tiếp"><i class="fas fa-forward-step"></i></button>
-                    <button class="ctrl-btn" id="btnRepeat" title="Lặp lại"><i class="fas fa-repeat"></i></button>
-                </div>
-                <div class="player-progress">
-                    <span class="p-time" id="currentTime">0:00</span>
-                    <div class="progress-track" id="progressBar">
-                        <div class="progress-fill" id="progress" style="width:0%"></div>
-                    </div>
-                    <span class="p-time right" id="duration">0:00</span>
-                </div>
-            </div>
-
-            <!-- Right: volume -->
-            <div class="player-right">
-                <button class="vol-icon" id="btnVolume"><i class="fas fa-volume-high"></i></button>
-                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
-            </div>
-
-            <audio id="audioPlayer"></audio>
-        </div>
+        <!-- ✅ PLAYER BAR - Include Partial -->
+        <partial name="_PlayerBarPartial" />
 
     </div><!-- /app-root -->
     <!-- Create Playlist Modal -->

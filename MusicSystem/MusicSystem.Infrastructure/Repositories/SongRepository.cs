@@ -32,7 +32,7 @@ namespace MusicSystem.Infrastructure.Repositories
             }
 
             return await query
-                .OrderByDescending(s => s.CreatedAt)
+                .OrderBy(s => s.CreatedAt)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
@@ -52,7 +52,7 @@ namespace MusicSystem.Infrastructure.Repositories
                 .Include(s => s.SongArtists)
                     .ThenInclude(sa => sa.Artist)
                 .Where(s => s.Status == "Pending")
-                .OrderBy(s => s.CreatedAt)
+                .OrderByDescending(s => s.CreatedAt)
                 .ToListAsync();
         }
 

@@ -45,9 +45,8 @@ namespace MusicSystem.Application.Services.Artists
                 .Select(MapToDto);
         }
 
-        public async Task<ArtistDto> CreateArtistAsync(CreateArtistDto dto, Guid createdBy)
+        public async Task<ArtistDto> CreateArtistAsync(CreateArtistDto dto)  
         {
-            // Check if artist name already exists
             var existing = await _artistRepository.GetByNameAsync(dto.ArtistName);
             if (existing != null)
                 throw new Exception("Nghệ sĩ này đã tồn tại trong hệ thống");
@@ -57,11 +56,10 @@ namespace MusicSystem.Application.Services.Artists
                 ArtistId = Guid.NewGuid(),
                 ArtistName = dto.ArtistName,
                 Biography = dto.Biography,
-                AvatarUrl = dto.AvatarUrl ?? $"https://ui-avatars.com/api/?name={dto.ArtistName}&background=random",
+                AvatarUrl = dto.AvatarUrl ?? $"https://ui-avatars.com/api/?name={Uri.EscapeDataString(dto.ArtistName)}&background=random",
                 Status = "Active",
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow,
-                UpdatedBy = createdBy
+                CreatedAt = DateTime.UtcNow
+                // KHÔNG set UpdatedBy, UpdatedAt, CreatedBy
             };
 
             await _artistRepository.AddAsync(artist);

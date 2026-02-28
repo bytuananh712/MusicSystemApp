@@ -61,6 +61,20 @@ namespace MusicSystem.Application.Services.Songs
                     throw new Exception($"Artist with ID {artistId} not found");
             }
 
+            // Check for duplicates (same title and same artists)
+            var allSongs = await _songRepository.GetAllAsync(null, 1, 10000);
+            var isDuplicate = allSongs.Any(s =>
+                s.Title.Equals(dto.Title, StringComparison.OrdinalIgnoreCase) &&
+                s.SongArtists != null &&
+                s.SongArtists.Count == dto.ArtistIds.Count &&
+                s.SongArtists.All(sa => dto.ArtistIds.Contains(sa.ArtistId))
+            );
+
+            if (isDuplicate)
+            {
+                throw new Exception("Bài hát này đã tồn tại trong hệ thống (trùng Tên và Nghệ sĩ)!");
+            }
+
             var song = new Song
             {
                 SongId = Guid.NewGuid(),
@@ -80,12 +94,19 @@ namespace MusicSystem.Application.Services.Songs
                 CreatedBy = createdBy
             };
 
+            // Add song-artist relationships
+            song.SongArtists = dto.ArtistIds.Select(artistId => new SongArtist
+            {
+                SongId = song.SongId,
+                ArtistId = artistId
+            }).ToList();
+
             await _songRepository.AddAsync(song);
 
-            // Add song-artist relationships
-            
+            // Fetch the inserted song with Artist includes so the DTO mapping has artist names
+            var savedSong = await _songRepository.GetByIdAsync(song.SongId);
 
-            return MapToDto(song);
+            return MapToDto(savedSong ?? song);
         }
 
         public async Task<SongDto> UpdateSongAsync(Guid songId, UpdateSongDto dto)
@@ -125,7 +146,7 @@ namespace MusicSystem.Application.Services.Songs
             song.Status = "Disabled";
             await _songRepository.UpdateAsync(song);
 
-            
+
 
             return true;
         }
@@ -151,7 +172,7 @@ namespace MusicSystem.Application.Services.Songs
                 Artists = song.SongArtists != null
                     ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
                     : "Unknown",
-                CreatedAt = song.CreatedAt ,
+                CreatedAt = song.CreatedAt,
                 ApprovedAt = song.ApprovedAt
             };
         }

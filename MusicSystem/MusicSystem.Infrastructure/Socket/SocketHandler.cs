@@ -13,10 +13,12 @@ using MusicSystem.Shared.DTOs.Users;
 using MusicSystem.Shared.SocketContracts;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MusicSystem.Infrastructure.Socket
@@ -26,17 +28,19 @@ namespace MusicSystem.Infrastructure.Socket
         private readonly ILogger<SocketHandler> _logger;
         private readonly IAuthService _authService;
         private readonly IUserService _userService;
-        private readonly IArtistService _artistService; // quản lí nghệ sĩ
-        private readonly ISongService _songService;    
+        private readonly IArtistService _artistService;
+        private readonly ISongService _songService;
         private readonly IFileUploadService _fileUploadService;
         private readonly IUserRepository _userRepository;
-
 
         public SocketHandler(
             ILogger<SocketHandler> logger,
             IAuthService authService,
-             IUserService userService,
-              IArtistService artistService, ISongService songService, IFileUploadService fileUploadService, IUserRepository userRepository)
+            IUserService userService,
+            IArtistService artistService,
+            ISongService songService,
+            IFileUploadService fileUploadService,
+            IUserRepository userRepository)
         {
             _logger = logger;
             _authService = authService;
@@ -49,47 +53,53 @@ namespace MusicSystem.Infrastructure.Socket
 
         public async Task HandleAsync(TcpClient client, CancellationToken cancellationToken)
         {
+            var clientEndpoint = client.Client.RemoteEndPoint?.ToString();
+            _logger.LogInformation(" Client connected: {ClientEndpoint}", clientEndpoint);
+
             using var stream = client.GetStream();
-                using var reader = new StreamReader(stream, Encoding.UTF8);
-                using var writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };
+            using var reader = new StreamReader(stream, Encoding.UTF8);
+            using var writer = new StreamWriter(stream, Encoding.UTF8) { AutoFlush = true };
 
             while (!cancellationToken.IsCancellationRequested && client.Connected)
             {
                 try
                 {
-                    // Đọc request (JSON trên 1 dòng)
                     var requestJson = await reader.ReadLineAsync();
 
                     if (string.IsNullOrEmpty(requestJson))
                     {
-                        _logger.LogWarning("⚠️ Empty request received");
+                        _logger.LogWarning(" Empty request received");
                         break;
                     }
 
-                    _logger.LogInformation($"📨 Received: {requestJson}");
+                    //  CHỈ log JSON ở Debug level
+                    _logger.LogDebug(" Received: {RequestJson}", requestJson);
 
-                    // Parse request
                     var request = JsonSerializer.Deserialize<SocketRequest>(requestJson);
 
-                    // Process request
+                    //  Log summary - ngắn gọn
+                    _logger.LogInformation(" Command: {Command}", request.Command);
+
                     var response = await ProcessRequestAsync(request);
 
-                    // Send response
                     var responseJson = JsonSerializer.Serialize(response);
                     await writer.WriteLineAsync(responseJson);
 
-                    _logger.LogInformation($"📤 Sent: {responseJson}");
+                    //  Log summary - ngắn gọn
+                    _logger.LogInformation(" Status: {Status}", response.Status);
+
+                    //  CHỈ log JSON ở Debug level
+                    _logger.LogDebug(" Sent: {ResponseJson}", responseJson);
                 }
                 catch (IOException ioEx)
                 {
-                    _logger.LogWarning(ioEx, "⚠️ Client disconnected unexpectedly");
+                    _logger.LogWarning(ioEx, " Client disconnected");
                     break;
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "❌ Error processing request");
+                    _logger.LogError(ex, " Error processing request");
 
-                    // Gửi error response
                     var errorResponse = new SocketResponse
                     {
                         Status = SocketStatus.Error,
@@ -101,211 +111,233 @@ namespace MusicSystem.Infrastructure.Socket
                     await writer.WriteLineAsync(errorJson);
                 }
             }
-        }
 
-
-
-        private async Task<Guid> GetCurrentUserIdAsync()
-        {
-            try
-            {
-                // Lấy user có role Manager hoặc Admin (bất kỳ)
-                var users = await _userRepository.GetAllWithRolesAsync();
-
-                var user = users.FirstOrDefault(u =>
-                    u.UserRoles.Any(ur =>
-                        ur.Role.RoleName == "Manager" ||
-                        ur.Role.RoleName == "Admin"));
-
-                if (user != null)
-                {
-                    _logger.LogInformation($"Using userId: {user.UserId} ({user.Username})");
-                    return user.UserId;
-                }
-
-                throw new Exception("No valid Manager or Admin user found in database");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error getting current user ID");
-                throw;
-            }
+            _logger.LogInformation(" Client disconnected: {ClientEndpoint}", clientEndpoint);
         }
 
         private async Task<SocketResponse> ProcessRequestAsync(SocketRequest request)
         {
             try
             {
-                _logger.LogInformation($"🔄 Processing command: {request.Command}");
-
-                switch (request.Command)
+                return request.Command switch
                 {
-                    case SocketCommands.Login:
-                        return await HandleLoginAsync(request);
-
-                    case SocketCommands.ValidateToken:
-                        return HandleValidateToken(request);
-
-                    case SocketCommands.Logout:
-                        return HandleLogout(request);
+                    SocketCommands.Login => await HandleLoginAsync(request),
+                    SocketCommands.ValidateToken => HandleValidateToken(request),
+                    SocketCommands.Logout => HandleLogout(request),
 
                     // Admin
-                    case SocketCommands.GetAllUsers:
-                        return await HandleGetAllUsersAsync(request);
+                    SocketCommands.GetAllUsers => await HandleGetAllUsersAsync(request),
+                    SocketCommands.CreateUser => await HandleCreateUserAsync(request),
+                    SocketCommands.UpdateUser => await HandleUpdateUserAsync(request),
+                    SocketCommands.DisableUser => await HandleDisableUserAsync(request),
+                    SocketCommands.EnableUser => await HandleEnableUserAsync(request),
+                    SocketCommands.AssignRole => await HandleAssignRoleAsync(request),
+                    SocketCommands.ResetPassword => await HandleResetPasswordAsync(request),
 
-                    case SocketCommands.CreateUser:
-                        return await HandleCreateUserAsync(request);
+                    // Artist
+                    SocketCommands.GetAllArtists => await HandleGetAllArtistsAsync(request),
+                    SocketCommands.CreateArtist => await HandleCreateArtistAsync(request),
+                    SocketCommands.UpdateArtist => await HandleUpdateArtistAsync(request),
+                    SocketCommands.DeleteArtist => await HandleDeleteArtistAsync(request),
+                    SocketCommands.DisableArtist => await HandleDisableArtistAsync(request),
+                    SocketCommands.EnableArtist => await HandleEnableArtistAsync(request),
 
-                    case SocketCommands.UpdateUser:
-                        return await HandleUpdateUserAsync(request);
+                    // Song
+                    SocketCommands.GetAllSongs => await HandleGetAllSongsAsync(request),
+                    SocketCommands.GetPendingSongs => await HandleGetPendingSongsAsync(request),
+                    SocketCommands.UploadSongFile => await HandleUploadSongFileAsync(request),
+                    SocketCommands.CreateSong => await HandleCreateSongAsync(request),
+                    SocketCommands.UpdateSong => await HandleUpdateSongAsync(request),
+                    SocketCommands.DeleteSong => await HandleDeleteSongAsync(request),
+                    SocketCommands.ApproveSong => await HandleApproveSongAsync(request),
+                    SocketCommands.RejectSong => await HandleRejectSongAsync(request),
 
-                    case SocketCommands.DisableUser:
-                        return await HandleDisableUserAsync(request);
-
-                    case SocketCommands.EnableUser:
-                        return await HandleEnableUserAsync(request);
-
-                    case SocketCommands.AssignRole:
-                        return await HandleAssignRoleAsync(request);
-
-                    case SocketCommands.ResetPassword:
-                        return await HandleResetPasswordAsync(request);
-
-
-                    // ===== ARTIST MANAGEMENT =====
-                    case SocketCommands.GetAllArtists:
-                        return await HandleGetAllArtistsAsync(request);
-
-                    case SocketCommands.CreateArtist:
-                        return await HandleCreateArtistAsync(request);
-
-                    case SocketCommands.UpdateArtist:
-                        return await HandleUpdateArtistAsync(request);
-
-                    case SocketCommands.DeleteArtist:
-                        return await HandleDeleteArtistAsync(request);
-
-                    case SocketCommands.DisableArtist:
-                        return await HandleDisableArtistAsync(request);
-
-                    case SocketCommands.EnableArtist:
-                        return await HandleEnableArtistAsync(request);
-
-                    // ===== SONG MANAGEMENT =====
-
-                    case SocketCommands.GetAllSongs:
-                        return await HandleGetAllSongsAsync(request);
-
-                    case SocketCommands.GetPendingSongs:
-                        return await HandleGetPendingSongsAsync(request);
-
-                    case SocketCommands.UploadSongFile:
-                        return await HandleUploadSongFileAsync(request);
-
-                    case SocketCommands.CreateSong:
-                        return await HandleCreateSongAsync(request);
-
-                    case SocketCommands.UpdateSong:
-                        return await HandleUpdateSongAsync(request);
-
-                    case SocketCommands.DeleteSong:
-                        return await HandleDeleteSongAsync(request);
-
-                    case SocketCommands.ApproveSong:
-                        return await HandleApproveSongAsync(request);
-
-                    case SocketCommands.RejectSong:
-                        return await HandleRejectSongAsync(request);
-
-
-
-
-
-                    // Thêm các command khác sau...
-
-                    default:
-                        return new SocketResponse
-                        {
-                            RequestId = request.RequestId,
-                            Status = SocketStatus.InvalidRequest,
-                            Message = $"Unknown command: {request.Command}",
-                            Timestamp = DateTime.UtcNow
-                        };
-                }
+                    _ => new SocketResponse
+                    {
+                        RequestId = request.RequestId,
+                        Status = SocketStatus.InvalidRequest,
+                        Message = $"Unknown command: {request.Command}",
+                        Timestamp = DateTime.UtcNow
+                    }
+                };
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $" Error processing command: {request.Command}");
-                return new SocketResponse
-                {
-                    RequestId = request.RequestId,
-                    Status = SocketStatus.Error,
-                    Message = ex.Message,
-                    Timestamp = DateTime.UtcNow
-                };
+                _logger.LogError(ex, " Command error: {Command}", request.Command);
+                return ErrorResponse(request.RequestId, ex.Message);
             }
         }
+
+        // ==================== AUTH HANDLERS ====================
 
         private async Task<SocketResponse> HandleLoginAsync(SocketRequest request)
         {
             try
             {
-                // Parse login request từ JSON
                 var loginRequest = JsonSerializer.Deserialize<LoginRequestDto>(request.Data);
 
-                // Gọi AuthService
+                _logger.LogInformation(" Login attempt: {Username}", loginRequest.Username);
+
                 var loginResult = await _authService.LoginAsync(loginRequest);
 
                 if (!loginResult.Success)
                 {
-                    return new SocketResponse
-                    {
-                        RequestId = request.RequestId,
-                        Status = SocketStatus.Unauthorized,
-                        Message = loginResult.Message,
-                        Timestamp = DateTime.UtcNow
-                    };
+                    _logger.LogWarning(" Login failed: {Message}", loginResult.Message);
+                    return UnauthorizedResponse(request.RequestId, loginResult.Message);
                 }
 
-                // Kiểm tra role (chỉ Admin/Manager mới login được qua WPF)
-                if (!loginResult.User.Roles.Contains("Admin") &&
-                    !loginResult.User.Roles.Contains("Manager"))
+                if (!loginResult.User.Roles.Contains("Admin") && !loginResult.User.Roles.Contains("Manager"))
                 {
-                    return new SocketResponse
-                    {
-                        RequestId = request.RequestId,
-                        Status = SocketStatus.Unauthorized,
-                        Message = "Chỉ Admin và Manager mới có thể đăng nhập vào ứng dụng quản trị",
-                        Timestamp = DateTime.UtcNow
-                    };
+                    _logger.LogWarning(" Unauthorized role: {Roles}", string.Join(", ", loginResult.User.Roles));
+                    return UnauthorizedResponse(request.RequestId, "Chỉ Admin và Manager mới có thể đăng nhập vào ứng dụng quản trị");
                 }
 
-                // Success - trả về user data + token
-                var responseData = JsonSerializer.Serialize(loginResult);
+                _logger.LogInformation(" Login successful: {Username} ({Roles})",
+                    loginResult.User.Username, string.Join(", ", loginResult.User.Roles));
 
-                return new SocketResponse
-                {
-                    RequestId = request.RequestId,
-                    Status = SocketStatus.Success,
-                    Message = "Đăng nhập thành công",
-                    Data = responseData,
-                    Timestamp = DateTime.UtcNow
-                };
+                return SuccessResponse(request.RequestId, loginResult);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, " Login error");
-                return new SocketResponse
-                {
-                    RequestId = request.RequestId,
-                    Status = SocketStatus.Error,
-                    Message = $"Lỗi đăng nhập: {ex.Message}",
-                    Timestamp = DateTime.UtcNow
-                };
+                return ErrorResponse(request.RequestId, $"Lỗi đăng nhập: {ex.Message}");
             }
         }
 
-        // Implement handlers
+        // ==================== ARTIST HANDLERS ====================
+
+        private async Task<SocketResponse> HandleGetAllArtistsAsync(SocketRequest request)
+        {
+            var artists = await _artistService.GetAllArtistsAsync();
+            var artistList = artists.ToList();
+
+            _logger.LogInformation(" Found {Count} artists", artistList.Count);
+
+            return SuccessResponse(request.RequestId, artistList);
+        }
+
+        private async Task<SocketResponse> HandleCreateArtistAsync(SocketRequest request)
+        {
+            var createDto = JsonSerializer.Deserialize<CreateArtistDto>(request.Data);
+
+            _logger.LogInformation(" Creating artist: {ArtistName}", createDto.ArtistName);
+
+            var artist = await _artistService.CreateArtistAsync(createDto);
+
+            _logger.LogInformation(" Artist created: {ArtistName}", artist.ArtistName);
+
+            return SuccessResponse(request.RequestId, artist);
+        }
+
+        // ==================== SONG HANDLERS ====================
+
+        private async Task<SocketResponse> HandleGetPendingSongsAsync(SocketRequest request)
+        {
+            var songs = await _songService.GetPendingSongsAsync();
+            var songList = songs.ToList();
+
+            _logger.LogInformation(" Found {Count} pending songs", songList.Count);
+
+            return SuccessResponse(request.RequestId, songList);
+        }
+
+        private async Task<SocketResponse> HandleCreateSongAsync(SocketRequest request)
+        {
+            try
+            {
+                var createDto = JsonSerializer.Deserialize<CreateSongDto>(request.Data);
+                var userId = await GetCurrentUserIdAsync();
+
+                _logger.LogInformation(" Creating song: {Title}", createDto.Title);
+
+                var song = await _songService.CreateSongAsync(createDto, userId);
+
+                _logger.LogInformation(" Song created: {Title}", song.Title);
+
+                return SuccessResponse(request.RequestId, song);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, " Error creating song");
+                return ErrorResponse(request.RequestId, ex.Message);
+            }
+        }
+
+        private async Task<SocketResponse> HandleApproveSongAsync(SocketRequest request)
+        {
+            var songId = Guid.Parse(request.Data);
+            var adminId = await GetCurrentUserIdAsync();
+
+            _logger.LogInformation(" Approving song: {SongId}", songId);
+
+            var result = await _songService.ApproveSongAsync(songId, adminId);
+
+            _logger.LogInformation(" Song approved");
+
+            return SuccessResponse(request.RequestId, result);
+        }
+
+        // ==================== HELPER METHODS ====================
+
+        private async Task<Guid> GetCurrentUserIdAsync()
+        {
+            var users = await _userRepository.GetAllWithRolesAsync();
+            var user = users.FirstOrDefault(u =>
+                u.UserRoles.Any(ur => ur.Role.RoleName == "Manager" || ur.Role.RoleName == "Admin"));
+
+            if (user == null)
+                throw new Exception("No valid Manager or Admin user found");
+
+            return user.UserId;
+        }
+
+        private SocketResponse SuccessResponse(Guid requestId, object data)
+        {
+            return new SocketResponse
+            {
+                RequestId = requestId,
+                Status = SocketStatus.Success,
+                Message = "OK",
+                Data = JsonSerializer.Serialize(data),
+                Timestamp = DateTime.UtcNow
+            };
+        }
+
+        private SocketResponse ErrorResponse(Guid requestId, string message)
+        {
+            return new SocketResponse
+            {
+                RequestId = requestId,
+                Status = SocketStatus.Error,
+                Message = message,
+                Timestamp = DateTime.UtcNow
+            };
+        }
+
+        private SocketResponse UnauthorizedResponse(Guid requestId, string message)
+        {
+            return new SocketResponse
+            {
+                RequestId = requestId,
+                Status = SocketStatus.Unauthorized,
+                Message = message,
+                Timestamp = DateTime.UtcNow
+            };
+        }
+
+        private SocketResponse HandleValidateToken(SocketRequest request)
+        {
+            return SuccessResponse(request.RequestId, new { valid = true });
+        }
+
+        private SocketResponse HandleLogout(SocketRequest request)
+        {
+            _logger.LogInformation(" Logout");
+            return SuccessResponse(request.RequestId, new { success = true });
+        }
+
+        // ==================== IMPLEMENT MISSING HANDLERS ====================
+
         private async Task<SocketResponse> HandleGetAllUsersAsync(SocketRequest request)
         {
             var users = await _userService.GetAllUsersAsync();
@@ -324,7 +356,6 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
             var userId = Guid.Parse(data["userId"].ToString());
             var updateDto = JsonSerializer.Deserialize<UpdateUserDto>(data["data"].ToString());
-
             var user = await _userService.UpdateUserAsync(userId, updateDto);
             return SuccessResponse(request.RequestId, user);
         }
@@ -355,28 +386,8 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, string>>(request.Data);
             var userId = Guid.Parse(data["userId"]);
             var newPassword = data["newPassword"];
-
             var result = await _userService.ResetPasswordAsync(userId, newPassword);
             return SuccessResponse(request.RequestId, result);
-        }
-
-
-        // ==================== ARTIST HANDLERS ====================  quản lí nghệ sĩ
-        private async Task<SocketResponse> HandleGetAllArtistsAsync(SocketRequest request)
-        {
-            var artists = await _artistService.GetAllArtistsAsync();
-            return SuccessResponse(request.RequestId, artists);
-        }
-
-        private async Task<SocketResponse> HandleCreateArtistAsync(SocketRequest request)
-        {
-            var createDto = JsonSerializer.Deserialize<CreateArtistDto>(request.Data);
-
-            // TODO: Get userId from token
-            var userId = Guid.Empty;
-
-            var artist = await _artistService.CreateArtistAsync(createDto, userId);
-            return SuccessResponse(request.RequestId, artist);
         }
 
         private async Task<SocketResponse> HandleUpdateArtistAsync(SocketRequest request)
@@ -384,7 +395,6 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
             var artistId = Guid.Parse(data["artistId"].ToString());
             var updateDto = JsonSerializer.Deserialize<UpdateArtistDto>(data["data"].ToString());
-
             var artist = await _artistService.UpdateArtistAsync(artistId, updateDto);
             return SuccessResponse(request.RequestId, artist);
         }
@@ -410,17 +420,9 @@ namespace MusicSystem.Infrastructure.Socket
             return SuccessResponse(request.RequestId, result);
         }
 
-
-        // ==================== SONG HANDLERS ==================== quản lí bài hát
         private async Task<SocketResponse> HandleGetAllSongsAsync(SocketRequest request)
         {
             var songs = await _songService.GetAllSongsAsync("Active", 1, 1000);
-            return SuccessResponse(request.RequestId, songs);
-        }
-
-        private async Task<SocketResponse> HandleGetPendingSongsAsync(SocketRequest request)
-        {
-            var songs = await _songService.GetPendingSongsAsync();
             return SuccessResponse(request.RequestId, songs);
         }
 
@@ -431,33 +433,11 @@ namespace MusicSystem.Infrastructure.Socket
             return SuccessResponse(request.RequestId, result);
         }
 
-        private async Task<SocketResponse> HandleCreateSongAsync(SocketRequest request)
-        {
-            try
-            {
-                var createDto = JsonSerializer.Deserialize<CreateSongDto>(request.Data);
-
-                // Lấy userId từ helper method
-                var userId = await GetCurrentUserIdAsync();
-
-                _logger.LogInformation($" Creating song with userId: {userId}");
-
-                var song = await _songService.CreateSongAsync(createDto, userId);
-                return SuccessResponse(request.RequestId, song);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error creating song");
-                return ErrorResponse(request.RequestId, ex.Message);
-            }
-        }
-
         private async Task<SocketResponse> HandleUpdateSongAsync(SocketRequest request)
         {
             var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
             var songId = Guid.Parse(data["songId"].ToString());
             var updateDto = JsonSerializer.Deserialize<UpdateSongDto>(data["data"].ToString());
-
             var song = await _songService.UpdateSongAsync(songId, updateDto);
             return SuccessResponse(request.RequestId, song);
         }
@@ -469,101 +449,14 @@ namespace MusicSystem.Infrastructure.Socket
             return SuccessResponse(request.RequestId, result);
         }
 
-        private async Task<SocketResponse> HandleApproveSongAsync(SocketRequest request)
-        {
-            var songId = Guid.Parse(request.Data);
-
-            var adminId = await GetCurrentUserIdAsync();
-
-            var result = await _songService.ApproveSongAsync(songId, adminId);
-            return SuccessResponse(request.RequestId, result);
-        }
-
         private async Task<SocketResponse> HandleRejectSongAsync(SocketRequest request)
         {
             var data = JsonSerializer.Deserialize<Dictionary<string, string>>(request.Data);
             var songId = Guid.Parse(data["songId"]);
             var reason = data.ContainsKey("reason") ? data["reason"] : "Không đạt yêu cầu";
-
-            //Get adminId from token
             var adminId = await GetCurrentUserIdAsync();
-
             var result = await _songService.RejectSongAsync(songId, adminId, reason);
             return SuccessResponse(request.RequestId, result);
-        }
-
-
-
-        private SocketResponse HandleValidateToken(SocketRequest request)
-        {
-            // TODO: Implement JWT validation
-            // Tạm thời return success
-            return new SocketResponse
-            {
-                RequestId = request.RequestId,
-                Status = SocketStatus.Success,
-                Message = "Token valid",
-                Timestamp = DateTime.UtcNow
-            };
-        }
-
-        private SocketResponse HandleLogout(SocketRequest request)
-        {
-            return new SocketResponse
-            {
-                RequestId = request.RequestId,
-                Status = SocketStatus.Success,
-                Message = "Đăng xuất thành công",
-                Timestamp = DateTime.UtcNow
-            };
-        }
-
-
-
-        // ==================== HELPER METHODS ====================
-        /// <summary>
-        /// Tạo response thành công
-        /// </summary>
-        private SocketResponse SuccessResponse(Guid requestId, object data)
-        {
-            return new SocketResponse
-            {
-                RequestId = requestId,
-                Status = SocketStatus.Success,
-                Message = "OK",
-                Data = JsonSerializer.Serialize(data),
-                Timestamp = DateTime.UtcNow
-            };
-        }
-
-        /// <summary>
-        /// Tạo response lỗi
-        /// </summary>
-        private SocketResponse ErrorResponse(Guid requestId, string message)
-        {
-            return new SocketResponse
-            {
-                RequestId = requestId,
-                Status = SocketStatus.Error,
-                Message = message,
-                Data = null,
-                Timestamp = DateTime.UtcNow
-            };
-        }
-
-        /// <summary>
-        /// Tạo response unauthorized
-        /// </summary>
-        private SocketResponse UnauthorizedResponse(Guid requestId, string message = "Unauthorized")
-        {
-            return new SocketResponse
-            {
-                RequestId = requestId,
-                Status = SocketStatus.Unauthorized,
-                Message = message,
-                Data = null,
-                Timestamp = DateTime.UtcNow
-            };
         }
     }
 }

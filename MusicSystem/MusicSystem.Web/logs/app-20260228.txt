@@ -1,0 +1,170 @@
+[2026-02-28 08:02:47 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:02:49 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:02:51 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:02:51 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:02:56 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:02:56 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:03:07 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:03:12 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:03:14 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:03:21 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-02-28 08:04:11 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:14:41 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:20:01 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:20:18 INF] 🔗 Client connected: 127.0.0.1:52528
+[2026-02-28 08:20:18 INF] 📨 Received: {"RequestId":"032d2068-c3d0-480e-b910-2b237b016d1e","Command":"Login","Token":"","Data":"{\u0022Username\u0022:\u0022manager\u0022,\u0022Password\u0022:\u0022Manager@123\u0022,\u0022RememberMe\u0022:false}","Timestamp":"2026-02-28T01:20:15.9118459Z"}
+[2026-02-28 08:20:18 INF] 🔄 Processing command: Login
+[2026-02-28 08:20:18 INF] 📤 Sent: {"RequestId":"032d2068-c3d0-480e-b910-2b237b016d1e","Status":"Success","Message":"\u0110\u0103ng nh\u1EADp th\u00E0nh c\u00F4ng","Data":"{\u0022Success\u0022:true,\u0022Message\u0022:\u0022\\u0110\\u0103ng nh\\u1EADp th\\u00E0nh c\\u00F4ng\u0022,\u0022User\u0022:{\u0022UserId\u0022:\u00228b4cc76b-2db3-4b46-af97-35eb5c4c7027\u0022,\u0022Username\u0022:\u0022manager\u0022,\u0022Email\u0022:\u0022manager@musicsystem.com\u0022,\u0022FullName\u0022:\u0022Ng\\u01B0\\u1EDDi duy\\u1EC7t nh\\u1EA1c\u0022,\u0022Avatar\u0022:\u0022/storage/avatars/manager.png\u0022,\u0022Roles\u0022:[\u0022Manager\u0022]},\u0022Token\u0022:\u0022OGI0Y2M3NmItMmRiMy00YjQ2LWFmOTctMzVlYjVjNGM3MDI3OjYzOTA3ODM4NDE4Njk2MTAzNg==\u0022}","Timestamp":"2026-02-28T01:20:18.7030058Z"}
+[2026-02-28 08:20:18 INF] 📨 Received: {"RequestId":"085797e0-1c7a-44a3-b07a-7cc2a7e30996","Command":"GetAllSongs","Token":"OGI0Y2M3NmItMmRiMy00YjQ2LWFmOTctMzVlYjVjNGM3MDI3OjYzOTA3ODM4NDE4Njk2MTAzNg==","Data":"{}","Timestamp":"2026-02-28T01:20:18.8350126Z"}
+[2026-02-28 08:20:18 INF] 🔄 Processing command: GetAllSongs
+[2026-02-28 08:20:18 INF] 📤 Sent: {"RequestId":"085797e0-1c7a-44a3-b07a-7cc2a7e30996","Status":"Success","Message":"OK","Data":"[{\u0022SongId\u0022:\u0022a9ff82ad-9ec5-4bb6-b02a-d77d134a1bda\u0022,\u0022Title\u0022:\u0022Hai Tri\\u1EC7u N\\u0103m\u0022,\u0022Duration\u0022:215,\u0022DurationFormatted\u0022:\u002203:35\u0022,\u0022FileUrl\u0022:\u0022/storage/music/hai-trieu-nam.mp3\u0022,\u0022FileSize\u0022:null,\u0022FileSizeFormatted\u0022:\u0022N/A\u0022,\u0022Format\u0022:\u0022MP3\u0022,\u0022Genre\u0022:\u0022Pop\u0022,\u0022ReleaseYear\u0022:2019,\u0022CoverImageUrl\u0022:\u0022/storage/covers/hai-trieu-nam.jpg\u0022,\u0022Lyrics\u0022:\u0022\u0022,\u0022TotalPlays\u0022:13,\u0022TotalLikes\u0022:0,\u0022Status\u0022:\u0022Active\u0022,\u0022Artists\u0022:\u0022\\u0110en V\\u00E2u\u0022,\u0022ArtistIds\u0022:null,\u0022CreatedAt\u0022:\u00222026-02-08T01:31:53.5\u0022,\u0022CreatedBy\u0022:null,\u0022ApprovedBy\u0022:null,\u0022ApprovedAt\u0022:\u00222026-02-08T01:31:53.5\u0022},{\u0022SongId\u0022:\u00220233d67e-d5f8-4c1e-bfc2-d9ca27401a6d\u0022,\u0022Title\u0022:\u0022Ch\\u00FAng Ta C\\u1EE7a Hi\\u1EC7n T\\u1EA1i\u0022,\u0022Duration\u0022:302,\u0022DurationFormatted\u0022:\u002205:02\u0022,\u0022FileUrl\u0022:\u0022/storage/music/chung-ta-cua-hien-tai.mp3\u0022,\u0022FileSize\u0022:null,\u0022FileSizeFormatted\u0022:\u0022N/A\u0022,\u0022Format\u0022:\u0022MP3\u0022,\u0022Genre\u0022:\u0022V-Pop\u0022,\u0022ReleaseYear\u0022:2020,\u0022CoverImageUrl\u0022:\u0022/storage/covers/chung-ta-cua-hien-tai.jpg\u0022,\u0022Lyrics\u0022:null,\u0022TotalPlays\u0022:7,\u0022TotalLikes\u0022:1,\u0022Status\u0022:\u0022Active\u0022,\u0022Artists\u0022:\u0022S\\u01A1n T\\u00F9ng M-TP\u0022,\u0022ArtistIds\u0022:null,\u0022CreatedAt\u0022:\u00222026-02-08T01:31:53.5\u0022,\u0022CreatedBy\u0022:null,\u0022ApprovedBy\u0022:null,\u0022ApprovedAt\u0022:\u00222026-02-08T01:31:53.5\u0022},{\u0022SongId\u0022:\u0022accfea8f-e477-4cc0-a19b-ece264e9aecd\u0022,\u0022Title\u0022:\u0022V\\u1EA1n S\\u1EF1 Nh\\u01B0 \\u00DD\u0022,\u0022Duration\u0022:238,\u0022DurationFormatted\u0022:\u002203:58\u0022,\u0022FileUrl\u0022:\u0022/uploads/songs/7586f0ac-51a0-4534-ab06-3b38b738f9ad.mp3\u0022,\u0022FileSize\u0022:4174893,\u0022FileSizeFormatted\u0022:\u00223.98 MB\u0022,\u0022Format\u0022:\u0022MP3\u0022,\u0022Genre\u0022:\u0022Pop\u0022,\u0022ReleaseYear\u0022:null,\u0022CoverImageUrl\u0022:null,\u0022Lyrics\u0022:\u0022\u0022,\u0022TotalPlays\u0022:30,\u0022TotalLikes\u0022:1,\u0022Status\u0022:\u0022Active\u0022,\u0022Artists\u0022:\u0022\u0022,\u0022ArtistIds\u0022:null,\u0022CreatedAt\u0022:\u00222026-02-22T16:01:41.3168127\u0022,\u0022CreatedBy\u0022:null,\u0022ApprovedBy\u0022:null,\u0022ApprovedAt\u0022:\u00222026-02-24T13:10:31.3481512\u0022},{\u0022SongId\u0022:\u0022c073a551-b72d-4904-9ae0-f73975583c80\u0022,\u0022Title\u0022:\u0022V\\u1EA1n S\\u1EF1 Nh\\u01B0 \\u00DD\u0022,\u0022Duration\u0022:238,\u0022DurationFormatted\u0022:\u002203:58\u0022,\u0022FileUrl\u0022:\u0022/uploads/songs/4e65c092-4c7c-4d20-8d46-9b99a079e152.mp3\u0022,\u0022FileSize\u0022:4174893,\u0022FileSizeFormatted\u0022:\u00223.98 MB\u0022,\u0022Format\u0022:\u0022MP3\u0022,\u0022Genre\u0022:\u0022Classical\u0022,\u0022ReleaseYear\u0022:2004,\u0022CoverImageUrl\u0022:null,\u0022Lyrics\u0022:\u0022\u0022,\u0022TotalPlays\u0022:13,\u0022TotalLikes\u0022:0,\u0022Status\u0022:\u0022Active\u0022,\u0022Artists\u0022:\u0022\u0022,\u0022ArtistIds\u0022:null,\u0022CreatedAt\u0022:\u00222026-02-27T16:35:27.1077171\u0022,\u0022CreatedBy\u0022:null,\u0022ApprovedBy\u0022:null,\u0022ApprovedAt\u0022:\u00222026-02-27T16:36:03.6668472\u0022},{\u0022SongId\u0022:\u00220921ecad-674b-439b-ac42-c0c5e71a53cc\u0022,\u0022Title\u0022:\u0022V\\u1EA1n S\\u1EF1 Nh\\u01B0 \\u00DD\u0022,\u0022Duration\u0022:238,\u0022DurationFormatted\u0022:\u002203:58\u0022,\u0022FileUrl\u0022:\u0022/uploads/songs/eef34b5c-440d-4eae-9c1c-64dcd1119750.mp3\u0022,\u0022FileSize\u0022:4174893,\u0022FileSizeFormatted\u0022:\u00223.98 MB\u0022,\u0022Format\u0022:\u0022MP3\u0022,\u0022Genre\u0022:\u0022Pop\u0022,\u0022ReleaseYear\u0022:2025,\u0022CoverImageUrl\u0022:null,\u0022Lyrics\u0022:\u0022\u0022,\u0022TotalPlays\u0022:23,\u0022TotalLikes\u0022:0,\u0022Status\u0022:\u0022Active\u0022,\u0022Artists\u0022:\u0022aaaa\u0022,\u0022ArtistIds\u0022:null,\u0022CreatedAt\u0022:\u00222026-02-27T16:50:34.3713485\u0022,\u0022CreatedBy\u0022:null,\u0022ApprovedBy\u0022:null,\u0022ApprovedAt\u0022:\u00222026-02-27T16:52:06.2256131\u0022}]","Timestamp":"2026-02-28T01:20:18.8775613Z"}
+[2026-02-28 08:20:18 INF] 📨 Received: {"RequestId":"ab125646-bef6-46b4-afb6-514074ec91a9","Command":"GetAllArtists","Token":"OGI0Y2M3NmItMmRiMy00YjQ2LWFmOTctMzVlYjVjNGM3MDI3OjYzOTA3ODM4NDE4Njk2MTAzNg==","Data":"{}","Timestamp":"2026-02-28T01:20:18.9090971Z"}
+[2026-02-28 08:20:18 INF] 🔄 Processing command: GetAllArtists
+[2026-02-28 08:20:18 INF] 📤 Sent: {"RequestId":"ab125646-bef6-46b4-afb6-514074ec91a9","Status":"Success","Message":"OK","Data":"[{\u0022ArtistId\u0022:\u0022809b2085-32fc-423d-ba88-3b7d14a69707\u0022,\u0022ArtistName\u0022:\u0022S\\u01A1n T\\u00F9ng M-TP\u0022,\u0022AvatarUrl\u0022:\u0022/storage/artists/sontung.jpg\u0022,\u0022Biography\u0022:\u0022Ngh\\u1EC7 s\\u0129 V-Pop h\\u00E0ng \\u0111\\u1EA7u Vi\\u1EC7t Nam\u0022,\u0022Status\u0022:\u0022Active\u0022,\u0022CreatedAt\u0022:\u00222026-02-08T01:31:53.5\u0022,\u0022UpdatedAt\u0022:\u00222026-02-21T18:29:12.2148152\u0022,\u0022CreatedBy\u0022:null},{\u0022ArtistId\u0022:\u0022dab6a8e3-7172-43f8-b912-18b9836ad56c\u0022,\u0022ArtistName\u0022:\u0022\\u0110en V\\u00E2u\u0022,\u0022AvatarUrl\u0022:\u0022/storage/artists/denvau.jpg\u0022,\u0022Biography\u0022:\u0022Rapper mang phong c\\u00E1ch \\u0111\\u1EDDi th\\u01B0\\u1EDDng, t\\u1EF1 s\\u1EF1\u0022,\u0022Status\u0022:\u0022Active\u0022,\u0022CreatedAt\u0022:\u00222026-02-08T01:31:53.5\u0022,\u0022UpdatedAt\u0022:\u00222026-02-21T22:06:49.4066667\u0022,\u0022CreatedBy\u0022:null},{\u0022ArtistId\u0022:\u0022eb3ccb8d-a1b2-4ac8-8d3b-27f18d6c24c9\u0022,\u0022ArtistName\u0022:\u0022aaaa\u0022,\u0022AvatarUrl\u0022:\u0022\u0022,\u0022Biography\u0022:\u0022aaaaa\u0022,\u0022Status\u0022:\u0022Active\u0022,\u0022CreatedAt\u0022:\u00222026-02-27T15:33:51.5061346\u0022,\u0022UpdatedAt\u0022:\u00220001-01-01T00:00:00\u0022,\u0022CreatedBy\u0022:null}]","Timestamp":"2026-02-28T01:20:18.9252818Z"}
+[2026-02-28 08:20:18 INF] 📨 Received: {"RequestId":"5387ba5f-fb82-41cb-970c-22be8ef3dd9e","Command":"GetPendingSongs","Token":"OGI0Y2M3NmItMmRiMy00YjQ2LWFmOTctMzVlYjVjNGM3MDI3OjYzOTA3ODM4NDE4Njk2MTAzNg==","Data":"{}","Timestamp":"2026-02-28T01:20:18.9978826Z"}
+[2026-02-28 08:20:18 INF] 🔄 Processing command: GetPendingSongs
+[2026-02-28 08:20:19 INF] ✅ GetPendingSongs: Found 1 songs
+[2026-02-28 08:20:19 INF] 📤 Sent: {"RequestId":"5387ba5f-fb82-41cb-970c-22be8ef3dd9e","Status":"Success","Message":"OK","Data":"[{\u0022SongId\u0022:\u00224e84313f-4d52-42e9-8f9b-5600648b6898\u0022,\u0022Title\u0022:\u0022V\\u1EA1n S\\u1EF1 Nh\\u01B0 \\u00DD\u0022,\u0022Duration\u0022:238,\u0022DurationFormatted\u0022:\u002203:58\u0022,\u0022FileUrl\u0022:\u0022/uploads/songs/aceb2122-1747-4f1b-8382-f28cb2760366.mp3\u0022,\u0022FileSize\u0022:4174893,\u0022FileSizeFormatted\u0022:\u00223.98 MB\u0022,\u0022Format\u0022:\u0022MP3\u0022,\u0022Genre\u0022:\u0022Jazz\u0022,\u0022ReleaseYear\u0022:2026,\u0022CoverImageUrl\u0022:null,\u0022Lyrics\u0022:\u0022\u0022,\u0022TotalPlays\u0022:0,\u0022TotalLikes\u0022:0,\u0022Status\u0022:\u0022Pending\u0022,\u0022Artists\u0022:\u0022\u0022,\u0022ArtistIds\u0022:null,\u0022CreatedAt\u0022:\u00222026-02-27T15:34:21.649473\u0022,\u0022CreatedBy\u0022:null,\u0022ApprovedBy\u0022:null,\u0022ApprovedAt\u0022:null}]","Timestamp":"2026-02-28T01:20:19.0241341Z"}
+[2026-02-28 08:21:05 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:29:44 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:30:11 INF] 🔗 Client connected: 127.0.0.1:61257
+[2026-02-28 08:30:11 INF] 🔌 Client connected: 127.0.0.1:61257
+[2026-02-28 08:30:11 INF] 📨 Command: Login
+[2026-02-28 08:30:11 INF] 🔐 Login attempt: manager
+[2026-02-28 08:30:12 INF] ✅ Login successful: manager (Manager)
+[2026-02-28 08:30:12 INF] 📤 Status: Success
+[2026-02-28 08:30:12 INF] 📨 Command: GetAllSongs
+[2026-02-28 08:30:12 INF] 📤 Status: Success
+[2026-02-28 08:30:12 INF] 📨 Command: GetAllArtists
+[2026-02-28 08:30:12 INF] ✅ Found 3 artists
+[2026-02-28 08:30:12 INF] 📤 Status: Success
+[2026-02-28 08:30:12 INF] 📨 Command: GetPendingSongs
+[2026-02-28 08:30:12 INF] ✅ Found 1 pending songs
+[2026-02-28 08:30:12 INF] 📤 Status: Success
+[2026-02-28 08:33:58 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:34:24 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:34:34 INF] 🔗 Client connected: 127.0.0.1:58304
+[2026-02-28 08:34:34 INF]  Client connected: 127.0.0.1:58304
+[2026-02-28 08:34:34 INF]  Command: Login
+[2026-02-28 08:34:34 INF]  Login attempt: manager
+[2026-02-28 08:34:35 INF]  Login successful: manager (Manager)
+[2026-02-28 08:34:35 INF]  Status: Success
+[2026-02-28 08:34:35 INF]  Command: GetAllSongs
+[2026-02-28 08:34:35 INF]  Status: Success
+[2026-02-28 08:34:35 INF]  Command: GetAllArtists
+[2026-02-28 08:34:35 INF]  Found 3 artists
+[2026-02-28 08:34:35 INF]  Status: Success
+[2026-02-28 08:34:35 INF]  Command: GetPendingSongs
+[2026-02-28 08:34:35 INF]  Found 1 pending songs
+[2026-02-28 08:34:35 INF]  Status: Success
+[2026-02-28 08:46:42 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:49:36 INF] ✅ Socket Server started on port 1500
+[2026-02-28 08:53:16 INF] ✅ Socket Server started on port 1500
+[2026-02-28 09:00:57 INF] ✅ Socket Server started on port 1500
+[2026-02-28 09:03:12 INF] ✅ Socket Server started on port 1500
+[2026-02-28 09:09:22 INF] ✅ Socket Server started on port 1500
+[2026-02-28 09:09:53 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-02-28 09:11:06 INF] ✅ Socket Server started on port 1500
+[2026-02-28 09:11:17 INF] 🔗 Client connected: 127.0.0.1:49940
+[2026-02-28 09:11:17 INF]  Client connected: 127.0.0.1:49940
+[2026-02-28 09:11:17 INF]  Command: Login
+[2026-02-28 09:11:17 INF]  Login attempt: manager
+[2026-02-28 09:11:18 INF]  Login successful: manager (Manager)
+[2026-02-28 09:11:18 INF]  Status: Success
+[2026-02-28 09:11:18 INF]  Command: GetAllSongs
+[2026-02-28 09:11:18 INF]  Status: Success
+[2026-02-28 09:11:18 INF]  Command: GetAllArtists
+[2026-02-28 09:11:18 INF]  Found 3 artists
+[2026-02-28 09:11:18 INF]  Status: Success
+[2026-02-28 09:11:18 INF]  Command: GetPendingSongs
+[2026-02-28 09:11:18 INF]  Found 1 pending songs
+[2026-02-28 09:11:18 INF]  Status: Success
+[2026-02-28 09:11:52 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-02-28 09:22:48 INF] ✅ Socket Server started on port 1500
+[2026-02-28 09:22:51 INF] 🔗 Client connected: 127.0.0.1:51971
+[2026-02-28 09:22:51 INF]  Client connected: 127.0.0.1:51971
+[2026-02-28 09:22:51 INF]  Command: Login
+[2026-02-28 09:22:51 INF]  Login attempt: manager
+[2026-02-28 09:22:53 INF]  Login successful: manager (Manager)
+[2026-02-28 09:22:53 INF]  Status: Success
+[2026-02-28 09:22:53 INF]  Command: GetAllSongs
+[2026-02-28 09:22:53 INF]  Status: Success
+[2026-02-28 09:22:53 INF]  Command: GetAllArtists
+[2026-02-28 09:22:53 INF]  Found 3 artists
+[2026-02-28 09:22:53 INF]  Status: Success
+[2026-02-28 09:22:53 INF]  Command: GetPendingSongs
+[2026-02-28 09:22:53 INF]  Found 1 pending songs
+[2026-02-28 09:22:53 INF]  Status: Success
+[2026-02-28 09:23:04 INF]  Command: GetAllSongs
+[2026-02-28 09:23:04 INF]  Status: Success
+[2026-02-28 09:23:05 INF]  Command: GetAllArtists
+[2026-02-28 09:23:05 INF]  Found 3 artists
+[2026-02-28 09:23:05 INF]  Status: Success
+[2026-02-28 09:23:20 INF]  Command: UploadSongFile
+[2026-02-28 09:23:20 INF]  Status: Success
+[2026-02-28 09:23:20 INF]  Command: CreateSong
+[2026-02-28 09:23:20 INF]  Creating song: Vạn Sự Như Ý
+[2026-02-28 09:23:20 ERR]  Error creating song
+System.Exception: Bài hát này đã tồn tại trong hệ thống (trùng Tên và Nghệ sĩ)!
+   at MusicSystem.Application.Services.Songs.SongService.CreateSongAsync(CreateSongDto dto, Guid createdBy) in E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Application\Services\Songs\SongService.cs:line 75
+   at MusicSystem.Infrastructure.Socket.SocketHandler.HandleCreateSongAsync(SocketRequest request) in E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Infrastructure\Socket\SocketHandler.cs:line 253
+[2026-02-28 09:23:20 INF]  Status: Error
+[2026-02-28 09:23:31 INF]  Command: GetAllSongs
+[2026-02-28 09:23:31 INF]  Status: Success
+[2026-02-28 09:23:33 WRN]  Empty request received
+[2026-02-28 09:23:33 INF]  Client disconnected: 127.0.0.1:51971
+[2026-02-28 09:23:33 INF] 🔌 Client disconnected

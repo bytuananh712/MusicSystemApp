@@ -26,6 +26,9 @@
     <Compile Update="Views\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\AdminDashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\ArtistManagementPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
