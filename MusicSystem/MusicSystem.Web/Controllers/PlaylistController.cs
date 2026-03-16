@@ -45,7 +45,7 @@ namespace MusicSystem.Web.Controllers
             return View(playlist);
         }
 
-        // ✅ Sửa parameter: playlistName → title
+        
         [HttpPost("Create")]
         public async Task<IActionResult> Create(string title, bool isPublic = true)
         {
@@ -60,7 +60,7 @@ namespace MusicSystem.Web.Controllers
                 var playlist = new Playlist
                 {
                     PlaylistId = Guid.NewGuid(),
-                    Title = title,          // ✅ Dùng Title
+                    Title = title,          
                     IsPublic = isPublic,
                     UserId = userId,
                     CreatedAt = DateTime.UtcNow

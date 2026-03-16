@@ -102,10 +102,49 @@ namespace MusicSystem.Application.Services.Auth
 
         private string GenerateSimpleToken(Guid userId)
         {
-            // Token đơn giản: Base64(UserId + Timestamp)
+            // Token : Base64(UserId + Timestamp)
             var tokenData = $"{userId}:{DateTime.UtcNow.Ticks}";
             var bytes = System.Text.Encoding.UTF8.GetBytes(tokenData);
             return Convert.ToBase64String(bytes);
+        }
+
+        
+        /// Giải mã Simple Token và trả về UserId nếu hợp lệ.
+        /// Token format: Base64("UserId:Ticks")
+        /// Token hết hạn sau 24 giờ.
+       
+        public Guid? ValidateSimpleToken(string token)
+        {
+            if (string.IsNullOrWhiteSpace(token))
+                return null;
+
+            try
+            {
+                var bytes = Convert.FromBase64String(token);
+                var decoded = System.Text.Encoding.UTF8.GetString(bytes);
+
+                // Format: "UserId:Ticks"
+                var parts = decoded.Split(':');
+                if (parts.Length != 2)
+                    return null;
+
+                if (!Guid.TryParse(parts[0], out var userId))
+                    return null;
+
+                if (!long.TryParse(parts[1], out var ticks))
+                    return null;
+
+                // Kiểm tra hạn token (24 giờ)
+                var tokenTime = new DateTime(ticks, DateTimeKind.Utc);
+                if ((DateTime.UtcNow - tokenTime).TotalHours > 24)
+                    return null; // Token hết hạn
+
+                return userId;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

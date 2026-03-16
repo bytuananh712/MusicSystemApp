@@ -54,13 +54,15 @@ namespace MusicSystem.Infrastructure.Repositories
         }
 
 
-        
+
         public async Task<IEnumerable<User>> GetAllWithRolesAsync()
         {
             return await _context.Users
                 .Include(u => u.UserRoles)
                     .ThenInclude(ur => ur.Role)
-                .OrderByDescending(u => u.Username)
+                .OrderBy(u => u.CreatedAt)      //  Cũ → Mới
+                    .ThenBy(u => u.FullName)     //  Cùng ngày → sắp A-Z
+                .AsSplitQuery()
                 .ToListAsync();
         }
 

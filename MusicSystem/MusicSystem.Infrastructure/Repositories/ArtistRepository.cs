@@ -22,7 +22,7 @@ namespace MusicSystem.Infrastructure.Repositories
         public async Task<IEnumerable<Artist>> GetAllAsync()
         {
             return await _context.Artists
-                .OrderByDescending(a => a.ArtistName)
+                .OrderBy(a => a.CreatedAt)
                 .ToListAsync();
         }
 

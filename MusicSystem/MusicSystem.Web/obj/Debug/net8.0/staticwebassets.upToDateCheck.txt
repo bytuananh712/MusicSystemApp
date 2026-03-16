@@ -64,9 +64,11 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\uploads\songs\3502c04e-394d-484c-9cd6-4da53f351a86.mp3
 wwwroot\uploads\songs\4177685c-8333-4129-af2a-5c889988ea0f.mp3
+wwwroot\uploads\songs\42c59983-9c7f-4e02-80d9-50dd0c019e7e.mp3
 wwwroot\uploads\songs\4e65c092-4c7c-4d20-8d46-9b99a079e152.mp3
 wwwroot\uploads\songs\60625720-6cc4-4188-94a1-816948cb512f.mp3
 wwwroot\uploads\songs\7586f0ac-51a0-4534-ab06-3b38b738f9ad.mp3
+wwwroot\uploads\songs\a5d0dbcf-27f4-4d70-8ed1-2521312efe46.mp3
 wwwroot\uploads\songs\aceb2122-1747-4f1b-8382-f28cb2760366.mp3
 wwwroot\uploads\songs\c443e2e8-971e-473e-9fb6-9a973222eec5.mp3
 wwwroot\uploads\songs\c9a07724-0855-4282-bb35-30ca93f8ef31.mp3

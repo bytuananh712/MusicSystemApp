@@ -13,6 +13,7 @@ using MusicSystem.Shared.DTOs.Users;
 using MusicSystem.Shared.SocketContracts;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -32,6 +33,10 @@ namespace MusicSystem.Infrastructure.Socket
         private readonly ISongService _songService;
         private readonly IFileUploadService _fileUploadService;
         private readonly IUserRepository _userRepository;
+
+        // Lưu giữ UserId của phiên đăng nhập hiện tại (per-connection)
+        private Guid? _authenticatedUserId;
+        private List<string> _authenticatedRoles = new List<string>();
 
         public SocketHandler(
             ILogger<SocketHandler> logger,
@@ -72,12 +77,10 @@ namespace MusicSystem.Infrastructure.Socket
                         break;
                     }
 
-                    //  CHỈ log JSON ở Debug level
                     _logger.LogDebug(" Received: {RequestJson}", requestJson);
 
                     var request = JsonSerializer.Deserialize<SocketRequest>(requestJson);
 
-                    //  Log summary - ngắn gọn
                     _logger.LogInformation(" Command: {Command}", request.Command);
 
                     var response = await ProcessRequestAsync(request);
@@ -85,10 +88,7 @@ namespace MusicSystem.Infrastructure.Socket
                     var responseJson = JsonSerializer.Serialize(response);
                     await writer.WriteLineAsync(responseJson);
 
-                    //  Log summary - ngắn gọn
                     _logger.LogInformation(" Status: {Status}", response.Status);
-
-                    //  CHỈ log JSON ở Debug level
                     _logger.LogDebug(" Sent: {ResponseJson}", responseJson);
                 }
                 catch (IOException ioEx)
@@ -115,26 +115,55 @@ namespace MusicSystem.Infrastructure.Socket
             _logger.LogInformation(" Client disconnected: {ClientEndpoint}", clientEndpoint);
         }
 
+        // ==================== PROCESS REQUEST (CÓ XÁC THỰC) ====================
+
         private async Task<SocketResponse> ProcessRequestAsync(SocketRequest request)
         {
             try
             {
+                //  Các command KHÔNG cần xác thực
+                if (request.Command == SocketCommands.Login)
+                {
+                    return await HandleLoginAsync(request);
+                }
+
+                //  TẤT CẢ các command khác ĐỀU cần Token hợp lệ
+                var userId = _authService.ValidateSimpleToken(request.Token);
+                if (userId == null)
+                {
+                    _logger.LogWarning(" Unauthorized request: Command={Command}, Token is invalid or missing", request.Command);
+                    return UnauthorizedResponse(request.RequestId, "Token không hợp lệ hoặc đã hết hạn. Vui lòng đăng nhập lại.");
+                }
+
+                //  Lưu UserId vào phiên hiện tại
+                _authenticatedUserId = userId.Value;
+
+                //  Lấy roles của user từ DB để kiểm tra quyền
+                await LoadUserRolesAsync(userId.Value);
+
+                //  Kiểm tra quyền: Chỉ Admin và Manager mới được dùng Portal
+                if (!_authenticatedRoles.Contains("Admin") && !_authenticatedRoles.Contains("Manager"))
+                {
+                    _logger.LogWarning(" Forbidden: User {UserId} with roles [{Roles}] tried to access admin command",
+                        userId.Value, string.Join(", ", _authenticatedRoles));
+                    return UnauthorizedResponse(request.RequestId, "Bạn không có quyền truy cập chức năng này.");
+                }
+
                 return request.Command switch
                 {
-                    SocketCommands.Login => await HandleLoginAsync(request),
                     SocketCommands.ValidateToken => HandleValidateToken(request),
                     SocketCommands.Logout => HandleLogout(request),
 
-                    // Admin
-                    SocketCommands.GetAllUsers => await HandleGetAllUsersAsync(request),
-                    SocketCommands.CreateUser => await HandleCreateUserAsync(request),
-                    SocketCommands.UpdateUser => await HandleUpdateUserAsync(request),
-                    SocketCommands.DisableUser => await HandleDisableUserAsync(request),
-                    SocketCommands.EnableUser => await HandleEnableUserAsync(request),
-                    SocketCommands.AssignRole => await HandleAssignRoleAsync(request),
-                    SocketCommands.ResetPassword => await HandleResetPasswordAsync(request),
+                    // Admin - Quản lý User (chỉ Admin)
+                    SocketCommands.GetAllUsers => await RequireRole("Admin", request, () => HandleGetAllUsersAsync(request)),
+                    SocketCommands.CreateUser => await RequireRole("Admin", request, () => HandleCreateUserAsync(request)),
+                    SocketCommands.UpdateUser => await RequireRole("Admin", request, () => HandleUpdateUserAsync(request)),
+                    SocketCommands.DisableUser => await RequireRole("Admin", request, () => HandleDisableUserAsync(request)),
+                    SocketCommands.EnableUser => await RequireRole("Admin", request, () => HandleEnableUserAsync(request)),
+                    SocketCommands.AssignRole => await RequireRole("Admin", request, () => HandleAssignRoleAsync(request)),
+                    SocketCommands.ResetPassword => await RequireRole("Admin", request, () => HandleResetPasswordAsync(request)),
 
-                    // Artist
+                    // Artist - Admin & Manager đều được
                     SocketCommands.GetAllArtists => await HandleGetAllArtistsAsync(request),
                     SocketCommands.CreateArtist => await HandleCreateArtistAsync(request),
                     SocketCommands.UpdateArtist => await HandleUpdateArtistAsync(request),
@@ -142,7 +171,7 @@ namespace MusicSystem.Infrastructure.Socket
                     SocketCommands.DisableArtist => await HandleDisableArtistAsync(request),
                     SocketCommands.EnableArtist => await HandleEnableArtistAsync(request),
 
-                    // Song
+                    // Song - Admin & Manager đều được
                     SocketCommands.GetAllSongs => await HandleGetAllSongsAsync(request),
                     SocketCommands.GetPendingSongs => await HandleGetPendingSongsAsync(request),
                     SocketCommands.UploadSongFile => await HandleUploadSongFileAsync(request),
@@ -168,6 +197,84 @@ namespace MusicSystem.Infrastructure.Socket
             }
         }
 
+        // ==================== ROLE-BASED ACCESS CONTROL ====================
+
+        
+        /// Kiểm tra người dùng hiện tại có role yêu cầu không.
+        /// Nếu không, trả về Unauthorized.
+        
+        private async Task<SocketResponse> RequireRole(string requiredRole, SocketRequest request, Func<Task<SocketResponse>> handler)
+        {
+            if (!_authenticatedRoles.Contains(requiredRole))
+            {
+                _logger.LogWarning(" Forbidden: User {UserId} cần role '{Role}' nhưng chỉ có [{Roles}]",
+                    _authenticatedUserId, requiredRole, string.Join(", ", _authenticatedRoles));
+                return UnauthorizedResponse(request.RequestId, $"Chức năng này yêu cầu quyền {requiredRole}.");
+            }
+
+            return await handler();
+        }
+
+       
+        /// Load danh sách Roles của user từ DB
+        
+        private async Task LoadUserRolesAsync(Guid userId)
+        {
+            var user = await _userRepository.GetByIdAsync(userId);
+            if (user?.UserRoles != null)
+            {
+                _authenticatedRoles = user.UserRoles
+                    .Where(ur => ur.Role != null)
+                    .Select(ur => ur.Role!.RoleName ?? string.Empty)
+                    .Where(name => !string.IsNullOrEmpty(name))
+                    .ToList();
+            }
+            else
+            {
+                _authenticatedRoles = new List<string>();
+            }
+        }
+
+        // ==================== DTO VALIDATION ====================
+
+        
+        /// Validate DTO bằng DataAnnotations.
+        /// Trả về danh sách lỗi nếu có, hoặc null nếu hợp lệ.
+        
+        private List<string>? ValidateDto<T>(T? dto)
+        {
+            if (dto == null)
+                return new List<string> { "Dữ liệu gửi lên không hợp lệ hoặc bị thiếu." };
+
+            var context = new ValidationContext(dto);
+            var results = new List<ValidationResult>();
+
+            bool isValid = Validator.TryValidateObject(dto, context, results, validateAllProperties: true);
+
+            if (!isValid)
+            {
+                return results.Select(r => r.ErrorMessage ?? "Lỗi validation").ToList();
+            }
+
+            return null; // Hợp lệ
+        }
+
+        
+        /// Validate DTO và trả về ErrorResponse nếu không hợp lệ.
+        /// Trả về null nếu hợp lệ (để tiếp tục xử lý).
+        
+        private SocketResponse? ValidateDtoOrError<T>(Guid requestId, T? dto)
+        {
+            var errors = ValidateDto(dto);
+            if (errors != null && errors.Any())
+            {
+                var errorMessage = "Dữ liệu không hợp lệ:\n• " + string.Join("\n• ", errors);
+                _logger.LogWarning(" Validation failed: {Errors}", errorMessage);
+                return ErrorResponse(requestId, errorMessage);
+            }
+            return null; // OK
+        }
+
         // ==================== AUTH HANDLERS ====================
 
         private async Task<SocketResponse> HandleLoginAsync(SocketRequest request)
@@ -175,6 +282,10 @@ namespace MusicSystem.Infrastructure.Socket
             try
             {
                 var loginRequest = JsonSerializer.Deserialize<LoginRequestDto>(request.Data);
+
+                //  Validate DTO
+                var validationError = ValidateDtoOrError(request.RequestId, loginRequest);
+                if (validationError != null) return validationError;
 
                 _logger.LogInformation(" Login attempt: {Username}", loginRequest.Username);
 
@@ -191,6 +302,10 @@ namespace MusicSystem.Infrastructure.Socket
                     _logger.LogWarning(" Unauthorized role: {Roles}", string.Join(", ", loginResult.User.Roles));
                     return UnauthorizedResponse(request.RequestId, "Chỉ Admin và Manager mới có thể đăng nhập vào ứng dụng quản trị");
                 }
+
+                //  Lưu phiên sau khi login thành công
+                _authenticatedUserId = loginResult.User.UserId;
+                _authenticatedRoles = loginResult.User.Roles;
 
                 _logger.LogInformation(" Login successful: {Username} ({Roles})",
                     loginResult.User.Username, string.Join(", ", loginResult.User.Roles));
@@ -220,6 +335,10 @@ namespace MusicSystem.Infrastructure.Socket
         {
             var createDto = JsonSerializer.Deserialize<CreateArtistDto>(request.Data);
 
+            //  Validate DTO
+            var validationError = ValidateDtoOrError(request.RequestId, createDto);
+            if (validationError != null) return validationError;
+
             _logger.LogInformation(" Creating artist: {ArtistName}", createDto.ArtistName);
 
             var artist = await _artistService.CreateArtistAsync(createDto);
@@ -246,9 +365,15 @@ namespace MusicSystem.Infrastructure.Socket
             try
             {
                 var createDto = JsonSerializer.Deserialize<CreateSongDto>(request.Data);
-                var userId = await GetCurrentUserIdAsync();
 
-                _logger.LogInformation(" Creating song: {Title}", createDto.Title);
+                //  Validate DTO
+                var validationError = ValidateDtoOrError(request.RequestId, createDto);
+                if (validationError != null) return validationError;
+
+                //  Lấy UserId từ phiên đăng nhập thực tế
+                var userId = GetCurrentUserId();
+
+                _logger.LogInformation(" Creating song: {Title} by User {UserId}", createDto.Title, userId);
 
                 var song = await _songService.CreateSongAsync(createDto, userId);
 
@@ -266,9 +391,11 @@ namespace MusicSystem.Infrastructure.Socket
         private async Task<SocketResponse> HandleApproveSongAsync(SocketRequest request)
         {
             var songId = Guid.Parse(request.Data);
-            var adminId = await GetCurrentUserIdAsync();
 
-            _logger.LogInformation(" Approving song: {SongId}", songId);
+            //  Lấy UserId từ phiên đăng nhập thực tế
+            var adminId = GetCurrentUserId();
+
+            _logger.LogInformation(" Approving song: {SongId} by Admin {AdminId}", songId, adminId);
 
             var result = await _songService.ApproveSongAsync(songId, adminId);
 
@@ -279,16 +406,15 @@ namespace MusicSystem.Infrastructure.Socket
 
         // ==================== HELPER METHODS ====================
 
-        private async Task<Guid> GetCurrentUserIdAsync()
+        
+        /// ✅ SỬA LỖI: Trả về UserId từ phiên đăng nhập thực tế thay vì query DB bừa bãi.
+        
+        private Guid GetCurrentUserId()
         {
-            var users = await _userRepository.GetAllWithRolesAsync();
-            var user = users.FirstOrDefault(u =>
-                u.UserRoles.Any(ur => ur.Role.RoleName == "Manager" || ur.Role.RoleName == "Admin"));
+            if (_authenticatedUserId == null)
+                throw new UnauthorizedAccessException("Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại.");
 
-            if (user == null)
-                throw new Exception("No valid Manager or Admin user found");
-
-            return user.UserId;
+            return _authenticatedUserId.Value;
         }
 
         private SocketResponse SuccessResponse(Guid requestId, object data)
@@ -327,16 +453,19 @@ namespace MusicSystem.Infrastructure.Socket
 
         private SocketResponse HandleValidateToken(SocketRequest request)
         {
-            return SuccessResponse(request.RequestId, new { valid = true });
+            //  Nếu code chạy đến đây nghĩa là Token đã được validate ở ProcessRequestAsync
+            return SuccessResponse(request.RequestId, new { valid = true, userId = _authenticatedUserId });
         }
 
         private SocketResponse HandleLogout(SocketRequest request)
         {
-            _logger.LogInformation(" Logout");
+            _logger.LogInformation(" Logout: User {UserId}", _authenticatedUserId);
+            _authenticatedUserId = null;
+            _authenticatedRoles = new List<string>();
             return SuccessResponse(request.RequestId, new { success = true });
         }
 
-        // ==================== IMPLEMENT MISSING HANDLERS ====================
+        // ==================== USER MANAGEMENT HANDLERS (ADMIN ONLY) ====================
 
         private async Task<SocketResponse> HandleGetAllUsersAsync(SocketRequest request)
         {
@@ -347,6 +476,11 @@ namespace MusicSystem.Infrastructure.Socket
         private async Task<SocketResponse> HandleCreateUserAsync(SocketRequest request)
         {
             var createDto = JsonSerializer.Deserialize<CreateUserDto>(request.Data);
+
+            //  Validate DTO
+            var validationError = ValidateDtoOrError(request.RequestId, createDto);
+            if (validationError != null) return validationError;
+
             var user = await _userService.CreateUserAsync(createDto);
             return SuccessResponse(request.RequestId, user);
         }
@@ -356,6 +490,11 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
             var userId = Guid.Parse(data["userId"].ToString());
             var updateDto = JsonSerializer.Deserialize<UpdateUserDto>(data["data"].ToString());
+
+            //  Validate DTO
+            var validationError = ValidateDtoOrError(request.RequestId, updateDto);
+            if (validationError != null) return validationError;
+
             var user = await _userService.UpdateUserAsync(userId, updateDto);
             return SuccessResponse(request.RequestId, user);
         }
@@ -377,6 +516,11 @@ namespace MusicSystem.Infrastructure.Socket
         private async Task<SocketResponse> HandleAssignRoleAsync(SocketRequest request)
         {
             var dto = JsonSerializer.Deserialize<AssignRoleDto>(request.Data);
+
+            //  Validate DTO
+            var validationError = ValidateDtoOrError(request.RequestId, dto);
+            if (validationError != null) return validationError;
+
             var result = await _userService.AssignRoleAsync(dto.UserId, dto.RoleName);
             return SuccessResponse(request.RequestId, result);
         }
@@ -386,15 +530,28 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, string>>(request.Data);
             var userId = Guid.Parse(data["userId"]);
             var newPassword = data["newPassword"];
+
+            if (string.IsNullOrWhiteSpace(newPassword) || newPassword.Length < 6)
+            {
+                return ErrorResponse(request.RequestId, "Mật khẩu mới phải có ít nhất 6 ký tự.");
+            }
+
             var result = await _userService.ResetPasswordAsync(userId, newPassword);
             return SuccessResponse(request.RequestId, result);
         }
+
+        // ==================== ARTIST MANAGEMENT HANDLERS ====================
 
         private async Task<SocketResponse> HandleUpdateArtistAsync(SocketRequest request)
         {
             var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
             var artistId = Guid.Parse(data["artistId"].ToString());
             var updateDto = JsonSerializer.Deserialize<UpdateArtistDto>(data["data"].ToString());
+
+            //  Validate DTO
+            var validationError = ValidateDtoOrError(request.RequestId, updateDto);
+            if (validationError != null) return validationError;
+
             var artist = await _artistService.UpdateArtistAsync(artistId, updateDto);
             return SuccessResponse(request.RequestId, artist);
         }
@@ -420,6 +577,8 @@ namespace MusicSystem.Infrastructure.Socket
             return SuccessResponse(request.RequestId, result);
         }
 
+        // ==================== SONG MANAGEMENT HANDLERS ====================
+
         private async Task<SocketResponse> HandleGetAllSongsAsync(SocketRequest request)
         {
             var songs = await _songService.GetAllSongsAsync("Active", 1, 1000);
@@ -438,6 +597,11 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, object>>(request.Data);
             var songId = Guid.Parse(data["songId"].ToString());
             var updateDto = JsonSerializer.Deserialize<UpdateSongDto>(data["data"].ToString());
+
+            //  Validate DTO
+            var validationError = ValidateDtoOrError(request.RequestId, updateDto);
+            if (validationError != null) return validationError;
+
             var song = await _songService.UpdateSongAsync(songId, updateDto);
             return SuccessResponse(request.RequestId, song);
         }
@@ -454,7 +618,10 @@ namespace MusicSystem.Infrastructure.Socket
             var data = JsonSerializer.Deserialize<Dictionary<string, string>>(request.Data);
             var songId = Guid.Parse(data["songId"]);
             var reason = data.ContainsKey("reason") ? data["reason"] : "Không đạt yêu cầu";
-            var adminId = await GetCurrentUserIdAsync();
+
+            //  Lấy UserId từ phiên đăng nhập thực tế
+            var adminId = GetCurrentUserId();
+
             var result = await _songService.RejectSongAsync(songId, adminId, reason);
             return SuccessResponse(request.RequestId, result);
         }

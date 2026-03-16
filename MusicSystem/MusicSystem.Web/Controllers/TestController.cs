@@ -49,7 +49,7 @@ namespace MusicSystem.Web.Controllers
                 var roleCount = await _context.Roles.CountAsync();
                 var songCount = await _context.Songs.CountAsync();
 
-                var result = $"✅ Connected to Database!\n\n" +
+                var result = $"Connected to Database!\n\n" +
                             $"Users: {userCount}\n" +
                             $"Roles: {roleCount}\n" +
                             $"Songs: {songCount}";

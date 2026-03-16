@@ -1,0 +1,401 @@
+[2026-03-01 21:48:30 INF]  Socket Server started on port 1500
+[2026-03-01 21:48:44 INF]  Client connected: 127.0.0.1:59904
+[2026-03-01 21:48:44 INF]  Client connected: 127.0.0.1:59904
+[2026-03-01 21:48:44 INF]  Command: Login
+[2026-03-01 21:48:44 INF]  Login attempt: manager
+[2026-03-01 21:48:45 INF]  Login successful: manager (Manager)
+[2026-03-01 21:48:45 INF]  Status: Success
+[2026-03-01 21:48:45 INF]  Command: GetAllSongs
+[2026-03-01 21:48:45 INF]  Status: Success
+[2026-03-01 21:48:45 INF]  Command: GetAllArtists
+[2026-03-01 21:48:45 INF]  Found 3 artists
+[2026-03-01 21:48:45 INF]  Status: Success
+[2026-03-01 21:48:45 INF]  Command: GetPendingSongs
+[2026-03-01 21:48:45 INF]  Found 1 pending songs
+[2026-03-01 21:48:45 INF]  Status: Success
+[2026-03-01 21:48:54 INF]  Command: GetAllArtists
+[2026-03-01 21:48:54 INF]  Found 3 artists
+[2026-03-01 21:48:54 INF]  Status: Success
+[2026-03-01 21:48:56 INF]  Command: GetAllSongs
+[2026-03-01 21:48:56 INF]  Status: Success
+[2026-03-01 21:48:57 INF]  Command: GetAllArtists
+[2026-03-01 21:48:57 INF]  Found 3 artists
+[2026-03-01 21:48:57 INF]  Status: Success
+[2026-03-01 21:48:58 INF]  Command: GetAllSongs
+[2026-03-01 21:48:58 INF]  Status: Success
+[2026-03-01 21:48:58 INF]  Command: GetAllArtists
+[2026-03-01 21:48:58 INF]  Found 3 artists
+[2026-03-01 21:48:58 INF]  Status: Success
+[2026-03-01 21:48:58 INF]  Command: GetPendingSongs
+[2026-03-01 21:48:58 INF]  Found 1 pending songs
+[2026-03-01 21:48:58 INF]  Status: Success
+[2026-03-01 21:48:58 INF]  Command: GetAllArtists
+[2026-03-01 21:48:58 INF]  Found 3 artists
+[2026-03-01 21:48:58 INF]  Status: Success
+[2026-03-01 21:48:59 INF]  Command: GetAllSongs
+[2026-03-01 21:48:59 INF]  Status: Success
+[2026-03-01 21:48:59 INF]  Command: GetAllArtists
+[2026-03-01 21:48:59 INF]  Found 3 artists
+[2026-03-01 21:48:59 INF]  Status: Success
+[2026-03-01 21:49:11 INF]  Command: CreateArtist
+[2026-03-01 21:49:11 INF]  Creating artist: Hùng Tống
+[2026-03-01 21:49:12 INF]  Artist created: Hùng Tống
+[2026-03-01 21:49:12 INF]  Status: Success
+[2026-03-01 21:49:13 INF]  Command: GetAllArtists
+[2026-03-01 21:49:13 INF]  Found 4 artists
+[2026-03-01 21:49:13 INF]  Status: Success
+[2026-03-01 21:49:28 INF]  Command: GetAllSongs
+[2026-03-01 21:49:28 INF]  Status: Success
+[2026-03-01 21:50:25 INF]  Command: GetAllArtists
+[2026-03-01 21:50:25 INF]  Found 4 artists
+[2026-03-01 21:50:25 INF]  Status: Success
+[2026-03-01 21:50:43 INF]  Command: UploadSongFile
+[2026-03-01 21:50:43 INF]  Status: Success
+[2026-03-01 21:50:43 INF]  Command: CreateSong
+[2026-03-01 21:50:43 INF]  Creating song: Hôn Lễ Của Em by User "8b4cc76b-2db3-4b46-af97-35eb5c4c7027"
+[2026-03-01 21:50:43 INF]  Song created: Hôn Lễ Của Em
+[2026-03-01 21:50:43 INF]  Status: Success
+[2026-03-01 21:50:47 INF]  Command: GetAllSongs
+[2026-03-01 21:50:47 INF]  Status: Success
+[2026-03-01 21:51:04 INF]  Command: UpdateSong
+[2026-03-01 21:51:05 INF]  Status: Success
+[2026-03-01 21:51:05 INF]  Command: GetAllSongs
+[2026-03-01 21:51:05 INF]  Status: Success
+[2026-03-01 21:51:09 WRN]  Empty request received
+[2026-03-01 21:51:09 INF]  Client disconnected: 127.0.0.1:59904
+[2026-03-01 21:51:09 INF]  Client disconnected
+[2026-03-01 21:51:19 INF]  Client connected: 127.0.0.1:59568
+[2026-03-01 21:51:19 INF]  Client connected: 127.0.0.1:59568
+[2026-03-01 21:51:19 INF]  Command: Login
+[2026-03-01 21:51:19 INF]  Login attempt: admin
+[2026-03-01 21:51:20 INF]  Login successful: admin (Admin)
+[2026-03-01 21:51:20 INF]  Status: Success
+[2026-03-01 21:51:20 INF]  Command: GetAllUsers
+[2026-03-01 21:51:20 INF]  Status: Success
+[2026-03-01 21:51:20 INF]  Command: GetAllSongs
+[2026-03-01 21:51:20 INF]  Status: Success
+[2026-03-01 21:51:20 INF]  Command: GetAllArtists
+[2026-03-01 21:51:20 INF]  Found 4 artists
+[2026-03-01 21:51:20 INF]  Status: Success
+[2026-03-01 21:51:20 INF]  Command: GetPendingSongs
+[2026-03-01 21:51:20 INF]  Found 2 pending songs
+[2026-03-01 21:51:20 INF]  Status: Success
+[2026-03-01 21:52:04 INF]  Command: GetAllUsers
+[2026-03-01 21:52:04 INF]  Status: Success
+[2026-03-01 21:52:12 INF]  Command: GetPendingSongs
+[2026-03-01 21:52:12 INF]  Found 2 pending songs
+[2026-03-01 21:52:12 INF]  Status: Success
+[2026-03-01 21:52:27 INF]  Command: RejectSong
+[2026-03-01 21:52:27 INF]  Status: Success
+[2026-03-01 21:52:29 INF]  Command: GetPendingSongs
+[2026-03-01 21:52:29 INF]  Found 1 pending songs
+[2026-03-01 21:52:29 INF]  Status: Success
+[2026-03-01 21:52:38 INF]  Command: ApproveSong
+[2026-03-01 21:52:38 INF]  Approving song: "48dbc621-dcec-4716-ac48-61ae2629dcfc" by Admin "7e471c56-c5cf-494f-abb9-77ab96af2d73"
+[2026-03-01 21:52:38 INF]  Song approved
+[2026-03-01 21:52:38 INF]  Status: Success
+[2026-03-01 21:52:41 INF]  Command: GetPendingSongs
+[2026-03-01 21:52:41 INF]  Found 0 pending songs
+[2026-03-01 21:52:41 INF]  Status: Success
+[2026-03-01 21:52:43 INF]  Command: GetPendingSongs
+[2026-03-01 21:52:43 INF]  Found 0 pending songs
+[2026-03-01 21:52:43 INF]  Status: Success
+[2026-03-01 21:52:43 INF]  Command: GetAllUsers
+[2026-03-01 21:52:43 INF]  Status: Success
+[2026-03-01 21:52:45 INF]  Command: GetAllUsers
+[2026-03-01 21:52:45 INF]  Status: Success
+[2026-03-01 21:52:45 INF]  Command: GetAllSongs
+[2026-03-01 21:52:45 INF]  Status: Success
+[2026-03-01 21:52:45 INF]  Command: GetAllArtists
+[2026-03-01 21:52:45 INF]  Found 4 artists
+[2026-03-01 21:52:45 INF]  Status: Success
+[2026-03-01 21:52:45 INF]  Command: GetPendingSongs
+[2026-03-01 21:52:45 INF]  Found 0 pending songs
+[2026-03-01 21:52:45 INF]  Status: Success
+[2026-03-01 21:52:49 WRN]  Empty request received
+[2026-03-01 21:52:49 INF]  Client disconnected: 127.0.0.1:59568
+[2026-03-01 21:52:49 INF]  Client disconnected
+[2026-03-01 21:52:51 INF]  Client connected: 127.0.0.1:49921
+[2026-03-01 21:52:51 INF]  Client connected: 127.0.0.1:49921
+[2026-03-01 21:52:51 INF]  Command: Login
+[2026-03-01 21:52:51 INF]  Login attempt: manager
+[2026-03-01 21:52:52 INF]  Login successful: manager (Manager)
+[2026-03-01 21:52:52 INF]  Status: Success
+[2026-03-01 21:52:52 INF]  Command: GetAllSongs
+[2026-03-01 21:52:52 INF]  Status: Success
+[2026-03-01 21:52:52 INF]  Command: GetAllArtists
+[2026-03-01 21:52:52 INF]  Found 4 artists
+[2026-03-01 21:52:52 INF]  Status: Success
+[2026-03-01 21:52:52 INF]  Command: GetPendingSongs
+[2026-03-01 21:52:52 INF]  Found 0 pending songs
+[2026-03-01 21:52:52 INF]  Status: Success
+[2026-03-01 21:52:57 INF]  Command: GetAllSongs
+[2026-03-01 21:52:57 INF]  Status: Success
+[2026-03-01 21:53:00 INF]  Command: GetAllArtists
+[2026-03-01 21:53:00 INF]  Found 4 artists
+[2026-03-01 21:53:00 INF]  Status: Success
+[2026-03-01 21:53:00 INF]  Command: GetAllSongs
+[2026-03-01 21:53:00 INF]  Status: Success
+[2026-03-01 21:53:01 INF]  Command: GetAllArtists
+[2026-03-01 21:53:01 INF]  Found 4 artists
+[2026-03-01 21:53:01 INF]  Status: Success
+[2026-03-01 21:53:01 INF]  Command: GetAllSongs
+[2026-03-01 21:53:01 INF]  Status: Success
+[2026-03-01 21:53:01 INF]  Command: GetAllArtists
+[2026-03-01 21:53:01 INF]  Found 4 artists
+[2026-03-01 21:53:01 INF]  Status: Success
+[2026-03-01 21:53:02 INF]  Command: GetAllSongs
+[2026-03-01 21:53:02 INF]  Status: Success
+[2026-03-01 21:53:02 INF]  Command: GetAllArtists
+[2026-03-01 21:53:02 INF]  Found 4 artists
+[2026-03-01 21:53:02 INF]  Status: Success
+[2026-03-01 21:53:04 INF]  Command: GetAllSongs
+[2026-03-01 21:53:04 INF]  Status: Success
+[2026-03-01 21:53:18 INF]  Command: GetAllArtists
+[2026-03-01 21:53:18 INF]  Found 4 artists
+[2026-03-01 21:53:18 INF]  Status: Success
+[2026-03-01 21:53:18 INF]  Command: GetAllSongs
+[2026-03-01 21:53:19 INF]  Status: Success
+[2026-03-01 21:55:10 WRN]  Empty request received
+[2026-03-01 21:55:10 INF]  Client disconnected: 127.0.0.1:49921
+[2026-03-01 21:55:10 INF]  Client disconnected
+[2026-03-01 21:58:34 INF]  Socket Server started on port 1500
+[2026-03-01 21:58:39 INF]  Client connected: 127.0.0.1:58299
+[2026-03-01 21:58:39 INF]  Client connected: 127.0.0.1:58299
+[2026-03-01 21:58:39 INF]  Command: Login
+[2026-03-01 21:58:39 INF]  Login attempt: manager
+[2026-03-01 21:58:40 INF]  Login successful: manager (Manager)
+[2026-03-01 21:58:40 INF]  Status: Success
+[2026-03-01 21:58:40 INF]  Command: GetAllSongs
+[2026-03-01 21:58:40 INF]  Status: Success
+[2026-03-01 21:58:40 INF]  Command: GetAllArtists
+[2026-03-01 21:58:40 INF]  Found 4 artists
+[2026-03-01 21:58:40 INF]  Status: Success
+[2026-03-01 21:58:40 INF]  Command: GetPendingSongs
+[2026-03-01 21:58:41 INF]  Found 0 pending songs
+[2026-03-01 21:58:41 INF]  Status: Success
+[2026-03-01 21:58:42 INF]  Command: GetAllArtists
+[2026-03-01 21:58:42 INF]  Found 4 artists
+[2026-03-01 21:58:42 INF]  Status: Success
+[2026-03-01 21:58:53 INF]  Command: GetAllSongs
+[2026-03-01 21:58:53 INF]  Status: Success
+[2026-03-01 22:00:01 WRN]  Empty request received
+[2026-03-01 22:00:01 INF]  Client disconnected: 127.0.0.1:58299
+[2026-03-01 22:00:01 INF]  Client disconnected
+[2026-03-01 22:00:06 INF]  Socket Server started on port 1500
+[2026-03-01 22:00:10 INF]  Client connected: 127.0.0.1:53048
+[2026-03-01 22:00:10 INF]  Client connected: 127.0.0.1:53048
+[2026-03-01 22:00:10 INF]  Command: Login
+[2026-03-01 22:00:10 INF]  Login attempt: manager
+[2026-03-01 22:00:11 INF]  Login successful: manager (Manager)
+[2026-03-01 22:00:11 INF]  Status: Success
+[2026-03-01 22:00:11 INF]  Command: GetAllSongs
+[2026-03-01 22:00:12 INF]  Status: Success
+[2026-03-01 22:00:12 INF]  Command: GetAllArtists
+[2026-03-01 22:00:12 INF]  Found 4 artists
+[2026-03-01 22:00:12 INF]  Status: Success
+[2026-03-01 22:00:12 INF]  Command: GetPendingSongs
+[2026-03-01 22:00:12 INF]  Found 0 pending songs
+[2026-03-01 22:00:12 INF]  Status: Success
+[2026-03-01 22:00:14 INF]  Command: GetAllArtists
+[2026-03-01 22:00:14 INF]  Found 4 artists
+[2026-03-01 22:00:14 INF]  Status: Success
+[2026-03-01 22:00:28 WRN]  Empty request received
+[2026-03-01 22:00:28 INF]  Client disconnected: 127.0.0.1:53048
+[2026-03-01 22:00:28 INF]  Client disconnected
+[2026-03-01 22:00:39 INF]  Socket Server started on port 1500
+[2026-03-01 22:00:41 INF]  Client connected: 127.0.0.1:49972
+[2026-03-01 22:00:41 INF]  Client connected: 127.0.0.1:49972
+[2026-03-01 22:00:41 INF]  Command: Login
+[2026-03-01 22:00:41 INF]  Login attempt: manager
+[2026-03-01 22:00:43 INF]  Login successful: manager (Manager)
+[2026-03-01 22:00:43 INF]  Status: Success
+[2026-03-01 22:00:43 INF]  Command: GetAllSongs
+[2026-03-01 22:00:43 INF]  Status: Success
+[2026-03-01 22:00:43 INF]  Command: GetAllArtists
+[2026-03-01 22:00:43 INF]  Found 4 artists
+[2026-03-01 22:00:43 INF]  Status: Success
+[2026-03-01 22:00:43 INF]  Command: GetPendingSongs
+[2026-03-01 22:00:43 INF]  Found 0 pending songs
+[2026-03-01 22:00:43 INF]  Status: Success
+[2026-03-01 22:00:44 INF]  Command: GetAllArtists
+[2026-03-01 22:00:44 INF]  Found 4 artists
+[2026-03-01 22:00:44 INF]  Status: Success
+[2026-03-01 22:00:49 INF]  Command: GetAllSongs
+[2026-03-01 22:00:49 INF]  Status: Success
+[2026-03-01 22:00:51 WRN]  Empty request received
+[2026-03-01 22:00:51 INF]  Client disconnected: 127.0.0.1:49972
+[2026-03-01 22:00:51 INF]  Client disconnected
+[2026-03-01 22:01:01 INF]  Client connected: 127.0.0.1:52116
+[2026-03-01 22:01:01 INF]  Client connected: 127.0.0.1:52116
+[2026-03-01 22:01:01 INF]  Command: Login
+[2026-03-01 22:01:01 INF]  Login attempt: admin
+[2026-03-01 22:01:02 INF]  Login successful: admin (Admin)
+[2026-03-01 22:01:02 INF]  Status: Success
+[2026-03-01 22:01:02 INF]  Command: GetAllUsers
+[2026-03-01 22:01:02 INF]  Status: Success
+[2026-03-01 22:01:02 INF]  Command: GetAllSongs
+[2026-03-01 22:01:02 INF]  Status: Success
+[2026-03-01 22:01:02 INF]  Command: GetAllArtists
+[2026-03-01 22:01:02 INF]  Found 4 artists
+[2026-03-01 22:01:02 INF]  Status: Success
+[2026-03-01 22:01:02 INF]  Command: GetPendingSongs
+[2026-03-01 22:01:02 INF]  Found 0 pending songs
+[2026-03-01 22:01:02 INF]  Status: Success
+[2026-03-01 22:01:04 INF]  Command: GetAllUsers
+[2026-03-01 22:01:04 INF]  Status: Success
+[2026-03-01 22:01:08 INF]  Command: GetPendingSongs
+[2026-03-01 22:01:08 INF]  Found 0 pending songs
+[2026-03-01 22:01:08 INF]  Status: Success
+[2026-03-01 22:01:09 INF]  Command: GetAllUsers
+[2026-03-01 22:01:09 INF]  Status: Success
+[2026-03-01 22:01:38 WRN]  Empty request received
+[2026-03-01 22:01:43 INF]  Socket Server started on port 1500
+[2026-03-01 22:01:56 INF]  Client connected: 127.0.0.1:50214
+[2026-03-01 22:01:56 INF]  Client connected: 127.0.0.1:50214
+[2026-03-01 22:01:56 INF]  Command: Login
+[2026-03-01 22:01:56 INF]  Login attempt: admin
+[2026-03-01 22:01:56 INF]  Login successful: admin (Admin)
+[2026-03-01 22:01:56 INF]  Status: Success
+[2026-03-01 22:01:57 INF]  Command: GetAllUsers
+[2026-03-01 22:01:57 INF]  Status: Success
+[2026-03-01 22:01:57 INF]  Command: GetAllSongs
+[2026-03-01 22:01:57 INF]  Status: Success
+[2026-03-01 22:01:57 INF]  Command: GetAllArtists
+[2026-03-01 22:01:57 INF]  Found 4 artists
+[2026-03-01 22:01:57 INF]  Status: Success
+[2026-03-01 22:01:57 INF]  Command: GetPendingSongs
+[2026-03-01 22:01:57 INF]  Found 0 pending songs
+[2026-03-01 22:01:57 INF]  Status: Success
+[2026-03-01 22:01:59 INF]  Command: GetPendingSongs
+[2026-03-01 22:01:59 INF]  Found 0 pending songs
+[2026-03-01 22:01:59 INF]  Status: Success
+[2026-03-01 22:02:00 INF]  Command: GetAllUsers
+[2026-03-01 22:02:00 INF]  Status: Success
+[2026-03-01 22:03:29 INF]  Socket Server started on port 1500
+[2026-03-01 22:03:32 INF]  Client connected: 127.0.0.1:56778
+[2026-03-01 22:03:32 INF]  Client connected: 127.0.0.1:56778
+[2026-03-01 22:03:32 INF]  Command: Login
+[2026-03-01 22:03:32 INF]  Login attempt: manager
+[2026-03-01 22:03:33 INF]  Login successful: manager (Manager)
+[2026-03-01 22:03:33 INF]  Status: Success
+[2026-03-01 22:03:34 INF]  Command: GetAllSongs
+[2026-03-01 22:03:34 INF]  Status: Success
+[2026-03-01 22:03:34 INF]  Command: GetAllArtists
+[2026-03-01 22:03:34 INF]  Found 4 artists
+[2026-03-01 22:03:34 INF]  Status: Success
+[2026-03-01 22:03:34 INF]  Command: GetPendingSongs
+[2026-03-01 22:03:34 INF]  Found 0 pending songs
+[2026-03-01 22:03:34 INF]  Status: Success
+[2026-03-01 22:03:38 WRN]  Empty request received
+[2026-03-01 22:03:38 INF]  Client disconnected: 127.0.0.1:56778
+[2026-03-01 22:03:38 INF]  Client disconnected
+[2026-03-01 22:03:48 INF]  Client connected: 127.0.0.1:50694
+[2026-03-01 22:03:48 INF]  Client connected: 127.0.0.1:50694
+[2026-03-01 22:03:48 INF]  Command: Login
+[2026-03-01 22:03:48 INF]  Login attempt: admin
+[2026-03-01 22:03:48 INF]  Login successful: admin (Admin)
+[2026-03-01 22:03:48 INF]  Status: Success
+[2026-03-01 22:03:48 INF]  Command: GetAllUsers
+[2026-03-01 22:03:48 INF]  Status: Success
+[2026-03-01 22:03:48 INF]  Command: GetAllSongs
+[2026-03-01 22:03:48 INF]  Status: Success
+[2026-03-01 22:03:48 INF]  Command: GetAllArtists
+[2026-03-01 22:03:48 INF]  Found 4 artists
+[2026-03-01 22:03:48 INF]  Status: Success
+[2026-03-01 22:03:48 INF]  Command: GetPendingSongs
+[2026-03-01 22:03:48 INF]  Found 0 pending songs
+[2026-03-01 22:03:48 INF]  Status: Success
+[2026-03-01 22:03:50 INF]  Command: GetAllUsers
+[2026-03-01 22:03:50 INF]  Status: Success
+[2026-03-01 22:04:10 INF]  Socket Server started on port 1500
+[2026-03-01 22:04:25 INF]  Client connected: 127.0.0.1:61301
+[2026-03-01 22:04:25 INF]  Client connected: 127.0.0.1:61301
+[2026-03-01 22:04:25 INF]  Command: Login
+[2026-03-01 22:04:25 INF]  Login attempt: admin
+[2026-03-01 22:04:26 WRN]  Login failed: Tên đăng nhập hoặc mật khẩu không đúng
+[2026-03-01 22:04:26 INF]  Status: Unauthorized
+[2026-03-01 22:04:30 INF]  Command: Login
+[2026-03-01 22:04:30 INF]  Login attempt: admin
+[2026-03-01 22:04:30 WRN]  Login failed: Tên đăng nhập hoặc mật khẩu không đúng
+[2026-03-01 22:04:30 INF]  Status: Unauthorized
+[2026-03-01 22:04:38 INF]  Command: Login
+[2026-03-01 22:04:38 INF]  Login attempt: admin
+[2026-03-01 22:04:38 INF]  Login successful: admin (Admin)
+[2026-03-01 22:04:38 INF]  Status: Success
+[2026-03-01 22:04:38 INF]  Command: GetAllUsers
+[2026-03-01 22:04:38 INF]  Status: Success
+[2026-03-01 22:04:38 INF]  Command: GetAllSongs
+[2026-03-01 22:04:38 INF]  Status: Success
+[2026-03-01 22:04:38 INF]  Command: GetAllArtists
+[2026-03-01 22:04:38 INF]  Found 4 artists
+[2026-03-01 22:04:38 INF]  Status: Success
+[2026-03-01 22:04:38 INF]  Command: GetPendingSongs
+[2026-03-01 22:04:39 INF]  Found 0 pending songs
+[2026-03-01 22:04:39 INF]  Status: Success
+[2026-03-01 22:04:40 INF]  Command: GetPendingSongs
+[2026-03-01 22:04:40 INF]  Found 0 pending songs
+[2026-03-01 22:04:40 INF]  Status: Success
+[2026-03-01 22:04:40 INF]  Command: GetAllUsers
+[2026-03-01 22:04:40 INF]  Status: Success
+[2026-03-01 22:06:39 INF]  Socket Server started on port 1500
+[2026-03-01 22:06:52 INF]  Client connected: 127.0.0.1:50063
+[2026-03-01 22:06:52 INF]  Client connected: 127.0.0.1:50063
+[2026-03-01 22:06:52 INF]  Command: Login
+[2026-03-01 22:06:52 INF]  Login attempt: admin
+[2026-03-01 22:06:53 INF]  Login successful: admin (Admin)
+[2026-03-01 22:06:53 INF]  Status: Success
+[2026-03-01 22:06:53 INF]  Command: GetAllUsers
+[2026-03-01 22:06:54 INF]  Status: Success
+[2026-03-01 22:06:54 INF]  Command: GetAllSongs
+[2026-03-01 22:06:54 INF]  Status: Success
+[2026-03-01 22:06:54 INF]  Command: GetAllArtists
+[2026-03-01 22:06:54 INF]  Found 4 artists
+[2026-03-01 22:06:54 INF]  Status: Success
+[2026-03-01 22:06:54 INF]  Command: GetPendingSongs
+[2026-03-01 22:06:54 INF]  Found 0 pending songs
+[2026-03-01 22:06:54 INF]  Status: Success
+[2026-03-01 22:06:55 INF]  Command: GetAllUsers
+[2026-03-01 22:06:55 INF]  Status: Success
+[2026-03-01 22:10:49 INF]  Command: GetAllUsers
+[2026-03-01 22:10:49 INF]  Status: Success
+[2026-03-01 22:10:49 INF]  Command: GetAllUsers
+[2026-03-01 22:10:49 INF]  Status: Success
+[2026-03-01 22:11:25 INF]  Command: GetAllUsers
+[2026-03-01 22:11:25 INF]  Status: Success
+[2026-03-01 22:12:12 INF]  Command: GetAllUsers
+[2026-03-01 22:12:12 INF]  Status: Success
+[2026-03-01 22:13:01 INF]  Command: CreateUser
+[2026-03-01 22:13:01 INF]  Status: Success
+[2026-03-01 22:13:02 INF]  Command: GetAllUsers
+[2026-03-01 22:13:02 INF]  Status: Success
+[2026-03-01 22:13:10 INF]  Command: GetPendingSongs
+[2026-03-01 22:13:10 INF]  Found 0 pending songs
+[2026-03-01 22:13:10 INF]  Status: Success
+[2026-03-01 22:13:11 INF]  Command: GetAllUsers
+[2026-03-01 22:13:11 INF]  Status: Success
+[2026-03-01 22:13:11 INF]  Command: GetPendingSongs
+[2026-03-01 22:13:11 INF]  Found 0 pending songs
+[2026-03-01 22:13:11 INF]  Status: Success
+[2026-03-01 22:13:11 INF]  Command: GetAllUsers
+[2026-03-01 22:13:11 INF]  Status: Success
+[2026-03-01 22:13:12 INF]  Command: GetAllUsers
+[2026-03-01 22:13:12 INF]  Status: Success
+[2026-03-01 22:13:13 INF]  Command: GetAllUsers
+[2026-03-01 22:13:13 INF]  Status: Success
+[2026-03-01 22:13:13 INF]  Command: GetAllSongs
+[2026-03-01 22:13:13 INF]  Status: Success
+[2026-03-01 22:13:13 INF]  Command: GetAllArtists
+[2026-03-01 22:13:13 INF]  Found 4 artists
+[2026-03-01 22:13:13 INF]  Status: Success
+[2026-03-01 22:13:13 INF]  Command: GetPendingSongs
+[2026-03-01 22:13:13 INF]  Found 0 pending songs
+[2026-03-01 22:13:13 INF]  Status: Success
+[2026-03-01 22:13:18 INF]  Command: GetPendingSongs
+[2026-03-01 22:13:18 INF]  Found 0 pending songs
+[2026-03-01 22:13:18 INF]  Status: Success
+[2026-03-01 22:13:19 INF]  Command: GetAllUsers
+[2026-03-01 22:13:19 INF]  Status: Success
+[2026-03-01 22:13:39 WRN]  Empty request received
+[2026-03-01 22:13:39 INF]  Client disconnected: 127.0.0.1:50063
+[2026-03-01 22:13:39 INF]  Client disconnected

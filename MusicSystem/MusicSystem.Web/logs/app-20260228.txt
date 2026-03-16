@@ -168,3 +168,144 @@ System.Exception: Bài hát này đã tồn tại trong hệ thống (trùng Tê
 [2026-02-28 09:23:33 WRN]  Empty request received
 [2026-02-28 09:23:33 INF]  Client disconnected: 127.0.0.1:51971
 [2026-02-28 09:23:33 INF] 🔌 Client disconnected
+[2026-02-28 20:59:29 INF] ✅ Socket Server started on port 1500
+[2026-02-28 21:00:01 INF] 🔗 Client connected: 127.0.0.1:57186
+[2026-02-28 21:00:01 INF]  Client connected: 127.0.0.1:57186
+[2026-02-28 21:00:01 INF]  Command: Login
+[2026-02-28 21:00:01 INF]  Login attempt: manager
+[2026-02-28 21:00:01 INF]  Login successful: manager (Manager)
+[2026-02-28 21:00:01 INF]  Status: Success
+[2026-02-28 21:00:01 INF]  Command: GetAllSongs
+[2026-02-28 21:00:01 INF]  Status: Success
+[2026-02-28 21:00:01 INF]  Command: GetAllArtists
+[2026-02-28 21:00:01 INF]  Found 3 artists
+[2026-02-28 21:00:01 INF]  Status: Success
+[2026-02-28 21:00:01 INF]  Command: GetPendingSongs
+[2026-02-28 21:00:01 INF]  Found 1 pending songs
+[2026-02-28 21:00:01 INF]  Status: Success
+[2026-02-28 21:00:15 INF]  Command: GetAllSongs
+[2026-02-28 21:00:15 INF]  Status: Success
+[2026-02-28 21:00:15 INF]  Command: GetAllArtists
+[2026-02-28 21:00:15 INF]  Found 3 artists
+[2026-02-28 21:00:15 INF]  Status: Success
+[2026-02-28 21:00:15 INF]  Command: GetPendingSongs
+[2026-02-28 21:00:15 INF]  Found 1 pending songs
+[2026-02-28 21:00:15 INF]  Status: Success
+[2026-02-28 21:00:17 INF]  Command: GetAllSongs
+[2026-02-28 21:00:17 INF]  Status: Success
+[2026-02-28 21:00:17 INF]  Command: GetAllArtists
+[2026-02-28 21:00:17 INF]  Found 3 artists
+[2026-02-28 21:00:17 INF]  Status: Success
+[2026-02-28 21:00:17 INF]  Command: GetPendingSongs
+[2026-02-28 21:00:17 INF]  Found 1 pending songs
+[2026-02-28 21:00:17 INF]  Status: Success
+[2026-02-28 21:00:18 INF]  Command: GetAllSongs
+[2026-02-28 21:00:18 INF]  Status: Success
+[2026-02-28 21:00:18 INF]  Command: GetAllArtists
+[2026-02-28 21:00:18 INF]  Found 3 artists
+[2026-02-28 21:00:18 INF]  Status: Success
+[2026-02-28 21:00:18 INF]  Command: GetPendingSongs
+[2026-02-28 21:00:18 INF]  Found 1 pending songs
+[2026-02-28 21:00:18 INF]  Status: Success
+[2026-02-28 21:00:18 INF]  Command: GetAllSongs
+[2026-02-28 21:00:19 INF]  Status: Success
+[2026-02-28 21:00:19 INF]  Command: GetAllArtists
+[2026-02-28 21:00:19 INF]  Found 3 artists
+[2026-02-28 21:00:19 INF]  Status: Success
+[2026-02-28 21:00:19 INF]  Command: GetPendingSongs
+[2026-02-28 21:00:19 INF]  Found 1 pending songs
+[2026-02-28 21:00:19 INF]  Status: Success
+[2026-02-28 21:00:24 INF]  Command: GetAllArtists
+[2026-02-28 21:00:24 INF]  Found 3 artists
+[2026-02-28 21:00:24 INF]  Status: Success
+[2026-02-28 21:00:30 INF]  Command: GetAllSongs
+[2026-02-28 21:00:30 INF]  Status: Success
+[2026-02-28 21:00:37 INF]  Command: GetAllSongs
+[2026-02-28 21:00:37 INF]  Status: Success
+[2026-02-28 21:00:42 INF]  Command: DeleteSong
+[2026-02-28 21:00:42 INF]  Status: Success
+[2026-02-28 21:00:43 INF]  Command: GetAllSongs
+[2026-02-28 21:00:43 INF]  Status: Success
+[2026-02-28 21:00:48 INF]  Command: DeleteSong
+[2026-02-28 21:00:48 INF]  Status: Success
+[2026-02-28 21:00:49 INF]  Command: GetAllSongs
+[2026-02-28 21:00:49 INF]  Status: Success
+[2026-02-28 21:00:57 INF]  Command: GetAllSongs
+[2026-02-28 21:00:57 INF]  Status: Success
+[2026-02-28 21:00:57 INF]  Command: GetAllArtists
+[2026-02-28 21:00:57 INF]  Found 3 artists
+[2026-02-28 21:00:57 INF]  Status: Success
+[2026-02-28 21:00:57 INF]  Command: GetPendingSongs
+[2026-02-28 21:00:57 INF]  Found 1 pending songs
+[2026-02-28 21:00:57 INF]  Status: Success
+[2026-02-28 21:01:00 WRN]  Empty request received
+[2026-02-28 21:01:00 INF]  Client disconnected: 127.0.0.1:57186
+[2026-02-28 21:01:00 INF] 🔌 Client disconnected
+[2026-02-28 21:01:21 INF] 🔗 Client connected: 127.0.0.1:57808
+[2026-02-28 21:01:21 INF]  Client connected: 127.0.0.1:57808
+[2026-02-28 21:01:21 INF]  Command: Login
+[2026-02-28 21:01:21 INF]  Login attempt: admin
+[2026-02-28 21:01:21 INF]  Login successful: admin (Admin)
+[2026-02-28 21:01:21 INF]  Status: Success
+[2026-02-28 21:01:21 INF]  Command: GetAllUsers
+[2026-02-28 21:01:21 INF]  Status: Success
+[2026-02-28 21:01:21 INF]  Command: GetAllSongs
+[2026-02-28 21:01:21 INF]  Status: Success
+[2026-02-28 21:01:21 INF]  Command: GetAllArtists
+[2026-02-28 21:01:21 INF]  Found 3 artists
+[2026-02-28 21:01:21 INF]  Status: Success
+[2026-02-28 21:01:21 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:21 INF]  Found 1 pending songs
+[2026-02-28 21:01:21 INF]  Status: Success
+[2026-02-28 21:01:28 INF]  Command: GetAllUsers
+[2026-02-28 21:01:28 INF]  Status: Success
+[2026-02-28 21:01:40 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:40 INF]  Found 1 pending songs
+[2026-02-28 21:01:40 INF]  Status: Success
+[2026-02-28 21:01:46 INF]  Command: GetAllUsers
+[2026-02-28 21:01:46 INF]  Status: Success
+[2026-02-28 21:01:47 INF]  Command: GetAllUsers
+[2026-02-28 21:01:47 INF]  Status: Success
+[2026-02-28 21:01:47 INF]  Command: GetAllSongs
+[2026-02-28 21:01:47 INF]  Status: Success
+[2026-02-28 21:01:47 INF]  Command: GetAllArtists
+[2026-02-28 21:01:47 INF]  Found 3 artists
+[2026-02-28 21:01:47 INF]  Status: Success
+[2026-02-28 21:01:47 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:47 INF]  Found 1 pending songs
+[2026-02-28 21:01:47 INF]  Status: Success
+[2026-02-28 21:01:48 INF]  Command: GetAllUsers
+[2026-02-28 21:01:48 INF]  Status: Success
+[2026-02-28 21:01:48 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:48 INF]  Found 1 pending songs
+[2026-02-28 21:01:48 INF]  Status: Success
+[2026-02-28 21:01:56 INF]  Command: GetAllUsers
+[2026-02-28 21:01:56 INF]  Status: Success
+[2026-02-28 21:01:56 INF]  Command: GetAllUsers
+[2026-02-28 21:01:56 INF]  Status: Success
+[2026-02-28 21:01:56 INF]  Command: GetAllSongs
+[2026-02-28 21:01:56 INF]  Status: Success
+[2026-02-28 21:01:56 INF]  Command: GetAllArtists
+[2026-02-28 21:01:56 INF]  Found 3 artists
+[2026-02-28 21:01:56 INF]  Status: Success
+[2026-02-28 21:01:56 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:56 INF]  Found 1 pending songs
+[2026-02-28 21:01:56 INF]  Status: Success
+[2026-02-28 21:01:58 INF]  Command: GetAllUsers
+[2026-02-28 21:01:58 INF]  Status: Success
+[2026-02-28 21:01:58 INF]  Command: GetAllSongs
+[2026-02-28 21:01:58 INF]  Status: Success
+[2026-02-28 21:01:58 INF]  Command: GetAllArtists
+[2026-02-28 21:01:58 INF]  Found 3 artists
+[2026-02-28 21:01:58 INF]  Status: Success
+[2026-02-28 21:01:58 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:58 INF]  Found 1 pending songs
+[2026-02-28 21:01:58 INF]  Status: Success
+[2026-02-28 21:01:59 INF]  Command: GetAllUsers
+[2026-02-28 21:01:59 INF]  Status: Success
+[2026-02-28 21:01:59 INF]  Command: GetPendingSongs
+[2026-02-28 21:01:59 INF]  Found 1 pending songs
+[2026-02-28 21:01:59 INF]  Status: Success
+[2026-02-28 21:02:03 WRN]  Empty request received
+[2026-02-28 21:02:03 INF]  Client disconnected: 127.0.0.1:57808
+[2026-02-28 21:02:03 INF] 🔌 Client disconnected

@@ -54,7 +54,7 @@ namespace MusicSystem.Web.Controllers
                 return View(model);
             }
 
-            // ✅ Create Claims
+            //  Create Claims
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, result.User.UserId.ToString()),

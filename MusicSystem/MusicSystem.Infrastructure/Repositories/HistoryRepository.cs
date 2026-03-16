@@ -47,7 +47,7 @@ namespace MusicSystem.Infrastructure.Repositories
                     .ThenInclude(s => s.SongArtists)
                     .ThenInclude(sa => sa.Artist)
                 .Where(h => h.UserId == userId)
-                .OrderByDescending(h => h.PlayedAt)
+                .OrderBy(h => h.PlayedAt)
                 .Take(limit)
                 .ToListAsync();
         }

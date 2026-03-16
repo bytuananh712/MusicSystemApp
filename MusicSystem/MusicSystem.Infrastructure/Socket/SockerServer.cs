@@ -31,7 +31,7 @@ namespace MusicSystem.Infrastructure.Socket
             {
                 _listener = new TcpListener(IPAddress.Any, PORT);
                 _listener.Start();
-                _logger.LogInformation($"✅ Socket Server started on port {PORT}");
+                _logger.LogInformation($" Socket Server started on port {PORT}");
 
                 while (!stoppingToken.IsCancellationRequested)
                 {
@@ -39,20 +39,20 @@ namespace MusicSystem.Infrastructure.Socket
                     {
                         var client = await _listener.AcceptTcpClientAsync();
                         var clientEndpoint = client.Client.RemoteEndPoint;
-                        _logger.LogInformation($"🔗 Client connected: {clientEndpoint}");
+                        _logger.LogInformation($" Client connected: {clientEndpoint}");
 
                         // Handle mỗi client trong task riêng
                         _ = Task.Run(async () => await HandleClientAsync(client, stoppingToken), stoppingToken);
                     }
                     catch (Exception ex)
                     {
-                        _logger.LogError(ex, "❌ Error accepting client connection");
+                        _logger.LogError(ex, " Error accepting client connection");
                     }
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Socket Server failed to start");
+                _logger.LogError(ex, " Socket Server failed to start");
             }
         }
 
@@ -68,19 +68,19 @@ namespace MusicSystem.Infrastructure.Socket
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "❌ Error handling client");
+                _logger.LogError(ex, " Error handling client");
             }
             finally
             {
                 client?.Close();
-                _logger.LogInformation("🔌 Client disconnected");
+                _logger.LogInformation(" Client disconnected");
             }
         }
 
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
             _listener?.Stop();
-            _logger.LogInformation("⛔ Socket Server stopped");
+            _logger.LogInformation(" Socket Server stopped");
             await base.StopAsync(cancellationToken);
         }
     }
