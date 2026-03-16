@@ -60,9 +60,10 @@ namespace MusicSystem.Infrastructure.Repositories
             return await _context.Users
                 .Include(u => u.UserRoles)
                     .ThenInclude(ur => ur.Role)
-                .OrderBy(u => u.CreatedAt)      //  Cũ → Mới
-                    .ThenBy(u => u.FullName)     //  Cùng ngày → sắp A-Z
-                .AsSplitQuery()
+                .OrderBy(u => u.UserRoles.Any(ur => ur.Role.RoleName == "Admin") ? 0
+                            : u.UserRoles.Any(ur => ur.Role.RoleName == "Manager") ? 1
+                            : 2)
+                .ThenBy(u => u.CreatedAt)
                 .ToListAsync();
         }
 

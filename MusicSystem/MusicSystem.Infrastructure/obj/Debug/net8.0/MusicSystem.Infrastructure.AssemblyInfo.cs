@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MusicSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2909ff4300a4a23e3603447dc6289c378e00df90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+271727b9ba0ef5942ff58e38a25d502dcc57fd6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MusicSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MusicSystem.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
