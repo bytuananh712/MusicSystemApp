@@ -3,6 +3,8 @@ let currentSong = null;
 let isPlaying = false;
 let playlist = [];
 let currentIndex = -1;
+let isShuffle = false;
+let repeatMode = 0; // 0 = off, 1 = repeat all, 2 = repeat one
 
 // DOM Elements
 const audioPlayer = document.getElementById('audioPlayer');
@@ -10,6 +12,8 @@ const playerBar = document.getElementById('playerBar');
 const btnPlay = document.getElementById('btnPlay');
 const btnPrevious = document.getElementById('btnPrevious');
 const btnNext = document.getElementById('btnNext');
+const btnShuffle = document.getElementById('btnShuffle');
+const btnRepeat = document.getElementById('btnRepeat');
 const btnLike = document.getElementById('btnLike');
 const btnVolume = document.getElementById('btnVolume');
 const volumeSlider = document.getElementById('volumeSlider');
@@ -26,17 +30,23 @@ function playSong(element) {
     const title = element.dataset.songTitle;
     const artists = element.dataset.songArtists;
     const url = element.dataset.songUrl;
+    const cover = element.dataset.songCover || '';
 
-    currentSong = {
-        id: songId,
-        title: title,
-        artists: artists,
-        url: url
-    };
+    currentSong = { id: songId, title, artists, url, cover };
 
-    // Update UI
+    // Update UI text
     currentSongTitle.textContent = title;
     currentSongArtist.textContent = artists;
+
+    // Update album art thumbnail
+    const thumb = document.getElementById('playerThumb');
+    if (thumb) {
+        if (cover) {
+            thumb.innerHTML = `<img src="${cover}" alt="${title}" />`;
+        } else {
+            thumb.innerHTML = '<i class="fas fa-music"></i>';
+        }
+    }
 
     // Show player bar
     playerBar.classList.add('active');
@@ -45,10 +55,36 @@ function playSong(element) {
     audioPlayer.src = url;
     audioPlayer.play();
     isPlaying = true;
+    playerBar.classList.add('playing');
     updatePlayButton();
 
-    // Track play count (optional)
+    // Build playlist from all song cards
+    const allCards = document.querySelectorAll('.song-card');
+    playlist = Array.from(allCards).map(c => ({
+        id: c.dataset.songId,
+        title: c.dataset.songTitle,
+        artists: c.dataset.songArtists,
+        url: c.dataset.songUrl,
+        cover: c.dataset.songCover || ''
+    }));
+    currentIndex = playlist.findIndex(s => s.id === songId);
+
+    // Highlight active card
+    allCards.forEach(c => c.classList.remove('now-playing'));
+    const activeCard = document.querySelector(`.song-card[data-song-id="${songId}"]`);
+    if (activeCard) activeCard.classList.add('now-playing');
+
+    // Track play count
     trackPlay(songId);
+}
+
+// Helper: play song by index
+function playSongByIndex(index) {
+    if (index < 0 || index >= playlist.length) return;
+    currentIndex = index;
+    const song = playlist[index];
+    const fakeEl = { dataset: { songId: song.id, songTitle: song.title, songArtists: song.artists, songUrl: song.url, songCover: song.cover } };
+    playSong(fakeEl);
 }
 
 // Play/Pause Toggle
@@ -56,20 +92,91 @@ btnPlay.addEventListener('click', () => {
     if (isPlaying) {
         audioPlayer.pause();
         isPlaying = false;
+        playerBar.classList.remove('playing');
     } else {
         audioPlayer.play();
         isPlaying = true;
+        playerBar.classList.add('playing');
     }
     updatePlayButton();
+});
+
+// ===== PREVIOUS =====
+btnPrevious.addEventListener('click', () => {
+    if (playlist.length === 0) return;
+
+    // If more than 3 seconds played, restart the song
+    if (audioPlayer.currentTime > 3) {
+        audioPlayer.currentTime = 0;
+        return;
+    }
+
+    if (isShuffle) {
+        playSongByIndex(Math.floor(Math.random() * playlist.length));
+    } else if (currentIndex > 0) {
+        playSongByIndex(currentIndex - 1);
+    } else if (repeatMode === 1) {
+        // Repeat all: go to last song
+        playSongByIndex(playlist.length - 1);
+    }
+});
+
+// ===== NEXT =====
+btnNext.addEventListener('click', () => {
+    if (playlist.length === 0) return;
+
+    if (isShuffle) {
+        playSongByIndex(Math.floor(Math.random() * playlist.length));
+    } else if (currentIndex < playlist.length - 1) {
+        playSongByIndex(currentIndex + 1);
+    } else if (repeatMode === 1) {
+        // Repeat all: go back to first song
+        playSongByIndex(0);
+    }
+});
+
+// ===== SHUFFLE =====
+btnShuffle.addEventListener('click', () => {
+    isShuffle = !isShuffle;
+    btnShuffle.classList.toggle('active', isShuffle);
+    if (isShuffle) {
+        btnShuffle.style.color = 'var(--green, #1db954)';
+    } else {
+        btnShuffle.style.color = '';
+    }
+});
+
+// ===== REPEAT =====
+btnRepeat.addEventListener('click', () => {
+    repeatMode = (repeatMode + 1) % 3;
+    const icon = btnRepeat.querySelector('i');
+
+    if (repeatMode === 0) {
+        // Off
+        btnRepeat.style.color = '';
+        icon.className = 'fas fa-repeat';
+        btnRepeat.classList.remove('active');
+    } else if (repeatMode === 1) {
+        // Repeat all
+        btnRepeat.style.color = 'var(--green, #1db954)';
+        icon.className = 'fas fa-repeat';
+        btnRepeat.classList.add('active');
+    } else {
+        // Repeat one
+        btnRepeat.style.color = 'var(--green, #1db954)';
+        icon.className = 'fas fa-repeat';
+        btnRepeat.setAttribute('data-repeat-one', '1');
+        btnRepeat.classList.add('active');
+    }
 });
 
 // Update Play Button Icon
 function updatePlayButton() {
     const icon = btnPlay.querySelector('i');
     if (isPlaying) {
-        icon.className = 'fas fa-pause-circle';
+        icon.className = 'fas fa-pause';
     } else {
-        icon.className = 'fas fa-play-circle';
+        icon.className = 'fas fa-play';
     }
 }
 
@@ -83,11 +190,29 @@ audioPlayer.addEventListener('timeupdate', () => {
     }
 });
 
+// ===== AUTO-PLAY NEXT (with repeat/shuffle support) =====
 audioPlayer.addEventListener('ended', () => {
-    // Auto play next (if available)
-    // Or loop current song
     isPlaying = false;
+    playerBar.classList.remove('playing');
     updatePlayButton();
+
+    if (repeatMode === 2) {
+        // Repeat one: replay the same song
+        audioPlayer.currentTime = 0;
+        audioPlayer.play();
+        isPlaying = true;
+        playerBar.classList.add('playing');
+        updatePlayButton();
+    } else if (isShuffle) {
+        // Shuffle: pick a random song
+        playSongByIndex(Math.floor(Math.random() * playlist.length));
+    } else if (currentIndex < playlist.length - 1) {
+        // Next song
+        playSongByIndex(currentIndex + 1);
+    } else if (repeatMode === 1) {
+        // Repeat all: go back to first
+        playSongByIndex(0);
+    }
 });
 
 // Progress Bar Click
