@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MusicSystem.Domain.Entities.ListeningHistory>
+﻿@model IEnumerable<MusicSystem.Shared.DTOs.Songs.HistoryDto>
 @{
     ViewData["Title"] = "Lịch sử nghe";
     Layout = "_CustomerLayout";
@@ -27,10 +27,9 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    var song = item.Song;
-                    var artists = song?.SongArtists != null && song.SongArtists.Any()
-                    ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
-                    : "Unknown";
+                    var songId = item.SongId;
+                    var title = item.Title;
+                    var artists = item.Artists;
 
                     var diff = DateTime.UtcNow - item.PlayedAt;
                     var timeAgo = diff.TotalMinutes < 1 ? "Vừa xong"
@@ -39,11 +38,11 @@
                     : diff.TotalDays < 7 ? $"{(int)diff.TotalDays} ngày"
                     : item.PlayedAt.ToString("dd/MM/yy");
 
-                    var safetitle = (song?.Title ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
-                    var safeartists = artists.Replace("'", "\\'").Replace("\"", "\\\"");
-                    var safeUrl = song?.FileUrl ?? "";
+                    var safetitle = (title ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
+                    var safeartists = (artists ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
+                    var safeUrl = item.FileUrl ?? "";
 
-                    <tr class="history-row" onclick="playHistorySong('@song?.SongId','@safetitle','@safeartists','@safeUrl')">
+                    <tr class="history-row" onclick="playHistorySong('@songId','@safetitle','@safeartists','@safeUrl')">
                         <td style="width:40px">
                             <span class="h-num">@rownum</span>
                             <span class="h-play-icon"><i class="fas fa-play"></i></span>
@@ -52,14 +51,14 @@
                             <div class="h-thumb"><i class="fas fa-music"></i></div>
                         </td>
                         <td>
-                            <div class="h-info-title" title="@song?.Title">@(song?.Title ?? "Unknown")</div>
+                            <div class="h-info-title" title="@title">@(title ?? "Unknown")</div>
                             <div class="h-info-artist d-md-none">@artists</div>
                         </td>
                         <td class="h-time d-none d-md-table-cell">@artists</td>
                         <td class="h-time d-none d-lg-table-cell">@timeAgo</td>
                         <td>
                             <button class="h-play-btn"
-                                    onclick="event.stopPropagation(); playHistorySong('@song?.SongId','@safetitle','@safeartists','@safeUrl')"
+                                    onclick="event.stopPropagation(); playHistorySong('@songId','@safetitle','@safeartists','@safeUrl')"
                                     title="Phát">
                                 <i class="fas fa-play"></i>
                             </button>

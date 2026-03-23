@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MusicSystem.Domain.Entities;
-using MusicSystem.Domain.Interfaces;
+using MusicSystem.Application.Services.Playlists;
 using System;
 using System.Linq;
 using System.Security.Claims;
@@ -13,11 +13,11 @@ namespace MusicSystem.Web.Controllers
     [Route("Playlist")]
     public class PlaylistController : Controller
     {
-        private readonly IPlaylistRepository _playlistRepository;
+        private readonly IPlaylistService _playlistService;
 
-        public PlaylistController(IPlaylistRepository playlistRepository)
+        public PlaylistController(IPlaylistService playlistService)
         {
-            _playlistRepository = playlistRepository;
+            _playlistService = playlistService;
         }
 
         [HttpGet("")]
@@ -29,14 +29,14 @@ namespace MusicSystem.Web.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            var playlists = await _playlistRepository.GetUserPlaylistsAsync(userId);
+            var playlists = await _playlistService.GetUserPlaylistsAsync(userId);
             return View(playlists);
         }
 
         [HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(Guid id)
         {
-            var playlist = await _playlistRepository.GetByIdAsync(id);
+            var playlist = await _playlistService.GetByIdAsync(id);
             if (playlist == null)
             {
                 return NotFound();
@@ -45,8 +45,9 @@ namespace MusicSystem.Web.Controllers
             return View(playlist);
         }
 
-        
+
         [HttpPost("Create")]
+        [IgnoreAntiforgeryToken]
         public async Task<IActionResult> Create(string title, bool isPublic = true)
         {
             try
@@ -57,18 +58,9 @@ namespace MusicSystem.Web.Controllers
                     return Json(new { success = false, message = "Unauthorized" });
                 }
 
-                var playlist = new Playlist
-                {
-                    PlaylistId = Guid.NewGuid(),
-                    Title = title,          
-                    IsPublic = isPublic,
-                    UserId = userId,
-                    CreatedAt = DateTime.UtcNow
-                };
+                var createdPlaylist = await _playlistService.CreateAsync(title, isPublic, userId);
 
-                await _playlistRepository.CreateAsync(playlist);
-
-                return Json(new { success = true, playlistId = playlist.PlaylistId });
+                return Json(new { success = true, playlistId = createdPlaylist.PlaylistId });
             }
             catch (Exception ex)
             {
@@ -88,13 +80,13 @@ namespace MusicSystem.Web.Controllers
                     return Json(new { success = false, message = "Chưa đăng nhập" });
                 }
 
-                var playlists = await _playlistRepository.GetUserPlaylistsAsync(userId);
+                var playlists = await _playlistService.GetUserPlaylistsAsync(userId);
 
                 var result = playlists.Select(p => new
                 {
                     playlistId = p.PlaylistId,
                     playlistName = p.Title,
-                    songCount = p.PlaylistSongs?.Count ?? 0
+                    songCount = p.SongCount
                 });
 
                 return Json(new { success = true, playlists = result });
@@ -107,11 +99,20 @@ namespace MusicSystem.Web.Controllers
 
 
         [HttpPost("AddSong")]
+        [IgnoreAntiforgeryToken]
         public async Task<IActionResult> AddSong(Guid playlistId, Guid songId)
         {
             try
             {
-                await _playlistRepository.AddSongAsync(playlistId, songId);
+                if (playlistId == Guid.Empty || songId == Guid.Empty)
+                    return Json(new { success = false, message = "ID không hợp lệ" });
+
+                var playlist = await _playlistService.GetByIdAsync(playlistId);
+                var userId = GetCurrentUserId();
+                if (playlist == null || playlist.UserId != userId)
+                    return Json(new { success = false, message = "Bạn không có quyền truy cập!" });
+
+                await _playlistService.AddSongAsync(playlistId, songId);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -121,11 +122,17 @@ namespace MusicSystem.Web.Controllers
         }
 
         [HttpPost("RemoveSong")]
+        [IgnoreAntiforgeryToken]
         public async Task<IActionResult> RemoveSong(Guid playlistId, Guid songId)
         {
             try
             {
-                await _playlistRepository.RemoveSongAsync(playlistId, songId);
+                var playlist = await _playlistService.GetByIdAsync(playlistId);
+                var userId = GetCurrentUserId();
+                if (playlist == null || playlist.UserId != userId)
+                    return Json(new { success = false, message = "Bạn không có quyền truy cập!" });
+
+                await _playlistService.RemoveSongAsync(playlistId, songId);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -139,7 +146,12 @@ namespace MusicSystem.Web.Controllers
         {
             try
             {
-                await _playlistRepository.DeleteAsync(id);
+                var playlist = await _playlistService.GetByIdAsync(id);
+                var userId = GetCurrentUserId();
+                if (playlist == null || playlist.UserId != userId)
+                    return Json(new { success = false, message = "Bạn không có quyền truy cập!" });
+
+                await _playlistService.DeleteAsync(id);
                 return Json(new { success = true });
             }
             catch (Exception ex)

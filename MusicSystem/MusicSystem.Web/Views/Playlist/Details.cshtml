@@ -1,11 +1,11 @@
-﻿@model MusicSystem.Domain.Entities.Playlist
+﻿@model MusicSystem.Shared.DTOs.Playlists.PlaylistDto
 @{
     ViewData["Title"] = Model.Title;
     Layout = "_CustomerLayout";
 
-    var totalSec = Model.PlaylistSongs?
-        .Where(ps => ps.Song != null)
-        .Sum(ps => ps.Song.Duration) ?? 0;
+    var totalSec = Model.Songs?
+        .Where(song => song != null)
+        .Sum(song => song.Duration) ?? 0;
     var totalDur = totalSec > 3600
         ? $"{totalSec / 3600} giờ {(totalSec % 3600) / 60} phút"
         : $"{totalSec / 60} phút";
@@ -21,7 +21,7 @@
         <div class="pl-hero-type">Danh sách phát</div>
         <div class="pl-hero-title">@Model.Title</div>
         <div class="pl-hero-meta">
-            <strong>@(Model.PlaylistSongs?.Count ?? 0) bài hát</strong>
+            <strong>@Model.SongCount bài hát</strong>
             &nbsp;•&nbsp; @totalDur
             &nbsp;•&nbsp; @(Model.IsPublic ? "Công khai" : "Riêng tư")
             &nbsp;•&nbsp; @Model.CreatedAt.ToString("dd/MM/yyyy")
@@ -31,7 +31,7 @@
 
 <!-- Actions bar -->
 <div class="pl-actions-bar">
-    @if (Model.PlaylistSongs?.Any() == true)
+    @if (Model.Songs?.Any() == true)
     {
         <button class="pl-play-btn" onclick="playAll()" title="Phát tất cả">
             <i class="fas fa-play" style="margin-left:3px"></i>
@@ -46,7 +46,7 @@
 </div>
 
 <!-- Song table -->
-@if (Model.PlaylistSongs?.Any() == true)
+@if (Model.Songs?.Any() == true)
 {
     <div class="pl-table-header">
         <div style="text-align:center">#</div>
@@ -55,12 +55,9 @@
         <div style="text-align:right">⏱</div>
     </div>
 
-    @foreach (var ps in Model.PlaylistSongs.OrderBy(x => x.AddedAt))
+    @foreach (var song in Model.Songs)
     {
-        var song = ps.Song;
-        var artists = song?.SongArtists != null && song.SongArtists.Any()
-            ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
-            : "Unknown";
+        var artists = song?.Artists ?? "Unknown";
         var dur = TimeSpan.FromSeconds(song?.Duration ?? 0).ToString(@"mm\:ss");
         var stitle = (song?.Title ?? "").Replace("'", "\\'");
         var sartists = artists.Replace("'", "\\'");
@@ -113,16 +110,13 @@ else
     <script>
         // All songs for playAll
         const allSongs = [
-            @if (Model.PlaylistSongs?.Any() == true)
+            @if (Model.Songs?.Any() == true)
             {
-                            @foreach (var ps in Model.PlaylistSongs.OrderBy(x => x.AddedAt))
-                        {
-                                    var song = ps.Song;
-                                    var artists = song?.SongArtists != null && song.SongArtists.Any()
-                                    ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
-                                    : "Unknown";
-                                    <text>{songId:'@song?.SongId', title:'@((song?.Title ?? "").Replace("'", "\\'"))', artists:'@(artists.Replace("'", "\\'"))', url:'@(song?.FileUrl ?? "")' },</text>
-                            }
+                                @foreach (var song in Model.Songs)
+                            {
+                                            var artists = song?.Artists ?? "Unknown";
+                                            <text>{songId:'@song?.SongId', title:'@((song?.Title ?? "").Replace("'", "\\'"))', artists:'@(artists.Replace("'", "\\'"))', url:'@(song?.FileUrl ?? "")' },</text>
+                                }
             }
         ];
 

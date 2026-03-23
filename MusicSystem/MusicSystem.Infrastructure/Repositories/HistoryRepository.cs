@@ -20,6 +20,16 @@ namespace MusicSystem.Infrastructure.Repositories
 
         public async Task TrackPlayAsync(Guid userId, Guid songId)
         {
+            // Debounce: Chặn spam lượt nghe bằng cách kiểm tra lịch sử 5 phút gần nhất
+            var recentPlay = await _context.ListeningHistories
+                .Where(h => h.UserId == userId && h.SongId == songId && h.PlayedAt >= DateTime.UtcNow.AddMinutes(-5))
+                .FirstOrDefaultAsync();
+
+            if (recentPlay != null)
+            {
+                return; // Đã nghe gần đây, bỏ qua chống spam
+            }
+
             var history = new ListeningHistory
             {
                 HistoryId = Guid.NewGuid(),

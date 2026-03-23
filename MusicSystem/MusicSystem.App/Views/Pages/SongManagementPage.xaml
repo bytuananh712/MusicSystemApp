@@ -122,16 +122,32 @@
                                         Binding="{Binding TotalPlays}" 
                                         Width="80"/>
 
-                    <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                    <DataGridTemplateColumn Header="Trạng thái" Width="120">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Border Background="{Binding Status, Converter={StaticResource StatusToBrushConverter}}"
                                         CornerRadius="3"
                                         Padding="8,3">
-                                    <TextBlock Text="{Binding Status}" 
-                                               Foreground="White" 
+                                    <TextBlock Foreground="White" 
                                                FontSize="11"
-                                               HorizontalAlignment="Center"/>
+                                               HorizontalAlignment="Center">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Text" Value="{Binding Status}" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Status}" Value="Pending">
+                                                        <Setter Property="Text" Value="Chờ Admin duyệt" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Status}" Value="Active">
+                                                        <Setter Property="Text" Value="Đã duyệt" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Status}" Value="Rejected">
+                                                        <Setter Property="Text" Value="Bị từ chối" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
                                 </Border>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

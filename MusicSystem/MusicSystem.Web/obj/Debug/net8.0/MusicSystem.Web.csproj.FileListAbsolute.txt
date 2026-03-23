@@ -976,10 +976,10 @@ E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\staticwebassets.build.json.cache
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\staticwebassets.development.json
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\MusicSys.E4E8DD76.Up2Date
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\MusicSystem.Web.dll
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\refint\MusicSystem.Web.dll
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\MusicSystem.Web.pdb
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\MusicSystem.Web.genruntimeconfig.cache
 E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\ref\MusicSystem.Web.dll
+E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

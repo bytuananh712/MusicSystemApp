@@ -5,6 +5,7 @@ using MusicSystem.Application.Services.Files;
 using MusicSystem.Application.Services.Songs;
 using MusicSystem.Application.Services.Users;
 using MusicSystem.Domain.Interfaces;
+using MusicSystem.Infrastructure.Data;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Artists;
 using MusicSystem.Shared.DTOs.Auth;
@@ -33,6 +34,7 @@ namespace MusicSystem.Infrastructure.Socket
         private readonly ISongService _songService;
         private readonly IFileUploadService _fileUploadService;
         private readonly IUserRepository _userRepository;
+        private readonly MusicStreamingDbContext _dbContext;
 
         // Lưu giữ UserId của phiên đăng nhập hiện tại (per-connection)
         private Guid? _authenticatedUserId;
@@ -45,7 +47,8 @@ namespace MusicSystem.Infrastructure.Socket
             IArtistService artistService,
             ISongService songService,
             IFileUploadService fileUploadService,
-            IUserRepository userRepository)
+            IUserRepository userRepository,
+            MusicStreamingDbContext dbContext)
         {
             _logger = logger;
             _authService = authService;
@@ -54,6 +57,7 @@ namespace MusicSystem.Infrastructure.Socket
             _songService = songService;
             _fileUploadService = fileUploadService;
             _userRepository = userRepository;
+            _dbContext = dbContext;
         }
 
         public async Task HandleAsync(TcpClient client, CancellationToken cancellationToken)
@@ -178,8 +182,10 @@ namespace MusicSystem.Infrastructure.Socket
                     SocketCommands.CreateSong => await HandleCreateSongAsync(request),
                     SocketCommands.UpdateSong => await HandleUpdateSongAsync(request),
                     SocketCommands.DeleteSong => await HandleDeleteSongAsync(request),
-                    SocketCommands.ApproveSong => await HandleApproveSongAsync(request),
-                    SocketCommands.RejectSong => await HandleRejectSongAsync(request),
+
+                    // Admin ONLY (Sửa lỗi phân quyền duyệt bài do Manager gọi qua mặt Admin)
+                    SocketCommands.ApproveSong => await RequireRole("Admin", request, () => HandleApproveSongAsync(request)),
+                    SocketCommands.RejectSong => await RequireRole("Admin", request, () => HandleRejectSongAsync(request)),
 
                     _ => new SocketResponse
                     {
@@ -195,14 +201,20 @@ namespace MusicSystem.Infrastructure.Socket
                 _logger.LogError(ex, " Command error: {Command}", request.Command);
                 return ErrorResponse(request.RequestId, ex.Message);
             }
+            finally
+            {
+                // XÓA TRACKING của EF Core sau mỗi request để lấy dữ liệu mới ở các request sau!
+                // Fix lỗi 2 app đang bật thì một bên duyệt, một bên không cập nhật được.
+                _dbContext?.ChangeTracker?.Clear();
+            }
         }
 
         // ==================== ROLE-BASED ACCESS CONTROL ====================
 
-        
+
         /// Kiểm tra người dùng hiện tại có role yêu cầu không.
         /// Nếu không, trả về Unauthorized.
-        
+
         private async Task<SocketResponse> RequireRole(string requiredRole, SocketRequest request, Func<Task<SocketResponse>> handler)
         {
             if (!_authenticatedRoles.Contains(requiredRole))
@@ -215,9 +227,9 @@ namespace MusicSystem.Infrastructure.Socket
             return await handler();
         }
 
-       
+
         /// Load danh sách Roles của user từ DB
-        
+
         private async Task LoadUserRolesAsync(Guid userId)
         {
             var user = await _userRepository.GetByIdAsync(userId);
@@ -237,10 +249,10 @@ namespace MusicSystem.Infrastructure.Socket
 
         // ==================== DTO VALIDATION ====================
 
-        
+
         /// Validate DTO bằng DataAnnotations.
         /// Trả về danh sách lỗi nếu có, hoặc null nếu hợp lệ.
-        
+
         private List<string>? ValidateDto<T>(T? dto)
         {
             if (dto == null)
@@ -259,10 +271,10 @@ namespace MusicSystem.Infrastructure.Socket
             return null; // Hợp lệ
         }
 
-        
+
         /// Validate DTO và trả về ErrorResponse nếu không hợp lệ.
         /// Trả về null nếu hợp lệ (để tiếp tục xử lý).
-        
+
         private SocketResponse? ValidateDtoOrError<T>(Guid requestId, T? dto)
         {
             var errors = ValidateDto(dto);
@@ -406,9 +418,9 @@ namespace MusicSystem.Infrastructure.Socket
 
         // ==================== HELPER METHODS ====================
 
-        
+
         /// ✅ SỬA LỖI: Trả về UserId từ phiên đăng nhập thực tế thay vì query DB bừa bãi.
-        
+
         private Guid GetCurrentUserId()
         {
             if (_authenticatedUserId == null)
@@ -581,7 +593,7 @@ namespace MusicSystem.Infrastructure.Socket
 
         private async Task<SocketResponse> HandleGetAllSongsAsync(SocketRequest request)
         {
-            var songs = await _songService.GetAllSongsAsync("Active", 1, 1000);
+            var songs = await _songService.GetAllSongsAsync(null, 1, 1000);
             return SuccessResponse(request.RequestId, songs);
         }
 

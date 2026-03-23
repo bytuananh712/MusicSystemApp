@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MusicSystem.Domain.Interfaces;
+using MusicSystem.Application.Services.Likes;
+using MusicSystem.Application.Services.History;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -10,15 +11,15 @@ namespace MusicSystem.Web.Controllers
     [Route("Song")]
     public class SongController : Controller
     {
-        private readonly ILikeRepository _likeRepository;
-        private readonly IHistoryRepository _historyRepository;
+        private readonly ILikeService _likeService;
+        private readonly IHistoryService _historyService;
 
         public SongController(
-            ILikeRepository likeRepository,
-            IHistoryRepository historyRepository)
+            ILikeService likeService,
+            IHistoryService historyService)
         {
-            _likeRepository = likeRepository;
-            _historyRepository = historyRepository;
+            _likeService = likeService;
+            _historyService = historyService;
         }
 
         [HttpGet("Liked")]
@@ -29,7 +30,7 @@ namespace MusicSystem.Web.Controllers
             if (userId == Guid.Empty)
                 return RedirectToAction("Login", "Account");
 
-            var likedSongs = await _likeRepository.GetLikedSongsAsync(userId);
+            var likedSongs = await _likeService.GetLikedSongsAsync(userId);
             return View(likedSongs);
         }
 
@@ -45,7 +46,7 @@ namespace MusicSystem.Web.Controllers
                     return Json(new { success = false, message = "Vui lòng đăng nhập" });
                 }
 
-                var liked = await _likeRepository.ToggleLikeAsync(userId, songId);
+                var liked = await _likeService.ToggleLikeAsync(userId, songId);
 
                 return Json(new { success = true, liked });
             }
@@ -67,7 +68,7 @@ namespace MusicSystem.Web.Controllers
                     return Json(new { success = true, message = "Anonymous play" });
                 }
 
-                await _historyRepository.TrackPlayAsync(userId, songId);
+                await _historyService.TrackPlayAsync(userId, songId);
 
                 return Json(new { success = true });
             }
@@ -88,7 +89,7 @@ namespace MusicSystem.Web.Controllers
                     return Json(new { liked = false });
                 }
 
-                var liked = await _likeRepository.IsLikedAsync(userId, songId);
+                var liked = await _likeService.IsLikedAsync(userId, songId);
 
                 return Json(new { liked });
             }

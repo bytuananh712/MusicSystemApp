@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MusicSystem.Domain.Entities.SongLike>
+﻿@model IEnumerable<MusicSystem.Shared.DTOs.Songs.SongDto>
 @{
     ViewData["Title"] = "Bài hát yêu thích";
     Layout = "_CustomerLayout";
@@ -27,19 +27,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var like in Model)
+                @foreach (var song in Model)
                 {
-                    var song = like.Song;
-                    var artists = song?.SongArtists != null && song.SongArtists.Any()
-                    ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
-                    : "Unknown";
+                    var artists = song?.Artists ?? "Unknown";
 
-                    var diff = DateTime.UtcNow - like.LikedAt;
+                    var diff = DateTime.UtcNow - (song?.CreatedAt ?? DateTime.UtcNow);
                     var timeAgo = diff.TotalMinutes < 1 ? "Vừa xong"
                     : diff.TotalHours < 1 ? $"{(int)diff.TotalMinutes} phút"
                     : diff.TotalDays < 1 ? $"{(int)diff.TotalHours} giờ"
                     : diff.TotalDays < 7 ? $"{(int)diff.TotalDays} ngày"
-                    : like.LikedAt.ToString("dd/MM/yy");
+                    : (song?.CreatedAt ?? DateTime.UtcNow).ToString("dd/MM/yy");
 
                     var stitle = (song?.Title ?? "").Replace("'", "\\'");
                     var sartists = artists.Replace("'", "\\'");

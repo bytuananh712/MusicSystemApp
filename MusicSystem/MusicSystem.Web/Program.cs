@@ -6,6 +6,9 @@ using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Files;
 using MusicSystem.Application.Services.Songs;
 using MusicSystem.Application.Services.Users;
+using MusicSystem.Application.Services.Playlists;
+using MusicSystem.Application.Services.Likes;
+using MusicSystem.Application.Services.History;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Infrastructure.Data;
 using MusicSystem.Infrastructure.Repositories;
@@ -22,11 +25,11 @@ namespace MusicSystem.Web
             var builder = WebApplication.CreateBuilder(args);
 
 
-            
+
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)             
-                .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning) 
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
                 .Enrich.FromLogContext()
                 .WriteTo.Console(
                     outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
@@ -61,6 +64,9 @@ namespace MusicSystem.Web
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IArtistService, ArtistService>();
             builder.Services.AddScoped<ISongService, SongService>();
+            builder.Services.AddScoped<IPlaylistService, PlaylistService>();
+            builder.Services.AddScoped<ILikeService, LikeService>();
+            builder.Services.AddScoped<IHistoryService, HistoryService>();
 
 
             // ===== SOCKET SERVER =====
@@ -68,7 +74,7 @@ namespace MusicSystem.Web
             builder.Services.AddHostedService<SocketServer>(); // Background service
 
             // ===== FILE UPLOAD SERVICE =====
-            
+
             var uploadPath = Path.Combine(builder.Environment.WebRootPath, "uploads", "songs");
             builder.Services.AddScoped<IFileUploadService>(sp => new FileUploadService(uploadPath));
 

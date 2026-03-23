@@ -143,10 +143,8 @@ namespace MusicSystem.Application.Services.Songs
             var song = await _songRepository.GetByIdAsync(songId);
             if (song == null) return false;
 
-            song.Status = "Disabled";
+            song.Status = "Rejected"; // Đổi "Disabled" thành "Rejected" để đồng bộ với UI WPF
             await _songRepository.UpdateAsync(song);
-
-
 
             return true;
         }
@@ -172,8 +170,8 @@ namespace MusicSystem.Application.Services.Songs
                 Artists = song.SongArtists != null
                     ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
                     : "Unknown",
-                CreatedAt = song.CreatedAt,
-                ApprovedAt = song.ApprovedAt
+                CreatedAt = song.CreatedAt.ToLocalTime(),
+                ApprovedAt = song.ApprovedAt?.ToLocalTime()
             };
         }
     }

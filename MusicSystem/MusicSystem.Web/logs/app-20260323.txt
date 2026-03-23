@@ -1,0 +1,1114 @@
+[2026-03-23 19:58:04 INF]  Socket Server started on port 1500
+[2026-03-23 19:58:06 INF]  Client connected: 127.0.0.1:54180
+[2026-03-23 19:58:07 INF]  Client connected: 127.0.0.1:54180
+[2026-03-23 19:58:07 INF]  Command: Login
+[2026-03-23 19:58:07 INF]  Login attempt: manager
+[2026-03-23 19:58:07 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 19:58:11 INF]  Login successful: manager (Manager)
+[2026-03-23 19:58:11 INF]  Status: Success
+[2026-03-23 19:58:11 INF]  Command: GetAllSongs
+[2026-03-23 19:58:11 INF]  Status: Success
+[2026-03-23 19:58:11 INF]  Command: GetAllArtists
+[2026-03-23 19:58:11 INF]  Found 6 artists
+[2026-03-23 19:58:11 INF]  Status: Success
+[2026-03-23 19:58:12 INF]  Command: GetPendingSongs
+[2026-03-23 19:58:12 INF]  Found 3 pending songs
+[2026-03-23 19:58:12 INF]  Status: Success
+[2026-03-23 19:58:28 INF]  Command: GetAllSongs
+[2026-03-23 19:58:28 INF]  Status: Success
+[2026-03-23 19:58:31 INF]  Command: GetAllSongs
+[2026-03-23 19:58:31 INF]  Status: Success
+[2026-03-23 19:58:31 INF]  Command: GetAllSongs
+[2026-03-23 19:58:31 INF]  Status: Success
+[2026-03-23 19:58:32 INF]  Command: GetAllSongs
+[2026-03-23 19:58:32 INF]  Status: Success
+[2026-03-23 19:58:43 INF]  Command: GetAllSongs
+[2026-03-23 19:58:43 INF]  Status: Success
+[2026-03-23 19:58:43 INF]  Command: GetAllSongs
+[2026-03-23 19:58:43 INF]  Status: Success
+[2026-03-23 19:58:43 INF]  Command: GetAllSongs
+[2026-03-23 19:58:43 INF]  Status: Success
+[2026-03-23 19:58:43 INF]  Command: GetAllSongs
+[2026-03-23 19:58:43 INF]  Status: Success
+[2026-03-23 19:58:43 INF]  Command: GetAllSongs
+[2026-03-23 19:58:43 INF]  Status: Success
+[2026-03-23 19:58:44 INF]  Command: GetAllSongs
+[2026-03-23 19:58:44 INF]  Status: Success
+[2026-03-23 19:58:44 INF]  Command: GetAllSongs
+[2026-03-23 19:58:44 INF]  Status: Success
+[2026-03-23 19:58:44 INF]  Command: GetAllSongs
+[2026-03-23 19:58:44 INF]  Status: Success
+[2026-03-23 19:58:47 INF]  Command: GetAllArtists
+[2026-03-23 19:58:47 INF]  Found 6 artists
+[2026-03-23 19:58:47 INF]  Status: Success
+[2026-03-23 19:59:07 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 19:59:09 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 19:59:52 INF]  Client connected: 127.0.0.1:57232
+[2026-03-23 19:59:52 INF]  Client connected: 127.0.0.1:57232
+[2026-03-23 19:59:52 INF]  Command: Login
+[2026-03-23 19:59:52 INF]  Login attempt: admin
+[2026-03-23 19:59:53 INF]  Login successful: admin (Admin)
+[2026-03-23 19:59:53 INF]  Status: Success
+[2026-03-23 19:59:53 INF]  Command: GetAllUsers
+[2026-03-23 19:59:53 INF]  Status: Success
+[2026-03-23 19:59:53 INF]  Command: GetAllSongs
+[2026-03-23 19:59:53 INF]  Status: Success
+[2026-03-23 19:59:53 INF]  Command: GetAllArtists
+[2026-03-23 19:59:53 INF]  Found 6 artists
+[2026-03-23 19:59:53 INF]  Status: Success
+[2026-03-23 19:59:53 INF]  Command: GetPendingSongs
+[2026-03-23 19:59:53 INF]  Found 3 pending songs
+[2026-03-23 19:59:53 INF]  Status: Success
+[2026-03-23 20:00:02 INF]  Command: GetPendingSongs
+[2026-03-23 20:00:02 INF]  Found 3 pending songs
+[2026-03-23 20:00:02 INF]  Status: Success
+[2026-03-23 20:00:06 INF]  Command: ApproveSong
+[2026-03-23 20:00:06 INF]  Approving song: "000d5e07-65f7-40ea-a53c-15e9cacd1dfa" by Admin "7e471c56-c5cf-494f-abb9-77ab96af2d73"
+[2026-03-23 20:00:06 INF]  Song approved
+[2026-03-23 20:00:06 INF]  Status: Success
+[2026-03-23 20:00:07 INF]  Command: GetPendingSongs
+[2026-03-23 20:00:07 INF]  Found 2 pending songs
+[2026-03-23 20:00:07 INF]  Status: Success
+[2026-03-23 20:00:09 INF]  Command: GetAllArtists
+[2026-03-23 20:00:09 INF]  Found 6 artists
+[2026-03-23 20:00:09 INF]  Status: Success
+[2026-03-23 20:00:09 INF]  Command: GetAllSongs
+[2026-03-23 20:00:09 INF]  Status: Success
+[2026-03-23 20:00:12 INF]  Command: UpdateSong
+[2026-03-23 20:00:12 INF]  Status: Success
+[2026-03-23 20:00:13 INF]  Command: GetAllSongs
+[2026-03-23 20:00:13 INF]  Status: Success
+[2026-03-23 20:00:14 WRN]  Empty request received
+[2026-03-23 20:00:14 INF]  Client disconnected: 127.0.0.1:57232
+[2026-03-23 20:00:14 INF]  Client disconnected
+[2026-03-23 20:00:15 WRN]  Empty request received
+[2026-03-23 20:00:15 INF]  Client disconnected: 127.0.0.1:54180
+[2026-03-23 20:00:15 INF]  Client disconnected
+[2026-03-23 20:10:40 INF] User profile is available. Using 'C:\Users\nguye\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-03-23 20:10:40 INF]  Socket Server started on port 1500
+[2026-03-23 20:10:40 INF] Now listening on: https://localhost:7021
+[2026-03-23 20:10:40 INF] Now listening on: http://localhost:7000
+[2026-03-23 20:10:40 INF] Application started. Press Ctrl+C to shut down.
+[2026-03-23 20:10:40 INF] Hosting environment: Development
+[2026-03-23 20:10:40 INF] Content root path: E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web
+[2026-03-23 20:10:41 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 20:10:41 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 20:10:41 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 20:10:43 INF] Executing ViewResult, running view Index.
+[2026-03-23 20:10:43 INF] Executed ViewResult - view Index executed in 185.4213ms.
+[2026-03-23 20:10:43 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 1774.9922ms
+[2026-03-23 20:10:43 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 20:10:43 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 1993.8575ms
+[2026-03-23 20:10:43 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 20:10:43 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 20:10:43 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 17.7932ms
+[2026-03-23 20:10:43 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.5939ms
+[2026-03-23 20:10:52 INF]  Client connected: 127.0.0.1:64113
+[2026-03-23 20:10:52 INF]  Client connected: 127.0.0.1:64113
+[2026-03-23 20:10:52 INF]  Command: Login
+[2026-03-23 20:10:52 INF]  Login attempt: manager
+[2026-03-23 20:10:53 INF]  Login successful: manager (Manager)
+[2026-03-23 20:10:53 INF]  Status: Success
+[2026-03-23 20:10:53 INF]  Command: GetAllSongs
+[2026-03-23 20:10:53 INF]  Status: Success
+[2026-03-23 20:10:53 INF]  Command: GetAllArtists
+[2026-03-23 20:10:53 INF]  Found 6 artists
+[2026-03-23 20:10:53 INF]  Status: Success
+[2026-03-23 20:10:53 INF]  Command: GetPendingSongs
+[2026-03-23 20:10:53 INF]  Found 3 pending songs
+[2026-03-23 20:10:53 INF]  Status: Success
+[2026-03-23 20:10:56 INF]  Command: GetAllArtists
+[2026-03-23 20:10:56 INF]  Found 6 artists
+[2026-03-23 20:10:56 INF]  Status: Success
+[2026-03-23 20:10:57 INF]  Command: GetAllSongs
+[2026-03-23 20:10:57 INF]  Status: Success
+[2026-03-23 20:10:58 INF]  Command: GetAllSongs
+[2026-03-23 20:10:58 INF]  Status: Success
+[2026-03-23 20:11:03 WRN]  Empty request received
+[2026-03-23 20:11:03 INF]  Client disconnected: 127.0.0.1:64113
+[2026-03-23 20:11:03 INF]  Client disconnected
+[2026-03-23 20:11:13 INF]  Client connected: 127.0.0.1:57536
+[2026-03-23 20:11:13 INF]  Client connected: 127.0.0.1:57536
+[2026-03-23 20:11:13 INF]  Command: Login
+[2026-03-23 20:11:13 INF]  Login attempt: admin
+[2026-03-23 20:11:13 WRN]  Login failed: Tên đăng nhập hoặc mật khẩu không đúng
+[2026-03-23 20:11:13 INF]  Status: Unauthorized
+[2026-03-23 20:11:19 INF]  Command: Login
+[2026-03-23 20:11:19 INF]  Login attempt: admin
+[2026-03-23 20:11:19 WRN]  Login failed: Tên đăng nhập hoặc mật khẩu không đúng
+[2026-03-23 20:11:19 INF]  Status: Unauthorized
+[2026-03-23 20:11:26 INF]  Command: Login
+[2026-03-23 20:11:26 INF]  Login attempt: admin
+[2026-03-23 20:11:26 INF]  Login successful: admin (Admin)
+[2026-03-23 20:11:26 INF]  Status: Success
+[2026-03-23 20:11:26 INF]  Command: GetAllUsers
+[2026-03-23 20:11:26 INF]  Status: Success
+[2026-03-23 20:11:26 INF]  Command: GetAllSongs
+[2026-03-23 20:11:26 INF]  Status: Success
+[2026-03-23 20:11:26 INF]  Command: GetAllArtists
+[2026-03-23 20:11:26 INF]  Found 6 artists
+[2026-03-23 20:11:26 INF]  Status: Success
+[2026-03-23 20:11:26 INF]  Command: GetPendingSongs
+[2026-03-23 20:11:26 INF]  Found 3 pending songs
+[2026-03-23 20:11:26 INF]  Status: Success
+[2026-03-23 20:11:29 INF]  Command: GetPendingSongs
+[2026-03-23 20:11:29 INF]  Found 3 pending songs
+[2026-03-23 20:11:29 INF]  Status: Success
+[2026-03-23 20:11:32 INF]  Command: ApproveSong
+[2026-03-23 20:11:32 INF]  Approving song: "000d5e07-65f7-40ea-a53c-15e9cacd1dfa" by Admin "7e471c56-c5cf-494f-abb9-77ab96af2d73"
+[2026-03-23 20:11:32 INF]  Song approved
+[2026-03-23 20:11:32 INF]  Status: Success
+[2026-03-23 20:11:33 INF]  Command: GetPendingSongs
+[2026-03-23 20:11:33 INF]  Found 2 pending songs
+[2026-03-23 20:11:33 INF]  Status: Success
+[2026-03-23 20:11:35 WRN]  Empty request received
+[2026-03-23 20:11:35 INF]  Client disconnected: 127.0.0.1:57536
+[2026-03-23 20:11:35 INF]  Client disconnected
+[2026-03-23 20:11:38 INF]  Client connected: 127.0.0.1:53714
+[2026-03-23 20:11:38 INF]  Client connected: 127.0.0.1:53714
+[2026-03-23 20:11:38 INF]  Command: Login
+[2026-03-23 20:11:38 INF]  Login attempt: manager
+[2026-03-23 20:11:38 INF]  Login successful: manager (Manager)
+[2026-03-23 20:11:38 INF]  Status: Success
+[2026-03-23 20:11:39 INF]  Command: GetAllSongs
+[2026-03-23 20:11:39 INF]  Status: Success
+[2026-03-23 20:11:39 INF]  Command: GetAllArtists
+[2026-03-23 20:11:39 INF]  Found 6 artists
+[2026-03-23 20:11:39 INF]  Status: Success
+[2026-03-23 20:11:39 INF]  Command: GetPendingSongs
+[2026-03-23 20:11:39 INF]  Found 2 pending songs
+[2026-03-23 20:11:39 INF]  Status: Success
+[2026-03-23 20:11:43 INF]  Command: GetAllSongs
+[2026-03-23 20:11:43 INF]  Status: Success
+[2026-03-23 20:11:53 INF]  Command: UpdateSong
+[2026-03-23 20:11:53 INF]  Status: Success
+[2026-03-23 20:11:54 INF]  Command: GetAllSongs
+[2026-03-23 20:11:54 INF]  Status: Success
+[2026-03-23 20:12:25 WRN]  Empty request received
+[2026-03-23 20:12:25 INF]  Client disconnected: 127.0.0.1:53714
+[2026-03-23 20:12:25 INF]  Client disconnected
+[2026-03-23 23:07:17 INF] User profile is available. Using 'C:\Users\nguye\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-03-23 23:07:17 INF]  Socket Server started on port 1500
+[2026-03-23 23:07:18 INF] Now listening on: https://localhost:7021
+[2026-03-23 23:07:18 INF] Now listening on: http://localhost:7000
+[2026-03-23 23:07:18 INF] Application started. Press Ctrl+C to shut down.
+[2026-03-23 23:07:18 INF] Hosting environment: Development
+[2026-03-23 23:07:18 INF] Content root path: E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web
+[2026-03-23 23:07:19 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:07:19 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 23:07:19 INF] Cookies was not authenticated. Failure message: Unprotect ticket failed
+[2026-03-23 23:07:19 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:19 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:07:23 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:07:24 INF] Executed ViewResult - view Index executed in 423.4064ms.
+[2026-03-23 23:07:24 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 4796.9546ms
+[2026-03-23 23:07:24 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:24 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 5358.3891ms
+[2026-03-23 23:07:24 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:07:24 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:07:24 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 13.1111ms
+[2026-03-23 23:07:24 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.3827ms
+[2026-03-23 23:07:36 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+[2026-03-23 23:07:36 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 23:07:36 INF] Cookies was not authenticated. Failure message: Unprotect ticket failed
+[2026-03-23 23:07:36 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:07:36 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:07:36 INF] Executing ViewResult, running view Login.
+[2026-03-23 23:07:36 INF] Executed ViewResult - view Login executed in 129.2446ms.
+[2026-03-23 23:07:36 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 148.0066ms
+[2026-03-23 23:07:36 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:07:36 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 189.0128ms
+[2026-03-23 23:07:36 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:07:36 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.8366ms
+[2026-03-23 23:07:36 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:07:36 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.4637ms
+[2026-03-23 23:07:38 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 239
+[2026-03-23 23:07:38 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 23:07:38 INF] Cookies was not authenticated. Failure message: Unprotect ticket failed
+[2026-03-23 23:07:38 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:07:38 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MusicSystem.Shared.DTOs.Auth.LoginRequestDto, System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:07:39 INF] AuthenticationScheme: Cookies signed in.
+[2026-03-23 23:07:39 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:07:39 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 1072.0051ms
+[2026-03-23 23:07:39 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:07:39 INF] Session started; Key:5149b7a9-d03c-0c93-132e-1ba3e8309e84, Id:e75a089e-96ad-8d90-82a7-2231cd2de4da
+[2026-03-23 23:07:39 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 1109.7193ms
+[2026-03-23 23:07:39 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:07:39 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:39 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:07:39 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:07:39 INF] Executed ViewResult - view Index executed in 12.8755ms.
+[2026-03-23 23:07:39 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 95.511ms
+[2026-03-23 23:07:39 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:39 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 113.7396ms
+[2026-03-23 23:07:39 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:07:39 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:07:39 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.8189ms
+[2026-03-23 23:07:39 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.8571ms
+[2026-03-23 23:07:47 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:07:47 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:47 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:07:47 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:07:47 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 74.7434ms
+[2026-03-23 23:07:47 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:47 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method595(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:07:47 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 146.0162ms
+[2026-03-23 23:07:47 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:07:47 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:07:47 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 9.0871ms
+[2026-03-23 23:07:47 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.4605ms
+[2026-03-23 23:07:55 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:07:55 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:55 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:07:55 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:07:55 INF] Executed ViewResult - view Index executed in 10.1252ms.
+[2026-03-23 23:07:55 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 29.1787ms
+[2026-03-23 23:07:55 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:07:55 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 43.0086ms
+[2026-03-23 23:07:55 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:07:55 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.293ms
+[2026-03-23 23:08:05 INF] Request starting HTTP/2 POST https://localhost:7021/Playlist/Create - application/x-www-form-urlencoded 23
+[2026-03-23 23:08:05 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Create (MusicSystem.Web)'
+[2026-03-23 23:08:05 INF] Route matched with {action = "Create", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(System.String, Boolean) on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:05 INF] Executing JsonResult, writing value of type '<>f__AnonymousType2`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-03-23 23:08:05 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Create (MusicSystem.Web) in 85.6899ms
+[2026-03-23 23:08:05 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Create (MusicSystem.Web)'
+[2026-03-23 23:08:05 INF] Request finished HTTP/2 POST https://localhost:7021/Playlist/Create - 200 null application/json; charset=utf-8 105.2619ms
+[2026-03-23 23:08:06 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist/Details/14938c1a-defe-4f4d-9ff9-140d7cfa1fd0 - null null
+[2026-03-23 23:08:06 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web)'
+[2026-03-23 23:08:06 INF] Route matched with {action = "Details", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(System.Guid) on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:06 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-03-23 23:08:06 INF] Executing ViewResult, running view Details.
+[2026-03-23 23:08:06 INF] Executed ViewResult - view Details executed in 19.7609ms.
+[2026-03-23 23:08:06 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web) in 74.0094ms
+[2026-03-23 23:08:06 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web)'
+[2026-03-23 23:08:06 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist/Details/14938c1a-defe-4f4d-9ff9-140d7cfa1fd0 - 200 null text/html; charset=utf-8 95.2241ms
+[2026-03-23 23:08:06 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:06 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.2932ms
+[2026-03-23 23:08:06 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:06 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.4816ms
+[2026-03-23 23:08:08 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:08:08 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:08 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:08 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:08 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 17.5785ms
+[2026-03-23 23:08:08 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:08 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method595(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:08:08 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 49.7588ms
+[2026-03-23 23:08:08 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:08 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:08 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 8.8353ms
+[2026-03-23 23:08:08 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.8858ms
+[2026-03-23 23:08:11 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist/Details/14938c1a-defe-4f4d-9ff9-140d7cfa1fd0 - null null
+[2026-03-23 23:08:11 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web)'
+[2026-03-23 23:08:11 INF] Route matched with {action = "Details", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(System.Guid) on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:11 INF] Executing ViewResult, running view Details.
+[2026-03-23 23:08:11 INF] Executed ViewResult - view Details executed in 5.3847ms.
+[2026-03-23 23:08:11 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web) in 24.5518ms
+[2026-03-23 23:08:11 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web)'
+[2026-03-23 23:08:11 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist/Details/14938c1a-defe-4f4d-9ff9-140d7cfa1fd0 - 200 null text/html; charset=utf-8 37.0529ms
+[2026-03-23 23:08:11 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:11 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.3286ms
+[2026-03-23 23:08:12 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:08:12 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:12 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:12 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:12 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 17.7864ms
+[2026-03-23 23:08:12 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:12 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method595(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:08:12 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 48.8793ms
+[2026-03-23 23:08:12 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:12 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:12 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 12.8706ms
+[2026-03-23 23:08:12 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.1517ms
+[2026-03-23 23:08:13 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist/Details/14938c1a-defe-4f4d-9ff9-140d7cfa1fd0 - null null
+[2026-03-23 23:08:13 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web)'
+[2026-03-23 23:08:13 INF] Route matched with {action = "Details", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(System.Guid) on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:13 INF] Executing ViewResult, running view Details.
+[2026-03-23 23:08:13 INF] Executed ViewResult - view Details executed in 5.6064ms.
+[2026-03-23 23:08:13 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web) in 26.4765ms
+[2026-03-23 23:08:13 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Details (MusicSystem.Web)'
+[2026-03-23 23:08:13 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist/Details/14938c1a-defe-4f4d-9ff9-140d7cfa1fd0 - 200 null text/html; charset=utf-8 42.1805ms
+[2026-03-23 23:08:13 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:13 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.931ms
+[2026-03-23 23:08:14 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:08:14 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:14 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:08:14 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:14 INF] Executed ViewResult - view Index executed in 9.0608ms.
+[2026-03-23 23:08:14 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 23.8024ms
+[2026-03-23 23:08:14 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:14 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 38.208ms
+[2026-03-23 23:08:14 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:14 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.442ms
+[2026-03-23 23:08:17 INF] Request starting HTTP/2 POST https://localhost:7021/Song/TrackPlay/0921ecad-674b-439b-ac42-c0c5e71a53cc - null 0
+[2026-03-23 23:08:17 INF] Executing endpoint 'MusicSystem.Web.Controllers.SongController.TrackPlay (MusicSystem.Web)'
+[2026-03-23 23:08:17 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist/GetUserPlaylists - null null
+[2026-03-23 23:08:17 INF] Route matched with {action = "TrackPlay", controller = "Song"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] TrackPlay(System.Guid) on controller MusicSystem.Web.Controllers.SongController (MusicSystem.Web).
+[2026-03-23 23:08:17 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.GetUserPlaylists (MusicSystem.Web)'
+[2026-03-23 23:08:17 INF] Request starting HTTP/2 GET https://localhost:7021/uploads/songs/eef34b5c-440d-4eae-9c1c-64dcd1119750.mp3 - null null
+[2026-03-23 23:08:17 INF] Route matched with {action = "GetUserPlaylists", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserPlaylists() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:17 INF] The file /uploads/songs/eef34b5c-440d-4eae-9c1c-64dcd1119750.mp3 was not modified
+[2026-03-23 23:08:17 INF] Request finished HTTP/2 GET https://localhost:7021/uploads/songs/eef34b5c-440d-4eae-9c1c-64dcd1119750.mp3 - 304 null audio/mpeg 18.4055ms
+[2026-03-23 23:08:17 INF] Executing JsonResult, writing value of type '<>f__AnonymousType4`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType3`3[[System.Guid, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], MusicSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-03-23 23:08:17 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.GetUserPlaylists (MusicSystem.Web) in 30.579ms
+[2026-03-23 23:08:17 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.GetUserPlaylists (MusicSystem.Web)'
+[2026-03-23 23:08:17 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist/GetUserPlaylists - 200 null application/json; charset=utf-8 49.2674ms
+[2026-03-23 23:08:17 INF] Executing JsonResult, writing value of type '<>f__AnonymousType5`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-03-23 23:08:17 INF] Executed action MusicSystem.Web.Controllers.SongController.TrackPlay (MusicSystem.Web) in 188.9ms
+[2026-03-23 23:08:17 INF] Executed endpoint 'MusicSystem.Web.Controllers.SongController.TrackPlay (MusicSystem.Web)'
+[2026-03-23 23:08:17 INF] Request finished HTTP/2 POST https://localhost:7021/Song/TrackPlay/0921ecad-674b-439b-ac42-c0c5e71a53cc - 200 null application/json; charset=utf-8 205.4874ms
+[2026-03-23 23:08:20 INF] Request starting HTTP/2 POST https://localhost:7021/Playlist/AddSong - application/x-www-form-urlencoded 91
+[2026-03-23 23:08:20 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.AddSong (MusicSystem.Web)'
+[2026-03-23 23:08:20 INF] Route matched with {action = "AddSong", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddSong(System.Guid, System.Guid) on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:20 INF] Executing JsonResult, writing value of type '<>f__AnonymousType5`1[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2026-03-23 23:08:20 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.AddSong (MusicSystem.Web) in 58.6293ms
+[2026-03-23 23:08:20 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.AddSong (MusicSystem.Web)'
+[2026-03-23 23:08:20 INF] Request finished HTTP/2 POST https://localhost:7021/Playlist/AddSong - 200 null application/json; charset=utf-8 74.9074ms
+[2026-03-23 23:08:26 INF] Request starting HTTP/2 GET https://localhost:7021/History - null null
+[2026-03-23 23:08:26 INF] Executing endpoint 'MusicSystem.Web.Controllers.HistoryController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:26 INF] Route matched with {action = "Index", controller = "History"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HistoryController (MusicSystem.Web).
+[2026-03-23 23:08:26 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:26 INF] Executed ViewResult - view Index executed in 20.1373ms.
+[2026-03-23 23:08:26 INF] Executed action MusicSystem.Web.Controllers.HistoryController.Index (MusicSystem.Web) in 72.5817ms
+[2026-03-23 23:08:26 INF] Executed endpoint 'MusicSystem.Web.Controllers.HistoryController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:26 INF] Request finished HTTP/2 GET https://localhost:7021/History - 200 null text/html; charset=utf-8 90.6414ms
+[2026-03-23 23:08:26 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:26 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:26 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.5491ms
+[2026-03-23 23:08:26 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.1646ms
+[2026-03-23 23:08:27 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:08:27 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:27 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:08:27 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:27 INF] Executed ViewResult - view Index executed in 9.285ms.
+[2026-03-23 23:08:27 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 23.964ms
+[2026-03-23 23:08:27 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:27 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 38.7714ms
+[2026-03-23 23:08:27 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:27 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.5258ms
+[2026-03-23 23:08:27 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:27 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.1425ms
+[2026-03-23 23:08:27 INF] Request starting HTTP/2 GET https://localhost:7021/History - null null
+[2026-03-23 23:08:27 INF] Executing endpoint 'MusicSystem.Web.Controllers.HistoryController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:27 INF] Route matched with {action = "Index", controller = "History"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HistoryController (MusicSystem.Web).
+[2026-03-23 23:08:28 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:28 INF] Executed ViewResult - view Index executed in 12.4163ms.
+[2026-03-23 23:08:28 INF] Executed action MusicSystem.Web.Controllers.HistoryController.Index (MusicSystem.Web) in 30.7131ms
+[2026-03-23 23:08:28 INF] Executed endpoint 'MusicSystem.Web.Controllers.HistoryController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:28 INF] Request finished HTTP/2 GET https://localhost:7021/History - 200 null text/html; charset=utf-8 43.5773ms
+[2026-03-23 23:08:28 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:28 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:28 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.931ms
+[2026-03-23 23:08:28 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.4239ms
+[2026-03-23 23:08:31 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:08:31 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:31 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:08:31 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:08:31 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 18.5154ms
+[2026-03-23 23:08:31 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:08:31 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary..ctor(ViewDataDictionary source, Object model, Type declaredModelType)
+   at lambda_method595(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:08:31 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 47.2049ms
+[2026-03-23 23:08:31 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:08:31 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:08:31 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 9.5731ms
+[2026-03-23 23:08:31 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.5372ms
+[2026-03-23 23:08:46 INF]  Client connected: 127.0.0.1:58942
+[2026-03-23 23:08:46 INF]  Client connected: 127.0.0.1:58942
+[2026-03-23 23:08:46 INF]  Command: Login
+[2026-03-23 23:08:46 INF]  Login attempt: manager
+[2026-03-23 23:08:46 INF]  Login successful: manager (Manager)
+[2026-03-23 23:08:46 INF]  Status: Success
+[2026-03-23 23:08:46 INF]  Command: GetAllSongs
+[2026-03-23 23:08:46 INF]  Status: Success
+[2026-03-23 23:08:46 INF]  Command: GetAllArtists
+[2026-03-23 23:08:46 INF]  Found 6 artists
+[2026-03-23 23:08:46 INF]  Status: Success
+[2026-03-23 23:08:46 INF]  Command: GetPendingSongs
+[2026-03-23 23:08:46 INF]  Found 0 pending songs
+[2026-03-23 23:08:46 INF]  Status: Success
+[2026-03-23 23:08:50 INF]  Command: GetAllSongs
+[2026-03-23 23:08:50 INF]  Status: Success
+[2026-03-23 23:08:57 INF]  Command: GetAllArtists
+[2026-03-23 23:08:57 INF]  Found 6 artists
+[2026-03-23 23:08:57 INF]  Status: Success
+[2026-03-23 23:09:07 INF]  Command: UploadSongFile
+[2026-03-23 23:09:07 INF]  Status: Success
+[2026-03-23 23:09:07 INF]  Command: CreateSong
+[2026-03-23 23:09:07 INF]  Creating song: Anh Tên Là by User "8b4cc76b-2db3-4b46-af97-35eb5c4c7027"
+[2026-03-23 23:09:07 INF]  Song created: Anh Tên Là
+[2026-03-23 23:09:07 INF]  Status: Success
+[2026-03-23 23:09:08 INF]  Command: GetAllSongs
+[2026-03-23 23:09:08 INF]  Status: Success
+[2026-03-23 23:09:14 WRN]  Empty request received
+[2026-03-23 23:09:14 INF]  Client disconnected: 127.0.0.1:58942
+[2026-03-23 23:09:14 INF]  Client disconnected
+[2026-03-23 23:09:27 INF]  Client connected: 127.0.0.1:52206
+[2026-03-23 23:09:27 INF]  Client connected: 127.0.0.1:52206
+[2026-03-23 23:09:27 INF]  Command: Login
+[2026-03-23 23:09:27 INF]  Login attempt: admin
+[2026-03-23 23:09:27 INF]  Login successful: admin (Admin)
+[2026-03-23 23:09:27 INF]  Status: Success
+[2026-03-23 23:09:27 INF]  Command: GetAllUsers
+[2026-03-23 23:09:27 INF]  Status: Success
+[2026-03-23 23:09:27 INF]  Command: GetAllSongs
+[2026-03-23 23:09:27 INF]  Status: Success
+[2026-03-23 23:09:27 INF]  Command: GetAllArtists
+[2026-03-23 23:09:27 INF]  Found 6 artists
+[2026-03-23 23:09:27 INF]  Status: Success
+[2026-03-23 23:09:27 INF]  Command: GetPendingSongs
+[2026-03-23 23:09:27 INF]  Found 1 pending songs
+[2026-03-23 23:09:27 INF]  Status: Success
+[2026-03-23 23:09:33 INF]  Command: GetPendingSongs
+[2026-03-23 23:09:33 INF]  Found 1 pending songs
+[2026-03-23 23:09:33 INF]  Status: Success
+[2026-03-23 23:09:43 INF]  Command: ApproveSong
+[2026-03-23 23:09:43 INF]  Approving song: "ce6346cd-0669-4771-b296-b2677aeab6ca" by Admin "7e471c56-c5cf-494f-abb9-77ab96af2d73"
+[2026-03-23 23:09:43 INF]  Song approved
+[2026-03-23 23:09:43 INF]  Status: Success
+[2026-03-23 23:09:44 INF]  Command: GetPendingSongs
+[2026-03-23 23:09:44 INF]  Found 0 pending songs
+[2026-03-23 23:09:44 INF]  Status: Success
+[2026-03-23 23:09:46 WRN]  Empty request received
+[2026-03-23 23:09:46 INF]  Client disconnected: 127.0.0.1:52206
+[2026-03-23 23:09:46 INF]  Client disconnected
+[2026-03-23 23:15:56 INF] User profile is available. Using 'C:\Users\nguye\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-03-23 23:15:57 INF]  Socket Server started on port 1500
+[2026-03-23 23:15:57 INF] Now listening on: https://localhost:7021
+[2026-03-23 23:15:57 INF] Now listening on: http://localhost:7000
+[2026-03-23 23:15:57 INF] Application started. Press Ctrl+C to shut down.
+[2026-03-23 23:15:57 INF] Hosting environment: Development
+[2026-03-23 23:15:57 INF] Content root path: E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web
+[2026-03-23 23:15:58 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:15:59 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 23:15:59 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:15:59 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:16:01 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:16:01 INF] Executed ViewResult - view Index executed in 150.4579ms.
+[2026-03-23 23:16:01 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 2137.027ms
+[2026-03-23 23:16:01 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:16:01 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 2461.5808ms
+[2026-03-23 23:16:01 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:16:01 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:16:01 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 28.6772ms
+[2026-03-23 23:16:01 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.0179ms
+[2026-03-23 23:16:02 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+[2026-03-23 23:16:02 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 23:16:02 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:16:02 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:16:02 INF] Executing ViewResult, running view Login.
+[2026-03-23 23:16:02 INF] Executed ViewResult - view Login executed in 92.4871ms.
+[2026-03-23 23:16:02 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 110.5541ms
+[2026-03-23 23:16:02 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:16:02 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 149.011ms
+[2026-03-23 23:16:02 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:16:02 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 6.084ms
+[2026-03-23 23:16:02 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:16:02 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.7564ms
+[2026-03-23 23:16:04 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 239
+[2026-03-23 23:16:04 WRN] Error unprotecting the session cookie.
+System.Security.Cryptography.CryptographicException: The payload was invalid. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+   at Microsoft.AspNetCore.DataProtection.Cng.CbcAuthenticatedEncryptor.DecryptImpl(Byte* pbCiphertext, UInt32 cbCiphertext, Byte* pbAdditionalAuthenticatedData, UInt32 cbAdditionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.Cng.Internal.CngAuthenticatedEncryptorBase.Decrypt(ArraySegment`1 ciphertext, ArraySegment`1 additionalAuthenticatedData)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.UnprotectCore(Byte[] protectedData, Boolean allowOperationsOnRevokedKeys, UnprotectStatus& status)
+   at Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingBasedDataProtector.Unprotect(Byte[] protectedData)
+   at Microsoft.AspNetCore.Session.CookieProtection.Unprotect(IDataProtector protector, String protectedText, ILogger logger)
+[2026-03-23 23:16:04 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:16:04 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MusicSystem.Shared.DTOs.Auth.LoginRequestDto, System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:16:04 INF] AuthenticationScheme: Cookies signed in.
+[2026-03-23 23:16:04 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:16:04 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 880.3033ms
+[2026-03-23 23:16:04 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:16:05 INF] Session started; Key:5768d630-297d-7da1-8370-85981d7b067d, Id:4f1634cd-15ad-e9c3-c4e7-4d8a0da7bf66
+[2026-03-23 23:16:05 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 918.72ms
+[2026-03-23 23:16:05 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:16:05 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:16:05 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:16:05 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:16:05 INF] Executed ViewResult - view Index executed in 13.6566ms.
+[2026-03-23 23:16:05 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 83.5693ms
+[2026-03-23 23:16:05 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:16:05 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 99.7185ms
+[2026-03-23 23:16:05 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:16:05 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:16:05 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 6.0855ms
+[2026-03-23 23:16:05 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.7148ms
+[2026-03-23 23:16:05 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:16:05 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:16:05 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:16:06 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:16:06 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 82.4622ms
+[2026-03-23 23:16:06 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:16:06 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method595(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:16:06 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 155.2047ms
+[2026-03-23 23:16:06 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:16:06 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:16:06 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 12.2ms
+[2026-03-23 23:16:06 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.0315ms
+[2026-03-23 23:19:00 INF] User profile is available. Using 'C:\Users\nguye\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-03-23 23:19:00 INF]  Socket Server started on port 1500
+[2026-03-23 23:19:01 INF] Now listening on: https://localhost:7021
+[2026-03-23 23:19:01 INF] Now listening on: http://localhost:7000
+[2026-03-23 23:19:01 INF] Application started. Press Ctrl+C to shut down.
+[2026-03-23 23:19:01 INF] Hosting environment: Development
+[2026-03-23 23:19:01 INF] Content root path: E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web
+[2026-03-23 23:19:01 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:19:01 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:01 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:19:04 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:04 INF] Executed ViewResult - view Index executed in 156.0581ms.
+[2026-03-23 23:19:04 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 3096.3792ms
+[2026-03-23 23:19:04 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:04 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 3283.4885ms
+[2026-03-23 23:19:05 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:19:05 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:05 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 310.3376ms
+[2026-03-23 23:19:05 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 345.336ms
+[2026-03-23 23:19:08 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:19:08 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:08 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:19:08 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:08 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 89.6057ms
+[2026-03-23 23:19:08 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:08 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method324(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:19:08 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 173.9731ms
+[2026-03-23 23:19:08 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:19:08 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:08 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 10.8473ms
+[2026-03-23 23:19:08 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 28.5467ms
+[2026-03-23 23:19:18 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:19:18 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:18 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:19:18 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:18 INF] Executed ViewResult - view Index executed in 11.5416ms.
+[2026-03-23 23:19:18 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 61.1124ms
+[2026-03-23 23:19:18 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:18 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 77.7401ms
+[2026-03-23 23:19:18 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:18 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.6269ms
+[2026-03-23 23:19:20 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+[2026-03-23 23:19:20 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:19:20 INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:19:20 INF] AuthenticationScheme: Cookies signed out.
+[2026-03-23 23:19:20 INF] Accessing expired session, Key:5768d630-297d-7da1-8370-85981d7b067d
+[2026-03-23 23:19:20 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:19:20 INF] Executed action MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web) in 20.0082ms
+[2026-03-23 23:19:20 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:19:20 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 37.0952ms
+[2026-03-23 23:19:20 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:19:20 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:20 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:19:20 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:20 INF] Executed ViewResult - view Index executed in 7.5904ms.
+[2026-03-23 23:19:20 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 16.8127ms
+[2026-03-23 23:19:20 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:20 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 28.9946ms
+[2026-03-23 23:19:20 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:20 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:19:20 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 6.1921ms
+[2026-03-23 23:19:20 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 26.3373ms
+[2026-03-23 23:19:21 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+[2026-03-23 23:19:21 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:19:21 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:19:21 INF] Executing ViewResult, running view Login.
+[2026-03-23 23:19:21 INF] Executed ViewResult - view Login executed in 43.6293ms.
+[2026-03-23 23:19:21 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 52.6595ms
+[2026-03-23 23:19:21 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:19:21 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 74.1683ms
+[2026-03-23 23:19:21 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:21 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.0305ms
+[2026-03-23 23:19:21 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:19:21 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.3366ms
+[2026-03-23 23:19:23 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 239
+[2026-03-23 23:19:23 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:19:23 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MusicSystem.Shared.DTOs.Auth.LoginRequestDto, System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:19:24 INF] AuthenticationScheme: Cookies signed in.
+[2026-03-23 23:19:24 INF] Accessing expired session, Key:5768d630-297d-7da1-8370-85981d7b067d
+[2026-03-23 23:19:24 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:19:24 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 609.5645ms
+[2026-03-23 23:19:24 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:19:24 INF] Session started; Key:5768d630-297d-7da1-8370-85981d7b067d, Id:0290205f-d346-7b09-07ad-9b70fe38ce43
+[2026-03-23 23:19:24 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 631.6174ms
+[2026-03-23 23:19:24 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:19:24 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:24 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:19:24 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:24 INF] Executed ViewResult - view Index executed in 8.0546ms.
+[2026-03-23 23:19:24 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 14.7133ms
+[2026-03-23 23:19:24 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:24 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 26.2023ms
+[2026-03-23 23:19:24 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:24 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:19:24 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.7475ms
+[2026-03-23 23:19:24 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.1058ms
+[2026-03-23 23:19:25 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:19:25 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:25 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:19:25 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:25 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 9.8479ms
+[2026-03-23 23:19:25 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:25 ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The model item passed into the ViewDataDictionary is of type 'System.Linq.Enumerable+SelectListIterator`2[MusicSystem.Domain.Entities.Playlist,MusicSystem.Shared.DTOs.Playlists.PlaylistDto]', but this ViewDataDictionary instance requires a model item of type 'MusicSystem.Shared.DTOs.Playlists.PlaylistDto'.
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary.EnsureCompatible(Object value)
+   at lambda_method324(Closure, ViewDataDictionary)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPagePropertyActivator.Activate(Object page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+[2026-03-23 23:19:25 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 500 null text/html; charset=utf-8 40.4369ms
+[2026-03-23 23:19:25 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:19:25 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:25 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 7.8183ms
+[2026-03-23 23:19:25 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.4005ms
+[2026-03-23 23:19:27 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:19:27 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:27 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:19:27 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:19:27 INF] Executed ViewResult - view Index executed in 7.4178ms.
+[2026-03-23 23:19:27 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 24.5126ms
+[2026-03-23 23:19:27 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:19:27 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 37.5288ms
+[2026-03-23 23:19:27 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:19:27 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.3125ms
+[2026-03-23 23:25:38 INF] User profile is available. Using 'C:\Users\nguye\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2026-03-23 23:25:38 INF]  Socket Server started on port 1500
+[2026-03-23 23:25:38 INF] Now listening on: https://localhost:7021
+[2026-03-23 23:25:38 INF] Now listening on: http://localhost:7000
+[2026-03-23 23:25:38 INF] Application started. Press Ctrl+C to shut down.
+[2026-03-23 23:25:38 INF] Hosting environment: Development
+[2026-03-23 23:25:38 INF] Content root path: E:\HK_7_SP2026\Project_PRN222_MusicApp\MusicSystem\MusicSystem.Web
+[2026-03-23 23:25:39 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:25:39 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:39 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:25:41 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:25:41 INF] Executed ViewResult - view Index executed in 215.2297ms.
+[2026-03-23 23:25:41 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 2551.3358ms
+[2026-03-23 23:25:41 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:41 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 2860.5198ms
+[2026-03-23 23:25:42 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:42 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:42 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 19.4443ms
+[2026-03-23 23:25:42 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.9313ms
+[2026-03-23 23:25:45 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:25:45 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:45 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:25:45 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:25:45 INF] Executed ViewResult - view Index executed in 18.6198ms.
+[2026-03-23 23:25:45 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 89.9164ms
+[2026-03-23 23:25:45 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:45 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 200 null text/html; charset=utf-8 124.7218ms
+[2026-03-23 23:25:45 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:45 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:45 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 7.4817ms
+[2026-03-23 23:25:45 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.9523ms
+[2026-03-23 23:25:48 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+[2026-03-23 23:25:48 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:25:48 INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:25:48 INF] AuthenticationScheme: Cookies signed out.
+[2026-03-23 23:25:48 INF] Accessing expired session, Key:5768d630-297d-7da1-8370-85981d7b067d
+[2026-03-23 23:25:48 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:25:48 INF] Executed action MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web) in 27.0074ms
+[2026-03-23 23:25:48 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:25:48 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 52.6039ms
+[2026-03-23 23:25:48 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:25:48 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:48 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:25:48 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:25:48 INF] Executed ViewResult - view Index executed in 8.4495ms.
+[2026-03-23 23:25:48 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 84.0912ms
+[2026-03-23 23:25:48 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:48 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 97.6985ms
+[2026-03-23 23:25:48 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:48 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:48 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.7126ms
+[2026-03-23 23:25:48 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.7836ms
+[2026-03-23 23:25:51 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+[2026-03-23 23:25:51 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:25:51 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:25:51 INF] Executing ViewResult, running view Login.
+[2026-03-23 23:25:51 INF] Executed ViewResult - view Login executed in 48.2674ms.
+[2026-03-23 23:25:51 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 63.3185ms
+[2026-03-23 23:25:51 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:25:51 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 86.0062ms
+[2026-03-23 23:25:51 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:51 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.4258ms
+[2026-03-23 23:25:52 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:52 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.5851ms
+[2026-03-23 23:25:54 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 239
+[2026-03-23 23:25:54 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:25:54 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MusicSystem.Shared.DTOs.Auth.LoginRequestDto, System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:25:55 INF] AuthenticationScheme: Cookies signed in.
+[2026-03-23 23:25:55 INF] Accessing expired session, Key:5768d630-297d-7da1-8370-85981d7b067d
+[2026-03-23 23:25:55 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:25:55 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 900.6745ms
+[2026-03-23 23:25:55 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:25:55 INF] Session started; Key:5768d630-297d-7da1-8370-85981d7b067d, Id:e8e4563a-c58a-8e51-ab4e-d7d382f3cf00
+[2026-03-23 23:25:55 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 927.1562ms
+[2026-03-23 23:25:55 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:25:55 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:55 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:25:55 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:25:55 INF] Executed ViewResult - view Index executed in 9.4477ms.
+[2026-03-23 23:25:55 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 24.8991ms
+[2026-03-23 23:25:55 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:55 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 35.4992ms
+[2026-03-23 23:25:55 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:55 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:55 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.669ms
+[2026-03-23 23:25:55 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.3655ms
+[2026-03-23 23:25:56 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:25:56 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:56 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:25:56 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:25:56 INF] Executed ViewResult - view Index executed in 7.6856ms.
+[2026-03-23 23:25:56 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 33.81ms
+[2026-03-23 23:25:56 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:56 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 200 null text/html; charset=utf-8 46.8389ms
+[2026-03-23 23:25:56 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:56 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:56 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.8003ms
+[2026-03-23 23:25:56 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.4394ms
+[2026-03-23 23:25:59 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+[2026-03-23 23:25:59 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:25:59 INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:25:59 INF] AuthenticationScheme: Cookies signed out.
+[2026-03-23 23:25:59 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:25:59 INF] Executed action MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web) in 3.9424ms
+[2026-03-23 23:25:59 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:25:59 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 14.1576ms
+[2026-03-23 23:25:59 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:25:59 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:59 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:25:59 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:25:59 INF] Executed ViewResult - view Index executed in 6.2736ms.
+[2026-03-23 23:25:59 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 20.5557ms
+[2026-03-23 23:25:59 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:25:59 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 31.7121ms
+[2026-03-23 23:25:59 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:25:59 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:25:59 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.0308ms
+[2026-03-23 23:25:59 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.968ms
+[2026-03-23 23:26:00 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+[2026-03-23 23:26:00 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:26:00 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:26:00 INF] Executing ViewResult, running view Login.
+[2026-03-23 23:26:00 INF] Executed ViewResult - view Login executed in 7.0718ms.
+[2026-03-23 23:26:00 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 10.2838ms
+[2026-03-23 23:26:00 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:26:00 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 23.6762ms
+[2026-03-23 23:26:00 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:26:00 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.1449ms
+[2026-03-23 23:26:00 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:26:00 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.6312ms
+[2026-03-23 23:26:01 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Roboto-Regular.ttf - null null
+[2026-03-23 23:26:01 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Roboto-Regular.ttf - 404 0 null 6.4933ms
+[2026-03-23 23:26:01 INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7021/Account/Roboto-Regular.ttf, Response status code: 404
+[2026-03-23 23:26:07 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Login - application/x-www-form-urlencoded 239
+[2026-03-23 23:26:07 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:26:07 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(MusicSystem.Shared.DTOs.Auth.LoginRequestDto, System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:26:08 INF] AuthenticationScheme: Cookies signed in.
+[2026-03-23 23:26:08 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:26:08 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 212.5585ms
+[2026-03-23 23:26:08 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:26:08 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Login - 302 0 null 223.644ms
+[2026-03-23 23:26:08 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:26:08 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:26:08 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:26:08 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:26:08 INF] Executed ViewResult - view Index executed in 9.0901ms.
+[2026-03-23 23:26:08 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 22.102ms
+[2026-03-23 23:26:08 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:26:08 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 33.2897ms
+[2026-03-23 23:26:08 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:26:08 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:26:08 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.8423ms
+[2026-03-23 23:26:08 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.0374ms
+[2026-03-23 23:26:09 INF] Request starting HTTP/2 GET https://localhost:7021/Playlist - null null
+[2026-03-23 23:26:09 INF] Executing endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:26:09 INF] Route matched with {action = "Index", controller = "Playlist"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.PlaylistController (MusicSystem.Web).
+[2026-03-23 23:26:09 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:26:09 INF] Executed ViewResult - view Index executed in 6.4989ms.
+[2026-03-23 23:26:09 INF] Executed action MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web) in 29.6451ms
+[2026-03-23 23:26:09 INF] Executed endpoint 'MusicSystem.Web.Controllers.PlaylistController.Index (MusicSystem.Web)'
+[2026-03-23 23:26:09 INF] Request finished HTTP/2 GET https://localhost:7021/Playlist - 200 null text/html; charset=utf-8 44.6057ms
+[2026-03-23 23:26:09 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:26:09 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:26:09 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.1476ms
+[2026-03-23 23:26:09 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.9913ms
+[2026-03-23 23:26:11 INF] Request starting HTTP/2 POST https://localhost:7021/Account/Logout - application/x-www-form-urlencoded 225
+[2026-03-23 23:26:11 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:26:11 INF] Route matched with {action = "Logout", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:26:11 INF] AuthenticationScheme: Cookies signed out.
+[2026-03-23 23:26:11 INF] Executing RedirectResult, redirecting to /.
+[2026-03-23 23:26:11 INF] Executed action MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web) in 2.3805ms
+[2026-03-23 23:26:11 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Logout (MusicSystem.Web)'
+[2026-03-23 23:26:11 INF] Request finished HTTP/2 POST https://localhost:7021/Account/Logout - 302 0 null 12.5362ms
+[2026-03-23 23:26:11 INF] Request starting HTTP/2 GET https://localhost:7021/ - null null
+[2026-03-23 23:26:11 INF] Executing endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:26:11 INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller MusicSystem.Web.Controllers.HomeController (MusicSystem.Web).
+[2026-03-23 23:26:12 INF] Executing ViewResult, running view Index.
+[2026-03-23 23:26:12 INF] Executed ViewResult - view Index executed in 7.0631ms.
+[2026-03-23 23:26:12 INF] Executed action MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web) in 23.0842ms
+[2026-03-23 23:26:12 INF] Executed endpoint 'MusicSystem.Web.Controllers.HomeController.Index (MusicSystem.Web)'
+[2026-03-23 23:26:12 INF] Request finished HTTP/2 GET https://localhost:7021/ - 200 null text/html; charset=utf-8 33.3979ms
+[2026-03-23 23:26:12 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:26:12 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:26:12 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.3531ms
+[2026-03-23 23:26:12 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.923ms
+[2026-03-23 23:26:18 INF] Request starting HTTP/2 GET https://localhost:7021/Account/Login - null null
+[2026-03-23 23:26:18 INF] Executing endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:26:18 INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(System.String) on controller MusicSystem.Web.Controllers.AccountController (MusicSystem.Web).
+[2026-03-23 23:26:18 INF] Executing ViewResult, running view Login.
+[2026-03-23 23:26:18 INF] Executed ViewResult - view Login executed in 4.0793ms.
+[2026-03-23 23:26:18 INF] Executed action MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web) in 6.8233ms
+[2026-03-23 23:26:18 INF] Executed endpoint 'MusicSystem.Web.Controllers.AccountController.Login (MusicSystem.Web)'
+[2026-03-23 23:26:18 INF] Request finished HTTP/2 GET https://localhost:7021/Account/Login - 200 null text/html; charset=utf-8 19.1983ms
+[2026-03-23 23:26:18 INF] Request starting HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - null null
+[2026-03-23 23:26:18 INF] Request finished HTTP/2 GET https://localhost:7021/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.9207ms
+[2026-03-23 23:26:18 INF] Request starting HTTP/2 GET https://localhost:7021/_vs/browserLink - null null
+[2026-03-23 23:26:18 INF] Request finished HTTP/2 GET https://localhost:7021/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.308ms

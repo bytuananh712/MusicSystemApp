@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MusicSystem.Domain.Entities.Playlist>
+@model IEnumerable<MusicSystem.Shared.DTOs.Playlists.PlaylistDto>
 @{
     ViewData["Title"] = "Thư viện";
     Layout = "_CustomerLayout";
@@ -34,7 +34,7 @@
                     </div>
                     <div class="playlist-name">@pl.Title</div>
                     <div class="playlist-desc">
-                        Danh sách phát • @(pl.PlaylistSongs?.Count ?? 0) bài
+                        Danh sách phát • @(pl.SongCount) bài
                     </div>
                     <!-- Delete action -->
                     <div class="playlist-card-actions">

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MusicSystem.Domain.Interfaces;
+using MusicSystem.Application.Services.History;
 using System;
 using System.Linq;
 using System.Security.Claims;
@@ -12,11 +12,11 @@ namespace MusicSystem.Web.Controllers
     [Route("History")]
     public class HistoryController : Controller
     {
-        private readonly IHistoryRepository _historyRepository;
+        private readonly IHistoryService _historyService;
 
-        public HistoryController(IHistoryRepository historyRepository)
+        public HistoryController(IHistoryService historyService)
         {
-            _historyRepository = historyRepository;
+            _historyService = historyService;
         }
 
         // GET: /History
@@ -29,7 +29,7 @@ namespace MusicSystem.Web.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
-            var history = await _historyRepository.GetUserHistoryAsync(userId, 100);
+            var history = await _historyService.GetUserHistoryAsync(userId, 100);
             return View(history);
         }
 
