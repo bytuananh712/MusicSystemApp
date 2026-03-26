@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +31,7 @@ namespace MusicSystem.Shared.DTOs.Songs
 
         // Status
         public string Status { get; set; }
+        public string RejectReason { get; set; }
 
         // Artists
         public string Artists { get; set; } // "Sơn Tùng M-TP, Đen Vâu"

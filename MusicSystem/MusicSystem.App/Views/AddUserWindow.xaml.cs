@@ -111,9 +111,25 @@ namespace MusicSystem.App.Views
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtFullName.Text))
+            var fullName = txtFullName.Text.Trim();
+            if (string.IsNullOrWhiteSpace(fullName))
             {
                 ShowError("Vui lòng nhập họ tên");
+                txtFullName.Focus();
+                return;
+            }
+
+            if (fullName.Length < 2 || fullName.Length > 100)
+            {
+                ShowError("Họ và tên phải dài từ 2 đến 100 ký tự");
+                txtFullName.Focus();
+                return;
+            }
+
+            var nameRegex = new System.Text.RegularExpressions.Regex(@"^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s]+$");
+            if (!nameRegex.IsMatch(fullName))
+            {
+                ShowError("Họ và tên chỉ được chứa chữ cái và khoảng trắng (không chứa số hoặc ký tự đặc biệt)");
                 txtFullName.Focus();
                 return;
             }
@@ -124,7 +140,7 @@ namespace MusicSystem.App.Views
                 Username = username,
                 Email = email,
                 Password = txtPassword.Password,
-                FullName = txtFullName.Text.Trim(),
+                FullName = fullName,
                 RoleNames = new List<string> { "Customer" }
             };
 

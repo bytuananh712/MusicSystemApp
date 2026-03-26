@@ -234,3 +234,8 @@ WHERE UpdatedAt IS NULL;
 GO
 
 PRINT 'Added UpdatedAt column to Artists table';
+
+
+
+-- Thêm cột lý do vào bảng Song
+ALTER TABLE Songs ADD RejectReason NVARCHAR(500) NULL;

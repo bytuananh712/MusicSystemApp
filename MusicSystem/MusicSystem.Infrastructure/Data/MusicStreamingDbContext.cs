@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using MusicSystem.Domain.Entities;
@@ -136,6 +136,8 @@ public partial class MusicStreamingDbContext : DbContext
                 .HasMaxLength(20)
                 .HasDefaultValue("Pending");
             entity.Property(e => e.Title).HasMaxLength(255);
+
+            entity.Property(e => e.RejectReason).HasMaxLength(500);
 
             entity.HasOne(d => d.ApprovedByNavigation).WithMany(p => p.SongApprovedByNavigations)
                 .HasForeignKey(d => d.ApprovedBy)

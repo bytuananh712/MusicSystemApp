@@ -143,8 +143,8 @@ namespace MusicSystem.Application.Services.Songs
         {
             var song = await _songRepository.GetByIdAsync(songId);
             if (song == null) return false;
-
             song.Status = "Rejected"; // Đổi "Disabled" thành "Rejected" để đồng bộ với UI WPF
+            song.RejectReason = reason;
             await _songRepository.UpdateAsync(song);
 
             return true;
@@ -168,6 +168,7 @@ namespace MusicSystem.Application.Services.Songs
                 TotalPlays = song.TotalPlays,
                 TotalLikes = song.TotalLikes,
                 Status = song.Status,
+                RejectReason = song.RejectReason,
                 Artists = song.SongArtists != null
                     ? string.Join(", ", song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
                     : "Unknown",

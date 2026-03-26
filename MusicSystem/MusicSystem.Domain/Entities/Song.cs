@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace MusicSystem.Domain.Entities;
@@ -30,6 +30,8 @@ public partial class Song
     public int TotalLikes { get; set; }
 
     public string Status { get; set; } = null!;
+
+    public string? RejectReason { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

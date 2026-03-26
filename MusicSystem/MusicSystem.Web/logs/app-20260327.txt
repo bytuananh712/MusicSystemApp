@@ -850,3 +850,466 @@ System.Exception: Bài hát này đã tồn tại trong hệ thống (trùng Tê
 [2026-03-27 01:27:56 INF]  Status: Success
 [2026-03-27 01:28:18 WRN]  Empty request received
 [2026-03-27 01:28:18 INF]  Client disconnected: 127.0.0.1:54655
+[2026-03-27 01:39:10 INF]  Socket Server started on port 1500
+[2026-03-27 01:42:17 INF]  Socket Server started on port 1500
+[2026-03-27 01:42:38 INF]  Client connected: 127.0.0.1:52088
+[2026-03-27 01:42:38 INF]  Client connected: 127.0.0.1:52088
+[2026-03-27 01:42:39 INF]  Command: Login
+[2026-03-27 01:42:39 INF]  Login attempt: admin
+[2026-03-27 01:42:39 INF]  Login successful: admin (Admin, Customer)
+[2026-03-27 01:42:39 INF]  Status: Success
+[2026-03-27 01:42:39 INF]  Command: GetAllUsers
+[2026-03-27 01:42:40 INF]  Status: Success
+[2026-03-27 01:42:40 INF]  Command: GetAllSongs
+[2026-03-27 01:42:40 INF]  Status: Success
+[2026-03-27 01:42:40 INF]  Command: GetAllArtists
+[2026-03-27 01:42:40 INF]  Found 7 artists
+[2026-03-27 01:42:40 INF]  Status: Success
+[2026-03-27 01:42:40 INF]  Command: GetPendingSongs
+[2026-03-27 01:42:40 INF]  Found 0 pending songs
+[2026-03-27 01:42:40 INF]  Status: Success
+[2026-03-27 01:42:41 INF]  Command: GetAllUsers
+[2026-03-27 01:42:41 INF]  Status: Success
+[2026-03-27 01:43:45 INF]  Command: CreateUser
+[2026-03-27 01:43:45 INF]  Status: Success
+[2026-03-27 01:43:46 INF]  Command: GetAllUsers
+[2026-03-27 01:43:46 INF]  Status: Success
+[2026-03-27 01:45:43 WRN]  Empty request received
+[2026-03-27 01:45:43 INF]  Client disconnected: 127.0.0.1:52088
+[2026-03-27 01:45:43 INF]  Client disconnected
+[2026-03-27 01:45:54 INF]  Socket Server started on port 1500
+[2026-03-27 01:46:07 INF]  Client connected: 127.0.0.1:57261
+[2026-03-27 01:46:07 INF]  Client connected: 127.0.0.1:57261
+[2026-03-27 01:46:07 INF]  Command: Login
+[2026-03-27 01:46:07 INF]  Login attempt: admin
+[2026-03-27 01:46:08 INF]  Login successful: admin (Admin, Customer)
+[2026-03-27 01:46:08 INF]  Status: Success
+[2026-03-27 01:46:08 INF]  Command: GetAllUsers
+[2026-03-27 01:46:08 INF]  Status: Success
+[2026-03-27 01:46:08 INF]  Command: GetAllSongs
+[2026-03-27 01:46:08 INF]  Status: Success
+[2026-03-27 01:46:08 INF]  Command: GetAllArtists
+[2026-03-27 01:46:08 INF]  Found 7 artists
+[2026-03-27 01:46:08 INF]  Status: Success
+[2026-03-27 01:46:08 INF]  Command: GetPendingSongs
+[2026-03-27 01:46:08 INF]  Found 0 pending songs
+[2026-03-27 01:46:08 INF]  Status: Success
+[2026-03-27 01:46:11 INF]  Command: GetAllUsers
+[2026-03-27 01:46:11 INF]  Status: Success
+[2026-03-27 01:47:37 INF]  Command: GetAllUsers
+[2026-03-27 01:47:37 INF]  Status: Success
+[2026-03-27 01:51:59 INF]  Command: CreateUser
+[2026-03-27 01:51:59 INF]  Status: Success
+[2026-03-27 01:52:00 INF]  Command: GetAllUsers
+[2026-03-27 01:52:00 INF]  Status: Success
+[2026-03-27 01:52:09 INF]  Command: UpdateUser
+[2026-03-27 01:52:09 INF]  Status: Success
+[2026-03-27 01:52:12 INF]  Command: GetAllUsers
+[2026-03-27 01:52:12 INF]  Status: Success
+[2026-03-27 01:52:17 INF]  Command: GetPendingSongs
+[2026-03-27 01:52:17 INF]  Found 0 pending songs
+[2026-03-27 01:52:17 INF]  Status: Success
+[2026-03-27 01:52:18 INF]  Command: GetAllUsers
+[2026-03-27 01:52:18 INF]  Status: Success
+[2026-03-27 01:52:19 INF]  Command: GetPendingSongs
+[2026-03-27 01:52:19 INF]  Found 0 pending songs
+[2026-03-27 01:52:19 INF]  Status: Success
+[2026-03-27 01:52:19 INF]  Command: GetAllUsers
+[2026-03-27 01:52:19 INF]  Status: Success
+[2026-03-27 01:52:19 INF]  Command: GetPendingSongs
+[2026-03-27 01:52:19 INF]  Found 0 pending songs
+[2026-03-27 01:52:19 INF]  Status: Success
+[2026-03-27 01:52:20 INF]  Command: GetAllUsers
+[2026-03-27 01:52:20 INF]  Status: Success
+[2026-03-27 01:52:20 INF]  Command: GetPendingSongs
+[2026-03-27 01:52:20 INF]  Found 0 pending songs
+[2026-03-27 01:52:20 INF]  Status: Success
+[2026-03-27 01:52:21 INF]  Command: GetAllUsers
+[2026-03-27 01:52:21 INF]  Status: Success
+[2026-03-27 01:52:21 INF]  Command: GetPendingSongs
+[2026-03-27 01:52:21 INF]  Found 0 pending songs
+[2026-03-27 01:52:21 INF]  Status: Success
+[2026-03-27 01:52:58 INF]  Command: GetAllUsers
+[2026-03-27 01:52:58 INF]  Status: Success
+[2026-03-27 01:53:37 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:37 INF]  Found 0 pending songs
+[2026-03-27 01:53:37 INF]  Status: Success
+[2026-03-27 01:53:38 INF]  Command: GetAllUsers
+[2026-03-27 01:53:38 INF]  Status: Success
+[2026-03-27 01:53:38 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:38 INF]  Found 0 pending songs
+[2026-03-27 01:53:38 INF]  Status: Success
+[2026-03-27 01:53:39 INF]  Command: GetAllUsers
+[2026-03-27 01:53:39 INF]  Status: Success
+[2026-03-27 01:53:39 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:39 INF]  Found 0 pending songs
+[2026-03-27 01:53:39 INF]  Status: Success
+[2026-03-27 01:53:39 INF]  Command: GetAllUsers
+[2026-03-27 01:53:39 INF]  Status: Success
+[2026-03-27 01:53:40 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:40 INF]  Found 0 pending songs
+[2026-03-27 01:53:40 INF]  Status: Success
+[2026-03-27 01:53:41 INF]  Command: GetAllUsers
+[2026-03-27 01:53:41 INF]  Status: Success
+[2026-03-27 01:53:41 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:41 INF]  Found 0 pending songs
+[2026-03-27 01:53:41 INF]  Status: Success
+[2026-03-27 01:53:42 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:42 INF]  Found 0 pending songs
+[2026-03-27 01:53:42 INF]  Status: Success
+[2026-03-27 01:53:42 INF]  Command: GetAllUsers
+[2026-03-27 01:53:42 INF]  Status: Success
+[2026-03-27 01:53:42 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:42 INF]  Found 0 pending songs
+[2026-03-27 01:53:42 INF]  Status: Success
+[2026-03-27 01:53:43 INF]  Command: GetAllUsers
+[2026-03-27 01:53:43 INF]  Status: Success
+[2026-03-27 01:53:43 INF]  Command: GetPendingSongs
+[2026-03-27 01:53:43 INF]  Found 0 pending songs
+[2026-03-27 01:53:43 INF]  Status: Success
+[2026-03-27 02:00:37 INF]  Socket Server started on port 1500
+[2026-03-27 02:00:47 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-03-27 02:01:18 INF]  Client connected: 127.0.0.1:65342
+[2026-03-27 02:01:18 INF]  Client connected: 127.0.0.1:65342
+[2026-03-27 02:01:19 INF]  Command: Login
+[2026-03-27 02:01:19 INF]  Login attempt: manager
+[2026-03-27 02:01:19 INF]  Login successful: manager (Manager)
+[2026-03-27 02:01:19 INF]  Status: Success
+[2026-03-27 02:01:19 INF]  Command: GetAllSongs
+[2026-03-27 02:01:19 INF]  Status: Success
+[2026-03-27 02:01:19 INF]  Command: GetAllArtists
+[2026-03-27 02:01:19 INF]  Found 7 artists
+[2026-03-27 02:01:19 INF]  Status: Success
+[2026-03-27 02:01:19 INF]  Command: GetPendingSongs
+[2026-03-27 02:01:19 INF]  Found 0 pending songs
+[2026-03-27 02:01:19 INF]  Status: Success
+[2026-03-27 02:01:22 INF]  Command: GetAllSongs
+[2026-03-27 02:01:22 INF]  Status: Success
+[2026-03-27 02:01:28 INF]  Command: GetAllArtists
+[2026-03-27 02:01:28 INF]  Found 7 artists
+[2026-03-27 02:01:28 INF]  Status: Success
+[2026-03-27 02:01:42 INF]  Command: UploadSongFile
+[2026-03-27 02:01:42 INF]  Status: Success
+[2026-03-27 02:01:42 INF]  Command: CreateSong
+[2026-03-27 02:01:42 INF]  Creating song: CHỜ ANH VỀ by User "8b4cc76b-2db3-4b46-af97-35eb5c4c7027"
+[2026-03-27 02:01:42 INF]  Song created: CHỜ ANH VỀ
+[2026-03-27 02:01:42 INF]  Status: Success
+[2026-03-27 02:01:43 INF]  Command: GetAllSongs
+[2026-03-27 02:01:43 INF]  Status: Success
+[2026-03-27 02:01:47 WRN]  Empty request received
+[2026-03-27 02:01:47 INF]  Client disconnected: 127.0.0.1:65342
+[2026-03-27 02:01:47 INF]  Client disconnected
+[2026-03-27 02:01:55 INF]  Client connected: 127.0.0.1:62947
+[2026-03-27 02:01:55 INF]  Client connected: 127.0.0.1:62947
+[2026-03-27 02:01:55 INF]  Command: Login
+[2026-03-27 02:01:55 INF]  Login attempt: admin
+[2026-03-27 02:01:56 INF]  Login successful: admin (Admin, Customer)
+[2026-03-27 02:01:56 INF]  Status: Success
+[2026-03-27 02:01:56 INF]  Command: GetAllUsers
+[2026-03-27 02:01:56 INF]  Status: Success
+[2026-03-27 02:01:56 INF]  Command: GetAllSongs
+[2026-03-27 02:01:56 INF]  Status: Success
+[2026-03-27 02:01:56 INF]  Command: GetAllArtists
+[2026-03-27 02:01:56 INF]  Found 7 artists
+[2026-03-27 02:01:56 INF]  Status: Success
+[2026-03-27 02:01:56 INF]  Command: GetPendingSongs
+[2026-03-27 02:01:56 INF]  Found 1 pending songs
+[2026-03-27 02:01:56 INF]  Status: Success
+[2026-03-27 02:01:59 INF]  Command: GetPendingSongs
+[2026-03-27 02:01:59 INF]  Found 1 pending songs
+[2026-03-27 02:01:59 INF]  Status: Success
+[2026-03-27 02:02:06 INF]  Command: RejectSong
+[2026-03-27 02:02:06 INF]  Status: Success
+[2026-03-27 02:02:07 INF]  Command: GetPendingSongs
+[2026-03-27 02:02:07 INF]  Found 0 pending songs
+[2026-03-27 02:02:07 INF]  Status: Success
+[2026-03-27 02:05:32 WRN]  Empty request received
+[2026-03-27 02:10:17 INF]  Socket Server started on port 1500
+[2026-03-27 02:10:21 INF]  Client connected: 127.0.0.1:49878
+[2026-03-27 02:10:21 INF]  Client connected: 127.0.0.1:49878
+[2026-03-27 02:10:21 INF]  Command: Login
+[2026-03-27 02:10:21 INF]  Login attempt: manager
+[2026-03-27 02:10:22 INF]  Login successful: manager (Manager)
+[2026-03-27 02:10:22 INF]  Status: Success
+[2026-03-27 02:10:22 INF]  Command: GetAllSongs
+[2026-03-27 02:10:22 INF]  Status: Success
+[2026-03-27 02:10:22 INF]  Command: GetAllArtists
+[2026-03-27 02:10:22 INF]  Found 7 artists
+[2026-03-27 02:10:22 INF]  Status: Success
+[2026-03-27 02:10:22 INF]  Command: GetPendingSongs
+[2026-03-27 02:10:23 INF]  Found 0 pending songs
+[2026-03-27 02:10:23 INF]  Status: Success
+[2026-03-27 02:10:26 INF]  Command: GetAllSongs
+[2026-03-27 02:10:26 INF]  Status: Success
+[2026-03-27 02:12:29 INF]  Socket Server started on port 1500
+[2026-03-27 02:12:32 INF]  Client connected: 127.0.0.1:59689
+[2026-03-27 02:12:32 INF]  Client connected: 127.0.0.1:59689
+[2026-03-27 02:12:32 INF]  Command: Login
+[2026-03-27 02:12:32 INF]  Login attempt: manager
+[2026-03-27 02:12:34 INF]  Login successful: manager (Manager)
+[2026-03-27 02:12:34 INF]  Status: Success
+[2026-03-27 02:12:34 INF]  Command: GetAllSongs
+[2026-03-27 02:12:34 INF]  Status: Success
+[2026-03-27 02:12:34 INF]  Command: GetAllArtists
+[2026-03-27 02:12:34 INF]  Found 7 artists
+[2026-03-27 02:12:34 INF]  Status: Success
+[2026-03-27 02:12:34 INF]  Command: GetPendingSongs
+[2026-03-27 02:12:34 INF]  Found 0 pending songs
+[2026-03-27 02:12:34 INF]  Status: Success
+[2026-03-27 02:12:36 INF]  Command: GetAllArtists
+[2026-03-27 02:12:36 INF]  Found 7 artists
+[2026-03-27 02:12:36 INF]  Status: Success
+[2026-03-27 02:12:38 INF]  Command: GetAllSongs
+[2026-03-27 02:12:38 INF]  Status: Success
+[2026-03-27 02:12:54 INF]  Command: GetAllArtists
+[2026-03-27 02:12:54 INF]  Found 7 artists
+[2026-03-27 02:12:54 INF]  Status: Success
+[2026-03-27 02:13:03 WRN]  Empty request received
+[2026-03-27 02:13:03 INF]  Client disconnected: 127.0.0.1:59689
+[2026-03-27 02:13:03 INF]  Client disconnected
+[2026-03-27 02:15:29 INF]  Socket Server started on port 1500
+[2026-03-27 02:15:32 INF]  Client connected: 127.0.0.1:65466
+[2026-03-27 02:15:32 INF]  Client connected: 127.0.0.1:65466
+[2026-03-27 02:15:32 INF]  Command: Login
+[2026-03-27 02:15:32 INF]  Login attempt: manager
+[2026-03-27 02:15:35 INF]  Login successful: manager (Manager)
+[2026-03-27 02:15:35 INF]  Status: Success
+[2026-03-27 02:15:35 INF]  Command: GetAllSongs
+[2026-03-27 02:15:35 INF]  Status: Success
+[2026-03-27 02:15:35 INF]  Command: GetAllArtists
+[2026-03-27 02:15:35 INF]  Found 7 artists
+[2026-03-27 02:15:35 INF]  Status: Success
+[2026-03-27 02:15:35 INF]  Command: GetPendingSongs
+[2026-03-27 02:15:35 INF]  Found 0 pending songs
+[2026-03-27 02:15:35 INF]  Status: Success
+[2026-03-27 02:15:42 INF]  Command: GetAllArtists
+[2026-03-27 02:15:42 INF]  Found 7 artists
+[2026-03-27 02:15:42 INF]  Status: Success
+[2026-03-27 02:15:50 INF]  Command: GetAllSongs
+[2026-03-27 02:15:50 INF]  Status: Success
+[2026-03-27 02:16:17 INF]  Command: GetAllArtists
+[2026-03-27 02:16:17 INF]  Found 7 artists
+[2026-03-27 02:16:17 INF]  Status: Success
+[2026-03-27 02:16:27 INF]  Command: GetAllSongs
+[2026-03-27 02:16:27 INF]  Status: Success
+[2026-03-27 02:16:49 INF]  Command: GetAllArtists
+[2026-03-27 02:16:49 INF]  Found 7 artists
+[2026-03-27 02:16:49 INF]  Status: Success
+[2026-03-27 02:16:49 INF]  Command: GetAllSongs
+[2026-03-27 02:16:49 INF]  Status: Success
+[2026-03-27 02:16:49 INF]  Command: GetAllArtists
+[2026-03-27 02:16:49 INF]  Found 7 artists
+[2026-03-27 02:16:49 INF]  Status: Success
+[2026-03-27 02:16:49 INF]  Command: GetPendingSongs
+[2026-03-27 02:16:49 INF]  Found 0 pending songs
+[2026-03-27 02:16:49 INF]  Status: Success
+[2026-03-27 02:16:51 INF]  Command: GetAllSongs
+[2026-03-27 02:16:51 INF]  Status: Success
+[2026-03-27 02:16:51 INF]  Command: GetAllArtists
+[2026-03-27 02:16:51 INF]  Found 7 artists
+[2026-03-27 02:16:51 INF]  Status: Success
+[2026-03-27 02:16:52 INF]  Command: GetAllSongs
+[2026-03-27 02:16:52 INF]  Status: Success
+[2026-03-27 02:16:52 INF]  Command: GetAllArtists
+[2026-03-27 02:16:52 INF]  Found 7 artists
+[2026-03-27 02:16:52 INF]  Status: Success
+[2026-03-27 02:16:53 INF]  Command: GetAllArtists
+[2026-03-27 02:16:53 INF]  Found 7 artists
+[2026-03-27 02:16:53 INF]  Status: Success
+[2026-03-27 02:16:53 INF]  Command: GetAllSongs
+[2026-03-27 02:16:53 INF]  Status: Success
+[2026-03-27 02:16:56 WRN]  Empty request received
+[2026-03-27 02:16:56 INF]  Client disconnected: 127.0.0.1:65466
+[2026-03-27 02:16:56 INF]  Client disconnected
+[2026-03-27 02:17:21 INF]  Socket Server started on port 1500
+[2026-03-27 02:21:55 INF]  Socket Server started on port 1500
+[2026-03-27 02:22:09 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-03-27 02:26:34 INF]  Socket Server started on port 1500
+[2026-03-27 02:26:45 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-03-27 02:31:09 INF]  Socket Server started on port 1500
+[2026-03-27 02:31:12 INF]  Client connected: 127.0.0.1:57805
+[2026-03-27 02:31:12 INF]  Client connected: 127.0.0.1:57805
+[2026-03-27 02:31:12 INF]  Command: Login
+[2026-03-27 02:31:12 INF]  Login attempt: manager
+[2026-03-27 02:31:13 INF]  Login successful: manager (Manager)
+[2026-03-27 02:31:13 INF]  Status: Success
+[2026-03-27 02:31:13 INF]  Command: GetAllSongs
+[2026-03-27 02:31:14 INF]  Status: Success
+[2026-03-27 02:31:14 INF]  Command: GetAllArtists
+[2026-03-27 02:31:14 INF]  Found 7 artists
+[2026-03-27 02:31:14 INF]  Status: Success
+[2026-03-27 02:31:14 INF]  Command: GetPendingSongs
+[2026-03-27 02:31:14 INF]  Found 0 pending songs
+[2026-03-27 02:31:14 INF]  Status: Success
+[2026-03-27 02:31:17 INF]  Command: GetAllSongs
+[2026-03-27 02:31:17 INF]  Status: Success
+[2026-03-27 02:31:17 INF]  Command: GetAllArtists
+[2026-03-27 02:31:17 INF]  Found 7 artists
+[2026-03-27 02:31:17 INF]  Status: Success
+[2026-03-27 02:31:22 INF]  Command: UpdateArtist
+[2026-03-27 02:31:22 INF]  Status: Success
+[2026-03-27 02:31:23 INF]  Command: GetAllArtists
+[2026-03-27 02:31:23 INF]  Found 7 artists
+[2026-03-27 02:31:23 INF]  Status: Success
+[2026-03-27 02:31:38 INF]  Command: UpdateArtist
+[2026-03-27 02:31:38 INF]  Status: Success
+[2026-03-27 02:31:39 INF]  Command: GetAllArtists
+[2026-03-27 02:31:39 INF]  Found 7 artists
+[2026-03-27 02:31:39 INF]  Status: Success
+[2026-03-27 02:31:45 INF]  Command: GetAllSongs
+[2026-03-27 02:31:45 INF]  Status: Success
+[2026-03-27 02:31:47 INF]  Command: GetAllArtists
+[2026-03-27 02:31:47 INF]  Found 7 artists
+[2026-03-27 02:31:47 INF]  Status: Success
+[2026-03-27 02:31:50 INF]  Command: GetAllSongs
+[2026-03-27 02:31:50 INF]  Status: Success
+[2026-03-27 02:31:50 INF]  Command: GetAllArtists
+[2026-03-27 02:31:50 INF]  Found 7 artists
+[2026-03-27 02:31:50 INF]  Status: Success
+[2026-03-27 02:31:50 INF]  Command: GetAllSongs
+[2026-03-27 02:31:50 INF]  Status: Success
+[2026-03-27 02:31:50 INF]  Command: GetAllArtists
+[2026-03-27 02:31:50 INF]  Found 7 artists
+[2026-03-27 02:31:50 INF]  Status: Success
+[2026-03-27 02:31:51 INF]  Command: GetAllSongs
+[2026-03-27 02:31:51 INF]  Status: Success
+[2026-03-27 02:31:51 INF]  Command: GetAllArtists
+[2026-03-27 02:31:51 INF]  Found 7 artists
+[2026-03-27 02:31:51 INF]  Status: Success
+[2026-03-27 02:31:52 INF]  Command: GetAllSongs
+[2026-03-27 02:31:52 INF]  Status: Success
+[2026-03-27 02:32:06 INF]  Command: GetAllArtists
+[2026-03-27 02:32:06 INF]  Found 7 artists
+[2026-03-27 02:32:06 INF]  Status: Success
+[2026-03-27 02:32:21 INF]  Command: UpdateArtist
+[2026-03-27 02:32:21 INF]  Status: Success
+[2026-03-27 02:32:22 INF]  Command: GetAllArtists
+[2026-03-27 02:32:22 INF]  Found 7 artists
+[2026-03-27 02:32:22 INF]  Status: Success
+[2026-03-27 02:32:26 INF]  Command: UpdateArtist
+[2026-03-27 02:32:26 INF]  Status: Success
+[2026-03-27 02:32:26 INF]  Command: GetAllArtists
+[2026-03-27 02:32:26 INF]  Found 7 artists
+[2026-03-27 02:32:26 INF]  Status: Success
+[2026-03-27 02:33:22 WRN]  Empty request received
+[2026-03-27 02:33:22 INF]  Client disconnected: 127.0.0.1:57805
+[2026-03-27 02:34:18 INF]  Socket Server started on port 1500
+[2026-03-27 02:34:25 INF]  Client connected: 127.0.0.1:49672
+[2026-03-27 02:34:25 INF]  Client connected: 127.0.0.1:49672
+[2026-03-27 02:34:25 INF]  Command: Login
+[2026-03-27 02:34:25 INF]  Login attempt: manager
+[2026-03-27 02:34:26 INF]  Login successful: manager (Manager)
+[2026-03-27 02:34:26 INF]  Status: Success
+[2026-03-27 02:34:26 INF]  Command: GetAllSongs
+[2026-03-27 02:34:26 INF]  Status: Success
+[2026-03-27 02:34:26 INF]  Command: GetAllArtists
+[2026-03-27 02:34:26 INF]  Found 7 artists
+[2026-03-27 02:34:26 INF]  Status: Success
+[2026-03-27 02:34:26 INF]  Command: GetPendingSongs
+[2026-03-27 02:34:26 INF]  Found 0 pending songs
+[2026-03-27 02:34:26 INF]  Status: Success
+[2026-03-27 02:34:42 INF]  Command: GetAllArtists
+[2026-03-27 02:34:42 INF]  Found 7 artists
+[2026-03-27 02:34:42 INF]  Status: Success
+[2026-03-27 02:34:42 INF]  Command: GetAllSongs
+[2026-03-27 02:34:42 INF]  Status: Success
+[2026-03-27 02:34:43 INF]  Command: GetAllArtists
+[2026-03-27 02:34:43 INF]  Found 7 artists
+[2026-03-27 02:34:43 INF]  Status: Success
+[2026-03-27 02:34:45 INF]  Command: UpdateArtist
+[2026-03-27 02:34:45 INF]  Status: Success
+[2026-03-27 02:34:46 INF]  Command: GetAllArtists
+[2026-03-27 02:34:46 INF]  Found 7 artists
+[2026-03-27 02:34:46 INF]  Status: Success
+[2026-03-27 02:34:50 INF]  Command: UpdateArtist
+[2026-03-27 02:34:50 INF]  Status: Success
+[2026-03-27 02:34:50 INF]  Command: GetAllArtists
+[2026-03-27 02:34:50 INF]  Found 7 artists
+[2026-03-27 02:34:50 INF]  Status: Success
+[2026-03-27 02:35:02 INF]  Command: CreateArtist
+[2026-03-27 02:35:02 INF]  Creating artist: gagaga
+[2026-03-27 02:35:02 INF]  Artist created: gagaga
+[2026-03-27 02:35:02 INF]  Status: Success
+[2026-03-27 02:35:03 INF]  Command: GetAllArtists
+[2026-03-27 02:35:03 INF]  Found 8 artists
+[2026-03-27 02:35:03 INF]  Status: Success
+[2026-03-27 02:35:09 WRN]  Empty request received
+[2026-03-27 02:35:09 INF]  Client disconnected: 127.0.0.1:49672
+[2026-03-27 02:35:09 INF]  Client disconnected
+[2026-03-27 02:35:14 WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-03-27 02:36:32 INF]  Socket Server started on port 1500
+[2026-03-27 02:36:52 INF]  Client connected: 127.0.0.1:56865
+[2026-03-27 02:36:52 INF]  Client connected: 127.0.0.1:56865
+[2026-03-27 02:36:52 INF]  Command: Login
+[2026-03-27 02:36:52 INF]  Login attempt: admin
+[2026-03-27 02:36:52 INF]  Login successful: admin (Admin, Customer)
+[2026-03-27 02:36:52 INF]  Status: Success
+[2026-03-27 02:36:52 INF]  Command: GetAllUsers
+[2026-03-27 02:36:53 INF]  Status: Success
+[2026-03-27 02:36:53 INF]  Command: GetAllSongs
+[2026-03-27 02:36:53 INF]  Status: Success
+[2026-03-27 02:36:53 INF]  Command: GetAllArtists
+[2026-03-27 02:36:53 INF]  Found 8 artists
+[2026-03-27 02:36:53 INF]  Status: Success
+[2026-03-27 02:36:53 INF]  Command: GetPendingSongs
+[2026-03-27 02:36:53 INF]  Found 0 pending songs
+[2026-03-27 02:36:53 INF]  Status: Success
+[2026-03-27 02:36:55 INF]  Command: GetAllUsers
+[2026-03-27 02:36:55 INF]  Status: Success
+[2026-03-27 02:36:57 INF]  Command: GetPendingSongs
+[2026-03-27 02:36:57 INF]  Found 0 pending songs
+[2026-03-27 02:36:57 INF]  Status: Success
+[2026-03-27 02:36:57 INF]  Command: GetAllUsers
+[2026-03-27 02:36:57 INF]  Status: Success
+[2026-03-27 02:36:58 INF]  Command: GetPendingSongs
+[2026-03-27 02:36:58 INF]  Found 0 pending songs
+[2026-03-27 02:36:58 INF]  Status: Success
+[2026-03-27 02:36:58 INF]  Command: GetAllUsers
+[2026-03-27 02:36:58 INF]  Status: Success
+[2026-03-27 02:36:58 INF]  Command: GetPendingSongs
+[2026-03-27 02:36:58 INF]  Found 0 pending songs
+[2026-03-27 02:36:58 INF]  Status: Success
+[2026-03-27 02:36:59 INF]  Command: GetAllUsers
+[2026-03-27 02:36:59 INF]  Status: Success
+[2026-03-27 02:37:02 WRN]  Empty request received
+[2026-03-27 02:37:02 INF]  Client disconnected: 127.0.0.1:56865
+[2026-03-27 02:37:02 INF]  Client disconnected
+[2026-03-27 02:41:24 INF]  Socket Server started on port 1500
+[2026-03-27 02:41:27 INF]  Client connected: 127.0.0.1:55333
+[2026-03-27 02:41:27 INF]  Client connected: 127.0.0.1:55333
+[2026-03-27 02:41:27 INF]  Command: Login
+[2026-03-27 02:41:27 INF]  Login attempt: manager
+[2026-03-27 02:41:28 INF]  Login successful: manager (Manager)
+[2026-03-27 02:41:28 INF]  Status: Success
+[2026-03-27 02:41:28 INF]  Command: GetAllSongs
+[2026-03-27 02:41:29 INF]  Status: Success
+[2026-03-27 02:41:29 INF]  Command: GetAllArtists
+[2026-03-27 02:41:29 INF]  Found 8 artists
+[2026-03-27 02:41:29 INF]  Status: Success
+[2026-03-27 02:41:29 INF]  Command: GetPendingSongs
+[2026-03-27 02:41:29 INF]  Found 0 pending songs
+[2026-03-27 02:41:29 INF]  Status: Success
+[2026-03-27 02:41:30 INF]  Command: GetAllArtists
+[2026-03-27 02:41:30 INF]  Found 8 artists
+[2026-03-27 02:41:30 INF]  Status: Success
+[2026-03-27 02:41:36 INF]  Command: UpdateArtist
+[2026-03-27 02:41:36 INF]  Status: Success
+[2026-03-27 02:41:37 INF]  Command: GetAllArtists
+[2026-03-27 02:41:37 INF]  Found 8 artists
+[2026-03-27 02:41:37 INF]  Status: Success
+[2026-03-27 02:41:46 INF]  Command: UpdateArtist
+[2026-03-27 02:41:46 INF]  Status: Success
+[2026-03-27 02:41:46 INF]  Command: GetAllArtists
+[2026-03-27 02:41:46 INF]  Found 8 artists
+[2026-03-27 02:41:46 INF]  Status: Success
+[2026-03-27 02:42:19 INF]  Command: UpdateArtist
+[2026-03-27 02:42:19 INF]  Status: Success
+[2026-03-27 02:42:20 INF]  Command: GetAllArtists
+[2026-03-27 02:42:20 INF]  Found 8 artists
+[2026-03-27 02:42:20 INF]  Status: Success
+[2026-03-27 02:42:48 INF]  Command: GetAllArtists
+[2026-03-27 02:42:48 INF]  Found 8 artists
+[2026-03-27 02:42:48 INF]  Status: Success
+[2026-03-27 02:42:51 WRN]  Empty request received
+[2026-03-27 02:42:52 INF]  Client disconnected: 127.0.0.1:55333
+[2026-03-27 02:42:52 INF]  Client disconnected
