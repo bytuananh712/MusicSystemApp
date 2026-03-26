@@ -1,4 +1,4 @@
-﻿using MusicSystem.App.Services;
+using MusicSystem.App.Services;
 using MusicSystem.App.Views; // ← Import để dùng các Window
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Users;
@@ -146,7 +146,7 @@ namespace MusicSystem.App.Views.Pages
                 if (user == null) return;
 
                 var editWindow = new EditUserWindow(_socketClient, user);
-                // ✅ Sửa
+                
                 editWindow.Owner = Window.GetWindow(this);
 
                 var result = editWindow.ShowDialog();
@@ -165,6 +165,18 @@ namespace MusicSystem.App.Views.Pages
             {
                 var user = _allUsers.FirstOrDefault(u => u.UserId == userId);
                 if (user == null) return;
+
+                // Block: Admin cannot disable their own account
+                var currentUserIdStr = Application.Current.Properties["UserId"]?.ToString();
+                if (Guid.TryParse(currentUserIdStr, out var currentUserId) && currentUserId == userId)
+                {
+                    MessageBox.Show(
+                        "Bạn không thể vô hiệu hóa chính tài khoản Admin của mình.",
+                        "Không được phép",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+                    return;
+                }
 
                 var confirm = MessageBox.Show(
                     $"Bạn có chắc muốn vô hiệu hóa tài khoản '{user.Username}'?\n\n" +

@@ -1,4 +1,4 @@
-﻿using MusicSystem.App.Services;
+using MusicSystem.App.Services;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Users;
 using MusicSystem.Shared.SocketContracts;
@@ -50,9 +50,35 @@ namespace MusicSystem.App.Views
                 return;
             }
 
+            var username = txtUsername.Text.Trim();
+            if (username.Contains(' '))
+            {
+                ShowError("Username không được chứa khoảng trắng");
+                txtUsername.Focus();
+                return;
+            }
+
+            foreach (char c in username)
+            {
+                if (!char.IsLetterOrDigit(c) && c != '_')
+                {
+                    ShowError("Username chỉ được chứa chữ, số và dấu gạch dưới (_)");
+                    txtUsername.Focus();
+                    return;
+                }
+            }
+
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 ShowError("Vui lòng nhập email");
+                txtEmail.Focus();
+                return;
+            }
+
+            var email = txtEmail.Text.Trim();
+            if (!email.Contains('@') || !email.Contains('.') || email.IndexOf('@') > email.LastIndexOf('.'))
+            {
+                ShowError("Email không đúng định dạng (ví dụ: user@example.com)");
                 txtEmail.Focus();
                 return;
             }
@@ -71,6 +97,20 @@ namespace MusicSystem.App.Views
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(txtConfirmPassword.Password))
+            {
+                ShowError("Vui lòng xác nhận mật khẩu");
+                txtConfirmPassword.Focus();
+                return;
+            }
+
+            if (txtPassword.Password != txtConfirmPassword.Password)
+            {
+                ShowError("Mật khẩu xác nhận không khớp");
+                txtConfirmPassword.Focus();
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtFullName.Text))
             {
                 ShowError("Vui lòng nhập họ tên");
@@ -78,17 +118,14 @@ namespace MusicSystem.App.Views
                 return;
             }
 
-            // Get selected role
-            var selectedRole = (cboRole.SelectedItem as ComboBoxItem)?.Content.ToString() ?? "Customer";
-
-            // Create DTO
+            // Create DTO (luôn là Customer)
             var createDto = new CreateUserDto
             {
-                Username = txtUsername.Text.Trim(),
-                Email = txtEmail.Text.Trim(),
+                Username = username,
+                Email = email,
                 Password = txtPassword.Password,
                 FullName = txtFullName.Text.Trim(),
-                RoleNames = new List<string> { selectedRole }
+                RoleNames = new List<string> { "Customer" }
             };
 
             // Save

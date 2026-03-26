@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Infrastructure.Data;
@@ -57,14 +57,16 @@ namespace MusicSystem.Infrastructure.Repositories
 
         public async Task<IEnumerable<User>> GetAllWithRolesAsync()
         {
-            return await _context.Users
+            var users = await _context.Users
                 .Include(u => u.UserRoles)
                     .ThenInclude(ur => ur.Role)
-                .OrderBy(u => u.UserRoles.Any(ur => ur.Role.RoleName == "Admin") ? 0
-                            : u.UserRoles.Any(ur => ur.Role.RoleName == "Manager") ? 1
-                            : 2)
-                .ThenBy(u => u.CreatedAt)
                 .ToListAsync();
+
+            return users.OrderBy(u => u.UserRoles.Any(ur => ur.Role.RoleName == "Admin") ? 0
+                                    : u.UserRoles.Any(ur => ur.Role.RoleName == "Manager") ? 1
+                                    : 2)
+                        .ThenBy(u => u.CreatedAt)
+                        .ToList();
         }
 
         public async Task<IEnumerable<User>> GetUsersByRoleAsync(string roleName)

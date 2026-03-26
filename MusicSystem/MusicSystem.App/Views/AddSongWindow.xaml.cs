@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using MusicSystem.App.Services;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Artists;
@@ -146,6 +146,18 @@ namespace MusicSystem.App.Views
             }
 
             // Upload file first
+            // Validate năm phát hành nếu có nhập
+            if (!string.IsNullOrWhiteSpace(txtReleaseYear.Text))
+            {
+                if (!int.TryParse(txtReleaseYear.Text.Trim(), out int year)
+                    || year < 1900 || year > DateTime.Now.Year)
+                {
+                    ShowError($"Năm phát hành phải là số từ 1900 đến {DateTime.Now.Year}");
+                    txtReleaseYear.Focus();
+                    return;
+                }
+            }
+
             await UploadAndSaveAsync();
         }
 
@@ -226,7 +238,7 @@ namespace MusicSystem.App.Views
                 if (createResponse.Status == SocketStatus.Success)
                 {
                     MessageBox.Show(
-                        "Thêm bài hát thành công!\n\nBài hát đang ở trạng thái 'Pending', cần Manager duyệt.",
+                        "Thêm bài hát thành công!\n\nBài hát đang ở trạng thái 'Pending', cần Admin duyệt.",
                         "Thành công",
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);

@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Infrastructure.Data;
@@ -29,6 +29,12 @@ namespace MusicSystem.Infrastructure.Repositories
             if (!string.IsNullOrEmpty(status))
             {
                 query = query.Where(s => s.Status == status);
+                
+                // Ẩn bài hát nếu có bất kỳ nghệ sĩ nào bị khoá (Status == "Disabled")
+                if (status == "Active")
+                {
+                    query = query.Where(s => !s.SongArtists.Any(sa => sa.Artist.Status == "Disabled"));
+                }
             }
 
             return await query

@@ -1,4 +1,4 @@
-﻿using MusicSystem.App.Services;
+using MusicSystem.App.Services;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Auth;
 using MusicSystem.Shared.SocketContracts;
@@ -104,6 +104,7 @@ namespace MusicSystem.App.Views
                     // Lưu thông tin user vào Application Properties
                     Application.Current.Properties["AuthToken"] = loginResult.Token;
                     Application.Current.Properties["CurrentUser"] = loginResult.User;
+                    Application.Current.Properties["UserId"] = loginResult.User.UserId.ToString();
 
                     // Log thông tin
                     System.Diagnostics.Debug.WriteLine($" Login thành công: {loginResult.User.FullName}");

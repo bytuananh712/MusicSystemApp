@@ -1,4 +1,4 @@
-﻿using MusicSystem.App.Services;
+using MusicSystem.App.Services;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Songs;
 using MusicSystem.Shared.SocketContracts;
@@ -56,6 +56,17 @@ namespace MusicSystem.App.Views
             {
                 ShowError("Vui lòng nhập tiêu đề");
                 return;
+            }
+
+            if (!string.IsNullOrWhiteSpace(txtReleaseYear.Text))
+            {
+                if (!int.TryParse(txtReleaseYear.Text.Trim(), out int year)
+                    || year < 1900 || year > DateTime.Now.Year)
+                {
+                    ShowError($"Năm phát hành phải là số từ 1900 đến {DateTime.Now.Year}");
+                    txtReleaseYear.Focus();
+                    return;
+                }
             }
 
             await UpdateSongAsync();

@@ -1,4 +1,4 @@
-﻿using MusicSystem.App.Services;
+using MusicSystem.App.Services;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Artists;
 using MusicSystem.Shared.SocketContracts;
@@ -61,6 +61,23 @@ namespace MusicSystem.App.Views
             {
                 ShowError("Vui lòng nhập tên nghệ sĩ");
                 txtNewArtistName.Focus();
+                return;
+            }
+
+            if (txtNewArtistName.Text.Trim().Length > 100)
+            {
+                ShowError("Tên nghệ sĩ không được vượt quá 100 ký tự");
+                txtNewArtistName.Focus();
+                return;
+            }
+
+            var avatarUrl = txtAvatarUrl.Text.Trim();
+            if (!string.IsNullOrEmpty(avatarUrl)
+                && !avatarUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase)
+                && !avatarUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
+            {
+                ShowError("URL ảnh đại diện phải bắt đầu bằng http:// hoặc https://");
+                txtAvatarUrl.Focus();
                 return;
             }
 

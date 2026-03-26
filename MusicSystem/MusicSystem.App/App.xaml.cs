@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MusicSystem.App.Services;
 using MusicSystem.App.Views;
+using MusicSystem.App.Views.Pages;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -39,14 +40,25 @@ namespace MusicSystem.App
             services.AddTransient<LoginWindow>();
             services.AddTransient<MainWindow>();
 
-
-            // Windows
+            // ===== WINDOWS & DIALOGS =====
             services.AddTransient<AddUserWindow>();
             services.AddTransient<EditUserWindow>();
             services.AddTransient<AssignRoleWindow>();
             services.AddTransient<ResetPasswordDialog>();
+            services.AddTransient<SelectArtistsDialog>();
+            services.AddTransient<AddSongWindow>();
+            services.AddTransient<EditSongWindow>();
+            services.AddTransient<AddArtistWindow>();
+            services.AddTransient<EditArtistWindow>();
+            services.AddTransient<RejectReasonDialog>();
 
-
+            // ===== MANAGEMENT PAGES (NEW) =====
+            services.AddTransient<AdminDashboardPage>();
+            services.AddTransient<DashboardPage>();
+            services.AddTransient<PendingSongsPage>();
+            services.AddTransient<SongManagementPage>();
+            services.AddTransient<ArtistManagementPage>();
+            services.AddTransient<UserManagementPage>();
         }
 
         protected override void OnExit(ExitEventArgs e)

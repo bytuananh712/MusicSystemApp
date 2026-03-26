@@ -1,4 +1,4 @@
-﻿using MusicSystem.Domain.Entities;
+using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Shared.DTOs.Songs;
 using System;
@@ -45,7 +45,8 @@ namespace MusicSystem.Application.Services.Songs
 
         public async Task<IEnumerable<SongDto>> SearchSongsAsync(string searchTerm)
         {
-            var allSongs = await _songRepository.GetAllAsync(null, 1, 1000);
+            // Chỉ tìm các bài Active (sẽ tự động loại trừ các bài hát có nghệ sĩ Disabled nhờ logic trong Repository)
+            var allSongs = await _songRepository.GetAllAsync("Active", 1, 1000);
             return allSongs
                 .Where(s => s.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
                 .Select(MapToDto);

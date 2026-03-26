@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MusicSystem.Shared.DTOs.Songs.SongDto>
+@model IEnumerable<MusicSystem.Shared.DTOs.Songs.SongDto>
 @{
     bool isSearch = !string.IsNullOrEmpty(ViewBag.SearchQuery as string);
     ViewData["Title"] = isSearch ? $"Kết quả: {ViewBag.SearchQuery}" : "Trang chủ";
@@ -115,7 +115,13 @@
                         <!-- Info -->
                         <div style="flex: 1; min-width: 0;">
                             <div style="font-weight: 600; font-size: 14px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">@song.Title</div>
-                            <div style="font-size: 12px; color: var(--text-300); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px;">@song.Artists</div>
+                            <div style="font-size: 12px; color: var(--text-300); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px;">
+                                @song.Artists
+                                @if (song.ReleaseYear.HasValue)
+                                {
+                                    <span style="margin-left:6px; color:var(--text-200); font-size:11px;">• @song.ReleaseYear</span>
+                                }
+                            </div>
                         </div>
                         <!-- Plays badge -->
                         <div style="flex-shrink: 0; text-align: right;">
@@ -205,6 +211,10 @@
 
                     <div class="song-title" title="@song.Title">@song.Title</div>
                     <div class="song-artist">@song.Artists</div>
+                    @if (song.ReleaseYear.HasValue)
+                    {
+                        <div style="font-size:11px; color:var(--text-300); margin-top:2px;">@song.ReleaseYear</div>
+                    }
                     <div class="song-stats">
                         <span>
                             <i class="fas fa-play"></i> @(song.TotalPlays > 999 ? $"{song.TotalPlays / 1000}K" : song.TotalPlays.ToString())
@@ -215,7 +225,8 @@
                     <!-- Add to playlist -->
                     <button class="card-add-btn"
                             data-add-song-id="@song.SongId"
-                            data-add-song-title="@song.Title"
+                            data-add-song-title="@System.Web.HttpUtility.HtmlAttributeEncode(song.Title)"
+                            onclick="event.stopPropagation(); showAddToPlaylistMenu(this.dataset.addSongId, this.dataset.addSongTitle)"
                             title="Thêm vào playlist">
                         <i class="fas fa-plus"></i>
                     </button>

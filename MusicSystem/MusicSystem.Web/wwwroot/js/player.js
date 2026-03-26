@@ -1,4 +1,4 @@
-﻿// Player State
+// Player State
 let currentSong = null;
 let isPlaying = false;
 let playlist = [];
@@ -118,6 +118,9 @@ btnPrevious.addEventListener('click', () => {
     } else if (repeatMode === 1) {
         // Repeat all: go to last song
         playSongByIndex(playlist.length - 1);
+    } else {
+        // At the first song, no repeat
+        showPlayerToast('⏮️ Đây là bài đầu tiên trong danh sách.', 'info');
     }
 });
 
@@ -132,6 +135,13 @@ btnNext.addEventListener('click', () => {
     } else if (repeatMode === 1) {
         // Repeat all: go back to first song
         playSongByIndex(0);
+    } else {
+        // At the last song, no repeat
+        audioPlayer.pause();
+        isPlaying = false;
+        playerBar.classList.remove('playing');
+        updatePlayButton();
+        showPlayerToast('⏭️ Đã hết danh sách phát. Bật Repeat để phát lại từ đầu.', 'info');
     }
 });
 
@@ -178,6 +188,52 @@ function updatePlayButton() {
     } else {
         icon.className = 'fas fa-play';
     }
+}
+
+// Audio Error Handler (e.g., 404 file not found)
+audioPlayer.addEventListener('error', () => {
+    isPlaying = false;
+    playerBar.classList.remove('playing');
+    updatePlayButton();
+
+    const errorCode = audioPlayer.error?.code;
+    let msg = '❌ Không thể phát bài hát này (file không tồn tại trên server).';
+    if (errorCode === MediaError.MEDIA_ERR_NETWORK) {
+        msg = '❌ Lỗi mạng khi tải bài hát.';
+    } else if (errorCode === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+        msg = '❌ File nhạc không tìm thấy hoặc định dạng không hỗ trợ.';
+    }
+
+    // Show toast notification
+    showPlayerToast(msg, 'error');
+
+    // Auto-skip to next song after 2s (if playlist has more songs)
+    if (playlist.length > 1) {
+        setTimeout(() => {
+            const next = (currentIndex + 1) % playlist.length;
+            if (next !== currentIndex) playSongByIndex(next);
+        }, 2000);
+    }
+});
+
+function showPlayerToast(message, type = 'info') {
+    // Remove existing toast
+    const existing = document.getElementById('playerToast');
+    if (existing) existing.remove();
+
+    const toast = document.createElement('div');
+    toast.id = 'playerToast';
+    toast.textContent = message;
+    toast.style.cssText = `
+        position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%);
+        background: ${type === 'error' ? 'rgba(220,38,38,0.95)' : 'rgba(29,185,84,0.95)'};
+        color: #fff; padding: 10px 20px; border-radius: 500px;
+        font-size: 13px; font-weight: 600; z-index: 9999;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        animation: fadeInUp 0.3s ease;
+    `;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 4000);
 }
 
 // Audio Events

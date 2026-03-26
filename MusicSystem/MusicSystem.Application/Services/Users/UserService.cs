@@ -1,4 +1,4 @@
-﻿using MusicSystem.Application.Services.Auth;
+using MusicSystem.Application.Services.Auth;
 using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Shared.DTOs.Users;

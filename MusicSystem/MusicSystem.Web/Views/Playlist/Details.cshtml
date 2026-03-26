@@ -1,4 +1,4 @@
-﻿@model MusicSystem.Shared.DTOs.Playlists.PlaylistDto
+@model MusicSystem.Shared.DTOs.Playlists.PlaylistDto
 @{
     ViewData["Title"] = Model.Title;
     Layout = "_CustomerLayout";
@@ -12,7 +12,7 @@
     int idx = 1;
 }
 
-<!-- Hero gradient (Spotify style: purple gradient that fades to base) -->
+<!-- Hero gradient -->
 <div class="pl-hero">
     <div class="pl-hero-cover">
         <i class="fas fa-music"></i>
@@ -59,13 +59,15 @@
     {
         var artists = song?.Artists ?? "Unknown";
         var dur = TimeSpan.FromSeconds(song?.Duration ?? 0).ToString(@"mm\:ss");
-        var stitle = (song?.Title ?? "").Replace("'", "\\'");
-        var sartists = artists.Replace("'", "\\'");
-        var sUrl = song?.FileUrl ?? "";
 
-        <div class="pl-table-row" onclick="playInPlaylist('@song?.SongId','@stitle','@sartists','@sUrl')"
-             data-song-id="@song?.SongId" data-song-title="@song?.Title" data-song-artists="@artists"
-             data-song-url="@song?.FileUrl">
+        @* Dùng data-attributes thay vì inline onclick để tránh lỗi với ký tự đặc biệt trong title/artists *@
+        <div class="pl-table-row song-card"
+             data-song-id="@song?.SongId"
+             data-song-title="@song?.Title"
+             data-song-artists="@artists"
+             data-song-url="@song?.FileUrl"
+             data-song-cover=""
+             onclick="playSong(this)">
 
             <div>
                 <span class="pl-row-num">@idx</span>
@@ -84,7 +86,8 @@
 
             <div class="pl-row-right">
                 <span class="pl-row-dur">@dur</span>
-                <button class="pl-row-del" onclick="event.stopPropagation(); removeSong('@song?.SongId')"
+                <button class="pl-row-del"
+                        onclick="event.stopPropagation(); removeSong('@song?.SongId')"
                         title="Xóa khỏi playlist">
                     <i class="fas fa-xmark"></i>
                 </button>
@@ -108,33 +111,10 @@ else
 
 @section Scripts {
     <script>
-        // All songs for playAll
-        const allSongs = [
-            @if (Model.Songs?.Any() == true)
-            {
-                                @foreach (var song in Model.Songs)
-                            {
-                                            var artists = song?.Artists ?? "Unknown";
-                                            <text>{songId:'@song?.SongId', title:'@((song?.Title ?? "").Replace("'", "\\'"))', artists:'@(artists.Replace("'", "\\'"))', url:'@(song?.FileUrl ?? "")' },</text>
-                                }
-            }
-        ];
-
-        function playInPlaylist(id, title, artists, url) {
-            playSong({ dataset: { songId: id, songTitle: title, songArtists: artists, songUrl: url } });
-            document.querySelectorAll('.pl-table-row').forEach(r => r.style.background = '');
-            event.currentTarget.style.background = 'rgba(255,255,255,0.12)';
-        }
-
-        let _playIdx = 0;
+        // Phát tất cả từ bài đầu tiên
         function playAll() {
-            if (!allSongs.length) return;
-            _playIdx = 0;
-            _playFromIdx(0);
-        }
-        function _playFromIdx(i) {
-            const s = allSongs[i]; if (!s) return;
-            playSong({ dataset: { songId: s.songId, songTitle: s.title, songArtists: s.artists, songUrl: s.url } });
+            const firstRow = document.querySelector('.pl-table-row.song-card');
+            if (firstRow) playSong(firstRow);
         }
 
         async function removeSong(songId) {

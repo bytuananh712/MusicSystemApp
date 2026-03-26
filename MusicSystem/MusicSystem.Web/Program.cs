@@ -2,13 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using MusicSystem.Application.Services.Artists;
 using MusicSystem.Application.Services.Auth;
-using MusicSystem.Application.Services.Auth;
 using MusicSystem.Application.Services.Files;
+using MusicSystem.Application.Services.History;
+using MusicSystem.Application.Services.Likes;
+using MusicSystem.Application.Services.Playlists;
 using MusicSystem.Application.Services.Songs;
 using MusicSystem.Application.Services.Users;
-using MusicSystem.Application.Services.Playlists;
-using MusicSystem.Application.Services.Likes;
-using MusicSystem.Application.Services.History;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Infrastructure.Data;
 using MusicSystem.Infrastructure.Repositories;
@@ -24,11 +23,10 @@ namespace MusicSystem.Web
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
-
+            // ===== SERILOG CONFIGURATION =====
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
-                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)  //  FIX: Warning instead of Information
                 .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
                 .Enrich.FromLogContext()
                 .WriteTo.Console(
@@ -36,30 +34,32 @@ namespace MusicSystem.Web
                 .WriteTo.File(
                     path: "logs/app-.txt",
                     rollingInterval: RollingInterval.Day,
-                    outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
+                    outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}",
+                    retainedFileCountLimit: 7)  //  Keep logs for 7 days
                 .CreateLogger();
 
             builder.Host.UseSerilog();
 
-
-            // Add services to the container.
+            // ===== ADD SERVICES =====
             builder.Services.AddControllersWithViews();
 
+            // ===== DATABASE CONTEXT =====
+            // ✅ ĐƠN GIẢN - Không có UseQuerySplittingBehavior
             builder.Services.AddDbContext<MusicStreamingDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+            });
 
-            // Repositories
+            // ===== REPOSITORIES (Domain Interfaces) =====
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-            builder.Services.AddScoped<IArtistRepository, ArtistRepository>();  // Quản lí nghệ sĩ
-            builder.Services.AddScoped<ISongRepository, SongRepository>();  // Quản lí bài hát
+            builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
+            builder.Services.AddScoped<ISongRepository, SongRepository>();
+            builder.Services.AddScoped<ILikeRepository, LikeRepository>();
+            builder.Services.AddScoped<IHistoryRepository, HistoryRepository>();
+            builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();
 
-            builder.Services.AddScoped<ILikeRepository, LikeRepository>();          // Nhạc yêu thích
-            builder.Services.AddScoped<IHistoryRepository, HistoryRepository>();    // Lịch sử nghe
-            builder.Services.AddScoped<IPlaylistRepository, PlaylistRepository>();  // Danh sách phát 
-
-
-            // Services
+            // ===== SERVICES (Application Layer) =====
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IArtistService, ArtistService>();
@@ -68,15 +68,17 @@ namespace MusicSystem.Web
             builder.Services.AddScoped<ILikeService, LikeService>();
             builder.Services.AddScoped<IHistoryService, HistoryService>();
 
-
             // ===== SOCKET SERVER =====
-            builder.Services.AddScoped<SocketHandler>(); // Scoped per client connection
-            builder.Services.AddHostedService<SocketServer>(); // Background service
+            builder.Services.AddScoped<SocketHandler>();
+            builder.Services.AddHostedService<SocketServer>();
 
             // ===== FILE UPLOAD SERVICE =====
-
             var uploadPath = Path.Combine(builder.Environment.WebRootPath, "uploads", "songs");
-            builder.Services.AddScoped<IFileUploadService>(sp => new FileUploadService(uploadPath));
+
+            //  FIX: Dùng Singleton thay vì Scoped (path không đổi)
+            builder.Services.AddSingleton<IFileUploadService>(
+                new FileUploadService(uploadPath)
+            );
 
             // ===== AUTHENTICATION =====
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -92,8 +94,7 @@ namespace MusicSystem.Web
                     options.Cookie.IsEssential = true;
                 });
 
-
-            // Session
+            // ===== SESSION =====
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -103,35 +104,26 @@ namespace MusicSystem.Web
 
             builder.Services.AddHttpContextAccessor();
 
-
-
-
+            // ===== BUILD APP =====
             var app = builder.Build();
 
-            var uploadsFolder = Path.Combine(app.Environment.WebRootPath, "uploads", "songs");
-            if (!Directory.Exists(uploadsFolder))
+            // ===== CREATE UPLOAD FOLDER =====
+            if (!Directory.Exists(uploadPath))
             {
-                Directory.CreateDirectory(uploadsFolder);
+                Directory.CreateDirectory(uploadPath);
             }
 
-
-
-            // Configure the HTTP request pipeline.
+            // ===== HTTP PIPELINE =====
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
-            // Thêm session
             app.UseSession();
-
             app.UseAuthentication();
             app.UseAuthorization();
 

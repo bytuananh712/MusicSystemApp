@@ -1,4 +1,4 @@
-﻿using MusicSystem.App.Services;
+using MusicSystem.App.Services;
 using MusicSystem.Shared.Constants;
 using MusicSystem.Shared.DTOs.Users;
 using MusicSystem.Shared.SocketContracts;
@@ -61,6 +61,14 @@ namespace MusicSystem.App.Views
                 return;
             }
 
+            var email = txtEmail.Text.Trim();
+            if (!email.Contains('@') || !email.Contains('.') || email.IndexOf('@') > email.LastIndexOf('.'))
+            {
+                ShowError("Email không đúng định dạng (ví dụ: user@example.com)");
+                txtEmail.Focus();
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(txtFullName.Text))
             {
                 ShowError("Vui lòng nhập họ tên");
@@ -71,7 +79,7 @@ namespace MusicSystem.App.Views
             // Create DTO
             var updateDto = new UpdateUserDto
             {
-                Email = txtEmail.Text.Trim(),
+                Email = email,
                 FullName = txtFullName.Text.Trim()
             };
 
