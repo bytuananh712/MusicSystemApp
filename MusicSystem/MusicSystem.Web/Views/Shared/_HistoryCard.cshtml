@@ -1,0 +1,42 @@
+@model MusicSystem.Shared.DTOs.Songs.HistoryDto
+@{
+    var songId = Model.SongId;
+    var title = Model.Title;
+    var artists = Model.Artists;
+    var cover = Model.CoverImageUrl;
+    var url = Model.FileUrl;
+
+    var diff = DateTime.UtcNow - Model.PlayedAt;
+    var timeAgo = diff.TotalMinutes < 1 ? "Vừa xong"
+                : diff.TotalHours < 1 ? $"{(int)diff.TotalMinutes} phút"
+                : diff.TotalDays < 1 ? $"{(int)diff.TotalHours} giờ"
+                : $"{(int)diff.TotalDays} ngày";
+
+    var safetitle = (title ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
+    var safeartists = (artists ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
+}
+
+<div class="history-card" onclick="playHistorySong('@songId','@safetitle','@safeartists','@url')">
+    <div class="card-media">
+        @if (!string.IsNullOrEmpty(cover))
+        {
+            <img src="@cover" alt="@title" loading="lazy">
+        }
+        else
+        {
+            <div class="fallback-icon">
+                <i class="fas fa-music"></i>
+            </div>
+        }
+        <button class="card-play-btn" title="Phát ngay">
+            <i class="fas fa-play"></i>
+        </button>
+    </div>
+    <div class="card-content">
+        <div class="card-title" title="@title">@title</div>
+        <div class="card-artist" title="@artists">@artists</div>
+        <div class="card-time">
+            <i class="far fa-clock"></i> @timeAgo
+        </div>
+    </div>
+</div>

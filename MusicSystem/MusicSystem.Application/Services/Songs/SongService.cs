@@ -62,18 +62,20 @@ namespace MusicSystem.Application.Services.Songs
                     throw new Exception($"Artist with ID {artistId} not found");
             }
 
-            // Check for duplicates (same title and same artists)
-            var allSongs = await _songRepository.GetAllAsync(null, 1, 10000);
-            var isDuplicate = allSongs.Any(s =>
-                s.Title.Equals(dto.Title, StringComparison.OrdinalIgnoreCase) &&
-                s.SongArtists != null &&
-                s.SongArtists.Count == dto.ArtistIds.Count &&
-                s.SongArtists.All(sa => dto.ArtistIds.Contains(sa.ArtistId))
-            );
+            // Check for duplicates (same title and same artists) using Database
+            var isDuplicate = await _songRepository.ExistsAsync(dto.Title, dto.ArtistIds);
 
             if (isDuplicate)
             {
                 throw new Exception("Bài hát này đã tồn tại trong hệ thống (trùng Tên và Nghệ sĩ)!");
+            }
+
+            // Check for duplicate audio file (heuristic using FileSize and Duration)
+            var isFileDuplicate = await _songRepository.ExistsByFileAsync(dto.FileSize, dto.Duration);
+            
+            if (isFileDuplicate)
+            {
+                throw new Exception("File âm thanh này đã tồn tại trên hệ thống dưới một tên bài hát khác. Vui lòng không re-up!");
             }
 
             var song = new Song

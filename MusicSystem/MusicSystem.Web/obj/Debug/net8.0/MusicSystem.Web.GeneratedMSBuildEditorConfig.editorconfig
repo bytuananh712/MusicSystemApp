@@ -1,5 +1,7 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -36,10 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/HK_7_SP2026/Project_PRN222_MusicApp/MusicSystem/MusicSystem.Web/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/HK_7_SP2026/Project_PRN222_MusicApp/MusicSystem/MusicSystem.Web/Views/Playlist/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheWxpc3RcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/HK_7_SP2026/Project_PRN222_MusicApp/MusicSystem/MusicSystem.Web/Views/Shared/_AuthLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/HK_7_SP2026/Project_PRN222_MusicApp/MusicSystem/MusicSystem.Web/Views/Shared/_HistoryCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IaXN0b3J5Q2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/HK_7_SP2026/Project_PRN222_MusicApp/MusicSystem/MusicSystem.Web/Views/Shared/_NavbarPartial.cshtml]

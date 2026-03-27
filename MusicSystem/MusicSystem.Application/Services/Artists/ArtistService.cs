@@ -1,4 +1,4 @@
-﻿using MusicSystem.Domain.Entities;
+using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Shared.DTOs.Artists;
 using System;
@@ -13,13 +13,16 @@ namespace MusicSystem.Application.Services.Artists
     {
         private readonly IArtistRepository _artistRepository;
         private readonly IUserRepository _userRepository;
+        private readonly ISongRepository _songRepository;
 
         public ArtistService(
             IArtistRepository artistRepository,
-            IUserRepository userRepository)
+            IUserRepository userRepository,
+            ISongRepository songRepository)
         {
             _artistRepository = artistRepository;
             _userRepository = userRepository;
+            _songRepository = songRepository;
         }
 
         public async Task<IEnumerable<ArtistDto>> GetAllArtistsAsync()
@@ -90,8 +93,10 @@ namespace MusicSystem.Application.Services.Artists
 
         public async Task<bool> DeleteArtistAsync(Guid artistId)
         {
-            // TODO: Check if artist has songs
-            // Nếu có bài hát thì không cho xóa, chỉ disable
+            var songCount = await _songRepository.CountSongsByArtistAsync(artistId);
+            if (songCount > 0)
+                throw new Exception("Không thể xóa! Nghệ sĩ này đang có bài hát trên hệ thống. Vui lòng dùng chức năng Khóa (Disable).");
+
             await _artistRepository.DeleteAsync(artistId);
             return true;
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,17 +21,17 @@ namespace MusicSystem.Infrastructure.Repositories
         public async Task<IEnumerable<Playlist>> GetUserPlaylistsAsync(Guid userId)
         {
             return await _context.Playlists
-                .Include(p => p.PlaylistSongs)
+                .Include(p => p.PlaylistSongs.OrderBy(ps => ps.AddedAt))
                     .ThenInclude(ps => ps.Song)
                 .Where(p => p.UserId == userId)
-                .OrderByDescending(p => p.CreatedAt)
+                .OrderBy(p => p.CreatedAt)
                 .ToListAsync();
         }
 
         public async Task<Playlist> GetByIdAsync(Guid playlistId)
         {
             return await _context.Playlists
-                .Include(p => p.PlaylistSongs)
+                .Include(p => p.PlaylistSongs.OrderBy(ps => ps.AddedAt))
                     .ThenInclude(ps => ps.Song)
                     .ThenInclude(s => s.SongArtists)
                     .ThenInclude(sa => sa.Artist)

@@ -1,92 +1,235 @@
-﻿@model IEnumerable<MusicSystem.Shared.DTOs.Songs.HistoryDto>
+@model IEnumerable<MusicSystem.Shared.DTOs.Songs.HistoryDto>
 @{
     ViewData["Title"] = "Lịch sử nghe";
     Layout = "_CustomerLayout";
-    int rownum = 1;
+
+    // Grouping logic
+    var now = DateTime.UtcNow;
+    var today = Model.Where(h => h.PlayedAt.Date == now.Date);
+    var yesterday = Model.Where(h => h.PlayedAt.Date == now.Date.AddDays(-1));
+    var earlier = Model.Where(h => h.PlayedAt.Date < now.Date.AddDays(-1));
 }
 
-<div class="sp-section">
-    <div class="sp-section-header">
-        <div class="sp-section-title">Đã nghe gần đây</div>
-        <span style="font-size:13px;color:var(--text-200)">@Model.Count() bài</span>
-    </div>
+<style>
+    .history-page {
+        padding: 32px 0;
+    }
 
-    @if (Model.Any())
+    .history-section {
+        margin-bottom: 48px;
+    }
+
+    .section-title {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 24px;
+        color: var(--text-100);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .section-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Compact Grid Layout */
+    .history-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 20px;
+    }
+
+    .history-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        padding: 12px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .history-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-4px);
+        border-color: var(--green);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-media {
+        position: relative;
+        aspect-ratio: 1;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        background: linear-gradient(135deg, #282828, #121212);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-media .fallback-icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Floating Play Button */
+    .card-play-btn {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        width: 40px;
+        height: 40px;
+        background: var(--green);
+        border: none;
+        border-radius: 50%;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(29, 185, 84, 0.4);
+    }
+
+    .history-card:hover .card-play-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .card-play-btn:hover {
+        transform: scale(1.1);
+        background: var(--green-bright);
+    }
+
+    .card-content {
+        min-width: 0;
+    }
+
+    .card-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-100);
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-artist {
+        font-size: 12px;
+        color: var(--text-200);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-time {
+        font-size: 11px;
+        color: var(--text-300);
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    /* Empty State */
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 20px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 24px;
+        border: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+</style>
+
+<div class="history-page">
+    @if (!Model.Any())
     {
-        <table class="history-table">
-            <thead class="history-thead">
-                <tr>
-                    <th style="width:40px;text-align:center">#</th>
-                    <th style="width:48px"></th>
-                    <th>Tiêu đề</th>
-                    <th class="d-none d-md-table-cell">Nghệ sĩ</th>
-                    <th class="d-none d-lg-table-cell" style="width:120px">Thời gian</th>
-                    <th style="width:48px"></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    var songId = item.SongId;
-                    var title = item.Title;
-                    var artists = item.Artists;
-
-                    var diff = DateTime.UtcNow - item.PlayedAt;
-                    var timeAgo = diff.TotalMinutes < 1 ? "Vừa xong"
-                    : diff.TotalHours < 1 ? $"{(int)diff.TotalMinutes} phút"
-                    : diff.TotalDays < 1 ? $"{(int)diff.TotalHours} giờ"
-                    : diff.TotalDays < 7 ? $"{(int)diff.TotalDays} ngày"
-                    : item.PlayedAt.ToString("dd/MM/yy");
-
-                    var safetitle = (title ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
-                    var safeartists = (artists ?? "").Replace("'", "\\'").Replace("\"", "\\\"");
-                    var safeUrl = item.FileUrl ?? "";
-
-                    <tr class="history-row" onclick="playHistorySong('@songId','@safetitle','@safeartists','@safeUrl')">
-                        <td style="width:40px">
-                            <span class="h-num">@rownum</span>
-                            <span class="h-play-icon"><i class="fas fa-play"></i></span>
-                        </td>
-                        <td style="width:48px">
-                            <div class="h-thumb"><i class="fas fa-music"></i></div>
-                        </td>
-                        <td>
-                            <div class="h-info-title" title="@title">@(title ?? "Unknown")</div>
-                            <div class="h-info-artist d-md-none">@artists</div>
-                        </td>
-                        <td class="h-time d-none d-md-table-cell">@artists</td>
-                        <td class="h-time d-none d-lg-table-cell">@timeAgo</td>
-                        <td>
-                            <button class="h-play-btn"
-                                    onclick="event.stopPropagation(); playHistorySong('@songId','@safetitle','@safeartists','@safeUrl')"
-                                    title="Phát">
-                                <i class="fas fa-play"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    rownum++;
-                }
-            </tbody>
-        </table>
+        <div class="empty-state">
+            <div style="font-size: 64px; color: rgba(255,255,255,0.1); margin-bottom: 24px;">
+                <i class="fas fa-history"></i>
+            </div>
+            <h2 style="font-weight: 800; margin-bottom: 8px;">Chưa có lịch sử nghe</h2>
+            <p style="color: var(--text-200); margin-bottom: 32px;">Hãy bắt đầu hành trình âm nhạc của bạn ngay bây giờ!</p>
+            <a href="/" class="sp-btn-primary" style="text-decoration:none;">Khám phá ngay</a>
+        </div>
     }
     else
     {
-        <div class="empty-state">
-            <i class="fas fa-clock-rotate-left"></i>
-            <h3>Chưa có lịch sử</h3>
-            <p>Bắt đầu nghe nhạc để xem lại những gì bạn đã nghe</p>
-            <a href="/" class="sp-btn-primary" style="text-decoration:none;display:inline-block;margin-top:8px">
-                Khám phá nhạc
-            </a>
-        </div>
+        @if (today.Any())
+        {
+            <div class="history-section">
+                <h2 class="section-title">Hôm nay</h2>
+                <div class="history-grid">
+                    @foreach (var item in today)
+                    {
+                        @Html.Partial("_HistoryCard", item)
+                    }
+                </div>
+            </div>
+        }
+
+        @if (yesterday.Any())
+        {
+            <div class="history-section">
+                <h2 class="section-title">Hôm qua</h2>
+                <div class="history-grid">
+                    @foreach (var item in yesterday)
+                    {
+                        @Html.Partial("_HistoryCard", item)
+                    }
+                </div>
+            </div>
+        }
+
+        @if (earlier.Any())
+        {
+            <div class="history-section">
+                <h2 class="section-title">Trước đó</h2>
+                <div class="history-grid">
+                    @foreach (var item in earlier)
+                    {
+                        @Html.Partial("_HistoryCard", item)
+                    }
+                </div>
+            </div>
+        }
     }
 </div>
 
 @section Scripts {
     <script>
         function playHistorySong(id, title, artists, url) {
-            if (!id) return;
-            playSong({ dataset: { songId: id, songTitle: title, songArtists: artists, songUrl: url } });
+            if (!id || !url) return;
+            playSong({
+                dataset: {
+                    songId: id,
+                    songTitle: title,
+                    songArtists: artists,
+                    songUrl: url
+                }
+            });
         }
     </script>
 }

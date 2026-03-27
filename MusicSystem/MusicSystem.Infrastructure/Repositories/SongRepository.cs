@@ -110,5 +110,26 @@ namespace MusicSystem.Infrastructure.Repositories
 
             return await query.CountAsync();
         }
+
+        public async Task<bool> ExistsAsync(string title, List<Guid> artistIds)
+        {
+            var titleLower = title.ToLower();
+            return await _context.Songs
+                .AnyAsync(s => s.Title.ToLower() == titleLower &&
+                               s.SongArtists.Count == artistIds.Count &&
+                               s.SongArtists.All(sa => artistIds.Contains(sa.ArtistId)));
+        }
+
+        public async Task<bool> ExistsByFileAsync(long? fileSize, int duration)
+        {
+            if (fileSize == null || fileSize == 0) return false;
+
+            return await _context.Songs
+                .AnyAsync(s => s.FileSize == fileSize && s.Duration == duration);
+        }
+        public async Task<int> CountSongsByArtistAsync(Guid artistId)
+        {
+            return await _context.SongArtists.CountAsync(sa => sa.ArtistId == artistId);
+        }
     }
 }

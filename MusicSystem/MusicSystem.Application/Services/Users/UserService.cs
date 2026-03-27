@@ -89,6 +89,14 @@ namespace MusicSystem.Application.Services.Users
             if (user == null)
                 throw new Exception($"User with ID {userId} not found");
 
+            // Check duplicate email
+            if (!string.IsNullOrEmpty(dto.Email) && dto.Email != user.Email)
+            {
+                var emailExists = await _userRepository.GetByEmailAsync(dto.Email);
+                if (emailExists != null)
+                    throw new Exception("Email này đã được sử dụng bởi tài khoản khác!");
+            }
+
             user.Email = dto.Email ?? user.Email;
             user.FullName = dto.FullName ?? user.FullName;
             user.Avatar = dto.Avatar ?? user.Avatar;

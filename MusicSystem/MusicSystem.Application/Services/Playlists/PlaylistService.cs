@@ -1,4 +1,4 @@
-﻿using MusicSystem.Domain.Entities;
+using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Shared.DTOs.Playlists;
 using MusicSystem.Shared.DTOs.Songs;
@@ -46,18 +46,30 @@ namespace MusicSystem.Application.Services.Playlists
             return MapToDto(playlist);
         }
 
-        public async Task AddSongAsync(Guid playlistId, Guid songId)
+        public async Task AddSongAsync(Guid playlistId, Guid songId, Guid userId)
         {
+            var playlist = await _playlistRepository.GetByIdAsync(playlistId);
+            if (playlist == null || playlist.UserId != userId)
+                throw new UnauthorizedAccessException("Bạn không có quyền truy cập Playlist này!");
+
             await _playlistRepository.AddSongAsync(playlistId, songId);
         }
 
-        public async Task RemoveSongAsync(Guid playlistId, Guid songId)
+        public async Task RemoveSongAsync(Guid playlistId, Guid songId, Guid userId)
         {
+            var playlist = await _playlistRepository.GetByIdAsync(playlistId);
+            if (playlist == null || playlist.UserId != userId)
+                throw new UnauthorizedAccessException("Bạn không có quyền truy cập Playlist này!");
+
             await _playlistRepository.RemoveSongAsync(playlistId, songId);
         }
 
-        public async Task DeleteAsync(Guid playlistId)
+        public async Task DeleteAsync(Guid playlistId, Guid userId)
         {
+            var playlist = await _playlistRepository.GetByIdAsync(playlistId);
+            if (playlist == null || playlist.UserId != userId)
+                throw new UnauthorizedAccessException("Bạn không có quyền truy cập Playlist này!");
+
             await _playlistRepository.DeleteAsync(playlistId);
         }
 

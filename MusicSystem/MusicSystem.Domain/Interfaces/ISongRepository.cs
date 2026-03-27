@@ -1,4 +1,4 @@
-﻿using MusicSystem.Domain.Entities;
+using MusicSystem.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +17,8 @@ namespace MusicSystem.Domain.Interfaces
         Task DeleteAsync(Guid songId);
         Task<bool> ApproveSongAsync(Guid songId, Guid managerUserId);
         Task<int> CountAsync(string status = null);
+        Task<bool> ExistsAsync(string title, List<Guid> artistIds);
+        Task<bool> ExistsByFileAsync(long? fileSize, int duration);
+        Task<int> CountSongsByArtistAsync(Guid artistId);
     }
 }

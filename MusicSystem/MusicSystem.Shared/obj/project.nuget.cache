@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Wf6W/hoy6Oc=",
+  "dgSpecHash": "ZrIkUYKU89c=",
   "success": true,
   "projectFilePath": "E:\\HK_7_SP2026\\Project_PRN222_MusicApp\\MusicSystem\\MusicSystem.Shared\\MusicSystem.Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\nguye\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +14,6 @@ namespace MusicSystem.Shared.DTOs.Songs
         public string Artists { get; set; }
         public DateTime PlayedAt { get; set; }
         public string FileUrl { get; set; }
+        public string CoverImageUrl { get; set; }
     }
 }

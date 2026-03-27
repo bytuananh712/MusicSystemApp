@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MusicSystem.Domain.Entities;
 using MusicSystem.Application.Services.Playlists;
@@ -107,12 +107,8 @@ namespace MusicSystem.Web.Controllers
                 if (playlistId == Guid.Empty || songId == Guid.Empty)
                     return Json(new { success = false, message = "ID không hợp lệ" });
 
-                var playlist = await _playlistService.GetByIdAsync(playlistId);
                 var userId = GetCurrentUserId();
-                if (playlist == null || playlist.UserId != userId)
-                    return Json(new { success = false, message = "Bạn không có quyền truy cập!" });
-
-                await _playlistService.AddSongAsync(playlistId, songId);
+                await _playlistService.AddSongAsync(playlistId, songId, userId);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -127,12 +123,8 @@ namespace MusicSystem.Web.Controllers
         {
             try
             {
-                var playlist = await _playlistService.GetByIdAsync(playlistId);
                 var userId = GetCurrentUserId();
-                if (playlist == null || playlist.UserId != userId)
-                    return Json(new { success = false, message = "Bạn không có quyền truy cập!" });
-
-                await _playlistService.RemoveSongAsync(playlistId, songId);
+                await _playlistService.RemoveSongAsync(playlistId, songId, userId);
                 return Json(new { success = true });
             }
             catch (Exception ex)
@@ -146,12 +138,8 @@ namespace MusicSystem.Web.Controllers
         {
             try
             {
-                var playlist = await _playlistService.GetByIdAsync(id);
                 var userId = GetCurrentUserId();
-                if (playlist == null || playlist.UserId != userId)
-                    return Json(new { success = false, message = "Bạn không có quyền truy cập!" });
-
-                await _playlistService.DeleteAsync(id);
+                await _playlistService.DeleteAsync(id, userId);
                 return Json(new { success = true });
             }
             catch (Exception ex)

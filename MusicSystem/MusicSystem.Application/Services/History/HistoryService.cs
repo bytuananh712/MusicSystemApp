@@ -1,4 +1,4 @@
-﻿using MusicSystem.Domain.Entities;
+using MusicSystem.Domain.Entities;
 using MusicSystem.Domain.Interfaces;
 using MusicSystem.Shared.DTOs.Songs;
 using System;
@@ -37,6 +37,7 @@ namespace MusicSystem.Application.Services.History
                 PlayedAt = lh.PlayedAt,
                 Title = lh.Song?.Title ?? "Unknown",
                 FileUrl = lh.Song?.FileUrl,
+                CoverImageUrl = lh.Song?.CoverImageUrl,
                 Artists = lh.Song?.SongArtists != null
                     ? string.Join(", ", lh.Song.SongArtists.Select(sa => sa.Artist?.ArtistName ?? "Unknown"))
                     : "Unknown"

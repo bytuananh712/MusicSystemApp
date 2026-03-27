@@ -183,7 +183,7 @@ namespace MusicSystem.Infrastructure.Socket
                     SocketCommands.UpdateSong => await HandleUpdateSongAsync(request),
                     SocketCommands.DeleteSong => await HandleDeleteSongAsync(request),
 
-                    // Admin ONLY (Sửa lỗi phân quyền duyệt bài do Manager gọi qua mặt Admin)
+                    // Admin ONLY 
                     SocketCommands.ApproveSong => await RequireRole("Admin", request, () => HandleApproveSongAsync(request)),
                     SocketCommands.RejectSong => await RequireRole("Admin", request, () => HandleRejectSongAsync(request)),
 
@@ -419,7 +419,7 @@ namespace MusicSystem.Infrastructure.Socket
         // ==================== HELPER METHODS ====================
 
 
-        /// ✅ SỬA LỖI: Trả về UserId từ phiên đăng nhập thực tế thay vì query DB bừa bãi.
+        ///  SỬA LỖI: Trả về UserId từ phiên đăng nhập thực tế thay vì query DB bừa bãi.
 
         private Guid GetCurrentUserId()
         {
